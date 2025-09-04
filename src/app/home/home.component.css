@@ -1,3 +1,4 @@
+
 .carousel-inner img {
   height: 400px; 
   object-fit: cover;
@@ -56,4 +57,12 @@
 }
 .quote:hover{
     background:rgb(12, 18, 48);
+}
+.deal-header{
+    font-size:40px;
+  font-style: normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+#carouselContainer{
+    margin-top:50px;
 }
