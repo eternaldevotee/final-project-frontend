@@ -1,9 +1,10 @@
 *{
     margin:0;
     padding:0;
+    background-color: #f1f3f6;
 }
 .footer{
-    background:#f7f8fa;
+    /* background:#f7f8fa; */
     /* margin:0px; */
 height:50vh;    
 box-shadow: 20px 0px 0px 0px;
