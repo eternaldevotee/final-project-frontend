@@ -24,7 +24,25 @@
   </div>
 
   <div>
-    <button class="btn btn-white">Login </button>
-    <button class="btn btn-white">Agent Login</button>
+    <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
+        <button type="button" class="btn btn-outline-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Login
+        </button>
+    </a>
+    <div class="modal"  id="exampleModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="m-2" [routerLink]="[{ outlets: { modal: ['login'] } }]">Login</a>
+            <a class="m-2" [routerLink]="[{ outlets: { modal: ['signup'] } }]">Signup</a>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> 
+          <div class="modal-body">
+            <router-outlet name="modal"></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Agent Login</button>
   </div>
 </nav>

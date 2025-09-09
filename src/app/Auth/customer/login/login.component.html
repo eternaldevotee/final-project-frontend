@@ -1,0 +1,12 @@
+<h3>Login</h3><br/>
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+  <div class="mb-3">
+    <label for="userName" class="form-label">Username</label>
+    <input type="text" class="form-control" id="userName" name="userName" formControlName="userName" required/>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" formControlName="password"/>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
