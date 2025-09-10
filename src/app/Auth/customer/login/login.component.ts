@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component ,OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +7,26 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-  loginForm = new FormGroup({
-    userName : new FormControl(),
-    password : new FormControl()
-  })
+export class LoginComponent implements OnInit{
+  login!:Login;
+  
+  ngOnInit(): void {
+    this.login={
+      emailId:"",
+      password:""
+    }
+  }
 
-  onSubmit() {
+  onSubmit(loginForm: NgForm) {}
+
+}
+
+class Login{
+  emailId!:string;
+  password!:string;
+
+  constructor(emailId:string, password:string){
+    this.emailId=emailId;
+    this.password=password;
   }
 }
