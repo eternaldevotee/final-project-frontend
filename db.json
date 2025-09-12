@@ -104,6 +104,8 @@
     {
       "PackageID": 1,
       "Title": "Bangalore & Coorg Escape",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Explore the vibrant city of Bangalore and unwind in the lush hills of Coorg.",
       "Duration": "5 days",
       "Price": 20406.07,
@@ -113,13 +115,13 @@
         "Guide",
         "Transport",
         "Hotel"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "8476"
+      ]
     },
     {
       "PackageID": 2,
       "Title": "Heritage Trail: Mysore & Hampi",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Discover the royal palaces of Mysore and the ancient ruins of Hampi.",
       "Duration": "7 days",
       "Price": 14026.57,
@@ -129,13 +131,13 @@
         "Flight",
         "Hotel",
         "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "0496"
+      ]
     },
     {
       "PackageID": 3,
       "Title": "Kerala Backwaters & Tea Gardens",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Cruise through Alleppey’s backwaters and stroll through Munnar’s tea estates.",
       "Duration": "6 days",
       "Price": 32316.3,
@@ -144,52 +146,55 @@
         "Meals",
         "Flight",
         "Guide"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "7541"
+      ]
+    
     },
     {
       "PackageID": 4,
       "Title": "Spiritual South: Tirupati & Madurai",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Visit sacred temples and experience the spiritual essence of South India.",
       "Duration": "7 days",
       "Price": 28332.85,
       "IncludedServices": [
         "Meals",
         "Guide"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "0bbb"
+      ]
+    
     },
     {
       "PackageID": 5,
       "Title": "Adventure in Chikmagalur",
+      "imgURL": "https://picsum.photos/200/300",
+      "summary": "",
       "Description": "Trek through coffee plantations and enjoy scenic mountain views.",
       "Duration": "4 days",
       "Price": 38892.51,
       "IncludedServices": [
         "Guide",
         "Transport"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "f3b4"
+      ]
     },
     {
       "PackageID": 6,
       "Title": "Tamil Nadu Temple Trail",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Explore iconic temples in Kanchipuram, Thanjavur, and Rameswaram.",
       "Duration": "10 days",
       "Price": 25949.58,
       "IncludedServices": [
         "Guide",
         "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "d06b"
+      ]
+      
     },
     {
       "PackageID": 7,
       "Title": "Bangalore City Break",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Experience the tech capital’s nightlife, gardens, and shopping streets.",
       "Duration": "5 days",
       "Price": 9180.51,
@@ -199,13 +204,14 @@
         "Transport",
         "Flight",
         "Hotel"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "3e62"
+      ]
+     
     },
     {
       "PackageID": 8,
       "Title": "Western Ghats Nature Retreat",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Reconnect with nature in Wayanad and Bandipur National Park.",
       "Duration": "9 days",
       "Price": 15434.25,
@@ -215,13 +221,14 @@
         "Meals",
         "Hotel",
         "Guide"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "e452"
+      ]
+      
     },
     {
       "PackageID": 9,
       "Title": "South India Grand Tour",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "A complete journey through Karnataka, Kerala, and Tamil Nadu.",
       "Duration": "14 days",
       "Price": 40983.88,
@@ -238,6 +245,8 @@
     {
       "PackageID": 10,
       "Title": "Luxury Bangalore & Ooty Getaway",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
       "Duration": "5 days",
       "Price": 49020.17,
@@ -247,20 +256,21 @@
         "Guide",
         "Flight",
         "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "f1a0"
+      ]
+     
     },
     {
       "id": "e603",
       "Title": "Shimla",
+      "imgURL":"https://picsum.photos/200/300",
+      "summary":"",
       "Description": "NA",
       "Duration": "10",
       "Price": 20000,
       "IncludedServices": [
         "Meals"
-      ],
-      "PackageID": 11
+      ]
+     
     }
   ],
   "Booking": [
