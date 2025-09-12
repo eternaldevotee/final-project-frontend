@@ -1,283 +1,227 @@
 {
   "User": [
     {
-      "UserID": "USR001",
-      "Name": "Alice Johnson",
-      "Email": "alice.j@example.com",
-      "Password": "hashedpassword1",
-      "Role": "Customer",
+      "UserID": 1,
+      "Name": "User1",
+      "Email": "user1@example.com",
+      "Password": "pass1",
+      "Role": "customer",
+      "ContactNumber": "9876543201"
+    },
+    {
+      "UserID": 2,
+      "Name": "User2",
+      "Email": "user2@example.com",
+      "Password": "pass2",
+      "Role": "customer",
+      "ContactNumber": "9876543202"
+    },
+    {
+      "UserID": 3,
+      "Name": "User3",
+      "Email": "user3@example.com",
+      "Password": "pass3",
+      "Role": "agent",
+      "ContactNumber": "9876543203"
+    },
+    {
+      "UserID": 4,
+      "Name": "User4",
+      "Email": "user4@example.com",
+      "Password": "pass4",
+      "Role": "agent",
+      "ContactNumber": "9876543204"
+    },
+    {
+      "UserID": 5,
+      "Name": "User5",
+      "Email": "user5@example.com",
+      "Password": "pass5",
+      "Role": "admin",
+      "ContactNumber": "9876543205"
+    },
+    {
+      "UserID": 6,
+      "Name": "User6",
+      "Email": "user6@example.com",
+      "Password": "pass6",
+      "Role": "admin",
+      "ContactNumber": "9876543206"
+    },
+    {
+      "UserID": 7,
+      "Name": "User7",
+      "Email": "user7@example.com",
+      "Password": "pass7",
+      "Role": "admin",
+      "ContactNumber": "9876543207"
+    },
+    {
+      "UserID": 8,
+      "Name": "User8",
+      "Email": "user8@example.com",
+      "Password": "pass8",
+      "Role": "agent",
+      "ContactNumber": "9876543208"
+    },
+    {
+      "UserID": 9,
+      "Name": "User9",
+      "Email": "user9@example.com",
+      "Password": "pass9",
+      "Role": "admin",
+      "ContactNumber": "9876543209"
+    },
+    {
+      "UserID": 10,
+      "Name": "User10",
+      "Email": "user10@example.com",
+      "Password": "pass10",
+      "Role": "agent",
       "ContactNumber": "9876543210"
-    },
-    {
-      "UserID": "USR002",
-      "Name": "Bob Smith",
-      "Email": "bob.s@example.com",
-      "Password": "hashedpassword2",
-      "Role": "Customer",
-      "ContactNumber": "8765432109"
-    },
-    {
-      "UserID": "USR003",
-      "Name": "Charlie Brown",
-      "Email": "charlie.b@example.com",
-      "Password": "hashedpassword3",
-      "Role": "Admin",
-      "ContactNumber": "7654321098"
-    },
-    {
-      "UserID": "USR004",
-      "Name": "Diana Miller",
-      "Email": "diana.m@example.com",
-      "Password": "hashedpassword4",
-      "Role": "Customer",
-      "ContactNumber": "6543210987"
-    },
-    {
-      "UserID": "USR005",
-      "Name": "Edward Davis",
-      "Email": "edward.d@example.com",
-      "Password": "hashedpassword5",
-      "Role": "Customer",
-      "ContactNumber": "5432109876"
-    },
-    {
-      "UserID": "USR006",
-      "Name": "Fiona Green",
-      "Email": "fiona.g@example.com",
-      "Password": "hashedpassword6",
-      "Role": "Customer",
-      "ContactNumber": "4321098765"
-    },
-    {
-      "UserID": "USR007",
-      "Name": "George White",
-      "Email": "george.w@example.com",
-      "Password": "hashedpassword7",
-      "Role": "Customer",
-      "ContactNumber": "3210987654"
-    },
-    {
-      "UserID": "USR008",
-      "Name": "Hannah Black",
-      "Email": "hannah.b@example.com",
-      "Password": "hashedpassword8",
-      "Role": "Customer",
-      "ContactNumber": "2109876543"
-    },
-    {
-      "UserID": "USR009",
-      "Name": "Ian Wilson",
-      "Email": "ian.w@example.com",
-      "Password": "hashedpassword9",
-      "Role": "Customer",
-      "ContactNumber": "1098765432"
-    },
-    {
-      "UserID": "USR010",
-      "Name": "Jessica Taylor",
-      "Email": "jessica.t@example.com",
-      "Password": "hashedpassword10",
-      "Role": "Customer",
-      "ContactNumber": "0987654321"
-    },
-    {
-      "UserID": "USR011",
-      "Name": "Kevin Lee",
-      "Email": "kevin.l@example.com",
-      "Password": "hashedpassword11",
-      "Role": "Customer",
-      "ContactNumber": "9988776655"
-    },
-    {
-      "UserID": "USR012",
-      "Name": "Laura King",
-      "Email": "laura.k@example.com",
-      "Password": "hashedpassword12",
-      "Role": "Customer",
-      "ContactNumber": "8877665544"
-    },
-    {
-      "UserID": "USR013",
-      "Name": "Michael Scott",
-      "Email": "michael.s@example.com",
-      "Password": "hashedpassword13",
-      "Role": "Customer",
-      "ContactNumber": "7766554433"
-    },
-    {
-      "UserID": "USR014",
-      "Name": "Nancy Adams",
-      "Email": "nancy.a@example.com",
-      "Password": "hashedpassword14",
-      "Role": "Customer",
-      "ContactNumber": "6655443322"
-    },
-    {
-      "UserID": "USR015",
-      "Name": "Oliver Turner",
-      "Email": "oliver.t@example.com",
-      "Password": "hashedpassword15",
-      "Role": "Customer",
-      "ContactNumber": "5544332211"
     }
   ],
-"TravelPackage": [
-  {
-    "PackageID": "PKG001",
-    "Title": "Romantic Paris Getaway",
-    "Description": "A 5-day romantic trip to Paris, including visits to the Eiffel Tower and Louvre Museum.",
-    "Duration": "5 days",
-    "Price": 1200.00,
-    "IncludedServices": [ "Flights", "Hotel", "City tour" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG002",
-    "Title": "Himalayan Trekking Adventure",
-    "Description": "An exhilarating 10-day trek through the majestic Himalayas.",
-    "Duration": "10 days",
-    "Price": 1800.00,
-    "IncludedServices": [ "Trekking guides", "Accommodation", "Meals" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG003",
-    "Title": "Tropical Bali Escape",
-    "Description": "7 days of sun, sand, and relaxation in beautiful Bali.",
-    "Duration": "7 days",
-    "Price": 950.00,
-    "IncludedServices": [ "Flights", "Resort stay", "Island tours" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG004",
-    "Title": "Ancient Rome and Italy Tour",
-    "Description": "A historical journey through Rome, Florence, and Venice.",
-    "Duration": "8 days",
-    "Price": 1500.00,
-    "IncludedServices": [ "Flights", "Hotel", "Guided tours" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG005",
-    "Title": "Safari in Serengeti",
-    "Description": "Witness the Great Migration on a thrilling 6-day safari.",
-    "Duration": "6 days",
-    "Price": 2500.00,
-    "IncludedServices": [ "Game drives", "Luxury lodge", "All meals" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG006",
-    "Title": "Kyoto Cherry Blossom Tour",
-    "Description": "Experience the beauty of spring in Japan.",
-    "Duration": "9 days",
-    "Price": 2100.00,
-    "IncludedServices": [ "Flights", "Traditional accommodation", "Cultural experiences" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG007",
-    "Title": "Egypt Pyramids and Nile Cruise",
-    "Description": "Explore ancient wonders and cruise the Nile River.",
-    "Duration": "12 days",
-    "Price": 3000.00,
-    "IncludedServices": [ "Flights", "Cruise", "Guided tours" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG008",
-    "Title": "Costa Rican Rainforest Adventure",
-    "Description": "Ziplining, hiking, and wildlife spotting in the lush rainforest.",
-    "Duration": "7 days",
-    "Price": 1350.00,
-    "IncludedServices": [ "Accommodation", "Activities", "Local guides" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG009",
-    "Title": "New York City Break",
-    "Description": "The ultimate city experience in the Big Apple.",
-    "Duration": "4 days",
-    "Price": 800.00,
-    "IncludedServices": [ "Hotel", "City pass", "Broadway show tickets" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG010",
-    "Title": "Australian Coastal Road Trip",
-    "Description": "A scenic drive along the stunning Australian coast.",
-    "Duration": "14 days",
-    "Price": 2800.00,
-    "IncludedServices": [ "Car rental", "Accommodation", "Excursions" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG011",
-    "Title": "Alaskan Cruise",
-    "Description": "Glacier viewing and whale watching from a luxurious cruise ship.",
-    "Duration": "7 days",
-    "Price": 1900.00,
-    "IncludedServices": [ "Cruise fare", "Meals", "Onboard activities" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG012",
-    "Title": "Machu Picchu Trek",
-    "Description": "Hike the Inca Trail to the lost city of the Incas.",
-    "Duration": "5 days",
-    "Price": 1600.00,
-    "IncludedServices": [ "Trekking permits", "Guides", "Accommodation" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG013",
-    "Title": "Dubai Desert Safari",
-    "Description": "An exciting adventure in the Arabian desert.",
-    "Duration": "3 days",
-    "Price": 650.00,
-    "IncludedServices": [ "Safari tour", "Dinner", "Quad biking" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG014",
-    "Title": "Thailand Temple Tour",
-    "Description": "Explore the majestic temples and vibrant markets of Thailand.",
-    "Duration": "8 days",
-    "Price": 1100.00,
-    "IncludedServices": [ "Flights", "Hotel", "Temple passes" ],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": "PKG015",
-    "Title": "Moroccan Souk and Sahara Tour",
-    "Description": "Immerse yourself in Moroccan culture, from the bustling markets to the quiet desert.",
-    "Duration": "10 days",
-    "Price": 1450.00,
-    "IncludedServices": [ "Flights", "Riads", "Desert camp stay" ],
-    "ImageSrc": "/bangalore.webp"
-  }
-]
-
-,
-  "Booking": [
+  "TravelPackage": [
     {
-      "BookingID": "BKG001",
-      "UserID": "USR001",
-      "PackageID": "PKG001",
-      "StartDate": "2025-10-15",
-      "EndDate": "2025-10-20",
-      "Status": "Confirmed",
-      "PaymentID": "PAY001"
+      "PackageID": 1,
+      "Title": "Package1",
+      "Description": "Exciting travel package 1",
+      "Duration": "5 days",
+      "Price": 20406.07,
+      "IncludedServices": [
+        "Meals",
+        "Flight",
+        "Guide",
+        "Transport",
+        "Hotel"
+      ]
     },
     {
-      "BookingID": "BKG002",
-      "UserID": "USR002",
-      "PackageID": "PKG002",
-      "StartDate": "2025-11-01",
-      "EndDate": "2025-11-10",
-      "Status": "Confirmed",
-      "PaymentID": "PAY002"
+      "PackageID": 2,
+      "Title": "Package2",
+      "Description": "Exciting travel package 2",
+      "Duration": "7 days",
+      "Price": 14026.57,
+      "IncludedServices": [
+        "Transport",
+        "Guide",
+        "Flight",
+        "Hotel",
+        "Meals"
+      ]
+    },
+    {
+      "PackageID": 3,
+      "Title": "Package3",
+      "Description": "Exciting travel package 3",
+      "Duration": "6 days",
+      "Price": 32316.3,
+      "IncludedServices": [
+        "Hotel",
+        "Meals",
+        "Flight",
+        "Guide"
+      ]
+    },
+    {
+      "PackageID": 4,
+      "Title": "Package4",
+      "Description": "Exciting travel package 4",
+      "Duration": "7 days",
+      "Price": 28332.85,
+      "IncludedServices": [
+        "Meals",
+        "Guide"
+      ]
+    },
+    {
+      "PackageID": 5,
+      "Title": "Package5",
+      "Description": "Exciting travel package 5",
+      "Duration": "4 days",
+      "Price": 38892.51,
+      "IncludedServices": [
+        "Guide",
+        "Transport"
+      ]
+    },
+    {
+      "PackageID": 6,
+      "Title": "Package6",
+      "Description": "Exciting travel package 6",
+      "Duration": "10 days",
+      "Price": 25949.58,
+      "IncludedServices": [
+        "Guide",
+        "Meals"
+      ]
+    },
+    {
+      "PackageID": 7,
+      "Title": "Package7",
+      "Description": "Exciting travel package 7",
+      "Duration": "5 days",
+      "Price": 9180.51,
+      "IncludedServices": [
+        "Guide",
+        "Meals",
+        "Transport",
+        "Flight",
+        "Hotel"
+      ]
+    },
+    {
+      "PackageID": 8,
+      "Title": "Package8",
+      "Description": "Exciting travel package 8",
+      "Duration": "9 days",
+      "Price": 15434.25,
+      "IncludedServices": [
+        "Transport",
+        "Flight",
+        "Meals",
+        "Hotel",
+        "Guide"
+      ]
+    },
+    {
+      "PackageID": 9,
+      "Title": "Package9",
+      "Description": "Exciting travel package 9",
+      "Duration": "14 days",
+      "Price": 40983.88,
+      "IncludedServices": [
+        "Transport",
+        "Guide",
+        "Meals",
+        "Hotel",
+        "Flight"
+      ]
+    },
+    {
+      "PackageID": 10,
+      "Title": "Package10",
+      "Description": "Exciting travel package 10",
+      "Duration": "5 days",
+      "Price": 49020.17,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Flight",
+        "Meals"
+      ]
+    }
+  ],
+  "Booking": [
+    {
+      "BookingID": 1,
+      "UserID": 3,
+      "PackageID": 1,
+      "StartDate": "2025-12-26",
+      "EndDate": "2026-01-10",
+      "Status": "Pending",
+      "PaymentID": 1
     },
     {
       "BookingID": "BKG003",
@@ -286,25 +230,25 @@
       "StartDate": "2025-12-05",
       "EndDate": "2025-12-12",
       "Status": "Pending",
-      "PaymentID": null
+      "PaymentID": 2
     },
     {
-      "BookingID": "BKG004",
-      "UserID": "USR005",
-      "PackageID": "PKG004",
-      "StartDate": "2026-01-20",
-      "EndDate": "2026-01-28",
-      "Status": "Confirmed",
-      "PaymentID": "PAY003"
+      "BookingID": 3,
+      "UserID": 7,
+      "PackageID": 4,
+      "StartDate": "2025-09-11",
+      "EndDate": "2025-09-16",
+      "Status": "Pending",
+      "PaymentID": 3
     },
     {
-      "BookingID": "BKG005",
-      "UserID": "USR006",
-      "PackageID": "PKG005",
-      "StartDate": "2026-02-10",
-      "EndDate": "2026-02-16",
-      "Status": "Confirmed",
-      "PaymentID": "PAY004"
+      "BookingID": 4,
+      "UserID": 8,
+      "PackageID": 10,
+      "StartDate": "2025-09-14",
+      "EndDate": "2025-09-27",
+      "Status": "Pending",
+      "PaymentID": 4
     },
     {
       "BookingID": "BKG006",
@@ -313,61 +257,25 @@
       "StartDate": "2026-03-15",
       "EndDate": "2026-03-24",
       "Status": "Cancelled",
-      "PaymentID": "PAY005"
+      "PaymentID": 5
     },
     {
-      "BookingID": "BKG007",
-      "UserID": "USR008",
-      "PackageID": "PKG007",
-      "StartDate": "2026-04-01",
-      "EndDate": "2026-04-12",
-      "Status": "Confirmed",
-      "PaymentID": "PAY006"
+      "BookingID": 6,
+      "UserID": 7,
+      "PackageID": 5,
+      "StartDate": "2025-12-05",
+      "EndDate": "2025-12-20",
+      "Status": "Cancelled",
+      "PaymentID": 6
     },
     {
-      "BookingID": "BKG008",
-      "UserID": "USR009",
-      "PackageID": "PKG008",
-      "StartDate": "2026-05-10",
-      "EndDate": "2026-05-17",
-      "Status": "Confirmed",
-      "PaymentID": "PAY007"
-    },
-    {
-      "BookingID": "BKG009",
-      "UserID": "USR010",
-      "PackageID": "PKG009",
-      "StartDate": "2026-06-20",
-      "EndDate": "2026-06-24",
-      "Status": "Confirmed",
-      "PaymentID": "PAY008"
-    },
-    {
-      "BookingID": "BKG010",
-      "UserID": "USR011",
-      "PackageID": "PKG010",
-      "StartDate": "2026-07-01",
-      "EndDate": "2026-07-15",
-      "Status": "Pending",
-      "PaymentID": null
-    },
-    {
-      "BookingID": "BKG011",
-      "UserID": "USR012",
-      "PackageID": "PKG011",
-      "StartDate": "2026-08-01",
-      "EndDate": "2026-08-08",
-      "Status": "Confirmed",
-      "PaymentID": "PAY009"
-    },
-    {
-      "BookingID": "BKG012",
-      "UserID": "USR013",
-      "PackageID": "PKG012",
-      "StartDate": "2026-09-05",
-      "EndDate": "2026-09-10",
-      "Status": "Confirmed",
-      "PaymentID": "PAY010"
+      "BookingID": 7,
+      "UserID": 9,
+      "PackageID": 3,
+      "StartDate": "2025-11-19",
+      "EndDate": "2025-11-23",
+      "Status": "Cancelled",
+      "PaymentID": 7
     },
     {
       "BookingID": "BKG013",
@@ -375,131 +283,91 @@
       "PackageID": "PKG013",
       "StartDate": "2025-11-20",
       "EndDate": "2025-11-23",
-      "Status": "Confirmed",
-      "PaymentID": "PAY011"
+      "Status": "Cancelled",
+      "PaymentID": 8
     },
     {
-      "BookingID": "BKG014",
-      "UserID": "USR002",
-      "PackageID": "PKG014",
-      "StartDate": "2026-01-05",
-      "EndDate": "2026-01-13",
-      "Status": "Confirmed",
-      "PaymentID": "PAY012"
+      "BookingID": 9,
+      "UserID": 3,
+      "PackageID": 7,
+      "StartDate": "2025-12-12",
+      "EndDate": "2025-12-26",
+      "Status": "Cancelled",
+      "PaymentID": 9
     },
     {
-      "BookingID": "BKG015",
-      "UserID": "USR014",
-      "PackageID": "PKG015",
-      "StartDate": "2026-02-25",
-      "EndDate": "2026-03-07",
-      "Status": "Pending",
-      "PaymentID": null
+      "BookingID": 10,
+      "UserID": 7,
+      "PackageID": 1,
+      "StartDate": "2025-10-29",
+      "EndDate": "2025-11-05",
+      "Status": "Cancelled",
+      "PaymentID": 10
     }
   ],
   "Payment": [
     {
-      "PaymentID": "PAY001",
-      "UserID": "USR001",
-      "BookingID": "BKG001",
-      "Amount": 1200.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY002",
-      "UserID": "USR002",
-      "BookingID": "BKG002",
-      "Amount": 1800.00,
-      "Status": "Completed",
-      "PaymentMethod": "Bank Transfer"
-    },
-    {
-      "PaymentID": "PAY003",
-      "UserID": "USR005",
-      "BookingID": "BKG004",
-      "Amount": 1500.00,
-      "Status": "Completed",
-      "PaymentMethod": "PayPal"
-    },
-    {
-      "PaymentID": "PAY004",
-      "UserID": "USR006",
-      "BookingID": "BKG005",
-      "Amount": 2500.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY005",
-      "UserID": "USR007",
-      "BookingID": "BKG006",
-      "Amount": 2100.00,
-      "Status": "Refunded",
-      "PaymentMethod": "Bank Transfer"
-    },
-    {
-      "PaymentID": "PAY006",
-      "UserID": "USR008",
-      "BookingID": "BKG007",
-      "Amount": 3000.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY007",
-      "UserID": "USR009",
-      "BookingID": "BKG008",
-      "Amount": 1350.00,
-      "Status": "Completed",
-      "PaymentMethod": "PayPal"
-    },
-    {
-      "PaymentID": "PAY008",
-      "UserID": "USR010",
-      "BookingID": "BKG009",
-      "Amount": 800.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY009",
-      "UserID": "USR012",
-      "BookingID": "BKG011",
-      "Amount": 1900.00,
-      "Status": "Completed",
-      "PaymentMethod": "Bank Transfer"
-    },
-    {
-      "PaymentID": "PAY010",
-      "UserID": "USR013",
-      "BookingID": "BKG012",
-      "Amount": 1600.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY011",
-      "UserID": "USR001",
-      "BookingID": "BKG013",
-      "Amount": 650.00,
-      "Status": "Completed",
-      "PaymentMethod": "PayPal"
-    },
-    {
-      "PaymentID": "PAY012",
-      "UserID": "USR002",
-      "BookingID": "BKG014",
-      "Amount": 1100.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
-    },
-    {
-      "PaymentID": "PAY013",
-      "UserID": "USR015",
-      "BookingID": null,
-      "Amount": 500.00,
+      "PaymentID": 1,
+      "UserID": 3,
+      "BookingID": 1,
+      "Amount": 17665.42,
       "Status": "Failed",
+      "PaymentMethod": "Debit Card"
+    },
+    {
+      "PaymentID": 2,
+      "UserID": 4,
+      "BookingID": 2,
+      "Amount": 22473.25,
+      "Status": "Failed",
+      "PaymentMethod": "Credit Card"
+    },
+    {
+      "PaymentID": 3,
+      "UserID": 7,
+      "BookingID": 3,
+      "Amount": 21837.66,
+      "Status": "Pending",
+      "PaymentMethod": "Debit Card"
+    },
+    {
+      "PaymentID": 4,
+      "UserID": 8,
+      "BookingID": 4,
+      "Amount": 34844.51,
+      "Status": "Pending",
+      "PaymentMethod": "Debit Card"
+    },
+    {
+      "PaymentID": 5,
+      "UserID": 4,
+      "BookingID": 5,
+      "Amount": 20577.23,
+      "Status": "Paid",
+      "PaymentMethod": "UPI"
+    },
+    {
+      "PaymentID": 6,
+      "UserID": 7,
+      "BookingID": 6,
+      "Amount": 9874.14,
+      "Status": "Pending",
+      "PaymentMethod": "UPI"
+    },
+    {
+      "PaymentID": 7,
+      "UserID": 9,
+      "BookingID": 7,
+      "Amount": 42184.72,
+      "Status": "Paid",
+      "PaymentMethod": "Credit Card"
+    },
+    {
+      "PaymentID": 8,
+      "UserID": 5,
+      "BookingID": 8,
+      "Amount": 49375.5,
+      "Status": "Pending",
       "PaymentMethod": "Credit Card"
     },
     {
@@ -508,15 +376,15 @@
       "BookingID": null,
       "Amount": 950.00,
       "Status": "Pending",
-      "PaymentMethod": "PayPal"
+      "PaymentMethod": "Net Banking"
     },
     {
-      "PaymentID": "PAY015",
-      "UserID": "USR009",
-      "BookingID": null,
-      "Amount": 100.00,
-      "Status": "Completed",
-      "PaymentMethod": "Credit Card"
+      "PaymentID": 10,
+      "UserID": 7,
+      "BookingID": 10,
+      "Amount": 5529.7,
+      "Status": "Paid",
+      "PaymentMethod": "UPI"
     }
   ],
   "Review": [
@@ -533,233 +401,161 @@
       "UserID": "USR002",
       "PackageID": "PKG002",
       "Rating": 4,
-      "Comment": "Challenging but rewarding trek. The views were breathtaking.",
-      "Timestamp": "2025-11-15T15:00:00Z"
+      "Comment": "Review comment 1",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": "REV003",
-      "UserID": "USR005",
-      "PackageID": "PKG004",
-      "Rating": 5,
-      "Comment": "Loved the historical tours. Our guide was very knowledgeable.",
-      "Timestamp": "2026-02-01T11:45:00Z"
-    },
-    {
-      "ReviewID": "REV004",
-      "UserID": "USR006",
-      "PackageID": "PKG005",
-      "Rating": 5,
-      "Comment": "Seeing the migration was a once-in-a-lifetime experience. Highly recommend!",
-      "Timestamp": "2026-02-20T09:00:00Z"
-    },
-    {
-      "ReviewID": "REV005",
-      "UserID": "USR008",
-      "PackageID": "PKG007",
-      "Rating": 4,
-      "Comment": "The cruise was relaxing, and the pyramids were awe-inspiring.",
-      "Timestamp": "2026-04-20T14:20:00Z"
+      "ReviewID": 2,
+      "UserID": 6,
+      "PackageID": 5,
+      "Rating": 1,
+      "Comment": "Review comment 2",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV006",
       "UserID": "USR009",
       "PackageID": "PKG008",
       "Rating": 5,
-      "Comment": "So much fun! The ziplining was the highlight.",
-      "Timestamp": "2026-05-20T16:00:00Z"
+      "Comment": "Review comment 3",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": "REV007",
-      "UserID": "USR010",
-      "PackageID": "PKG009",
-      "Rating": 3,
-      "Comment": "Good package, but the hotel was a bit far from the main attractions.",
-      "Timestamp": "2026-06-28T12:00:00Z"
+      "ReviewID": 4,
+      "UserID": 3,
+      "PackageID": 8,
+      "Rating": 1,
+      "Comment": "Review comment 4",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": "REV008",
-      "UserID": "USR012",
-      "PackageID": "PKG011",
-      "Rating": 5,
-      "Comment": "Incredible views of the glaciers. Staff was very friendly.",
-      "Timestamp": "2026-08-15T09:30:00Z"
+      "ReviewID": 5,
+      "UserID": 2,
+      "PackageID": 4,
+      "Rating": 1,
+      "Comment": "Review comment 5",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV009",
       "UserID": "USR013",
       "PackageID": "PKG012",
       "Rating": 4,
-      "Comment": "The hike was tough, but getting to Machu Picchu was worth it.",
-      "Timestamp": "2026-09-15T11:00:00Z"
+      "Comment": "Review comment 6",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV010",
       "UserID": "USR001",
       "PackageID": "PKG013",
       "Rating": 5,
-      "Comment": "The desert safari was exhilarating! A great short trip.",
-      "Timestamp": "2025-11-25T18:00:00Z"
-    },
-    {
-      "ReviewID": "REV011",
-      "UserID": "USR002",
-      "PackageID": "PKG014",
-      "Rating": 4,
-      "Comment": "Beautiful temples and delicious food. The trip was well-organized.",
-      "Timestamp": "2026-01-18T10:00:00Z"
+      "Comment": "Review comment 7",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV012",
       "UserID": "USR004",
       "PackageID": "PKG003",
       "Rating": 5,
-      "Comment": "Bali was a dream! The resort was perfect.",
-      "Timestamp": "2025-12-20T12:00:00Z"
+      "Comment": "Review comment 8",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV013",
       "UserID": "USR005",
       "PackageID": "PKG005",
       "Rating": 4,
-      "Comment": "An unforgettable safari. The accommodation was very comfortable.",
-      "Timestamp": "2026-02-21T15:00:00Z"
+      "Comment": "Review comment 9",
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": "REV014",
       "UserID": "USR008",
       "PackageID": "PKG006",
       "Rating": 5,
-      "Comment": "The cherry blossoms were absolutely stunning. Perfect timing.",
-      "Timestamp": "2026-04-05T09:00:00Z"
-    },
-    {
-      "ReviewID": "REV015",
-      "UserID": "USR010",
-      "PackageID": "PKG008",
-      "Rating": 4,
-      "Comment": "Lots of activities, which was great. Wish we had more free time.",
-      "Timestamp": "2026-05-21T10:00:00Z"
+      "Comment": "Review comment 10",
+      "Timestamp": "2025-09-09 11:59:12"
     }
   ],
   "Insurance": [
     {
-      "InsuranceID": "INS001",
-      "UserID": "USR001",
-      "BookingID": "BKG001",
-      "CoverageDetails": "Full trip cancellation and medical coverage.",
-      "Provider": "TravelGuard",
+      "InsuranceID": 1,
+      "UserID": 3,
+      "BookingID": 1,
+      "CoverageDetails": "Coverage for booking 1",
+      "Provider": "ProviderB",
+      "Status": "Expired"
+    },
+    {
+      "InsuranceID": 2,
+      "UserID": 4,
+      "BookingID": 2,
+      "CoverageDetails": "Coverage for booking 2",
+      "Provider": "ProviderC",
       "Status": "Active"
     },
     {
-      "InsuranceID": "INS002",
-      "UserID": "USR002",
-      "BookingID": "BKG002",
-      "CoverageDetails": "Accident and medical coverage only.",
-      "Provider": "GlobalAssist",
+      "InsuranceID": 3,
+      "UserID": 7,
+      "BookingID": 3,
+      "CoverageDetails": "Coverage for booking 3",
+      "Provider": "ProviderA",
+      "Status": "Expired"
+    },
+    {
+      "InsuranceID": 4,
+      "UserID": 8,
+      "BookingID": 4,
+      "CoverageDetails": "Coverage for booking 4",
+      "Provider": "ProviderC",
+      "Status": "Expired"
+    },
+    {
+      "InsuranceID": 5,
+      "UserID": 4,
+      "BookingID": 5,
+      "CoverageDetails": "Coverage for booking 5",
+      "Provider": "ProviderC",
       "Status": "Active"
     },
     {
-      "InsuranceID": "INS003",
-      "UserID": "USR005",
-      "BookingID": "BKG004",
-      "CoverageDetails": "Trip cancellation and baggage loss.",
-      "Provider": "SecureTravel",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS004",
-      "UserID": "USR006",
-      "BookingID": "BKG005",
-      "CoverageDetails": "Full comprehensive travel insurance.",
-      "Provider": "TravelGuard",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS005",
-      "UserID": "USR007",
-      "BookingID": "BKG006",
-      "CoverageDetails": "Cancelled due to trip cancellation.",
-      "Provider": "GlobalAssist",
-      "Status": "Cancelled"
-    },
-    {
-      "InsuranceID": "INS006",
-      "UserID": "USR008",
-      "BookingID": "BKG007",
-      "CoverageDetails": "Medical and emergency evacuation.",
-      "Provider": "SecureTravel",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS007",
-      "UserID": "USR009",
-      "BookingID": "BKG008",
-      "CoverageDetails": "Adventure sports coverage.",
-      "Provider": "TravelGuard",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS008",
-      "UserID": "USR010",
-      "BookingID": "BKG009",
-      "CoverageDetails": "Standard travel insurance.",
-      "Provider": "GlobalAssist",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS009",
-      "UserID": "USR012",
-      "BookingID": "BKG011",
-      "CoverageDetails": "Marine and cruise coverage.",
-      "Provider": "SecureTravel",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS010",
-      "UserID": "USR013",
-      "BookingID": "BKG012",
-      "CoverageDetails": "High-altitude trekking and medical.",
-      "Provider": "TravelGuard",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS011",
-      "UserID": "USR001",
-      "BookingID": "BKG013",
-      "CoverageDetails": "Short-trip comprehensive insurance.",
-      "Provider": "GlobalAssist",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS012",
-      "UserID": "USR002",
-      "BookingID": "BKG014",
-      "CoverageDetails": "Standard travel insurance.",
-      "Provider": "SecureTravel",
-      "Status": "Active"
-    },
-    {
-      "InsuranceID": "INS013",
-      "UserID": "USR004",
-      "BookingID": "BKG003",
-      "CoverageDetails": "Pending as booking is not confirmed.",
-      "Provider": "TravelGuard",
+      "InsuranceID": 6,
+      "UserID": 7,
+      "BookingID": 6,
+      "CoverageDetails": "Coverage for booking 6",
+      "Provider": "ProviderC",
       "Status": "Pending"
     },
     {
-      "InsuranceID": "INS014",
-      "UserID": "USR014",
-      "BookingID": "BKG015",
-      "CoverageDetails": "Pending as booking is not confirmed.",
-      "Provider": "GlobalAssist",
+      "InsuranceID": 7,
+      "UserID": 9,
+      "BookingID": 7,
+      "CoverageDetails": "Coverage for booking 7",
+      "Provider": "ProviderC",
       "Status": "Pending"
     },
     {
-      "InsuranceID": "INS015",
-      "UserID": "USR003",
-      "BookingID": null,
-      "CoverageDetails": "Admin's personal insurance plan.",
-      "Provider": "SecureTravel",
+      "InsuranceID": 8,
+      "UserID": 5,
+      "BookingID": 8,
+      "CoverageDetails": "Coverage for booking 8",
+      "Provider": "ProviderA",
+      "Status": "Active"
+    },
+    {
+      "InsuranceID": 9,
+      "UserID": 3,
+      "BookingID": 9,
+      "CoverageDetails": "Coverage for booking 9",
+      "Provider": "ProviderC",
+      "Status": "Active"
+    },
+    {
+      "InsuranceID": 10,
+      "UserID": 7,
+      "BookingID": 10,
+      "CoverageDetails": "Coverage for booking 10",
+      "Provider": "ProviderC",
       "Status": "Active"
     }
   ],
@@ -769,56 +565,49 @@
       "UserID": "USR001",
       "IssueDescription": "Lost baggage on arrival in Paris.",
       "Status": "Resolved",
-      "ResolutionTime": "2025-10-16T14:00:00Z"
+      "ResolutionTime": "63 hours"
     },
     {
-      "RequestID": "REQ002",
-      "UserID": "USR002",
-      "IssueDescription": "Need help with finding a local guide.",
-      "Status": "In Progress",
-      "ResolutionTime": null
-    },
-    {
-      "RequestID": "REQ003",
-      "UserID": "USR004",
-      "IssueDescription": "Cannot complete payment for the booking.",
+      "RequestID": 2,
+      "UserID": 8,
+      "IssueDescription": "Issue description 2",
       "Status": "Resolved",
-      "ResolutionTime": "2025-12-05T10:00:00Z"
+      "ResolutionTime": "60 hours"
     },
     {
-      "RequestID": "REQ004",
-      "UserID": "USR006",
-      "IssueDescription": "Question about the safari itinerary.",
-      "Status": "Resolved",
-      "ResolutionTime": "2026-02-08T16:30:00Z"
+      "RequestID": 3,
+      "UserID": 2,
+      "IssueDescription": "Issue description 3",
+      "Status": "Open",
+      "ResolutionTime": "49 hours"
     },
     {
-      "RequestID": "REQ005",
-      "UserID": "USR007",
-      "IssueDescription": "Need to cancel my trip due to personal reasons.",
-      "Status": "Resolved",
-      "ResolutionTime": "2026-03-01T11:00:00Z"
+      "RequestID": 4,
+      "UserID": 9,
+      "IssueDescription": "Issue description 4",
+      "Status": "Open",
+      "ResolutionTime": "8 hours"
+    },
+    {
+      "RequestID": 5,
+      "UserID": 2,
+      "IssueDescription": "Issue description 5",
+      "Status": "Open",
+      "ResolutionTime": "60 hours"
     },
     {
       "RequestID": "REQ006",
       "UserID": "USR008",
       "IssueDescription": "Flight delay, need assistance with next steps.",
       "Status": "Resolved",
-      "ResolutionTime": "2026-04-01T08:00:00Z"
+      "ResolutionTime": "60 hours"
     },
     {
       "RequestID": "REQ007",
       "UserID": "USR010",
       "IssueDescription": "Hotel room not as described.",
       "Status": "In Progress",
-      "ResolutionTime": null
-    },
-    {
-      "RequestID": "REQ008",
-      "UserID": "USR012",
-      "IssueDescription": "Lost my cruise card.",
-      "Status": "Resolved",
-      "ResolutionTime": "2026-08-03T10:00:00Z"
+      "ResolutionTime": "62 hours"
     },
     {
       "RequestID": "REQ009",
@@ -853,21 +642,21 @@
       "UserID": "USR009",
       "IssueDescription": "Want to change my travel dates.",
       "Status": "In Progress",
-      "ResolutionTime": null
+      "ResolutionTime": "2 hours"
     },
     {
-      "RequestID": "REQ014",
-      "UserID": "USR011",
-      "IssueDescription": "My payment failed, please assist.",
+      "RequestID": 9,
+      "UserID": 9,
+      "IssueDescription": "Issue description 9",
+      "Status": "Open",
+      "ResolutionTime": "64 hours"
+    },
+    {
+      "RequestID": 10,
+      "UserID": 2,
+      "IssueDescription": "Issue description 10",
       "Status": "In Progress",
-      "ResolutionTime": null
-    },
-    {
-      "RequestID": "REQ015",
-      "UserID": "USR014",
-      "IssueDescription": "General inquiry about Moroccan travel advice.",
-      "Status": "Resolved",
-      "ResolutionTime": "2026-02-15T14:00:00Z"
+      "ResolutionTime": "3 hours"
     }
   ]
 }
