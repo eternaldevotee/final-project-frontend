@@ -3,6 +3,7 @@
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter your name"/>
+    <!-- Validating the touch and dirty -->
     <span class="text-danger" *ngIf="name?.touched && !name?.valid">
       <p class="m-2">Name is required!!</p>
     </span>
@@ -34,6 +35,10 @@
   <div class="mb-3">
     <label for="conPassword" class="form-label">Confirm Password</label>
     <input type="password" class="form-control" id="conPassword" name="conPassword" formControlName="conPassword" placeholder="Confirm your password"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="conPassword?.touched && !conPassword?.valid">
+      <p class="m-2">Please confirm your password!!</p>
+    </span>
   </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

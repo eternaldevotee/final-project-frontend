@@ -14,7 +14,7 @@ export class SignupComponent {
     name: new FormControl('',[Validators.required]),
     emailId: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
-    conPassword:new FormControl()
+    conPassword:new FormControl('',[Validators.required])
   })
 
   get name(){
@@ -29,6 +29,9 @@ export class SignupComponent {
     return this.signupForm.get('password');
   }
 
+  get conPassword(){
+    return this.signupForm.get('conPassword');
+  }
 
   constructor(private restservice: AuthserviceService){}
 
