@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
-import { TravelPackageService, TravelPackage } from '../../../services/travel-package.service';
+import { TravelPackageService, TravelPackage } from '../../../Service/travel-package.service';
 
 @Component({
   selector: 'app-dashboard',

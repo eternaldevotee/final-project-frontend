@@ -13,7 +13,7 @@ export interface TravelPackage {
 
 @Injectable({ providedIn: 'root' })
 export class TravelPackageService {
-  // Adjust baseUrl to your API (json-server) endpoint
+
   private baseUrl = 'http://localhost:3000/TravelPackage';
 
   constructor(private http: HttpClient) {}
