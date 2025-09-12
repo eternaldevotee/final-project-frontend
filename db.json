@@ -100,148 +100,99 @@
       "ContactNumber": ""
     }
   ],
-  "TravelPackage": [
-    {
-      "PackageID": 1,
-      "Title": "Package1",
-      "Description": "Exciting travel package 1",
-      "Duration": "5 days",
-      "Price": 20406.07,
-      "IncludedServices": [
-        "Meals",
-        "Flight",
-        "Guide",
-        "Transport",
-        "Hotel"
-      ],
-      "id": "cdb8"
-    },
-    {
-      "PackageID": 2,
-      "Title": "Package2",
-      "Description": "Exciting travel package 2",
-      "Duration": "7 days",
-      "Price": 14026.57,
-      "IncludedServices": [
-        "Transport",
-        "Guide",
-        "Flight",
-        "Hotel",
-        "Meals"
-      ],
-      "id": "04db"
-    },
-    {
-      "PackageID": 3,
-      "Title": "Package3",
-      "Description": "Exciting travel package 3",
-      "Duration": "6 days",
-      "Price": 32316.3,
-      "IncludedServices": [
-        "Hotel",
-        "Meals",
-        "Flight",
-        "Guide"
-      ],
-      "id": "3518"
-    },
-    {
-      "PackageID": 4,
-      "Title": "Package4",
-      "Description": "Exciting travel package 4",
-      "Duration": "7 days",
-      "Price": 28332.85,
-      "IncludedServices": [
-        "Meals",
-        "Guide"
-      ],
-      "id": "174c"
-    },
-    {
-      "PackageID": 5,
-      "Title": "Package5",
-      "Description": "Exciting travel package 5",
-      "Duration": "4 days",
-      "Price": 38892.51,
-      "IncludedServices": [
-        "Guide",
-        "Transport"
-      ],
-      "id": "94d3"
-    },
-    {
-      "PackageID": 6,
-      "Title": "Package6",
-      "Description": "Exciting travel package 6",
-      "Duration": "10 days",
-      "Price": 25949.58,
-      "IncludedServices": [
-        "Guide",
-        "Meals"
-      ],
-      "id": "0600"
-    },
-    {
-      "PackageID": 7,
-      "Title": "Package7",
-      "Description": "Exciting travel package 7",
-      "Duration": "5 days",
-      "Price": 9180.51,
-      "IncludedServices": [
-        "Guide",
-        "Meals",
-        "Transport",
-        "Flight",
-        "Hotel"
-      ],
-      "id": "c2e2"
-    },
-    {
-      "PackageID": 8,
-      "Title": "Package8",
-      "Description": "Exciting travel package 8",
-      "Duration": "9 days",
-      "Price": 15434.25,
-      "IncludedServices": [
-        "Transport",
-        "Flight",
-        "Meals",
-        "Hotel",
-        "Guide"
-      ],
-      "id": "b2eb"
-    },
-    {
-      "PackageID": 9,
-      "Title": "Package9",
-      "Description": "Exciting travel package 9",
-      "Duration": "14 days",
-      "Price": 40983.88,
-      "IncludedServices": [
-        "Transport",
-        "Guide",
-        "Meals",
-        "Hotel",
-        "Flight"
-      ],
-      "id": "6370"
-    },
-    {
-      "PackageID": 10,
-      "Title": "Package10",
-      "Description": "Exciting travel package 10",
-      "Duration": "5 days",
-      "Price": 49020.17,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Meals"
-      ],
-      "id": "f490"
-    }
-  ],
+ "TravelPackage": [
+  {
+    "PackageID": 1,
+    "Title": "Bangalore & Coorg Escape",
+    "Description": "Explore the vibrant city of Bangalore and unwind in the lush hills of Coorg.",
+    "Duration": "5 days",
+    "Price": 20406.07,
+    "IncludedServices": ["Meals", "Flight", "Guide", "Transport", "Hotel"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 2,
+    "Title": "Heritage Trail: Mysore & Hampi",
+    "Description": "Discover the royal palaces of Mysore and the ancient ruins of Hampi.",
+    "Duration": "7 days",
+    "Price": 14026.57,
+    "IncludedServices": ["Transport", "Guide", "Flight", "Hotel", "Meals"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 3,
+    "Title": "Kerala Backwaters & Tea Gardens",
+    "Description": "Cruise through Alleppey’s backwaters and stroll through Munnar’s tea estates.",
+    "Duration": "6 days",
+    "Price": 32316.3,
+    "IncludedServices": ["Hotel", "Meals", "Flight", "Guide"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 4,
+    "Title": "Spiritual South: Tirupati & Madurai",
+    "Description": "Visit sacred temples and experience the spiritual essence of South India.",
+    "Duration": "7 days",
+    "Price": 28332.85,
+    "IncludedServices": ["Meals", "Guide"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 5,
+    "Title": "Adventure in Chikmagalur",
+    "Description": "Trek through coffee plantations and enjoy scenic mountain views.",
+    "Duration": "4 days",
+    "Price": 38892.51,
+    "IncludedServices": ["Guide", "Transport"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 6,
+    "Title": "Tamil Nadu Temple Trail",
+    "Description": "Explore iconic temples in Kanchipuram, Thanjavur, and Rameswaram.",
+    "Duration": "10 days",
+    "Price": 25949.58,
+    "IncludedServices": ["Guide", "Meals"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 7,
+    "Title": "Bangalore City Break",
+    "Description": "Experience the tech capital’s nightlife, gardens, and shopping streets.",
+    "Duration": "5 days",
+    "Price": 9180.51,
+    "IncludedServices": ["Guide", "Meals", "Transport", "Flight", "Hotel"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 8,
+    "Title": "Western Ghats Nature Retreat",
+    "Description": "Reconnect with nature in Wayanad and Bandipur National Park.",
+    "Duration": "9 days",
+    "Price": 15434.25,
+    "IncludedServices": ["Transport", "Flight", "Meals", "Hotel", "Guide"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 9,
+    "Title": "South India Grand Tour",
+    "Description": "A complete journey through Karnataka, Kerala, and Tamil Nadu.",
+    "Duration": "14 days",
+    "Price": 40983.88,
+    "IncludedServices": ["Transport", "Guide", "Meals", "Hotel", "Flight"],
+    "ImageSrc": "/bangalore.webp"
+  },
+  {
+    "PackageID": 10,
+    "Title": "Luxury Bangalore & Ooty Getaway",
+    "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
+    "Duration": "5 days",
+    "Price": 49020.17,
+    "IncludedServices": ["Hotel", "Transport", "Guide", "Flight", "Meals"],
+    "ImageSrc": "/bangalore.webp"
+  }
+]
+,
   "Booking": [
     {
       "BookingID": 1,
