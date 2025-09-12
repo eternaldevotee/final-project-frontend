@@ -1,12 +1,84 @@
 {
   "User": [
     {
-      "UserId": "1234",
-      "Name": "StanyRomero",
-      "Email": "vivekam@gmail.com",
-      "Password": "Qs@12345",
-      "Role": "Customer",
-      "ContactNumber": ""
+      "UserID": 1,
+      "Name": "User1",
+      "Email": "user1@example.com",
+      "Password": "pass1",
+      "Role": "customer",
+      "ContactNumber": "9876543201"
+    },
+    {
+      "UserID": 2,
+      "Name": "User2",
+      "Email": "user2@example.com",
+      "Password": "pass2",
+      "Role": "customer",
+      "ContactNumber": "9876543202"
+    },
+    {
+      "UserID": 3,
+      "Name": "User3",
+      "Email": "user3@example.com",
+      "Password": "pass3",
+      "Role": "agent",
+      "ContactNumber": "9876543203"
+    },
+    {
+      "UserID": 4,
+      "Name": "User4",
+      "Email": "user4@example.com",
+      "Password": "pass4",
+      "Role": "agent",
+      "ContactNumber": "9876543204"
+    },
+    {
+      "UserID": 5,
+      "Name": "User5",
+      "Email": "user5@example.com",
+      "Password": "pass5",
+      "Role": "admin",
+      "ContactNumber": "9876543205"
+    },
+    {
+      "UserID": 6,
+      "Name": "User6",
+      "Email": "user6@example.com",
+      "Password": "pass6",
+      "Role": "admin",
+      "ContactNumber": "9876543206"
+    },
+    {
+      "UserID": 7,
+      "Name": "User7",
+      "Email": "user7@example.com",
+      "Password": "pass7",
+      "Role": "admin",
+      "ContactNumber": "9876543207"
+    },
+    {
+      "UserID": 8,
+      "Name": "User8",
+      "Email": "user8@example.com",
+      "Password": "pass8",
+      "Role": "agent",
+      "ContactNumber": "9876543208"
+    },
+    {
+      "UserID": 9,
+      "Name": "User9",
+      "Email": "user9@example.com",
+      "Password": "pass9",
+      "Role": "admin",
+      "ContactNumber": "9876543209"
+    },
+    {
+      "UserID": 10,
+      "Name": "User10",
+      "Email": "user10@example.com",
+      "Password": "pass10",
+      "Role": "agent",
+      "ContactNumber": "9876543210"
     }
   ],
   "TravelPackage": [
@@ -22,8 +94,7 @@
         "Guide",
         "Transport",
         "Hotel"
-      ],
-      "id": "db26"
+      ]
     },
     {
       "PackageID": 2,
@@ -37,8 +108,7 @@
         "Flight",
         "Hotel",
         "Meals"
-      ],
-      "id": "e53e"
+      ]
     },
     {
       "PackageID": 3,
@@ -51,8 +121,7 @@
         "Meals",
         "Flight",
         "Guide"
-      ],
-      "id": "6c86"
+      ]
     },
     {
       "PackageID": 4,
@@ -63,8 +132,7 @@
       "IncludedServices": [
         "Meals",
         "Guide"
-      ],
-      "id": "04b8"
+      ]
     },
     {
       "PackageID": 5,
@@ -75,8 +143,7 @@
       "IncludedServices": [
         "Guide",
         "Transport"
-      ],
-      "id": "bfd7"
+      ]
     },
     {
       "PackageID": 6,
@@ -87,8 +154,7 @@
       "IncludedServices": [
         "Guide",
         "Meals"
-      ],
-      "id": "8c8a"
+      ]
     },
     {
       "PackageID": 7,
@@ -102,8 +168,7 @@
         "Transport",
         "Flight",
         "Hotel"
-      ],
-      "id": "1797"
+      ]
     },
     {
       "PackageID": 8,
@@ -117,8 +182,7 @@
         "Meals",
         "Hotel",
         "Guide"
-      ],
-      "id": "da6a"
+      ]
     },
     {
       "PackageID": 9,
@@ -132,8 +196,7 @@
         "Meals",
         "Hotel",
         "Flight"
-      ],
-      "id": "e686"
+      ]
     },
     {
       "PackageID": 10,
@@ -147,8 +210,7 @@
         "Guide",
         "Flight",
         "Meals"
-      ],
-      "id": "fe5c"
+      ]
     }
   ],
   "Booking": [
@@ -159,18 +221,16 @@
       "StartDate": "2025-12-26",
       "EndDate": "2026-01-10",
       "Status": "Pending",
-      "PaymentID": 1,
-      "id": "64fb"
+      "PaymentID": 1
     },
     {
-      "BookingID": 2,
-      "UserID": 4,
-      "PackageID": 2,
-      "StartDate": "2025-12-25",
-      "EndDate": "2026-01-04",
+      "BookingID": "BKG003",
+      "UserID": "USR004",
+      "PackageID": "PKG003",
+      "StartDate": "2025-12-05",
+      "EndDate": "2025-12-12",
       "Status": "Pending",
-      "PaymentID": 2,
-      "id": "20bc"
+      "PaymentID": 2
     },
     {
       "BookingID": 3,
@@ -179,8 +239,7 @@
       "StartDate": "2025-09-11",
       "EndDate": "2025-09-16",
       "Status": "Pending",
-      "PaymentID": 3,
-      "id": "f58b"
+      "PaymentID": 3
     },
     {
       "BookingID": 4,
@@ -189,18 +248,16 @@
       "StartDate": "2025-09-14",
       "EndDate": "2025-09-27",
       "Status": "Pending",
-      "PaymentID": 4,
-      "id": "595a"
+      "PaymentID": 4
     },
     {
-      "BookingID": 5,
-      "UserID": 4,
-      "PackageID": 4,
-      "StartDate": "2025-09-15",
-      "EndDate": "2025-09-25",
+      "BookingID": "BKG006",
+      "UserID": "USR007",
+      "PackageID": "PKG006",
+      "StartDate": "2026-03-15",
+      "EndDate": "2026-03-24",
       "Status": "Cancelled",
-      "PaymentID": 5,
-      "id": "8289"
+      "PaymentID": 5
     },
     {
       "BookingID": 6,
@@ -209,8 +266,7 @@
       "StartDate": "2025-12-05",
       "EndDate": "2025-12-20",
       "Status": "Cancelled",
-      "PaymentID": 6,
-      "id": "f757"
+      "PaymentID": 6
     },
     {
       "BookingID": 7,
@@ -219,18 +275,16 @@
       "StartDate": "2025-11-19",
       "EndDate": "2025-11-23",
       "Status": "Cancelled",
-      "PaymentID": 7,
-      "id": "79e7"
+      "PaymentID": 7
     },
     {
-      "BookingID": 8,
-      "UserID": 5,
-      "PackageID": 1,
-      "StartDate": "2025-11-18",
+      "BookingID": "BKG013",
+      "UserID": "USR001",
+      "PackageID": "PKG013",
+      "StartDate": "2025-11-20",
       "EndDate": "2025-11-23",
       "Status": "Cancelled",
-      "PaymentID": 8,
-      "id": "a625"
+      "PaymentID": 8
     },
     {
       "BookingID": 9,
@@ -239,8 +293,7 @@
       "StartDate": "2025-12-12",
       "EndDate": "2025-12-26",
       "Status": "Cancelled",
-      "PaymentID": 9,
-      "id": "63e4"
+      "PaymentID": 9
     },
     {
       "BookingID": 10,
@@ -249,8 +302,7 @@
       "StartDate": "2025-10-29",
       "EndDate": "2025-11-05",
       "Status": "Cancelled",
-      "PaymentID": 10,
-      "id": "33fd"
+      "PaymentID": 10
     }
   ],
   "Payment": [
@@ -260,8 +312,7 @@
       "BookingID": 1,
       "Amount": 17665.42,
       "Status": "Failed",
-      "PaymentMethod": "Debit Card",
-      "id": "633a"
+      "PaymentMethod": "Debit Card"
     },
     {
       "PaymentID": 2,
@@ -269,8 +320,7 @@
       "BookingID": 2,
       "Amount": 22473.25,
       "Status": "Failed",
-      "PaymentMethod": "Credit Card",
-      "id": "f929"
+      "PaymentMethod": "Credit Card"
     },
     {
       "PaymentID": 3,
@@ -278,8 +328,7 @@
       "BookingID": 3,
       "Amount": 21837.66,
       "Status": "Pending",
-      "PaymentMethod": "Debit Card",
-      "id": "7a04"
+      "PaymentMethod": "Debit Card"
     },
     {
       "PaymentID": 4,
@@ -287,8 +336,7 @@
       "BookingID": 4,
       "Amount": 34844.51,
       "Status": "Pending",
-      "PaymentMethod": "Debit Card",
-      "id": "327b"
+      "PaymentMethod": "Debit Card"
     },
     {
       "PaymentID": 5,
@@ -296,8 +344,7 @@
       "BookingID": 5,
       "Amount": 20577.23,
       "Status": "Paid",
-      "PaymentMethod": "UPI",
-      "id": "775a"
+      "PaymentMethod": "UPI"
     },
     {
       "PaymentID": 6,
@@ -305,8 +352,7 @@
       "BookingID": 6,
       "Amount": 9874.14,
       "Status": "Pending",
-      "PaymentMethod": "UPI",
-      "id": "3943"
+      "PaymentMethod": "UPI"
     },
     {
       "PaymentID": 7,
@@ -314,8 +360,7 @@
       "BookingID": 7,
       "Amount": 42184.72,
       "Status": "Paid",
-      "PaymentMethod": "Credit Card",
-      "id": "cbab"
+      "PaymentMethod": "Credit Card"
     },
     {
       "PaymentID": 8,
@@ -323,17 +368,15 @@
       "BookingID": 8,
       "Amount": 49375.5,
       "Status": "Pending",
-      "PaymentMethod": "Credit Card",
-      "id": "9526"
+      "PaymentMethod": "Credit Card"
     },
     {
-      "PaymentID": 9,
-      "UserID": 3,
-      "BookingID": 9,
-      "Amount": 14945.91,
+      "PaymentID": "PAY014",
+      "UserID": "USR004",
+      "BookingID": null,
+      "Amount": 950.00,
       "Status": "Pending",
-      "PaymentMethod": "Net Banking",
-      "id": "deea"
+      "PaymentMethod": "Net Banking"
     },
     {
       "PaymentID": 10,
@@ -341,19 +384,25 @@
       "BookingID": 10,
       "Amount": 5529.7,
       "Status": "Paid",
-      "PaymentMethod": "UPI",
-      "id": "0245"
+      "PaymentMethod": "UPI"
     }
   ],
   "Review": [
     {
-      "ReviewID": 1,
-      "UserID": 3,
-      "PackageID": 1,
+      "ReviewID": "REV001",
+      "UserID": "USR001",
+      "PackageID": "PKG001",
+      "Rating": 5,
+      "Comment": "Amazing trip! The city tour was fantastic.",
+      "Timestamp": "2025-10-25T10:30:00Z"
+    },
+    {
+      "ReviewID": "REV002",
+      "UserID": "USR002",
+      "PackageID": "PKG002",
       "Rating": 4,
       "Comment": "Review comment 1",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "4a0d"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": 2,
@@ -361,17 +410,15 @@
       "PackageID": 5,
       "Rating": 1,
       "Comment": "Review comment 2",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "9010"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 3,
-      "UserID": 5,
-      "PackageID": 8,
+      "ReviewID": "REV006",
+      "UserID": "USR009",
+      "PackageID": "PKG008",
       "Rating": 5,
       "Comment": "Review comment 3",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "8eae"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": 4,
@@ -379,8 +426,7 @@
       "PackageID": 8,
       "Rating": 1,
       "Comment": "Review comment 4",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "6d6d"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
       "ReviewID": 5,
@@ -388,53 +434,47 @@
       "PackageID": 4,
       "Rating": 1,
       "Comment": "Review comment 5",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "09c4"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 6,
-      "UserID": 4,
-      "PackageID": 5,
+      "ReviewID": "REV009",
+      "UserID": "USR013",
+      "PackageID": "PKG012",
       "Rating": 4,
       "Comment": "Review comment 6",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "cd32"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 7,
-      "UserID": 9,
-      "PackageID": 6,
+      "ReviewID": "REV010",
+      "UserID": "USR001",
+      "PackageID": "PKG013",
       "Rating": 5,
       "Comment": "Review comment 7",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "5f8f"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 8,
-      "UserID": 5,
-      "PackageID": 7,
+      "ReviewID": "REV012",
+      "UserID": "USR004",
+      "PackageID": "PKG003",
       "Rating": 5,
       "Comment": "Review comment 8",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "bfda"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 9,
-      "UserID": 8,
-      "PackageID": 7,
+      "ReviewID": "REV013",
+      "UserID": "USR005",
+      "PackageID": "PKG005",
       "Rating": 4,
       "Comment": "Review comment 9",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "5529"
+      "Timestamp": "2025-09-09 11:59:12"
     },
     {
-      "ReviewID": 10,
-      "UserID": 4,
-      "PackageID": 2,
+      "ReviewID": "REV014",
+      "UserID": "USR008",
+      "PackageID": "PKG006",
       "Rating": 5,
       "Comment": "Review comment 10",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "a5b9"
+      "Timestamp": "2025-09-09 11:59:12"
     }
   ],
   "Insurance": [
@@ -444,8 +484,7 @@
       "BookingID": 1,
       "CoverageDetails": "Coverage for booking 1",
       "Provider": "ProviderB",
-      "Status": "Expired",
-      "id": "517d"
+      "Status": "Expired"
     },
     {
       "InsuranceID": 2,
@@ -453,8 +492,7 @@
       "BookingID": 2,
       "CoverageDetails": "Coverage for booking 2",
       "Provider": "ProviderC",
-      "Status": "Active",
-      "id": "a985"
+      "Status": "Active"
     },
     {
       "InsuranceID": 3,
@@ -462,8 +500,7 @@
       "BookingID": 3,
       "CoverageDetails": "Coverage for booking 3",
       "Provider": "ProviderA",
-      "Status": "Expired",
-      "id": "44b3"
+      "Status": "Expired"
     },
     {
       "InsuranceID": 4,
@@ -471,8 +508,7 @@
       "BookingID": 4,
       "CoverageDetails": "Coverage for booking 4",
       "Provider": "ProviderC",
-      "Status": "Expired",
-      "id": "4e59"
+      "Status": "Expired"
     },
     {
       "InsuranceID": 5,
@@ -480,8 +516,7 @@
       "BookingID": 5,
       "CoverageDetails": "Coverage for booking 5",
       "Provider": "ProviderC",
-      "Status": "Active",
-      "id": "c5eb"
+      "Status": "Active"
     },
     {
       "InsuranceID": 6,
@@ -489,8 +524,7 @@
       "BookingID": 6,
       "CoverageDetails": "Coverage for booking 6",
       "Provider": "ProviderC",
-      "Status": "Pending",
-      "id": "5589"
+      "Status": "Pending"
     },
     {
       "InsuranceID": 7,
@@ -498,8 +532,7 @@
       "BookingID": 7,
       "CoverageDetails": "Coverage for booking 7",
       "Provider": "ProviderC",
-      "Status": "Pending",
-      "id": "4a28"
+      "Status": "Pending"
     },
     {
       "InsuranceID": 8,
@@ -507,8 +540,7 @@
       "BookingID": 8,
       "CoverageDetails": "Coverage for booking 8",
       "Provider": "ProviderA",
-      "Status": "Active",
-      "id": "a535"
+      "Status": "Active"
     },
     {
       "InsuranceID": 9,
@@ -516,8 +548,7 @@
       "BookingID": 9,
       "CoverageDetails": "Coverage for booking 9",
       "Provider": "ProviderC",
-      "Status": "Active",
-      "id": "d88c"
+      "Status": "Active"
     },
     {
       "InsuranceID": 10,
@@ -525,90 +556,107 @@
       "BookingID": 10,
       "CoverageDetails": "Coverage for booking 10",
       "Provider": "ProviderC",
-      "Status": "Active",
-      "id": "4387"
+      "Status": "Active"
     }
   ],
   "AssistanceRequest": [
     {
-      "RequestID": 1,
-      "UserID": 7,
-      "IssueDescription": "Issue description 1",
+      "RequestID": "REQ001",
+      "UserID": "USR001",
+      "IssueDescription": "Lost baggage on arrival in Paris.",
       "Status": "Resolved",
-      "ResolutionTime": "63 hours",
-      "id": "de15"
+      "ResolutionTime": "63 hours"
     },
     {
       "RequestID": 2,
       "UserID": 8,
       "IssueDescription": "Issue description 2",
       "Status": "Resolved",
-      "ResolutionTime": "60 hours",
-      "id": "3ab0"
+      "ResolutionTime": "60 hours"
     },
     {
       "RequestID": 3,
       "UserID": 2,
       "IssueDescription": "Issue description 3",
       "Status": "Open",
-      "ResolutionTime": "49 hours",
-      "id": "8351"
+      "ResolutionTime": "49 hours"
     },
     {
       "RequestID": 4,
       "UserID": 9,
       "IssueDescription": "Issue description 4",
       "Status": "Open",
-      "ResolutionTime": "8 hours",
-      "id": "4b31"
+      "ResolutionTime": "8 hours"
     },
     {
       "RequestID": 5,
       "UserID": 2,
       "IssueDescription": "Issue description 5",
       "Status": "Open",
-      "ResolutionTime": "60 hours",
-      "id": "c149"
+      "ResolutionTime": "60 hours"
     },
     {
-      "RequestID": 6,
-      "UserID": 1,
-      "IssueDescription": "Issue description 6",
+      "RequestID": "REQ006",
+      "UserID": "USR008",
+      "IssueDescription": "Flight delay, need assistance with next steps.",
       "Status": "Resolved",
-      "ResolutionTime": "60 hours",
-      "id": "3ed0"
+      "ResolutionTime": "60 hours"
     },
     {
-      "RequestID": 7,
-      "UserID": 9,
-      "IssueDescription": "Issue description 7",
+      "RequestID": "REQ007",
+      "UserID": "USR010",
+      "IssueDescription": "Hotel room not as described.",
       "Status": "In Progress",
-      "ResolutionTime": "62 hours",
-      "id": "f19d"
+      "ResolutionTime": "62 hours"
     },
     {
-      "RequestID": 8,
-      "UserID": 8,
-      "IssueDescription": "Issue description 8",
+      "RequestID": "REQ009",
+      "UserID": "USR013",
+      "IssueDescription": "Need a local emergency contact number.",
+      "Status": "Resolved",
+      "ResolutionTime": "2026-09-06T12:00:00Z"
+    },
+    {
+      "RequestID": "REQ010",
+      "UserID": "USR001",
+      "IssueDescription": "Inquiry about adding an extra activity to my booking.",
+      "Status": "Resolved",
+      "ResolutionTime": "2025-11-18T15:00:00Z"
+    },
+    {
+      "RequestID": "REQ011",
+      "UserID": "USR002",
+      "IssueDescription": "Question about the visa requirements for my trip.",
+      "Status": "Resolved",
+      "ResolutionTime": "2025-10-25T09:00:00Z"
+    },
+    {
+      "RequestID": "REQ012",
+      "UserID": "USR005",
+      "IssueDescription": "Need an invoice for my payment.",
+      "Status": "Resolved",
+      "ResolutionTime": "2026-01-21T10:00:00Z"
+    },
+    {
+      "RequestID": "REQ013",
+      "UserID": "USR009",
+      "IssueDescription": "Want to change my travel dates.",
       "Status": "In Progress",
-      "ResolutionTime": "2 hours",
-      "id": "1359"
+      "ResolutionTime": "2 hours"
     },
     {
       "RequestID": 9,
       "UserID": 9,
       "IssueDescription": "Issue description 9",
       "Status": "Open",
-      "ResolutionTime": "64 hours",
-      "id": "1124"
+      "ResolutionTime": "64 hours"
     },
     {
       "RequestID": 10,
       "UserID": 2,
       "IssueDescription": "Issue description 10",
       "Status": "In Progress",
-      "ResolutionTime": "3 hours",
-      "id": "8499"
+      "ResolutionTime": "3 hours"
     }
   ]
 }
