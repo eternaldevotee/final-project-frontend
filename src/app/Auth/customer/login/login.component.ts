@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthserviceService } from '../../../../Service/authservice.service';
+import { AuthserviceService } from '../../../Service/authservice.service';
 
 @Component({
   selector: 'app-login',

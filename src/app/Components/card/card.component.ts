@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DynamicCardService, TravelPackage } from '../../../Service/dynamic-card.service';
+import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.service';
 @Component({
   selector: 'app-card',
   standalone: false,

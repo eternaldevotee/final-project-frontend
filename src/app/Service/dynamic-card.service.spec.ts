@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DynamicCardService } from '../Service/dynamic-card.service';
+import { DynamicCardService } from './dynamic-card.service';
 
 describe('DynamicCardService', () => {
   let service: DynamicCardService;

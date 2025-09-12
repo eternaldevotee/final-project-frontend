@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SignUp } from '../app/Auth/customer/signup/signup.component';
+import { SignUp } from '../Auth/customer/signup/signup.component';
 
 
 @Injectable({
