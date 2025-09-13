@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { TncComponent } from './pages/tnc/tnc.component';
+import { AdminComponent } from './Auth/admin/admin.component';
 
 
 
@@ -36,7 +37,8 @@ import { TncComponent } from './pages/tnc/tnc.component';
     HomeComponent,
     PrivacyComponent,
     FaqComponent,
-    TncComponent
+    TncComponent,
+    AdminComponent
   ], 
   imports: [
     BrowserModule,
