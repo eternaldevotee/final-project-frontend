@@ -7,6 +7,7 @@ export interface TravelPackage {
   PackageId: string;
   Title : string;
   Description : string;
+  DetailedDescription : string;
   Duration : string;
   Price : number;
   IncludedServices : string[];

@@ -11,8 +11,9 @@ import { LoginComponent } from './Auth/customer/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,16 +25,16 @@ import {  HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     ListPackagesComponent,
+    CardDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
