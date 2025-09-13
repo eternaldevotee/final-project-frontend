@@ -1,3 +1,24 @@
 .shadow-box {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+.design{
+    position:relative;
+
+}
+.design::after{
+    content:"";
+    background-color:rgba(0, 0, 0, .55);
+    transform:scaleX(0);
+    height:2px;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    transition:transform 0.4s ease-in-out;
+
+
+}
+
+.design:hover::after{
+    transform:scaleX(1);
+}

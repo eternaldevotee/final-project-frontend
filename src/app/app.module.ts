@@ -1,9 +1,7 @@
-
+import { MatExpansionModule, MatAccordion,MatExpansionPanel,MatExpansionPanelHeader,MatExpansionPanelTitle } from '@angular/material/expansion';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-// import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CarouselComponent } from './Components/carousel/carousel.component';
@@ -16,6 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { FaqComponent } from './pages/faq/faq.component';
+import { TncComponent } from './pages/tnc/tnc.component';
+
+
+
 
 
 @NgModule({
@@ -29,16 +33,22 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     ListPackagesComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    PrivacyComponent,
+    FaqComponent,
+    TncComponent
   ], 
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
-    
-  ],
+    HttpClientModule,
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelHeader,
+    MatExpansionPanelTitle
+],
   providers: [],
   bootstrap: [AppComponent]
 })
