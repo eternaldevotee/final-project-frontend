@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Auth/admin/login/login.component';
@@ -8,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { TncComponent } from './pages/tnc/tnc.component';
 import { FaqComponent } from './pages/faq/faq.component'
-import { AdminDashboardComponent } from './Auth/admin/dashboard/dashboard.component';
+import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.component';
+import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
+import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -16,9 +20,11 @@ const routes: Routes = [
     {path:'signup', component:SignupComponent, outlet:'modal'},
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
-    {path:'admindashboard',component:AdminDashboardComponent},
+    {path:'admindashboard',component:AdminNavbarComponent},
     {path:'adminlogin',component:LoginComponent},
     {path:'privacy',component:PrivacyComponent},
+    {path:'agentControl',component:AgentControlComponent},
+    {path:'adminlayout',component:AdminlayoutComponent},
     {path : 'packages', component : DashboardComponent}
 ];
 

@@ -17,7 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { TncComponent } from './pages/tnc/tnc.component';
-import { AdminDashboardComponent } from './Auth/admin/dashboard/dashboard.component';
+import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.component';
+import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
+import { PackageControlComponent } from './Auth/admin/package-control/package-control.component';
+import { AdminProfileComponent } from './Auth/admin/admin-profile/admin-profile.component';
+import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
 
 
 
@@ -38,7 +42,11 @@ import { AdminDashboardComponent } from './Auth/admin/dashboard/dashboard.compon
     PrivacyComponent,
     FaqComponent,
     TncComponent,
-    AdminDashboardComponent
+    AdminNavbarComponent,
+    AgentControlComponent,
+    PackageControlComponent,
+    AdminProfileComponent,
+    AdminlayoutComponent
   ], 
   imports: [
     BrowserModule,
