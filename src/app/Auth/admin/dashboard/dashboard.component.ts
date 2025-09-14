@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-admindashboard',
   standalone: false,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class AdminDashboardComponent{
 
 }

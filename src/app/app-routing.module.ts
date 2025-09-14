@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { TncComponent } from './pages/tnc/tnc.component';
 import { FaqComponent } from './pages/faq/faq.component'
+import { AdminDashboardComponent } from './Auth/admin/dashboard/dashboard.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:'signup', component:SignupComponent, outlet:'modal'},
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
+    {path:'admindashboard',component:AdminDashboardComponent},
     {path:'adminlogin',component:LoginComponent},
     {path:'privacy',component:PrivacyComponent},
     {path : 'packages', component : DashboardComponent}
