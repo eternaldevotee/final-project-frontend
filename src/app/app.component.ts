@@ -7,5 +7,6 @@ import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Travel-package-booking-system';
+  practise=false;
+  
 }
