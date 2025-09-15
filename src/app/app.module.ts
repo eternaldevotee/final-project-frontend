@@ -12,7 +12,7 @@ import { LoginComponent } from './Auth/customer/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
-import {  HttpClientModule } from '@angular/common/http';
+// import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { FaqComponent } from './pages/faq/faq.component';
@@ -25,7 +25,9 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 
 
 
+import { HttpClientModule } from '@angular/common/http';
 
+import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -46,8 +48,9 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
     AgentControlComponent,
     PackageControlComponent,
     AdminProfileComponent,
-    AdminlayoutComponent
-  ], 
+    AdminlayoutComponent,
+    CardDetailComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -60,6 +63,6 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
     MatExpansionPanelTitle
 ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

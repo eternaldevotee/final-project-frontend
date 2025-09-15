@@ -13,6 +13,7 @@ import { FaqComponent } from './pages/faq/faq.component'
 import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.component';
 import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
 import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
+import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -25,7 +26,10 @@ const routes: Routes = [
     {path:'privacy',component:PrivacyComponent},
     {path:'agentControl',component:AgentControlComponent},
     {path:'adminlayout',component:AdminlayoutComponent},
-    {path : 'packages', component : DashboardComponent}
+    {path : 'packages', component : DashboardComponent},
+    {path : 'packages', component : CardComponent},
+    //adding route for particular package
+    {path : 'package/:id', component : CardDetailComponent}
 ];
 
 @NgModule({
