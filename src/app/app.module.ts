@@ -12,6 +12,9 @@ import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { SearchpipePipe } from './Components/pipes/searchpipe.pipe';
+
+
 
 
 @NgModule({
@@ -24,13 +27,14 @@ import {  HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignupComponent,
     ListPackagesComponent,
+    SearchpipePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
     
   ],
   providers: [],

@@ -98,101 +98,186 @@
       "Password": "Qs@12345",
       "Role": "Customer",
       "ContactNumber": ""
+    },
+    {
+      "id": "704c",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
+    },
+    {
+      "id": "1e07",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
+    },
+    {
+      "id": "af75",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
+    },
+    {
+      "id": "1e79",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
     }
   ],
- "TravelPackage": [
-  {
-    "PackageID": 1,
-    "Title": "Bangalore & Coorg Escape",
-    "Description": "Explore the vibrant city of Bangalore and unwind in the lush hills of Coorg.",
-    "Duration": "5 days",
-    "Price": 20406.07,
-    "IncludedServices": ["Meals", "Flight", "Guide", "Transport", "Hotel"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 2,
-    "Title": "Heritage Trail: Mysore & Hampi",
-    "Description": "Discover the royal palaces of Mysore and the ancient ruins of Hampi.",
-    "Duration": "7 days",
-    "Price": 14026.57,
-    "IncludedServices": ["Transport", "Guide", "Flight", "Hotel", "Meals"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 3,
-    "Title": "Kerala Backwaters & Tea Gardens",
-    "Description": "Cruise through Alleppey’s backwaters and stroll through Munnar’s tea estates.",
-    "Duration": "6 days",
-    "Price": 32316.3,
-    "IncludedServices": ["Hotel", "Meals", "Flight", "Guide"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 4,
-    "Title": "Spiritual South: Tirupati & Madurai",
-    "Description": "Visit sacred temples and experience the spiritual essence of South India.",
-    "Duration": "7 days",
-    "Price": 28332.85,
-    "IncludedServices": ["Meals", "Guide"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 5,
-    "Title": "Adventure in Chikmagalur",
-    "Description": "Trek through coffee plantations and enjoy scenic mountain views.",
-    "Duration": "4 days",
-    "Price": 38892.51,
-    "IncludedServices": ["Guide", "Transport"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 6,
-    "Title": "Tamil Nadu Temple Trail",
-    "Description": "Explore iconic temples in Kanchipuram, Thanjavur, and Rameswaram.",
-    "Duration": "10 days",
-    "Price": 25949.58,
-    "IncludedServices": ["Guide", "Meals"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 7,
-    "Title": "Bangalore City Break",
-    "Description": "Experience the tech capital’s nightlife, gardens, and shopping streets.",
-    "Duration": "5 days",
-    "Price": 9180.51,
-    "IncludedServices": ["Guide", "Meals", "Transport", "Flight", "Hotel"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 8,
-    "Title": "Western Ghats Nature Retreat",
-    "Description": "Reconnect with nature in Wayanad and Bandipur National Park.",
-    "Duration": "9 days",
-    "Price": 15434.25,
-    "IncludedServices": ["Transport", "Flight", "Meals", "Hotel", "Guide"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 9,
-    "Title": "South India Grand Tour",
-    "Description": "A complete journey through Karnataka, Kerala, and Tamil Nadu.",
-    "Duration": "14 days",
-    "Price": 40983.88,
-    "IncludedServices": ["Transport", "Guide", "Meals", "Hotel", "Flight"],
-    "ImageSrc": "/bangalore.webp"
-  },
-  {
-    "PackageID": 10,
-    "Title": "Luxury Bangalore & Ooty Getaway",
-    "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
-    "Duration": "5 days",
-    "Price": 49020.17,
-    "IncludedServices": ["Hotel", "Transport", "Guide", "Flight", "Meals"],
-    "ImageSrc": "/bangalore.webp"
-  }
-]
-,
+  "TravelPackage": [
+    {
+      "PackageID": 1,
+      "Title": "Bangalore & Coorg Escape",
+      "Description": "Explore the vibrant city of Bangalore and unwind in the lush hills of Coorg.",
+      "Duration": "5 days",
+      "Price": 20406.07,
+      "IncludedServices": [
+        "Meals",
+        "Flight",
+        "Guide",
+        "Transport",
+        "Hotel"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 2,
+      "Title": "Heritage Trail: Mysore & Hampi",
+      "Description": "Discover the royal palaces of Mysore and the ancient ruins of Hampi.",
+      "Duration": "7 days",
+      "Price": 14026.57,
+      "IncludedServices": [
+        "Transport",
+        "Guide",
+        "Flight",
+        "Hotel",
+        "Meals"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 3,
+      "Title": "Kerala Backwaters & Tea Gardens",
+      "Description": "Cruise through Alleppey’s backwaters and stroll through Munnar’s tea estates.",
+      "Duration": "6 days",
+      "Price": 32316.3,
+      "IncludedServices": [
+        "Hotel",
+        "Meals",
+        "Flight",
+        "Guide"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 4,
+      "Title": "Spiritual South: Tirupati & Madurai",
+      "Description": "Visit sacred temples and experience the spiritual essence of South India.",
+      "Duration": "7 days",
+      "Price": 28332.85,
+      "IncludedServices": [
+        "Meals",
+        "Guide"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 5,
+      "Title": "Adventure in Chikmagalur",
+      "Description": "Trek through coffee plantations and enjoy scenic mountain views.",
+      "Duration": "4 days",
+      "Price": 38892.51,
+      "IncludedServices": [
+        "Guide",
+        "Transport"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 6,
+      "Title": "Tamil Nadu Temple Trail",
+      "Description": "Explore iconic temples in Kanchipuram, Thanjavur, and Rameswaram.",
+      "Duration": "10 days",
+      "Price": 25949.58,
+      "IncludedServices": [
+        "Guide",
+        "Meals"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 7,
+      "Title": "Bangalore City Break",
+      "Description": "Experience the tech capital’s nightlife, gardens, and shopping streets.",
+      "Duration": "5 days",
+      "Price": 9180.51,
+      "IncludedServices": [
+        "Guide",
+        "Meals",
+        "Transport",
+        "Flight",
+        "Hotel"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 8,
+      "Title": "Western Ghats Nature Retreat",
+      "Description": "Reconnect with nature in Wayanad and Bandipur National Park.",
+      "Duration": "9 days",
+      "Price": 15434.25,
+      "IncludedServices": [
+        "Transport",
+        "Flight",
+        "Meals",
+        "Hotel",
+        "Guide"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 9,
+      "Title": "South India Grand Tour",
+      "Description": "A complete journey through Karnataka, Kerala, and Tamil Nadu.",
+      "Duration": "14 days",
+      "Price": 40983.88,
+      "IncludedServices": [
+        "Transport",
+        "Guide",
+        "Meals",
+        "Hotel",
+        "Flight"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    },
+    {
+      "PackageID": 10,
+      "Title": "Luxury Bangalore & Ooty Getaway",
+      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
+      "Duration": "5 days",
+      "Price": 49020.17,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Flight",
+        "Meals"
+      ],
+      "ImageSrc": "/bangalore.webp"
+    }
+  ],
   "Booking": [
     {
       "BookingID": 1,
