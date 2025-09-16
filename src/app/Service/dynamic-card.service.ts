@@ -4,9 +4,10 @@ import { Observable } from 'rxjs';
 
 
 export interface TravelPackage {
-  PackageId: string;
+  PackageID: number;
   Title : string;
   Description : string;
+  DetailedDescription : string;
   Duration : string;
   Price : number;
   IncludedServices : string[];

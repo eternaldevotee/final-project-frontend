@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.service';
 @Component({
   selector: 'app-card',
@@ -7,6 +7,7 @@ import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.se
   styleUrl: './card.component.css'
 })
 export class CardComponent implements OnInit{
+  // @Input() packages: any[] = [];
       packages! : TravelPackage[];
 
       constructor(private cardService : DynamicCardService) {}

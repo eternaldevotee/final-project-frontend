@@ -1,0 +1,31 @@
+<div *ngIf="package" class="container mt-5 shadow-large">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <img
+        src="TajMahal.webp"
+        class="img-fluid rounded shadow"
+        alt="image Of Package"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <h2>{{package.Title}}</h2>
+      <p class="text-muted"><strong>Duration: </strong>{{package.Description}}</p>
+      <p class="text-muted"><strong>Package Price: </strong>${{package.Price}}</p>
+      <h6><b>Summary</b></h6>
+      <p>{{package.Description}}</p>
+      <h6><b>Detailed Description</b></h6>
+      <p>
+        {{package.DetailedDescription}}
+      </p>
+      <h6><b>Services Included</b></h6>
+      <div class="d-flex flex-wrap">
+         <div *ngFor="let services of package.IncludedServices" class="badge text-bg-primary m-2">{{services}}</div>
+      </div>
+      <br/>
+      <button class="btn btn-success">Book now</button>
+    </div>
+
+    
+  </div>
+</div>

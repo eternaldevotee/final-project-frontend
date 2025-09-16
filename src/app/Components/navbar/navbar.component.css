@@ -4,3 +4,24 @@
   color: white !important;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+.design{
+    position:relative;
+
+}
+.design::after{
+    content:"";
+    background-color:rgba(0, 0, 0, .55);
+    transform:scaleX(0);
+    height:2px;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    transition:transform 0.4s ease-in-out;
+
+
+}
+
+.design:hover::after{
+    transform:scaleX(1);
+}
