@@ -1,6 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-box p-3 m-2">
-  <a class="navbar-brand" href="#">TravelPro</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-box p-3 m-2" >
+  <a class="navbar-brand" href="#"
+    >Travel<span class="text-success">Pro</span></a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -10,7 +20,12 @@
         <a class="nav-link" href="#">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink] ="['/packages']" routerLinkActive="active ">Packages</a>
+        <a
+          class="nav-link"
+          [routerLink]="['/packages']"
+          routerLinkActive="active "
+          >Packages</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Destinations</a>
@@ -18,32 +33,77 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
-      
     </ul>
-  
+
+    <div class="d-flex align-items-center gap-2 flex-grow-1">
+      <input
+        type="text"
+        placeholder="Search your dream package"
+        class="form-control p-1"
+        style="max-width: 400px; margin-left: 10px"
+      />
+      <button class="btn btn-outline-success">Search</button>
+    </div>
   </div>
 
   <!-- Customer Login and SignUp -->
   <div>
     <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
-        <button type="button" class="btn btn-outline-primary m-2" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Login
-        </button>
+      <button
+        type="button"
+        class="btn btn-outline-primary m-2"
+        data-bs-toggle="modal"
+        data-bs-target="#loginModal"
+      >
+        Login
+      </button>
     </a>
-    <div class="modal"  id="loginModal">
+    <div class="modal" id="loginModal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
               <!-- Login -->
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-              <label class="btn btn-outline-primary" for="btnradio1" (click)="navigateTo('login')">Login</label>
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio1"
+                autocomplete="off"
+                checked
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="btnradio1"
+                (click)="navigateTo('login')"
+                >Login</label
+              >
               <!-- SignUp -->
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btnradio2" (click)="navigateTo('signup')">Signup</label>
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio"
+                id="btnradio2"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="btnradio2"
+                (click)="navigateTo('signup')"
+                >Signup</label
+              >
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div> 
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
           <div class="modal-body">
             <router-outlet name="modal"></router-outlet>
           </div>

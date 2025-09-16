@@ -14,6 +14,7 @@ import { ListPackagesComponent } from './Components/list-packages/list-packages.
 import { HttpClientModule } from '@angular/common/http';
 
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
+import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CardDetailComponent } from './Components/card-detail/card-detail.compon
     SignupComponent,
     ListPackagesComponent,
     CardDetailComponent,
+    AgentPackageDetailComponent,
   ],
   imports: [
     BrowserModule,

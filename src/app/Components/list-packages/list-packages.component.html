@@ -1,40 +1,15 @@
-<div>
-    <h1 class="p-4">List of your current Packages</h1>
-    <div class="row p-2">
-        <div class="card col-md-3 m-4 shadow-medium hover-lift" style="width: 18rem; cursor: pointer;">
-            <img src="bangalore.webp" class="card-img-top p-2 rounded-4" alt="...">
-            <div class="card-body">
-                <h5 class="card-title color-light-blue">Bengaluru</h5>
-                <p class="card-text">Discover the cultural richness and scenic beauty of Bengaluru — from the Himalayas to the Sundarbans.</p>
-                <a href="#" class="btn btn-primary">View Package Details</a>
+<h1 class="p-2">List of your Current Packages</h1>
+ <div class="container">
+    <div class="row p-2 " style="justify-content: space-around;">
+        <div class="card col-md-3 m-4 shadow-medium hover-lift" style=" cursor: pointer;" *ngFor="let pkg of packages">
+            <img [src] = "pkg.ImageSrc" class="card-img-top" alt="{{pkg.Title}}">
+            <div class="card-body" style="display: flex; justify-content: space-between; flex-direction: column;">
+                <h5 class="card-title">{{pkg.Title}}</h5>
+                <p class="card-text">{{pkg.Description}}</p>
+                <!-- <a href="#" class="btn btn-primary">Book now    </a> -->
+                 <a [routerLink] = "['agent/package', pkg.PackageID]" class="btn btn-primary formControl" >Package Detail</a>
             </div>
-        </div>
-        <div class="card col-md-3 m-4 shadow-medium hover-lift" style="width: 18rem;cursor: pointer;">
-            <img src="bangalore.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Bengaluru</h5>
-                <p class="card-text">Discover the cultural richness and scenic beauty of Bengaluru — from the Himalayas to the Sundarbans.</p>
-                <a href="#" class="btn btn-primary">View Package Details</a>
-            </div>
-        </div>
-        <div class="card col-md-3 m-4 shadow-m edium hover-lift" style="width: 18rem;cursor: pointer;">
-            <img src="bangalore.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Bengaluru</h5>
-                <p class="card-text">Discover the cultural richness and scenic beauty of Bengaluru — from the Himalayas to the Sundarbans.</p>
-                <a href="#" class="btn btn-primary">View Package Details</a>
-            </div>
-        </div>
-        <div class="card col-md-3 m-4 shadow-medium hover-lift" style="width: 18rem;cursor: pointer;">
-            <img src="bangalore.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Bengaluru</h5>
-                <p class="card-text">Discover the cultural richness and scenic beauty of Bengaluru — from the Himalayas to the Sundarbans.</p>
-                <a href="#" class="btn btn-primary">View Package Details</a>
-            </div>
+            
         </div>
     </div>
-   
-        </div>
- 
-
+ </div>
