@@ -131,7 +131,95 @@
       ],
       "ImageSrc": "/bangalore.webp",
       "id": "103e"
-    }
+    },
+    
+  {
+    "PackageID": 11,
+    "Title": "Serene Kerala Backwaters Escape",
+    "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
+    "DetailedDescription": "Start your journey in Alleppey aboard a private houseboat, drifting past coconut groves and village life. Enjoy Ayurvedic massages, traditional meals, and sunset views. Then head to Kumarakom for birdwatching and lakeside relaxation.",
+    "Duration": "4 days",
+    "Price": 38500.00,
+    "IncludedServices": [
+      "Hotel",
+      "Transport",
+      "Guide",
+      "Meals",
+      "Boat Cruise"
+    ],
+    "ImageSrc": "/bangalore.webp",
+    "id": "104x"
+  },
+  {
+    "PackageID": 12,
+    "Title": "Desert Mirage in Jaisalmer",
+    "Description": "Live the desert dream with camel safaris and golden fort adventures.",
+    "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
+    "Duration": "3 days",
+    "Price": 31200.50,
+    "IncludedServices": [
+      "Hotel",
+      "Transport",
+      "Guide",
+      "Meals",
+      "Camel Safari"
+    ],
+    "ImageSrc": "/bangalore.webp",
+    "id": "105y"
+  },
+  {
+    "PackageID": 13,
+    "Title": "Sikkim Nature & Culture Trail",
+    "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
+    "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
+    "Duration": "5 days",
+    "Price": 44670.25,
+    "IncludedServices": [
+      "Hotel",
+      "Transport",
+      "Guide",
+      "Meals",
+      "Permit Assistance"
+    ],
+    "ImageSrc": "/bangalore.webp",
+    "id": "106z"
+  },
+  {
+    "PackageID": 14,
+    "Title": "Spiritual Varanasi & Khajuraho Circuit",
+    "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
+    "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
+    "Duration": "6 days",
+    "Price": 49890.00,
+    "IncludedServices": [
+      "Hotel",
+      "Transport",
+      "Guide",
+      "Flight",
+      "Meals"
+    ],
+    "ImageSrc": "/bangalore.webp",
+    "id": "107w"
+  },
+  {
+    "PackageID": 15,
+    "Title": "Andaman Island Explorer",
+    "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
+    "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
+    "Duration": "5 days",
+    "Price": 52500.00,
+    "IncludedServices": [
+      "Hotel",
+      "Transport",
+      "Guide",
+      "Flight",
+      "Water Sports"
+    ],
+    "ImageSrc": "/bangalore.webp",
+    "id": "108v"
+  }
+
+
   ],
   "Booking": [
     {
