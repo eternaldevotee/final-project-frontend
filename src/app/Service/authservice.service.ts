@@ -25,4 +25,10 @@ export class AuthserviceService {
     console.log(signup);
     return this.rest.post(`${this.strUrl}User`,signup);
   }
+
+  //fetchesSimilarData
+  fetchMatchingPackages(searchValue:string):Observable<any>{
+    console.log(this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`));
+    return this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`);
+  }
 }

@@ -1,0 +1,67 @@
+<div class="container my-4">
+  <h2>Create Package</h2>
+  <form [formGroup]="createPackageForm" (ngSubmit)="submit()" novalidate>
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input class="form-control" formControlName="Title" placeholder="Enter title" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Enter Image URL</label>
+      <input class="form-control" formControlName="ImageURL" placeholder="Enter title" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Enter summary</label>
+      <input class="form-control" formControlName="summary" placeholder="Enter title" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" formControlName="Description" rows="6" placeholder="Describe the package"></textarea>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Duration</label>
+        <input class="form-control" formControlName="Duration" placeholder="e.g. 5 days" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" formControlName="Price" placeholder="e.g. 19999" />
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <div class="d-flex align-items-center justify-content-between">
+        <label class="form-label mb-0">Included Services</label>
+        <button type="button" class="btn btn-sm btn-outline-primary" (click)="addIncludedService('')">+ Add</button>
+      </div>
+      <div class="mt-2" formArrayName="IncludedServices">
+        <div class="input-group mb-2" *ngFor="let ctrl of includedServices.controls; index as i">
+          <input class="form-control" [formControlName]="i" placeholder="e.g. Meals" />
+          <button type="button" class="btn btn-outline-danger" (click)="removeIncludedService(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Create Package</button>
+  </form>
+
+  <hr class="my-4" />
+  <h3>My Packages</h3>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
+    <div class="col" *ngFor="let pkg of myPackages">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ pkg.Title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ pkg.Duration }}</h6>
+          <p class="card-text">{{ pkg.Description }}</p>
+          <div>
+            <strong>Included:</strong>
+            <span class="badge text-bg-secondary me-1" *ngFor="let s of pkg.IncludedServices">{{ s }}</span>
+          </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <span class="fw-bold">₹{{ pkg.Price | number:'1.0-0' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
