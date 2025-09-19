@@ -1,5 +1,4 @@
-import { MatExpansionModule, MatAccordion,MatExpansionPanel,MatExpansionPanelHeader,MatExpansionPanelTitle } from '@angular/material/expansion';
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,62 +9,71 @@ import { CardComponent } from './Components/card/card.component';
 import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
+import { AdminLoginComponent } from './Auth/admin/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
-// import {  HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
+import { SearchpipePipe } from './Components/pipes/searchpipe.pipe';
+import { NgModule } from '@angular/core';
+import { MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionModule } from '@angular/material/expansion';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { TncComponent } from './pages/tnc/tnc.component';
 import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.component';
-import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
-import { PackageControlComponent } from './Auth/admin/package-control/package-control.component';
 import { AdminProfileComponent } from './Auth/admin/admin-profile/admin-profile.component';
 import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
-
-
-
-import { HttpClientModule } from '@angular/common/http';
-
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { AdminAgentComponent } from './Auth/admin/admin-agent/admin-agent.component';
 import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packages.component';
+import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
+import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CarouselComponent,
+    AdminLoginComponent,
     FooterComponent,
     CardComponent,
     LoginComponent,
     SignupComponent,
     ListPackagesComponent,
+    SearchpipePipe,
     DashboardComponent,
     HomeComponent,
     PrivacyComponent,
     FaqComponent,
     TncComponent,
     AdminNavbarComponent,
-    AgentControlComponent,
-    PackageControlComponent,
     AdminProfileComponent,
     AdminlayoutComponent,
     CardDetailComponent,
+
     AdminAgentComponent,
-    AdminPackagesComponent
+    AdminPackagesComponent,
+    AgentPackageDetailComponent,
+
+    CustomerAuthModalComponent
+
   ],
-  imports: [
+    imports:[
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatExpansionModule,
     MatAccordion,
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle
-],
+    
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

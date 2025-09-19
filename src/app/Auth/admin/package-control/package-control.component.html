@@ -1,1 +1,15 @@
-<p>package-control works!</p>
+<div class="package-list-container">
+  <h2>Manage Travel Packages</h2>
+  
+  <ul class="package-list">
+    <li *ngFor="let pkg of packages" class="package-tile">
+      <h3>{{ pkg.Title }}</h3>
+      <p>{{ pkg.Description }}</p>
+      <div class="package-details">
+        <span><strong>Duration:</strong> {{ pkg.Duration }}</span>
+        <span><strong>Price:</strong> ₹{{ pkg.Price }}</span>
+      </div>
+      <button class="delete-btn" (click)="deletePackage(pkg.PackageID)">Delete</button>
+    </li>
+  </ul>
+</div>

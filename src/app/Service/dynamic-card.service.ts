@@ -12,6 +12,7 @@ export interface TravelPackage {
   Price : number;
   IncludedServices : string[];
   ImageSrc : string;
+  id: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class DynamicCardService {
   getPackages() : Observable<any> {
     console.log(this.apiUrl)
     return this.http.get(this.apiUrl)
+  }
+
+  deletePackage(id : string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

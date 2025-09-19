@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +6,6 @@ import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  practise=true;
-  
+  title = 'Travel-package-booking-system';
+
 }

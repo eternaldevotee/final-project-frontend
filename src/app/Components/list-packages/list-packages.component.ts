@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.service';
 
 @Component({
   selector: 'app-list-packages',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './list-packages.component.css'
 })
 export class ListPackagesComponent {
+
+  packages!: TravelPackage[];
+
+  constructor(private cardService : DynamicCardService){}
+
+  ngOnInit() : void {
+    this.cardService.getPackages().subscribe(data => {
+      this.packages = data;
+    })
+  }
+  
 
 }

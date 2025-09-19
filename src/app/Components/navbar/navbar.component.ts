@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { SearchserviceService } from '../../Service/searchservice.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +8,35 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
 
-constructor(private router: Router) {}
+   searchTerm: string = '';
+  // data: any[] = [];
+  filteredResults: any[] = [];
 
-navigateTo(view: string) {
-  this.router.navigate([{ outlets: { modal: [view] } }]);
-}
+
+
+  // searchForm = new FormGroup({
+  //   searchTerm: new FormControl(''),
+  // })
+
+  constructor(private service: SearchserviceService) {}
+  ngOnInit(): void {
+    this.service.getAllData().subscribe((res=>{
+      this.filteredResults=res;
+    }));
+  }
+
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  //   this.onSearch();
+  // }
+
+  // onSearch(): void {
+  //   this.rest.fetchMatchingPackages(this.searchTerm).subscribe((res =>{
+  //     console.log(res);
+  //     this.filteredResults=res;
+  //   }));
+  // }
 
 }
