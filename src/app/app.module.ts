@@ -28,6 +28,8 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 import { HttpClientModule } from '@angular/common/http';
 
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
+import { AdminAgentComponent } from './Auth/admin/admin-agent/admin-agent.component';
+import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packages.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { CardDetailComponent } from './Components/card-detail/card-detail.compon
     PackageControlComponent,
     AdminProfileComponent,
     AdminlayoutComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    AdminAgentComponent,
+    AdminPackagesComponent
   ],
   imports: [
     BrowserModule,

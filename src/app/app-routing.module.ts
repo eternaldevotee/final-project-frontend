@@ -14,6 +14,7 @@ import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.comp
 import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
 import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
+import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packages.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path:'agentControl',component:AgentControlComponent},
     {path:'adminlayout',component:AdminlayoutComponent},
     {path : 'packages', component : DashboardComponent},
+    {path:'adminpackages',component:AdminPackagesComponent},
     {path : 'packages', component : CardComponent},
     //adding route for particular package
     {path : 'package/:id', component : CardDetailComponent}
