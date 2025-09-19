@@ -1,0 +1,21 @@
+table,th,td,tr{
+    border:2px solid black;
+    width:auto;
+    table-layout: fixed;
+}
+.btn{
+    margin-left:10px;   
+    border:2px solid black;
+    border:none;
+    background:rgb(57, 57, 201);
+    color:white;
+    transition:background 0.3s ease-in;
+}
+.btn:hover{
+    background: rgb(17, 17, 224);
+}
+.back{
+    width:20px;
+    margin-top:100px;
+
+}

@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { AdminserviceService } from '../../../Service/adminservice.service'; // Adjust the path as needed
-import { NgFor } from '@angular/common';
+import { AdminserviceService } from '../../../Service/adminservice.service'; 
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-control-packages',
   templateUrl: './package-control.component.html',
@@ -9,31 +9,47 @@ import { NgFor } from '@angular/common';
 })
 export class PackageControlComponent implements OnInit {
   
-  // This array will hold the packages fetched from the server.
-  packages: any[] = [];
 
-  // Inject the PackageService to use its methods.
+  packages: any[] = [];
+filteredPackages:any[]=[];
+search:string="";
+ 
   constructor(private packageService: AdminserviceService) {}
 
-  // ngOnInit is a lifecycle hook that runs once when the component is initialized.
+
   ngOnInit(): void {
     this.loadPackages();
   }
 
-  // Method to fetch all packages from the service.
+
   loadPackages(): void {
     this.packageService.getPackages().subscribe(data => {
       this.packages = data;
+      this.filteredPackages=data; 
     });
   }
+searchPackages(searchTerm: string): void {
+    if (!searchTerm) {
+      console.log("Searching for:", searchTerm);
+    
+      this.filteredPackages=this.packages;
+    } else {
 
-  // Method to delete a package. It's called from the button in the HTML.
+      this.filteredPackages = this.packages.filter(pkg => 
+        pkg.Title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+  }
+  goBack()
+  {
+    this.filteredPackages=this.packages;
+  }
+
   deletePackage(id: number): void {
     if (confirm('Are you sure you want to delete this package?')) {
       this.packageService.deletePackage(id).subscribe(() => {
-        // After successful deletion, remove the package from the local array
-        // to instantly update the UI without a page refresh.
-        this.packages = this.packages.filter(pkg => pkg.PackageID !== id);
+  
+        this.packages = this.packages.filter(pkg => pkg.id !== id);
         console.log(`Package with ID ${id} deleted successfully.`);
       });
     }

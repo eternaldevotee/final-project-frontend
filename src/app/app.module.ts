@@ -28,6 +28,9 @@ import { AdminAgentComponent } from './Auth/admin/admin-agent/admin-agent.compon
 import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packages.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
+import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
+import { SinguprequestsComponent } from './Auth/admin/singuprequests/singuprequests.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 
 
@@ -58,7 +61,9 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
     AdminPackagesComponent,
     AgentPackageDetailComponent,
 
-    CustomerAuthModalComponent
+    CustomerAuthModalComponent,
+      CurrentagentComponent,
+      SinguprequestsComponent
 
   ],
     imports:[
@@ -66,12 +71,14 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule,
     HttpClientModule,
     MatExpansionModule,
     MatAccordion,
     MatExpansionPanel,
     MatExpansionPanelHeader,
-    MatExpansionPanelTitle
+    MatExpansionPanelTitle,
+    RouterOutlet
     
   ],
   providers: [],

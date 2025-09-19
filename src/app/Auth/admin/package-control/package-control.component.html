@@ -1,15 +1,40 @@
+<div class="d-flex justify-content-center w-100 h-100">
 <div class="package-list-container">
-  <h2>Manage Travel Packages</h2>
+  <h2 class="text-center">Manage Travel Packages</h2>
+  <br>
   
-  <ul class="package-list">
-    <li *ngFor="let pkg of packages" class="package-tile">
-      <h3>{{ pkg.Title }}</h3>
-      <p>{{ pkg.Description }}</p>
-      <div class="package-details">
-        <span><strong>Duration:</strong> {{ pkg.Duration }}</span>
-        <span><strong>Price:</strong> ₹{{ pkg.Price }}</span>
-      </div>
-      <button class="delete-btn" (click)="deletePackage(pkg.PackageID)">Delete</button>
-    </li>
-  </ul>
+  <a (click)="goBack()">
+  <svg class="back mb-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+</svg>
+</a>
+  <div class="d-flex justify-content-center align-items-center">
+  <input type="text" #searchInput style="width:300px;height:40px;border-radius:10px;">
+   <button class="btn" (click)="searchPackages(searchInput.value)">Search</button>
+</div>
+  <table class="table table-bordered bordered-primary mt-4 tbl">
+    <thead>
+      <tr>
+         <th style="width: 20%;">Title</th>
+    <th style="width: 45%;">Description</th>
+    <th style="width: 15%;">Duration</th>
+    <th style="width: 10%;">Price</th>
+    <th style="width: 10%;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (pkg of filteredPackages; track pkg.id) {
+        <tr>
+          <td>{{ pkg.Title }}</td>
+          <td>{{ pkg.Description }}</td>
+          <td>{{ pkg.Duration }}</td>
+          <td>₹{{ pkg.Price }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deletePackage(pkg.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
 </div>

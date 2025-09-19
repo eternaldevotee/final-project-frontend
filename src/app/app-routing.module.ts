@@ -19,6 +19,8 @@ import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packag
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { PackageControlComponent } from './Auth/admin/package-control/package-control.component';
+import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
+import { SinguprequestsComponent } from './Auth/admin/singuprequests/singuprequests.component';
 
 
 
@@ -33,10 +35,10 @@ const routes: Routes = [
     {path:'admindashboard',component:AdminNavbarComponent},
     {path:'adminlogin',component:AdminLoginComponent},
     {path:'privacy',component:PrivacyComponent},
-    {path:'agentControl',component:AgentControlComponent},
+    {path:'agentControl',component:AgentControlComponent,children:[{path:'currentagent',component:CurrentagentComponent},{path:'singuprequests',component:SinguprequestsComponent}]},
     {path:'adminlayout',component:AdminlayoutComponent},
     {path : 'packages', component : DashboardComponent},
-    {path:'adminpackages',component:AdminPackagesComponent},
+    {path:'adminpackages',component:AdminPackagesComponent},  
     {path : 'packages', component : CardComponent},
     {path:'packagecontrol',component:PackageControlComponent},
     //adding route for particular package
