@@ -24,6 +24,7 @@ import { AdminNavbarComponent } from './Auth/admin/admin-navbar/adminnavbar.comp
 import { AdminProfileComponent } from './Auth/admin/admin-profile/admin-profile.component';
 import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
+import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
 
 
@@ -49,12 +50,12 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
     AdminProfileComponent,
     AdminlayoutComponent,
     CardDetailComponent,
+    AgentPackageDetailComponent,
+
     AdminLoginComponent,
     CustomerAuthModalComponent
-     
-    
-    
   ],
+    
   imports: [
     BrowserModule,
     AppRoutingModule,

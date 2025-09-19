@@ -15,6 +15,7 @@ import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.
 import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.component';
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { LoginComponent } from './Auth/customer/login/login.component';
+import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
     {path : 'packages', component : DashboardComponent},
     {path : 'packages', component : CardComponent},
     //adding route for particular package
-    {path : 'package/:id', component : CardDetailComponent}
+    {path : 'package/:id', component : CardDetailComponent},
+    {path :'agent/package/:id', component :AgentPackageDetailComponent}
 ];
 
 @NgModule({
