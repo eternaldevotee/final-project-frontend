@@ -679,5 +679,107 @@
       "ResolutionTime": "3 hours",
       "id": "c1c9"
     }
+  ],
+  "Agents": [
+    {
+      "id": "1",
+      "name": "Manoj Kumar",
+      "location": "Kolkata",
+      "phone": 8745625874
+    },
+    {
+      "id": "2",
+      "name": "Ravi Sharma",
+      "location": "Delhi",
+      "phone": 9823456721
+    },
+    {
+      "id": "5",
+      "name": "Pooja Patel",
+      "location": "Ahmedabad",
+      "phone": 7896541230
+    },
+    {
+      "id": "6",
+      "name": "Neha Gupta",
+      "location": "Pune",
+      "phone": 9988776655
+    },
+    {
+      "id": "8",
+      "name": "Kiran Reddy",
+      "location": "Hyderabad",
+      "phone": 9876123450
+    },
+    {
+      "id": "9",
+      "name": "Priya Sharma",
+      "location": "Jaipur",
+      "phone": 9123456780
+    },
+    {
+      "id": "10",
+      "name": "Vikram Mehta",
+      "location": "Lucknow",
+      "phone": 9874501236
+    },
+    {
+      "id": "11",
+      "name": "Ritu Jain",
+      "location": "Nagpur",
+      "phone": 9981234567
+    },
+    {
+      "id": "12",
+      "name": "Sanjay Rao",
+      "location": "Bhopal",
+      "phone": 9765123489
+    },
+    {
+      "id": "13",
+      "name": "Tanya Kapoor",
+      "location": "Chandigarh",
+      "phone": 9126783450
+    },
+    {
+      "id": "14",
+      "name": "Ajay Nair",
+      "location": "Cochin",
+      "phone": 9876541203
+    },
+    {
+      "id": "17",
+      "name": "Sneha Rao",
+      "location": "Bhubaneswar",
+      "phone": 9123456709
+    },
+    {
+      "id": "18",
+      "name": "Anil Kumar",
+      "location": "Kochi",
+      "phone": 9876543212
+    },
+    {
+      "id": "19",
+      "name": "Riya Sharma",
+      "location": "Dehradun",
+      "phone": 9988776612
+    },
+    {
+      "id": "20",
+      "name": "Vishal Gupta",
+      "location": "Shimla",
+      "phone": 9765123490
+    }
+  ],
+  "signupRequests": [
+    {
+      "id": "1",
+      "name": "Ravi Sharma",
+      "email": "ravi@example.com",
+      "password": "agent123",
+      "role": "agent",
+      "active": true
+    }
   ]
 }

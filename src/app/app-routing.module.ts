@@ -20,7 +20,7 @@ import { LoginComponent } from './Auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { PackageControlComponent } from './Auth/admin/package-control/package-control.component';
 import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
-import { SinguprequestsComponent } from './Auth/admin/singuprequests/singuprequests.component';
+import { SignuprequestsComponent } from './Auth/admin/signuprequests/signuprequests.component';
 
 
 
@@ -35,8 +35,14 @@ const routes: Routes = [
     {path:'admindashboard',component:AdminNavbarComponent},
     {path:'adminlogin',component:AdminLoginComponent},
     {path:'privacy',component:PrivacyComponent},
-    {path:'agentControl',component:AgentControlComponent,children:[{path:'currentagent',component:CurrentagentComponent},{path:'singuprequests',component:SinguprequestsComponent}]},
-    {path:'adminlayout',component:AdminlayoutComponent},
+    { path: 'adminlayout', component: AdminlayoutComponent },
+    {
+        path: 'agentControl', component: AgentControlComponent,
+        children: [
+            {path:'currentagent',component:CurrentagentComponent},
+            {path:'signuprequests',component:SignuprequestsComponent}
+        ]},
+    
     {path : 'packages', component : DashboardComponent},
     {path:'adminpackages',component:AdminPackagesComponent},  
     {path : 'packages', component : CardComponent},

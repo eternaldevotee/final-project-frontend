@@ -29,7 +29,8 @@ import { AdminPackagesComponent } from './Auth/admin/admin-packages/admin-packag
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
 import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
-import { SinguprequestsComponent } from './Auth/admin/singuprequests/singuprequests.component';
+import { SignuprequestsComponent } from './Auth/admin/signuprequests/signuprequests.component';
+import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 
@@ -63,7 +64,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 
     CustomerAuthModalComponent,
       CurrentagentComponent,
-      SinguprequestsComponent
+      SignuprequestsComponent,
+      AgentControlComponent
 
   ],
     imports:[

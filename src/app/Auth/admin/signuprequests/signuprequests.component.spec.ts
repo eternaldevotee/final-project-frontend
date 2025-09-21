@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SinguprequestsComponent } from './singuprequests.component';
+import { SignuprequestsComponent } from './signuprequests.component';
 
 describe('SinguprequestsComponent', () => {
-  let component: SinguprequestsComponent;
-  let fixture: ComponentFixture<SinguprequestsComponent>;
+  let component: SignuprequestsComponent;
+  let fixture: ComponentFixture<SignuprequestsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SinguprequestsComponent]
+      declarations: [SignuprequestsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SinguprequestsComponent);
+    fixture = TestBed.createComponent(SignuprequestsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
