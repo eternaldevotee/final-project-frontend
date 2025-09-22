@@ -111,15 +111,16 @@
   ],
   "TravelPackage": [
     {
-      "PackageID": 4,
-      "Title": "Spiritual South: Tirupati & Madurai",
-      "Description": "Visit sacred temples and experience the spiritual essence of South India.",
-      "DetailedDescription": "Begin with Tirupati, home to the revered Venkateswara Temple atop the Tirumala hills. Witness the devotion of thousands and participate in rituals that have been practiced for centuries. The spiritual energy here is palpable and deeply moving.\n\nContinue to Madurai, one of India’s oldest cities, where the Meenakshi Amman Temple dazzles with its towering gopurams and intricate carvings. Explore temple corridors, attend evening aarti, and feel the timeless pulse of South Indian spirituality.",
-      "Duration": "7 days",
-      "Price": 28332.85,
+      "Title": "Desert Mirage in Jaisalmer Edited by stany",
+      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
+      "Duration": "3 days",
+      "Price": 31200.5,
       "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
         "Meals",
-        "Guide"
+        "Camel Safari"
       ],
       "ImageSrc": "/bangalore.webp",
       "Location": "Tamil Nadu",
@@ -131,12 +132,11 @@
       "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
       "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
       "Duration": "5 days",
-      "Price": 49020.17,
+      "Price": 44670.25,
       "IncludedServices": [
         "Hotel",
         "Transport",
         "Guide",
-        "Flight",
         "Meals"
       ],
       "ImageSrc": "/bangalore.webp",

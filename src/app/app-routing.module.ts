@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './Auth/admin/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { CardComponent } from './Components/card/card.component';
-import {DashboardComponent} from './Auth/agent/dashboard/dashboard.component';
+import {DashboardComponent} from './Components/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { TncComponent } from './pages/tnc/tnc.component';
@@ -34,7 +34,8 @@ const routes: Routes = [
     {path : 'package/:id', component : CardDetailComponent},
     {path :'agent/package/:id', component :AgentPackageDetailComponent},
     {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
-    {path:'booking/:PackageID',component:BookingComponent}
+    {path:'booking/:PackageID',component:BookingComponent},
+    {path : 'edit-package/:id', component : DashboardComponent}
 ];
 
 @NgModule({

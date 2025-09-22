@@ -6,7 +6,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CarouselComponent } from './Components/carousel/carousel.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { CardComponent } from './Components/card/card.component';
-import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { AdminLoginComponent } from './Auth/admin/login/login.component';
