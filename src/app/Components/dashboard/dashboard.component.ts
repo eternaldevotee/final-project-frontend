@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
       IncludedServices: this.fb.array<FormControl<string>>([]),
       ImageSrc: ['', [Validators.required]],
       DetailedDescription: ['', [Validators.required]],
+      // Location : ['']
     });
   }
 
