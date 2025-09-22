@@ -31,6 +31,7 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 import { ReviewsModule } from './reviews/reviews.module';
+import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
 
 
 
@@ -62,6 +63,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     BookingComponent,
     SearchbarComponent,
     ViewSearchedPackagesComponent,
+    AgentNavbarComponent,
+  
   ],
     
   imports: [

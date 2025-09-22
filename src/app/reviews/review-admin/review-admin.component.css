@@ -1,0 +1,68 @@
+/* Main panel styling */
+.admin-panel {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+}
+
+/* Individual review card styling */
+.review-card {
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+}
+
+/* User Avatar Placeholder */
+.review-avatar {
+  background-color: #6c757d; /* Muted grey for admin context */
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Visual Star Rating */
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-display mat-icon {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Action buttons styling */
+.agent-actions button {
+  flex-grow: 1; /* Make buttons take equal space */
+}
+.agent-actions mat-icon {
+  margin-right: 8px;
+}
+
+/* Enhanced Empty State Message */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-state mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: #28a745; /* Success green */
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  margin: 0;
+}

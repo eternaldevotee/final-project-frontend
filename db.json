@@ -127,23 +127,6 @@
       "id": "4ff9"
     },
     {
-      "PackageID": 10,
-      "Title": "Luxury Bangalore & Ooty Getaway",
-      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
-      "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
-      "Duration": "5 days",
-      "Price": 44670.25,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Bangalore",
-      "id": "103e"
-    },
-    {
       "PackageID": 11,
       "Title": "Serene Kerala Backwaters Escape",
       "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
@@ -216,42 +199,6 @@
       "id": "107w"
     },
     {
-      "PackageID": 15,
-      "Title": "Andaman Island Explorer",
-      "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
-      "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
-      "Duration": "5 days",
-      "Price": 52500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Water Sports"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Andaman",
-      "id": "108v"
-    },
-    {
-      "PackageID": 109,
-      "Title": "Mystic Mountains of Himachal",
-      "Description": "Trek through scenic valleys and visit ancient monasteries in the Himalayas.",
-      "DetailedDescription": "Explore Shimla’s colonial charm and Manali’s snow-capped beauty. Visit Tibetan monasteries in Dharamshala and enjoy adventure sports in Solang Valley.",
-      "Duration": "6 days",
-      "Price": 42500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Trekking Gear"
-      ],
-      "ImageSrc": "/himachal.webp",
-      "Location": "Himachal Pradesh",
-      "id": "109a"
-    },
-    {
       "PackageID": 110,
       "Title": "Cultural Odyssey in Gujarat",
       "Description": "Discover vibrant traditions and architectural wonders.",
@@ -270,10 +217,8 @@
       "id": "110b"
     },
     {
-      "PackageID": 111,
-      "Title": "Tea Trails of Darjeeling",
+      "Title": "Tea Trails of Darjeeling Edited",
       "Description": "Sip world-famous teas and enjoy Himalayan views.",
-      "DetailedDescription": "Ride the Darjeeling Himalayan Railway, tour tea estates, and visit Tiger Hill for sunrise views of Kanchenjunga.",
       "Duration": "4 days",
       "Price": 31200,
       "IncludedServices": [
@@ -284,7 +229,9 @@
         "Toy Train Ride"
       ],
       "ImageSrc": "/darjeeling.webp",
+      "DetailedDescription": "Ride the Darjeeling Himalayan Railway, tour tea estates, and visit Tiger Hill for sunrise views of Kanchenjunga.",
       "Location": "West Bengal",
+      "PackageID": 111,
       "id": "111c"
     },
     {
@@ -360,24 +307,6 @@
       "id": "115g"
     },
     {
-      "PackageID": 116,
-      "Title": "Island Retreat in Lakshadweep",
-      "Description": "Dive into coral reefs and relax on untouched beaches.",
-      "DetailedDescription": "Snorkel in Agatti, explore marine life, and enjoy eco-resorts. A tropical escape with minimal crowds.",
-      "Duration": "6 days",
-      "Price": 52000,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Water Sports"
-      ],
-      "ImageSrc": "/lakshadweep.webp",
-      "Location": "Lakshadweep",
-      "id": "116h"
-    },
-    {
       "PackageID": 117,
       "Title": "Architectural Wonders of Odisha",
       "Description": "Marvel at ancient temples and coastal beauty.",
@@ -426,6 +355,21 @@
       "ImageSrc": "/bangalore.webp",
       "DetailedDescription": "ksjfd an,m nfds mnfdbxfd,mb s,mdfsfdb sdf j",
       "Location": "West bengal",
+      "PackageID": null
+    },
+    {
+      "id": "",
+      "Title": "Vivek home",
+      "Description": "sdlkf jfds bskfd ,nfds ",
+      "Duration": "4",
+      "Price": 2500,
+      "IncludedServices": [
+        "Meals",
+        "Travel"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "d sfdn,m fds, ,mdsb,n fds,mfdnfd, fd dfkj",
+      "Location": "Telangana",
       "PackageID": null
     }
   ],
@@ -699,7 +643,7 @@
       "rating": 4,
       "comment": "wdewqdwefreg4w",
       "timestamp": "2025-09-22T06:54:51.893Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "3cb3",
@@ -718,8 +662,45 @@
       "rating": 3,
       "comment": "very good.",
       "timestamp": "2025-09-22T09:53:02.469Z",
-      "status": "PENDING",
+      "status": "REJECTED",
       "agentResponse": "reeg eragt"
+    },
+    {
+      "id": "7e5e",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 5,
+      "comment": "all good.................!!",
+      "timestamp": "2025-09-22T10:45:22.228Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you......."
+    },
+    {
+      "id": "338f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "shubam goasttttttttttttt",
+      "timestamp": "2025-09-22T10:48:04.725Z",
+      "status": "PUBLISHED"
+    },
+    {
+      "id": "f491",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "let it goooo",
+      "timestamp": "2025-09-22T11:15:03.075Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "7450",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "ooo ooooooooooo",
+      "timestamp": "2025-09-22T11:15:23.905Z",
+      "status": "PENDING"
     }
   ],
   "Insurance": [

@@ -17,12 +17,13 @@ import { ReviewListComponent } from './review-list/review-list.component';
 import { ReviewAgentComponent } from './review-agent/review-agent.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { ReviewAdminComponent } from './review-admin/review-admin.component';
 
 
 
 @NgModule({
   
-  declarations: [ReviewFormComponent,ReviewListComponent, ReviewAgentComponent],
+  declarations: [ReviewFormComponent,ReviewListComponent, ReviewAgentComponent, ReviewAdminComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -44,7 +45,8 @@ import { MatDividerModule } from '@angular/material/divider';
     // Export components so AppModule can use them in its template
     ReviewFormComponent,
     ReviewListComponent,
-    ReviewAgentComponent
+    ReviewAgentComponent,
+    ReviewAdminComponent,
   ]
 })
 export class ReviewsModule {}
