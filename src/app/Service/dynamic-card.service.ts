@@ -38,6 +38,10 @@ export class DynamicCardService {
     // console.log(this.apiUrl)
     return this.http.get(this.apiUrl)
   }
+  
+  updatePackage1(id: string, data: Partial<TravelPackage>): Observable<TravelPackage> {
+  return this.http.put<TravelPackage>(`${this.apiUrl}/${id}`, data);
+}
 
   deletePackage(id : string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);

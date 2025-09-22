@@ -127,82 +127,8 @@
       "id": "4ff9"
     },
     {
-      "PackageID": 11,
-      "Title": "Serene Kerala Backwaters Escape",
-      "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
-      "DetailedDescription": "Start your journey in Alleppey aboard a private houseboat, drifting past coconut groves and village life. Enjoy Ayurvedic massages, traditional meals, and sunset views. Then head to Kumarakom for birdwatching and lakeside relaxation.",
-      "Duration": "4 days",
-      "Price": 38500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Boat Cruise"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Kerala",
-      "id": "104x"
-    },
-    {
-      "PackageID": 12,
-      "Title": "Desert Mirage in Jaisalmer",
-      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
-      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
-      "Duration": "3 days",
-      "Price": 31200.5,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Camel Safari"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Rajastahan",
-      "id": "105y"
-    },
-    {
-      "PackageID": 13,
-      "Title": "Sikkim Nature & Culture Trail",
-      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
-      "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
-      "Duration": "5 days",
-      "Price": 44670.25,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Permit Assistance"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Sikkim",
-      "id": "106z"
-    },
-    {
-      "PackageID": 14,
-      "Title": "Spiritual Varanasi & Khajuraho Circuit",
-      "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
-      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
-      "Duration": "6 days",
-      "Price": 49890,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Uttar Pradesh",
-      "id": "107w"
-    },
-    {
-      "PackageID": 110,
-      "Title": "Cultural Odyssey in Gujarat",
+      "Title": "Cultural Odyssey in Gujarat eDITED",
       "Description": "Discover vibrant traditions and architectural wonders.",
-      "DetailedDescription": "Visit the Rani ki Vav stepwell, explore the Gir National Park, and witness the grandeur of the Somnath Temple. Enjoy local crafts and cuisine.",
       "Duration": "5 days",
       "Price": 39800,
       "IncludedServices": [
@@ -212,27 +138,11 @@
         "Meals",
         "Safari"
       ],
-      "ImageSrc": "/gujarat.webp",
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "Visit the Rani ki Vav stepwell, explore the Gir National Park, and witness the grandeur of the Somnath Temple. Enjoy local crafts and cuisine.",
       "Location": "Gujarat",
+      "PackageID": 110,
       "id": "110b"
-    },
-    {
-      "Title": "Tea Trails of Darjeeling Edited",
-      "Description": "Sip world-famous teas and enjoy Himalayan views.",
-      "Duration": "4 days",
-      "Price": 31200,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Toy Train Ride"
-      ],
-      "ImageSrc": "/darjeeling.webp",
-      "DetailedDescription": "Ride the Darjeeling Himalayan Railway, tour tea estates, and visit Tiger Hill for sunrise views of Kanchenjunga.",
-      "Location": "West Bengal",
-      "PackageID": 111,
-      "id": "111c"
     },
     {
       "PackageID": 112,
@@ -248,27 +158,9 @@
         "Meals",
         "Safari"
       ],
-      "ImageSrc": "/mp.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Madhya Pradesh",
       "id": "112d"
-    },
-    {
-      "PackageID": 113,
-      "Title": "Coastal Charm of Konkan",
-      "Description": "Relax on serene beaches and explore coastal forts.",
-      "DetailedDescription": "Visit Ganpatipule, Sindhudurg Fort, and enjoy seafood delicacies. Ideal for a peaceful beach retreat.",
-      "Duration": "4 days",
-      "Price": 29500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Beach Activities"
-      ],
-      "ImageSrc": "/konkan.webp",
-      "Location": "Maharashtra",
-      "id": "113e"
     },
     {
       "PackageID": 114,
@@ -284,15 +176,13 @@
         "Meals",
         "Cultural Show"
       ],
-      "ImageSrc": "/lucknow.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Uttar Pradesh",
       "id": "114f"
     },
     {
-      "PackageID": 115,
-      "Title": "Tribal Trails in Chhattisgarh",
+      "Title": "Tribal Trails in Chhattisgarh Edited",
       "Description": "Experience tribal life and natural beauty.",
-      "DetailedDescription": "Visit Bastar’s tribal villages, Chitrakote Falls, and local markets. Learn about indigenous crafts and traditions.",
       "Duration": "5 days",
       "Price": 38000,
       "IncludedServices": [
@@ -302,15 +192,15 @@
         "Meals",
         "Cultural Interaction"
       ],
-      "ImageSrc": "/chhattisgarh.webp",
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "Visit Bastar’s tribal villages, Chitrakote Falls, and local markets. Learn about indigenous crafts and traditions.",
       "Location": "Chhattisgarh",
+      "PackageID": 115,
       "id": "115g"
     },
     {
-      "PackageID": 117,
-      "Title": "Architectural Wonders of Odisha",
+      "Title": "Architectural Wonders of Odisha Edited",
       "Description": "Marvel at ancient temples and coastal beauty.",
-      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
       "Duration": "4 days",
       "Price": 34500,
       "IncludedServices": [
@@ -321,7 +211,9 @@
         "Boat Ride"
       ],
       "ImageSrc": "/odisha.webp",
+      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
       "Location": "Odisha",
+      "PackageID": 117,
       "id": "117i"
     },
     {
@@ -338,39 +230,9 @@
         "Meals",
         "Trekking"
       ],
-      "ImageSrc": "/meghalaya.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Meghalaya",
       "id": "118j"
-    },
-    {
-      "id": "",
-      "Title": "Kolkata  shubham",
-      "Description": "kwefdltsayflkusa isdkjf asfd",
-      "Duration": "4",
-      "Price": 6573,
-      "IncludedServices": [
-        "Meals",
-        "Travel"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "ksjfd an,m nfds mnfdbxfd,mb s,mdfsfdb sdf j",
-      "Location": "West bengal",
-      "PackageID": null
-    },
-    {
-      "id": "",
-      "Title": "Vivek home",
-      "Description": "sdlkf jfds bskfd ,nfds ",
-      "Duration": "4",
-      "Price": 2500,
-      "IncludedServices": [
-        "Meals",
-        "Travel"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "d sfdn,m fds, ,mdsb,n fds,mfdnfd, fd dfkj",
-      "Location": "Telangana",
-      "PackageID": null
     }
   ],
   "Booking": [

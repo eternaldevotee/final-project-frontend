@@ -21,7 +21,7 @@ export class AgentPackageDetailComponent {
       const id = Number(params.get('id'));
       console.log(id);
       console.log("inside the admin card detail page")
-      console.log("hey Sucess");
+
       this.cardService.getPackages().subscribe(packages => {
         this.package = packages.find((pkg : TravelPackage) => pkg.PackageID === id)!;
         console.log("got package")
