@@ -102,26 +102,43 @@
   ],
   "TravelPackage": [
     {
-      "PackageID": 4,
-      "Title": "Spiritual South: Tirupati & Madurai",
-      "Description": "Visit sacred temples and experience the spiritual essence of South India.",
-      "DetailedDescription": "Begin with Tirupati, home to the revered Venkateswara Temple atop the Tirumala hills. Witness the devotion of thousands and participate in rituals that have been practiced for centuries. The spiritual energy here is palpable and deeply moving.\n\nContinue to Madurai, one of India’s oldest cities, where the Meenakshi Amman Temple dazzles with its towering gopurams and intricate carvings. Explore temple corridors, attend evening aarti, and feel the timeless pulse of South Indian spirituality.",
-      "Duration": "7 days",
-      "Price": 28332.85,
+      "Title": "Desert Mirage in Jaisalmer Edited by stany",
+      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
+      "Duration": "3 days",
+      "Price": 31200.5,
       "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
         "Meals",
-        "Guide"
+        "Camel Safari"
       ],
       "ImageSrc": "/bangalore.webp",
-      "id": "4ff9"
+      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
+      "PackageID": 12,
+      "id": "105y"
     },
     {
-      "PackageID": 10,
-      "Title": "Luxury Bangalore & Ooty Getaway",
-      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
-      "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
+      "Title": "Sikkim Nature & Culture Trail Edited on Staturday 123",
+      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
       "Duration": "5 days",
-      "Price": 49020.17,
+      "Price": 44670.25,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim. Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim. Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
+      "PackageID": 13,
+      "id": "106z"
+    },
+    {
+      "Title": "Spiritual Varanasi & Khajuraho Circuit Edited and finnaly completed",
+      "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
+      "Duration": "6 days",
+      "Price": 49890,
       "IncludedServices": [
         "Hotel",
         "Transport",
@@ -130,96 +147,10 @@
         "Meals"
       ],
       "ImageSrc": "/bangalore.webp",
-      "id": "103e"
-    },
-    
-  {
-    "PackageID": 11,
-    "Title": "Serene Kerala Backwaters Escape",
-    "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
-    "DetailedDescription": "Start your journey in Alleppey aboard a private houseboat, drifting past coconut groves and village life. Enjoy Ayurvedic massages, traditional meals, and sunset views. Then head to Kumarakom for birdwatching and lakeside relaxation.",
-    "Duration": "4 days",
-    "Price": 38500.00,
-    "IncludedServices": [
-      "Hotel",
-      "Transport",
-      "Guide",
-      "Meals",
-      "Boat Cruise"
-    ],
-    "ImageSrc": "/bangalore.webp",
-    "id": "104x"
-  },
-  {
-    "PackageID": 12,
-    "Title": "Desert Mirage in Jaisalmer",
-    "Description": "Live the desert dream with camel safaris and golden fort adventures.",
-    "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
-    "Duration": "3 days",
-    "Price": 31200.50,
-    "IncludedServices": [
-      "Hotel",
-      "Transport",
-      "Guide",
-      "Meals",
-      "Camel Safari"
-    ],
-    "ImageSrc": "/bangalore.webp",
-    "id": "105y"
-  },
-  {
-    "PackageID": 13,
-    "Title": "Sikkim Nature & Culture Trail",
-    "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
-    "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
-    "Duration": "5 days",
-    "Price": 44670.25,
-    "IncludedServices": [
-      "Hotel",
-      "Transport",
-      "Guide",
-      "Meals",
-      "Permit Assistance"
-    ],
-    "ImageSrc": "/bangalore.webp",
-    "id": "106z"
-  },
-  {
-    "PackageID": 14,
-    "Title": "Spiritual Varanasi & Khajuraho Circuit",
-    "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
-    "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
-    "Duration": "6 days",
-    "Price": 49890.00,
-    "IncludedServices": [
-      "Hotel",
-      "Transport",
-      "Guide",
-      "Flight",
-      "Meals"
-    ],
-    "ImageSrc": "/bangalore.webp",
-    "id": "107w"
-  },
-  {
-    "PackageID": 15,
-    "Title": "Andaman Island Explorer",
-    "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
-    "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
-    "Duration": "5 days",
-    "Price": 52500.00,
-    "IncludedServices": [
-      "Hotel",
-      "Transport",
-      "Guide",
-      "Flight",
-      "Water Sports"
-    ],
-    "ImageSrc": "/bangalore.webp",
-    "id": "108v"
-  }
-
-
+      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
+      "PackageID": 14,
+      "id": "107w"
+    }
   ],
   "Booking": [
     {

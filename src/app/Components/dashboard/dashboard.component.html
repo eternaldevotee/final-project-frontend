@@ -1,5 +1,11 @@
-<div class="container my-4">
-  <h2>Create Package</h2>
+<div class="container my-4 p-4 shadow-large " style=" background-color: rgb(230, 227, 227); border-radius: 12px; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);;">
+  <!-- <h2>Create Package</h2> -->
+   <div *ngIf = "!isEditMode">
+    <h2>Create New Package</h2>
+   </div>
+   <div *ngIf = "isEditMode">
+    <h2>Edit Package</h2>
+   </div>
   <form [formGroup]="createPackageForm" (ngSubmit)="submit()" novalidate>
     <div class="mb-3">
       <label class="form-label">Title</label>
@@ -7,15 +13,15 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Enter Image URL</label>
-      <input class="form-control" formControlName="ImageURL" placeholder="Enter title" />
+      <input class="form-control" formControlName="ImageSrc" placeholder="Enter title" />
     </div>
     <div class="mb-3">
       <label class="form-label">Enter summary</label>
-      <input class="form-control" formControlName="summary" placeholder="Enter title" />
+      <input class="form-control" formControlName="Description" placeholder="Enter title" />
     </div>
     <div class="mb-3">
       <label class="form-label">Description</label>
-      <textarea class="form-control" formControlName="Description" rows="6" placeholder="Describe the package"></textarea>
+      <textarea class="form-control" formControlName="DetailedDescription" rows="6" placeholder="Describe the package"></textarea>
     </div>
     <div class="row g-3">
       <div class="col-md-6">
@@ -41,27 +47,11 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Create Package</button>
+    <div *ngIf="!isEditMode"><button type="submit" class="btn btn-primary mt-2">Create Package</button></div>
+    <div *ngIf="isEditMode" ><button type="submit" class="btn btn-primary mt-2">Edit Package</button></div>
+<!-- 
+    <button type="submit" class="btn btn-primary mt-2">Edit Package</button> -->
+    
   </form>
 
-  <hr class="my-4" />
-  <h3>My Packages</h3>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
-    <div class="col" *ngFor="let pkg of myPackages">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">{{ pkg.Title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ pkg.Duration }}</h6>
-          <p class="card-text">{{ pkg.Description }}</p>
-          <div>
-            <strong>Included:</strong>
-            <span class="badge text-bg-secondary me-1" *ngFor="let s of pkg.IncludedServices">{{ s }}</span>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between">
-          <span class="fw-bold">₹{{ pkg.Price | number:'1.0-0' }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

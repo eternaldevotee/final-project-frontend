@@ -23,6 +23,16 @@ export class DynamicCardService {
   
   constructor(private http : HttpClient) { }
 
+  updatePackage(id : string, data : Partial<TravelPackage>) : Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, data);
+
+  }
+
+  getPackageById(id : string) : Observable<TravelPackage> {
+    console.log("Hello I am in the get Package Id method")
+    return this.http.get<TravelPackage>(`${this.apiUrl}/${id}`)
+  }
+
   getPackages() : Observable<any> {
     console.log(this.apiUrl)
     return this.http.get(this.apiUrl)
