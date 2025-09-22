@@ -1,3 +1,5 @@
+<app-agent-navbar/>
+
 <h1 class="p-2">List of your Current Packages</h1>
  <div class="container">
     <div class="row p-2 " style="justify-content: space-around;">
@@ -7,7 +9,7 @@
                 <h5 class="card-title">{{pkg.Title}}</h5>
                 <p class="card-text">{{pkg.Description}}</p>
                 <!-- <a href="#" class="btn btn-primary">Book now    </a> -->
-                 <a [routerLink] = "['agent/package', pkg.PackageID]" class="btn btn-primary formControl" >Package Detail</a>
+                 <a [routerLink] = "['/agent/package', pkg.PackageID]" class="btn btn-primary formControl" >Package Detail</a>
             </div>
             
         </div>
