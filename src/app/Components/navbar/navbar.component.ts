@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { SearchserviceService } from '../../Service/searchservice.service';
+import { ShareloginService } from '../../Service/sharelogin.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,33 +10,19 @@ import { SearchserviceService } from '../../Service/searchservice.service';
 })
 export class NavbarComponent implements OnInit{
 
-   searchTerm: string = '';
-  // data: any[] = [];
-  filteredResults: any[] = [];
+   isLoggedIn!:boolean;
 
 
 
-  // searchForm = new FormGroup({
-  //   searchTerm: new FormControl(''),
-  // })
 
-  constructor(private service: SearchserviceService) {}
-  ngOnInit(): void {
-    this.service.getAllData().subscribe((res=>{
-      this.filteredResults=res;
-    }));
+  constructor(private shareDataService : ShareloginService) {}
+
+    ngOnInit(): void {
+
+      this.shareDataService.loginStatus$.subscribe(status => {
+        this.isLoggedIn = status;
+        console.log('Login status in navbar:', this.isLoggedIn);
+      });
+
   }
-
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  //   this.onSearch();
-  // }
-
-  // onSearch(): void {
-  //   this.rest.fetchMatchingPackages(this.searchTerm).subscribe((res =>{
-  //     console.log(res);
-  //     this.filteredResults=res;
-  //   }));
-  // }
-
 }

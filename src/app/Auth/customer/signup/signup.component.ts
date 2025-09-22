@@ -65,13 +65,4 @@ export class SignUp{
   Password!:string;
   Role!:string;
   ContactNumber!:string;
-
-  // constructor(name:string,email:string,password:string){
-  //   this.UserId="123";
-  //   this.Name=name;
-  //   this.Email=email;
-  //   this.Password=password;
-  //   this.Role="customer";
-  //   this.ContactNumber="";
-  // }
 }

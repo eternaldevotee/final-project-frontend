@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLoginComponent } from './Auth/admin/login/login.component';
@@ -16,6 +14,8 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
+import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
+import { BookingComponent, BookingForm } from './booking-module/booking/booking.component';
 
 const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -32,11 +32,16 @@ const routes: Routes = [
     {path : 'packages', component : CardComponent},
     //adding route for particular package
     {path : 'package/:id', component : CardDetailComponent},
-    {path :'agent/package/:id', component :AgentPackageDetailComponent}
+    {path :'agent/package/:id', component :AgentPackageDetailComponent},
+    {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
+    {path:'booking/:PackageID',component:BookingComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -24,7 +24,7 @@ export class DynamicCardService {
   constructor(private http : HttpClient) { }
 
   getPackages() : Observable<any> {
-    console.log(this.apiUrl)
+    // console.log(this.apiUrl)
     return this.http.get(this.apiUrl)
   }
 
