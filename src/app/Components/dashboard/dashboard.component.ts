@@ -161,12 +161,61 @@ export class DashboardComponent implements OnInit {
         this.loadPackages();
       });
     }
-    else {
-      this.packageService1.createPackage(payload).subscribe(() => {
-        this.createPackageForm.reset();
-        this.includedServices.clear();
-        this.loadPackages();
-      })
-    }
+    
+      // this.packageService1.createPackage(payload).subscribe(() => {
+      //   this.createPackageForm.reset();
+      //   this.includedServices.clear();
+      //   this.loadPackages();
+      // })
+//       this.packageService1.createPackage(this.createPackageForm.value).subscribe((createdPkg) => {
+//   const updated = { ...createdPkg, PackageID: Number(createdPkg.id) };
+//   this.packageService.updatePackage(createdPkg.id, updated).subscribe(() => {
+//     this.createPackageForm.reset();
+//     this.includedServices.clear();
+//     this.loadPackages();
+//   });
+// });
+else {
+  const basePayload = this.createPackageForm.value;
+
+  const randomId = Math.floor(Math.random() * 1000000);
+
+  const payload1 = {
+    ...basePayload,
+    PackageID: Number(randomId) 
+     , id : randomId.toString() 
+    // generates a number between 0 and 999999
+  };
+
+
+
+  // console.log(payload1);
+
+  // this.packageService1.createPackage(payload1).subscribe(() => {
+  //   this.createPackageForm.reset();
+  //   this.includedServices.clear();
+  //   this.loadPackages();
+  // });
+
+  this.packageService1.createPackage(payload1).subscribe((createdPkg) => {
+  const patchPayload = {
+    ...createdPkg,
+    PackageID: Number(createdPkg.id) 
+  };
+
+  this.packageService.updatePackage1(createdPkg.id, patchPayload).subscribe(() => {
+    this.createPackageForm.reset();
+    this.includedServices.clear();
+    this.loadPackages();
+  });
+});
+
+
+
+}
+  
+
+
+    
   }
 }

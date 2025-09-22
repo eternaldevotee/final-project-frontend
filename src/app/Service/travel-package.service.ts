@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map, switchMap } from 'rxjs';
 
 export interface TravelPackage1 {
+  id : string,
   PackageID: number;
   Title: string;
   Description: string;
