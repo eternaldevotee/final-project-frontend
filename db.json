@@ -91,6 +91,15 @@
       "id": "0b8e"
     },
     {
+      "UserID": 11,
+      "Name": "admin",
+      "Email": "admin@example.com",
+      "Password": "12345678",
+      "Role": "admin",
+      "ContactNumber": "",
+      "id": "admin-1"
+    },
+    {
       "id": "b747",
       "UserId": "1234",
       "Name": "Stany ",
@@ -101,19 +110,6 @@
     }
   ],
   "TravelPackage": [
-    {
-      "Title": "Spiritual South: Tirupati & Madurai",
-      "Description": "Visit sacred temples and experience the spiritual essence of South India.",
-      "DetailedDescription": "Begin with Tirupati, home to the revered Venkateswara Temple atop the Tirumala hills. Witness the devotion of thousands and participate in rituals that have been practiced for centuries. The spiritual energy here is palpable and deeply moving.\n\nContinue to Madurai, one of India’s oldest cities, where the Meenakshi Amman Temple dazzles with its towering gopurams and intricate carvings. Explore temple corridors, attend evening aarti, and feel the timeless pulse of South Indian spirituality.",
-      "Duration": "7 days",
-      "Price": 28332.85,
-      "IncludedServices": [
-        "Meals",
-        "Guide"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "4ff9"
-    },
     {
       "Title": "Luxury Bangalore & Ooty Getaway",
       "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
@@ -129,38 +125,6 @@
       ],
       "ImageSrc": "/bangalore.webp",
       "id": "103e"
-    },
-    {
-      "Title": "Sikkim Nature & Culture Trail",
-      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
-      "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
-      "Duration": "5 days",
-      "Price": 44670.25,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Permit Assistance"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "106z"
-    },
-    {
-      "Title": "Spiritual Varanasi & Khajuraho Circuit",
-      "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
-      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
-      "Duration": "6 days",
-      "Price": 49890,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "id": "107w"
     },
     {
       "Title": "Andaman Island Explorer",

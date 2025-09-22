@@ -32,7 +32,7 @@ const routes: Routes = [
     {path:'signup', component:SignupComponent, outlet:'modal'},
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
-    {path:'admindashboard',component:AdminNavbarComponent},
+    {path:'admindashboard',component:AdminlayoutComponent},
     {path:'adminlogin',component:AdminLoginComponent},
     {path:'privacy',component:PrivacyComponent},
     { path: 'adminlayout', component: AdminlayoutComponent },
@@ -43,13 +43,13 @@ const routes: Routes = [
             {path:'signuprequests',component:SignuprequestsComponent}
         ]},
     
-    {path : 'packages', component : DashboardComponent},
     {path:'adminpackages',component:AdminPackagesComponent},  
     {path : 'packages', component : CardComponent},
     {path:'packagecontrol',component:PackageControlComponent},
     //adding route for particular package
     {path : 'package/:id', component : CardDetailComponent},
-    {path :'agent/package/:id', component :AgentPackageDetailComponent}
+    {path :'agent/package/:id', component :AgentPackageDetailComponent},
+    {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
 @NgModule({
