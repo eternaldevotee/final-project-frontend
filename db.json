@@ -4,7 +4,7 @@
       "UserID": 1,
       "Name": "User1",
       "Email": "user1@example.com",
-      "Password": "pass1",
+      "Password": "pass123456",
       "Role": "customer",
       "ContactNumber": "9876543201",
       "id": "f5a9"
@@ -13,7 +13,7 @@
       "UserID": 2,
       "Name": "User2",
       "Email": "user2@example.com",
-      "Password": "pass2",
+      "Password": "pass212345",
       "Role": "customer",
       "ContactNumber": "9876543202",
       "id": "68a0"
@@ -98,6 +98,15 @@
       "Password": "Admin@1234",
       "Role": "Customer",
       "ContactNumber": ""
+    },
+    {
+      "id": "9ff5",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
     }
   ],
   "TravelPackage": [
@@ -114,13 +123,14 @@
         "Camel Safari"
       ],
       "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
-      "PackageID": 12,
-      "id": "105y"
+      "Location": "Tamil Nadu",
+      "id": "4ff9"
     },
     {
-      "Title": "Sikkim Nature & Culture Trail Edited on Staturday 123",
-      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
+      "PackageID": 10,
+      "Title": "Luxury Bangalore & Ooty Getaway",
+      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
+      "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
       "Duration": "5 days",
       "Price": 44670.25,
       "IncludedServices": [
@@ -130,13 +140,68 @@
         "Meals"
       ],
       "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim. Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim. Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
+      "Location": "Bangalore",
+      "id": "103e"
+    },
+    {
+      "PackageID": 11,
+      "Title": "Serene Kerala Backwaters Escape",
+      "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
+      "DetailedDescription": "Start your journey in Alleppey aboard a private houseboat, drifting past coconut groves and village life. Enjoy Ayurvedic massages, traditional meals, and sunset views. Then head to Kumarakom for birdwatching and lakeside relaxation.",
+      "Duration": "4 days",
+      "Price": 38500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Boat Cruise"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "Location": "Kerala",
+      "id": "104x"
+    },
+    {
+      "PackageID": 12,
+      "Title": "Desert Mirage in Jaisalmer",
+      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
+      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
+      "Duration": "3 days",
+      "Price": 31200.5,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Camel Safari"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "Location": "Rajastahan",
+      "id": "105y"
+    },
+    {
       "PackageID": 13,
+      "Title": "Sikkim Nature & Culture Trail",
+      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
+      "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
+      "Duration": "5 days",
+      "Price": 44670.25,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Permit Assistance"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "Location": "Sikkim",
       "id": "106z"
     },
     {
-      "Title": "Spiritual Varanasi & Khajuraho Circuit Edited and finnaly completed",
+      "PackageID": 14,
+      "Title": "Spiritual Varanasi & Khajuraho Circuit",
       "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
+      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
       "Duration": "6 days",
       "Price": 49890,
       "IncludedServices": [
@@ -147,111 +212,278 @@
         "Meals"
       ],
       "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
-      "PackageID": 14,
+      "Location": "Uttar Pradesh",
       "id": "107w"
+    },
+    {
+      "PackageID": 15,
+      "Title": "Andaman Island Explorer",
+      "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
+      "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
+      "Duration": "5 days",
+      "Price": 52500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Flight",
+        "Water Sports"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "Location": "Andaman",
+      "id": "108v"
+    },
+    {
+      "PackageID": 109,
+      "Title": "Mystic Mountains of Himachal",
+      "Description": "Trek through scenic valleys and visit ancient monasteries in the Himalayas.",
+      "DetailedDescription": "Explore Shimla’s colonial charm and Manali’s snow-capped beauty. Visit Tibetan monasteries in Dharamshala and enjoy adventure sports in Solang Valley.",
+      "Duration": "6 days",
+      "Price": 42500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Trekking Gear"
+      ],
+      "ImageSrc": "/himachal.webp",
+      "Location": "Himachal Pradesh",
+      "id": "109a"
+    },
+    {
+      "PackageID": 110,
+      "Title": "Cultural Odyssey in Gujarat",
+      "Description": "Discover vibrant traditions and architectural wonders.",
+      "DetailedDescription": "Visit the Rani ki Vav stepwell, explore the Gir National Park, and witness the grandeur of the Somnath Temple. Enjoy local crafts and cuisine.",
+      "Duration": "5 days",
+      "Price": 39800,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Safari"
+      ],
+      "ImageSrc": "/gujarat.webp",
+      "Location": "Gujarat",
+      "id": "110b"
+    },
+    {
+      "PackageID": 111,
+      "Title": "Tea Trails of Darjeeling",
+      "Description": "Sip world-famous teas and enjoy Himalayan views.",
+      "DetailedDescription": "Ride the Darjeeling Himalayan Railway, tour tea estates, and visit Tiger Hill for sunrise views of Kanchenjunga.",
+      "Duration": "4 days",
+      "Price": 31200,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Toy Train Ride"
+      ],
+      "ImageSrc": "/darjeeling.webp",
+      "Location": "West Bengal",
+      "id": "111c"
+    },
+    {
+      "PackageID": 112,
+      "Title": "Wildlife Safari in Madhya Pradesh",
+      "Description": "Spot tigers and explore ancient caves.",
+      "DetailedDescription": "Safari in Kanha and Bandhavgarh National Parks, visit Bhimbetka rock shelters, and enjoy tribal culture.",
+      "Duration": "5 days",
+      "Price": 45000,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Safari"
+      ],
+      "ImageSrc": "/mp.webp",
+      "Location": "Madhya Pradesh",
+      "id": "112d"
+    },
+    {
+      "PackageID": 113,
+      "Title": "Coastal Charm of Konkan",
+      "Description": "Relax on serene beaches and explore coastal forts.",
+      "DetailedDescription": "Visit Ganpatipule, Sindhudurg Fort, and enjoy seafood delicacies. Ideal for a peaceful beach retreat.",
+      "Duration": "4 days",
+      "Price": 29500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Beach Activities"
+      ],
+      "ImageSrc": "/konkan.webp",
+      "Location": "Maharashtra",
+      "id": "113e"
+    },
+    {
+      "PackageID": 114,
+      "Title": "Heritage Walk in Lucknow",
+      "Description": "Discover Nawabi culture and Mughal architecture.",
+      "DetailedDescription": "Explore Bara Imambara, Chikan embroidery markets, and taste Awadhi cuisine. A cultural deep dive into royal elegance.",
+      "Duration": "3 days",
+      "Price": 26800,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Cultural Show"
+      ],
+      "ImageSrc": "/lucknow.webp",
+      "Location": "Uttar Pradesh",
+      "id": "114f"
+    },
+    {
+      "PackageID": 115,
+      "Title": "Tribal Trails in Chhattisgarh",
+      "Description": "Experience tribal life and natural beauty.",
+      "DetailedDescription": "Visit Bastar’s tribal villages, Chitrakote Falls, and local markets. Learn about indigenous crafts and traditions.",
+      "Duration": "5 days",
+      "Price": 38000,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Cultural Interaction"
+      ],
+      "ImageSrc": "/chhattisgarh.webp",
+      "Location": "Chhattisgarh",
+      "id": "115g"
+    },
+    {
+      "PackageID": 116,
+      "Title": "Island Retreat in Lakshadweep",
+      "Description": "Dive into coral reefs and relax on untouched beaches.",
+      "DetailedDescription": "Snorkel in Agatti, explore marine life, and enjoy eco-resorts. A tropical escape with minimal crowds.",
+      "Duration": "6 days",
+      "Price": 52000,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Flight",
+        "Water Sports"
+      ],
+      "ImageSrc": "/lakshadweep.webp",
+      "Location": "Lakshadweep",
+      "id": "116h"
+    },
+    {
+      "PackageID": 117,
+      "Title": "Architectural Wonders of Odisha",
+      "Description": "Marvel at ancient temples and coastal beauty.",
+      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
+      "Duration": "4 days",
+      "Price": 34500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Boat Ride"
+      ],
+      "ImageSrc": "/odisha.webp",
+      "Location": "Odisha",
+      "id": "117i"
+    },
+    {
+      "PackageID": 118,
+      "Title": "Eco Adventure in Meghalaya",
+      "Description": "Explore caves, waterfalls, and living root bridges.",
+      "DetailedDescription": "Visit Cherrapunji, Mawlynnong (Asia’s cleanest village), and trek to double-decker root bridges. Ideal for nature lovers.",
+      "Duration": "5 days",
+      "Price": 41000,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Trekking"
+      ],
+      "ImageSrc": "/meghalaya.webp",
+      "Location": "Meghalaya",
+      "id": "118j"
+    },
+    {
+      "id": "",
+      "Title": "Kolkata  shubham",
+      "Description": "kwefdltsayflkusa isdkjf asfd",
+      "Duration": "4",
+      "Price": 6573,
+      "IncludedServices": [
+        "Meals",
+        "Travel"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "ksjfd an,m nfds mnfdbxfd,mb s,mdfsfdb sdf j",
+      "Location": "West bengal",
+      "PackageID": null
     }
   ],
   "Booking": [
     {
-      "BookingID": 1,
-      "UserID": 3,
-      "PackageID": 1,
-      "StartDate": "2025-12-26",
-      "EndDate": "2026-01-10",
-      "Status": "Pending",
-      "PaymentID": 1,
-      "id": "32b5"
-    },
-    {
-      "BookingID": "BKG003",
-      "UserID": "USR004",
-      "PackageID": "PKG003",
-      "StartDate": "2025-12-05",
-      "EndDate": "2025-12-12",
-      "Status": "Pending",
-      "PaymentID": 2,
-      "id": "0c39"
-    },
-    {
-      "BookingID": 3,
-      "UserID": 7,
-      "PackageID": 4,
-      "StartDate": "2025-09-11",
-      "EndDate": "2025-09-16",
-      "Status": "Pending",
-      "PaymentID": 3,
-      "id": "6336"
-    },
-    {
-      "BookingID": 4,
-      "UserID": 8,
-      "PackageID": 10,
-      "StartDate": "2025-09-14",
-      "EndDate": "2025-09-27",
-      "Status": "Pending",
-      "PaymentID": 4,
-      "id": "7670"
-    },
-    {
-      "BookingID": "BKG006",
-      "UserID": "USR007",
-      "PackageID": "PKG006",
-      "StartDate": "2026-03-15",
-      "EndDate": "2026-03-24",
-      "Status": "Cancelled",
-      "PaymentID": 5,
-      "id": "99b6"
-    },
-    {
-      "BookingID": 6,
-      "UserID": 7,
-      "PackageID": 5,
-      "StartDate": "2025-12-05",
-      "EndDate": "2025-12-20",
-      "Status": "Cancelled",
-      "PaymentID": 6,
-      "id": "85aa"
-    },
-    {
-      "BookingID": 7,
-      "UserID": 9,
-      "PackageID": 3,
-      "StartDate": "2025-11-19",
-      "EndDate": "2025-11-23",
-      "Status": "Cancelled",
-      "PaymentID": 7,
-      "id": "52c0"
-    },
-    {
-      "BookingID": "BKG013",
-      "UserID": "USR001",
-      "PackageID": "PKG013",
-      "StartDate": "2025-11-20",
-      "EndDate": "2025-11-23",
-      "Status": "Cancelled",
-      "PaymentID": 8,
-      "id": "a8d9"
-    },
-    {
-      "BookingID": 9,
-      "UserID": 3,
-      "PackageID": 7,
-      "StartDate": "2025-12-12",
-      "EndDate": "2025-12-26",
-      "Status": "Cancelled",
-      "PaymentID": 9,
-      "id": "4147"
-    },
-    {
       "BookingID": 10,
       "UserID": 7,
       "PackageID": 1,
-      "StartDate": "2025-10-29",
-      "EndDate": "2025-11-05",
+      "date": "2025-10-29",
       "Status": "Cancelled",
+      "Adults": 4,
+      "Children": 1,
       "PaymentID": 10,
       "id": "2fd2"
+    },
+    {
+      "id": "be5d",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 1,
+      "date": "2025-09-30",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "99ab",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 1,
+      "date": "2025-09-30",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "7ed2",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 13,
+      "date": "2025-09-26",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "b779",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 10,
+      "date": "2025-09-12",
+      "Status": "Success",
+      "Adults": 9,
+      "Children": 0,
+      "PaymentID": 1234
     }
   ],
   "Payment": [

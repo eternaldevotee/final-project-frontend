@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component ,OnInit } from '@angular/core';
+import { Component ,ElementRef,OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthserviceService } from '../../../Service/authservice.service';
+import { ShareloginService } from '../../../Service/sharelogin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,16 +15,18 @@ export class LoginComponent implements OnInit{
   emailId!:string;
   password!:string;
   login!:Login;
-  userExists!:boolean;
-  
+  userExists!:boolean;  
+
+
+  constructor(private restservice:AuthserviceService, private sharedataservice:ShareloginService, private router: Router){}
+  @ViewChild('loginModal') loginModal!: ElementRef;
+
   ngOnInit(): void {
     this.login={
       emailId:"",
       password:""
     }
   }
-
-  constructor(private restservice:AuthserviceService){}
 
   onSubmit(loginForm: NgForm) {
     const emailId = loginForm.value.emailId;
@@ -33,8 +37,18 @@ export class LoginComponent implements OnInit{
       if(this.userExists){
         const password = loginForm.value.password;
 
-        if(password === data[0].Password) //data[0].Password => accessing the Password, since the return value is a single user object inside an array
+        if(password === data[0].Password){//data[0].Password => accessing the Password, since the return value is a single user object inside an array
           alert("Logged in successfully!!");
+
+          const modalElement = document.getElementById('loginModal');
+          const modal = (window as any).bootstrap.Modal.getInstance(modalElement);
+          if (modal) {
+            modal.hide();
+          }
+
+          this.sharedataservice.setLoginStatus(true);
+          this.router.navigate(['']);
+        }
         else
           alert("Incorrect password!!")
       }else{
@@ -42,7 +56,6 @@ export class LoginComponent implements OnInit{
        }
     })
   }
-
 }
 
 class Login{

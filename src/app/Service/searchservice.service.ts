@@ -15,16 +15,5 @@ export class SearchserviceService {
 
   getAllData():Observable<any>{
     return this.rest.get(`${this.strUrl}TravelPackage`);
-    //return this.rest.post(`${this.strUrl}User`,signup);
   }
-  //  filteredResults = [
-  // { name: 'Carrot', color: 'orange' },
-  // { name: 'Potato', color: 'brown' },
-  // { name: 'Tomato', color: 'red' },
-  // { name: 'Beans', color: 'green' }
-  // ];
-
-  // getAllResults(){
-  //   return this.filteredResults;
-  // }
 }

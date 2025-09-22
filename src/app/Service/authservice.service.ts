@@ -16,19 +16,19 @@ export class AuthserviceService {
   // Get users by username  
   getUserByEmailId(emailId: string): Observable<any[]> {
     const url = `${this.strUrl}User?Email=${emailId}`;
-    console.log("Fetching user data from:", url);
+    // console.log("Fetching user data from:", url);
     return this.rest.get<any[]>(url);
   }
 
   //insert customer info
   setCustomerDetails(signup :SignUp):Observable<any>{
-    console.log(signup);
+    // console.log(signup);
     return this.rest.post(`${this.strUrl}User`,signup);
   }
 
   //fetchesSimilarData
   fetchMatchingPackages(searchValue:string):Observable<any>{
-    console.log(this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`));
+    // console.log(this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`));
     return this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.service';
 
 @Component({
@@ -11,22 +11,10 @@ import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.se
 export class CardDetailComponent implements OnInit {
   package!: TravelPackage;
 
-  constructor(private route : ActivatedRoute, private cardService : DynamicCardService){}
-
-  // ngOnInit(): void {
-  //   const id = Number(this.route.snapshot.paramMap.get('id'));
-  //   if(id) {
-  //     this.cardService.getPackages().subscribe(packages => {
-  //       this.package = packages.find((pkg : TravelPackage) => pkg.PackageID === id)!;
-  //       console.log(this.package);
-  //       console.log(this.package.Title)
-  //     });
-      
-  //   }
-  // }
-  
+  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private routeBooking: Router){}
 
     ngOnInit(): void {
+
       this.route.paramMap.subscribe(params => {
         const id = Number(params.get('id'));
         this.cardService.getPackages().subscribe(packages => {
@@ -37,4 +25,7 @@ export class CardDetailComponent implements OnInit {
       })
     }
 
+    onBookNow(){
+      this.routeBooking.navigate(['/booking',this.package.PackageID]);
+    }
 }

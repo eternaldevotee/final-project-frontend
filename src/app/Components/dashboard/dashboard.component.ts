@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
       IncludedServices: this.fb.array<FormControl<string>>([]),
       ImageSrc: ['', [Validators.required]],
       DetailedDescription: ['', [Validators.required]],
-      // Location : ['']
+      Location : ['',[Validators.required]]
     });
   }
 
@@ -60,7 +60,8 @@ export class DashboardComponent implements OnInit {
       Duration: pkg.Duration,
       Price: pkg.Price,
       ImageSrc: pkg.ImageSrc,
-      DetailedDescription : pkg.DetailedDescription
+      DetailedDescription : pkg.DetailedDescription,
+      Location : pkg.Location
     });
 
     this.includedServices.clear();

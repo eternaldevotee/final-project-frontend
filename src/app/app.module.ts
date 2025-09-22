@@ -26,6 +26,10 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
+import { BookingComponent } from './booking-module/booking/booking.component';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 
 
 
@@ -53,7 +57,10 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
     AgentPackageDetailComponent,
 
     AdminLoginComponent,
-    CustomerAuthModalComponent
+    CustomerAuthModalComponent,
+    BookingComponent,
+    SearchbarComponent,
+    ViewSearchedPackagesComponent
   ],
     
   imports: [
@@ -66,7 +73,11 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
     MatAccordion,
     MatExpansionPanel,
     MatExpansionPanelHeader,
-    MatExpansionPanelTitle
+    MatExpansionPanelTitle,
+    RouterLink,
+    RouterOutlet
+
+
     
   ],
   providers: [],
