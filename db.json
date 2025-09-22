@@ -127,135 +127,8 @@
       "id": "4ff9"
     },
     {
-      "PackageID": 10,
-      "Title": "Luxury Bangalore & Ooty Getaway",
-      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
-      "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
-      "Duration": "5 days",
-      "Price": 44670.25,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Bangalore",
-      "id": "103e"
-    },
-    {
-      "PackageID": 11,
-      "Title": "Serene Kerala Backwaters Escape",
-      "Description": "Cruise through tranquil backwaters and unwind in lush green surroundings.",
-      "DetailedDescription": "Start your journey in Alleppey aboard a private houseboat, drifting past coconut groves and village life. Enjoy Ayurvedic massages, traditional meals, and sunset views. Then head to Kumarakom for birdwatching and lakeside relaxation.",
-      "Duration": "4 days",
-      "Price": 38500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Boat Cruise"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Kerala",
-      "id": "104x"
-    },
-    {
-      "PackageID": 12,
-      "Title": "Desert Mirage in Jaisalmer",
-      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
-      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
-      "Duration": "3 days",
-      "Price": 31200.5,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Camel Safari"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Rajastahan",
-      "id": "105y"
-    },
-    {
-      "PackageID": 13,
-      "Title": "Sikkim Nature & Culture Trail",
-      "Description": "Explore monasteries, waterfalls, and Himalayan villages in peaceful Sikkim.",
-      "DetailedDescription": "Begin in Gangtok with visits to Rumtek Monastery and MG Road. Travel to Lachung for views of Yumthang Valley and hot springs. Enjoy local cuisine, mountain hospitality, and breathtaking landscapes throughout.",
-      "Duration": "5 days",
-      "Price": 44670.25,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Permit Assistance"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Sikkim",
-      "id": "106z"
-    },
-    {
-      "PackageID": 14,
-      "Title": "Spiritual Varanasi & Khajuraho Circuit",
-      "Description": "Witness sacred rituals and ancient art in India’s spiritual heartland.",
-      "DetailedDescription": "Start in Varanasi with sunrise boat rides and Ganga Aarti. Then travel to Khajuraho to explore UNESCO-listed temples with intricate carvings. This journey offers deep cultural insight and spiritual reflection.",
-      "Duration": "6 days",
-      "Price": 49890,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Meals"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Uttar Pradesh",
-      "id": "107w"
-    },
-    {
-      "PackageID": 15,
-      "Title": "Andaman Island Explorer",
-      "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
-      "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
-      "Duration": "5 days",
-      "Price": 52500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Water Sports"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Andaman",
-      "id": "108v"
-    },
-    {
-      "PackageID": 109,
-      "Title": "Mystic Mountains of Himachal",
-      "Description": "Trek through scenic valleys and visit ancient monasteries in the Himalayas.",
-      "DetailedDescription": "Explore Shimla’s colonial charm and Manali’s snow-capped beauty. Visit Tibetan monasteries in Dharamshala and enjoy adventure sports in Solang Valley.",
-      "Duration": "6 days",
-      "Price": 42500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Trekking Gear"
-      ],
-      "ImageSrc": "/himachal.webp",
-      "Location": "Himachal Pradesh",
-      "id": "109a"
-    },
-    {
-      "PackageID": 110,
-      "Title": "Cultural Odyssey in Gujarat",
+      "Title": "Cultural Odyssey in Gujarat eDITED",
       "Description": "Discover vibrant traditions and architectural wonders.",
-      "DetailedDescription": "Visit the Rani ki Vav stepwell, explore the Gir National Park, and witness the grandeur of the Somnath Temple. Enjoy local crafts and cuisine.",
       "Duration": "5 days",
       "Price": 39800,
       "IncludedServices": [
@@ -265,27 +138,11 @@
         "Meals",
         "Safari"
       ],
-      "ImageSrc": "/gujarat.webp",
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "Visit the Rani ki Vav stepwell, explore the Gir National Park, and witness the grandeur of the Somnath Temple. Enjoy local crafts and cuisine.",
       "Location": "Gujarat",
+      "PackageID": 110,
       "id": "110b"
-    },
-    {
-      "PackageID": 111,
-      "Title": "Tea Trails of Darjeeling",
-      "Description": "Sip world-famous teas and enjoy Himalayan views.",
-      "DetailedDescription": "Ride the Darjeeling Himalayan Railway, tour tea estates, and visit Tiger Hill for sunrise views of Kanchenjunga.",
-      "Duration": "4 days",
-      "Price": 31200,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Toy Train Ride"
-      ],
-      "ImageSrc": "/darjeeling.webp",
-      "Location": "West Bengal",
-      "id": "111c"
     },
     {
       "PackageID": 112,
@@ -301,27 +158,9 @@
         "Meals",
         "Safari"
       ],
-      "ImageSrc": "/mp.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Madhya Pradesh",
       "id": "112d"
-    },
-    {
-      "PackageID": 113,
-      "Title": "Coastal Charm of Konkan",
-      "Description": "Relax on serene beaches and explore coastal forts.",
-      "DetailedDescription": "Visit Ganpatipule, Sindhudurg Fort, and enjoy seafood delicacies. Ideal for a peaceful beach retreat.",
-      "Duration": "4 days",
-      "Price": 29500,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Beach Activities"
-      ],
-      "ImageSrc": "/konkan.webp",
-      "Location": "Maharashtra",
-      "id": "113e"
     },
     {
       "PackageID": 114,
@@ -337,15 +176,13 @@
         "Meals",
         "Cultural Show"
       ],
-      "ImageSrc": "/lucknow.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Uttar Pradesh",
       "id": "114f"
     },
     {
-      "PackageID": 115,
-      "Title": "Tribal Trails in Chhattisgarh",
+      "Title": "Tribal Trails in Chhattisgarh Edited",
       "Description": "Experience tribal life and natural beauty.",
-      "DetailedDescription": "Visit Bastar’s tribal villages, Chitrakote Falls, and local markets. Learn about indigenous crafts and traditions.",
       "Duration": "5 days",
       "Price": 38000,
       "IncludedServices": [
@@ -355,33 +192,15 @@
         "Meals",
         "Cultural Interaction"
       ],
-      "ImageSrc": "/chhattisgarh.webp",
+      "ImageSrc": "/bangalore.webp",
+      "DetailedDescription": "Visit Bastar’s tribal villages, Chitrakote Falls, and local markets. Learn about indigenous crafts and traditions.",
       "Location": "Chhattisgarh",
+      "PackageID": 115,
       "id": "115g"
     },
     {
-      "PackageID": 116,
-      "Title": "Island Retreat in Lakshadweep",
-      "Description": "Dive into coral reefs and relax on untouched beaches.",
-      "DetailedDescription": "Snorkel in Agatti, explore marine life, and enjoy eco-resorts. A tropical escape with minimal crowds.",
-      "Duration": "6 days",
-      "Price": 52000,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Flight",
-        "Water Sports"
-      ],
-      "ImageSrc": "/lakshadweep.webp",
-      "Location": "Lakshadweep",
-      "id": "116h"
-    },
-    {
-      "PackageID": 117,
-      "Title": "Architectural Wonders of Odisha",
+      "Title": "Architectural Wonders of Odisha Edited",
       "Description": "Marvel at ancient temples and coastal beauty.",
-      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
       "Duration": "4 days",
       "Price": 34500,
       "IncludedServices": [
@@ -392,7 +211,9 @@
         "Boat Ride"
       ],
       "ImageSrc": "/odisha.webp",
+      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
       "Location": "Odisha",
+      "PackageID": 117,
       "id": "117i"
     },
     {
@@ -409,24 +230,9 @@
         "Meals",
         "Trekking"
       ],
-      "ImageSrc": "/meghalaya.webp",
+      "ImageSrc": "/bangalore.webp",
       "Location": "Meghalaya",
       "id": "118j"
-    },
-    {
-      "id": "",
-      "Title": "Kolkata  shubham",
-      "Description": "kwefdltsayflkusa isdkjf asfd",
-      "Duration": "4",
-      "Price": 6573,
-      "IncludedServices": [
-        "Meals",
-        "Travel"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "DetailedDescription": "ksjfd an,m nfds mnfdbxfd,mb s,mdfsfdb sdf j",
-      "Location": "West bengal",
-      "PackageID": null
     }
   ],
   "Booking": [
@@ -600,105 +406,185 @@
       "id": "6c2c"
     }
   ],
-  "Review": [
+  "reviews": [
     {
-      "ReviewID": "REV001",
-      "UserID": "USR001",
-      "PackageID": "PKG001",
-      "Rating": 5,
-      "Comment": "Amazing trip! The city tour was fantastic.",
-      "Timestamp": "2025-10-25T10:30:00Z",
-      "id": "46c7"
+      "id": "1",
+      "userId": 2,
+      "packageId": 101,
+      "rating": 5,
+      "comment": "Amazing trip! The scenery was breathtaking...",
+      "timestamp": "2025-09-11T09:30:00.000Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you so much for your wonderful feedback!..."
     },
     {
-      "ReviewID": "REV002",
-      "UserID": "USR002",
-      "PackageID": "PKG002",
-      "Rating": 4,
-      "Comment": "Review comment 1",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "0083"
+      "id": "2",
+      "userId": 3,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "It was a very nice experience overall...",
+      "timestamp": "2025-09-12T15:20:00.000Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you for your response.........."
     },
     {
-      "ReviewID": 2,
-      "UserID": 6,
-      "PackageID": 5,
-      "Rating": 1,
-      "Comment": "Review comment 2",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "c66f"
+      "id": "3",
+      "userId": 4,
+      "packageId": 102,
+      "rating": 3,
+      "comment": "The food options were limited for vegetarians...",
+      "timestamp": "2025-09-13T12:30:00.000Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV006",
-      "UserID": "USR009",
-      "PackageID": "PKG008",
-      "Rating": 5,
-      "Comment": "Review comment 3",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "1c7d"
+      "id": "ee5d",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "waste badddd..........",
+      "timestamp": "2025-09-19T11:37:34.416Z",
+      "status": "REJECTED"
     },
     {
-      "ReviewID": 4,
-      "UserID": 3,
-      "PackageID": 8,
-      "Rating": 1,
-      "Comment": "Review comment 4",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "9e19"
+      "id": "7264",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "VIVEK IS A GOOD GUY",
+      "timestamp": "2025-09-19T11:59:38.206Z",
+      "status": "PUBLISHED",
+      "agentResponse": "NOT AT ALL"
     },
     {
-      "ReviewID": 5,
-      "UserID": 2,
-      "PackageID": 4,
-      "Rating": 1,
-      "Comment": "Review comment 5",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "80ca"
+      "id": "fed4",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "Stany is cute",
+      "timestamp": "2025-09-19T12:00:52.227Z",
+      "status": "REJECTED"
     },
     {
-      "ReviewID": "REV009",
-      "UserID": "USR013",
-      "PackageID": "PKG012",
-      "Rating": 4,
-      "Comment": "Review comment 6",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "083d"
+      "id": "7756",
+      "userId": 1,
+      "packageId": 101,
+      "rating": null,
+      "comment": "JJJJJJJJJJJ",
+      "timestamp": "2025-09-19T12:01:55.291Z",
+      "status": "PUBLISHED",
+      "agentResponse": "OKAYYY"
     },
     {
-      "ReviewID": "REV010",
-      "UserID": "USR001",
-      "PackageID": "PKG013",
-      "Rating": 5,
-      "Comment": "Review comment 7",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "c569"
+      "id": "cab0",
+      "userId": 1,
+      "packageId": 101,
+      "rating": null,
+      "comment": "GGHJYVHVHJV",
+      "timestamp": "2025-09-19T12:11:31.031Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV012",
-      "UserID": "USR004",
-      "PackageID": "PKG003",
-      "Rating": 5,
-      "Comment": "Review comment 8",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "d0b5"
+      "id": "286f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "waste............................Experencie",
+      "timestamp": "2025-09-20T13:38:40.701Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV013",
-      "UserID": "USR005",
-      "PackageID": "PKG005",
-      "Rating": 4,
-      "Comment": "Review comment 9",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "5035"
+      "id": "b455",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 2,
+      "comment": "fffffffffff",
+      "timestamp": "2025-09-20T13:50:25.752Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV014",
-      "UserID": "USR008",
-      "PackageID": "PKG006",
-      "Rating": 5,
-      "Comment": "Review comment 10",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "53e3"
+      "id": "3e7f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "wwwwwwwwwwwwwwwwwww",
+      "timestamp": "2025-09-20T13:51:33.162Z",
+      "status": "PUBLISHED",
+      "agentResponse": "huh hyug"
+    },
+    {
+      "id": "0acc",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "goodddddddd",
+      "timestamp": "2025-09-22T05:00:41.358Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "7cf2",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "wdewqdwefreg4w",
+      "timestamp": "2025-09-22T06:54:51.893Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "3cb3",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "fewfcd reag",
+      "timestamp": "2025-09-22T09:44:10.475Z",
+      "status": "PUBLISHED",
+      "agentResponse": "rrrrrrrrrrrrr"
+    },
+    {
+      "id": "e366",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "very good.",
+      "timestamp": "2025-09-22T09:53:02.469Z",
+      "status": "REJECTED",
+      "agentResponse": "reeg eragt"
+    },
+    {
+      "id": "7e5e",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 5,
+      "comment": "all good.................!!",
+      "timestamp": "2025-09-22T10:45:22.228Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you......."
+    },
+    {
+      "id": "338f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "shubam goasttttttttttttt",
+      "timestamp": "2025-09-22T10:48:04.725Z",
+      "status": "PUBLISHED"
+    },
+    {
+      "id": "f491",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "let it goooo",
+      "timestamp": "2025-09-22T11:15:03.075Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "7450",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "ooo ooooooooooo",
+      "timestamp": "2025-09-22T11:15:23.905Z",
+      "status": "PENDING"
     }
   ],
   "Insurance": [

@@ -15,7 +15,9 @@ import { CardDetailComponent } from './Components/card-detail/card-detail.compon
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
-import { BookingComponent, BookingForm } from './Components/booking/booking.component';
+import { BookingComponent } from './Components/booking/booking.component';
+import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
+import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
 
 const routes: Routes = [
     {path:'home',component:HomeComponent},
@@ -35,7 +37,10 @@ const routes: Routes = [
     {path :'agent/package/:id', component :AgentPackageDetailComponent},
     {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
     {path:'booking/:PackageID',component:BookingComponent},
-    {path : 'edit-package/:id', component : DashboardComponent}
+    {path : 'edit-package/:id', component : DashboardComponent},
+    {path : 'agent/packages' , component : ListPackagesComponent},
+    {path : 'agent/create-package' , component : DashboardComponent},
+    {path : 'agent' , component : AgentNavbarComponent}
 ];
 
 @NgModule({

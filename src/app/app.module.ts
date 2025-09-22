@@ -30,6 +30,8 @@ import { BookingComponent } from './Components/booking/booking.component';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
+import { ReviewsModule } from './reviews/reviews.module';
+import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
 
 
 
@@ -60,6 +62,8 @@ import { ViewSearchedPackagesComponent } from './view-searched-packages/view-sea
     BookingComponent,
     SearchbarComponent,
     ViewSearchedPackagesComponent,
+    AgentNavbarComponent,
+  
   ],
     
   imports: [
@@ -75,7 +79,8 @@ import { ViewSearchedPackagesComponent } from './view-searched-packages/view-sea
     MatExpansionPanelTitle,
     RouterLink,
     RouterOutlet,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ReviewsModule
 
 
     

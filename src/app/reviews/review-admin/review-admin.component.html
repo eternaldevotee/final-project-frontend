@@ -1,0 +1,43 @@
+<mat-card class="mt-5 admin-panel">
+  <mat-card-title>Admin Panel: Pending Reviews for Moderation</mat-card-title>
+  <mat-card-content>
+    <ng-container *ngIf="pending$ | async as list">
+      <div *ngIf="list.length === 0" class="empty-state">
+        <mat-icon>done_all</mat-icon>
+        <p>Great job! No pending reviews.</p>
+      </div>
+
+      <div *ngFor="let r of list" class="pending-item mb-3">
+        <mat-card class="review-card">
+          <mat-card-header>
+            <div mat-card-avatar class="review-avatar">
+              <span>U{{ r.userId }}</span>
+            </div>
+            <mat-card-title>Review from User #{{ r.userId }}</mat-card-title>
+            <mat-card-subtitle>{{ r.timestamp | date:'medium' }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="rating-display mb-3">
+              <mat-icon *ngFor="let i of [1,2,3,4,5]">
+                {{ i <= r.rating ? 'star' : 'star_border' }}
+              </mat-icon>
+            </div>
+            <p>{{ r.comment }}</p>
+
+            <mat-divider></mat-divider>
+
+            <div class="agent-actions d-flex gap-2 mt-3">
+              <button mat-stroked-button color="primary" (click)="publish(r.reviewId)">
+                <mat-icon>check_circle_outline</mat-icon> Publish
+              </button>
+              <button mat-stroked-button color="warn" (click)="reject(r.reviewId)">
+                <mat-icon>highlight_off</mat-icon> Reject
+              </button>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
