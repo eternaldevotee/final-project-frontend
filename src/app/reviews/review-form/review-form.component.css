@@ -1,0 +1,62 @@
+/* --- New Card Styles --- */
+.review-form-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.review-form-card mat-card-content {
+  padding: 16px; /* Adds breathing room inside the card */
+}
+
+/* --- Rating Component Styles --- */
+.rating-input-container {
+  padding: 8px 12px;
+  position: relative;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  border: 1px solid #ccc; /* Default border */
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* ✅ Style for the container when invalid */
+.rating-input-container.is-invalid {
+  border-color: #f44336; /* Red border on error */
+}
+
+.rating-label {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+  color: #c5c5c5;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stars mat-icon:hover {
+  transform: scale(1.2);
+}
+
+.stars mat-icon.filled {
+  color: #ffc107;
+}
+
+.rating-input-container mat-error {
+  font-size: 0.75em;
+  position: absolute;
+  bottom: -1.3em; /* Position below the container */
+  left: 0;
+  color: #f44336;
+}
