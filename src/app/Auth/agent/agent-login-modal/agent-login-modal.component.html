@@ -1,0 +1,26 @@
+<div>
+    <a [routerLink]="[{ outlets: { modal: ['agentlogin'] } }]">
+      <button type="button" class="btn btn-outline-primary m-2" data-bs-toggle="modal" data-bs-target="#agentLoginModal">
+        Agent
+      </button>
+    </a>
+    <div class="modal" id="agentLoginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <!-- Login -->
+              <input type="radio" class="btn-check" name="btnradioAgent" id="btnradioAgent1" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="btnradioAgent1" (click)="navigateTo('agentlogin')">Login</label>
+              <!-- SignUp -->
+              <input type="radio" class="btn-check" name="btnradioAgent" id="btnradioAgent2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradioAgent2" (click)="navigateTo('agentsignup')">Signup</label>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <router-outlet name="modal"></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
