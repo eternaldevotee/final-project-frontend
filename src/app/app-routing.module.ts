@@ -15,10 +15,10 @@ import { CardDetailComponent } from './Components/card-detail/card-detail.compon
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
-import { BookingComponent, BookingForm } from './booking-module/booking/booking.component';
+import { BookingComponent, BookingForm } from './Components/booking/booking.component';
 
 const routes: Routes = [
-    {path:"",component:HomeComponent},
+    {path:'home',component:HomeComponent},
     {path:'login', component:LoginComponent, outlet:'modal'},
     {path:'signup', component:SignupComponent, outlet:'modal'},
     {path:'tnc',component:TncComponent},

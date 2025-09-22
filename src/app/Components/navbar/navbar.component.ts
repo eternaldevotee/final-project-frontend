@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchserviceService } from '../../Service/searchservice.service';
-import { ShareloginService } from '../../Service/sharelogin.service';
+import { SearchserviceService } from '../../Services/searchservice.service';
+import { ShareloginService } from '../../Services/sharelogin.service';
 
 @Component({
   selector: 'app-navbar',

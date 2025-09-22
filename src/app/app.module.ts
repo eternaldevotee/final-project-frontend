@@ -26,9 +26,9 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
-import { BookingComponent } from './booking-module/booking/booking.component';
+import { BookingComponent } from './Components/booking/booking.component';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 
 
@@ -55,12 +55,11 @@ import { ViewSearchedPackagesComponent } from './view-searched-packages/view-sea
     AdminlayoutComponent,
     CardDetailComponent,
     AgentPackageDetailComponent,
-
     AdminLoginComponent,
     CustomerAuthModalComponent,
     BookingComponent,
     SearchbarComponent,
-    ViewSearchedPackagesComponent
+    ViewSearchedPackagesComponent,
   ],
     
   imports: [
@@ -75,7 +74,8 @@ import { ViewSearchedPackagesComponent } from './view-searched-packages/view-sea
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    ReactiveFormsModule
 
 
     

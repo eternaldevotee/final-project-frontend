@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component ,ElementRef,OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthserviceService } from '../../../Service/authservice.service';
-import { ShareloginService } from '../../../Service/sharelogin.service';
+import { AuthserviceService } from '../../../Services/authservice.service';
+import { ShareloginService } from '../../../Services/sharelogin.service';
 import { Router } from '@angular/router';
 
 @Component({

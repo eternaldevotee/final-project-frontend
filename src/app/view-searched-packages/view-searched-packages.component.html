@@ -1,14 +1,28 @@
- <div class="container">
+<div *ngIf="packages?.length === 0">
+    <h3 class="text-center text-danger p-3 rounded shadow">
+        No packages realated to <i>{{Location}}</i> and Try again after some time!!
+    </h3>
+
+    <h6 class="text-center text-dark p-3">
+        Try Visit our other packages!!
+    </h6>
+</div>
+<div *ngIf="packages?.length != 0">
+<div class="container">
+    <h3 class="text-center text-dark p-3 rounded shadow">
+    Come to {{Location}} and See the breathtaking places
+    </h3>
+
     <div class="row p-2 " style="justify-content: space-around;">
         <div class="card col-md-3 m-4 shadow-medium hover-lift" style=" cursor: pointer;" *ngFor="let pkg of packages">
             <img [src] = "pkg.ImageSrc" class="card-img-top" alt="{{pkg.Title}}">
             <div class="card-body" style="display: flex; justify-content: space-between; flex-direction: column;">
                 <h5 class="card-title">{{pkg.Title}}</h5>
                 <p class="card-text">{{pkg.Description}}</p>
-                <!-- <a href="#" class="btn btn-primary">Book now    </a> -->
                  <a [routerLink] = "['/package', pkg.PackageID]" class="btn btn-primary" style="width: 40%;">Book Now</a>
             </div>
-            
         </div>
     </div>
  </div>
+
+</div>
