@@ -26,12 +26,14 @@ import { AdminlayoutComponent } from './Auth/admin/adminlayout/adminlayout.compo
 import { CardDetailComponent } from './Components/card-detail/card-detail.component';
 import { AgentPackageDetailComponent } from './Components/agent-package-detail/agent-package-detail.component';
 import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/customer-auth-modal.component';
-import { BookingComponent } from './booking-module/booking/booking.component';
+import { BookingComponent } from './Components/booking/booking.component';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 import { ReviewsModule } from './reviews/reviews.module';
 import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
+import { AgentLoginComponent } from './Auth/agent/agent-login/agent-login.component';
+import { AgentSignupComponent } from './Auth/agent/agent-signup/agent-signup.component';
 
 
 
@@ -57,13 +59,14 @@ import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.componen
     AdminlayoutComponent,
     CardDetailComponent,
     AgentPackageDetailComponent,
-
     AdminLoginComponent,
     CustomerAuthModalComponent,
     BookingComponent,
     SearchbarComponent,
     ViewSearchedPackagesComponent,
     AgentNavbarComponent,
+    AgentLoginComponent,
+    AgentSignupComponent,
   
   ],
     
@@ -80,6 +83,7 @@ import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.componen
     MatExpansionPanelTitle,
     RouterLink,
     RouterOutlet,
+    ReactiveFormsModule,
     ReviewsModule
 
 

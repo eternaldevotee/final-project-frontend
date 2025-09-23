@@ -9,13 +9,13 @@ import {
 import {
   TravelPackageService,
   TravelPackage1,
-} from '../../Service/travel-package.service';
+} from '../../Services/travel-package.service';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import {
   DynamicCardService,
   TravelPackage,
-} from '../../Service/dynamic-card.service';
+} from '../../Services/dynamic-card.service';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CardComponent} from '../Components/card/card.component';
-import { CarouselComponent } from '../Components/carousel/carousel.component';
 
 @Component({
   selector: 'app-home',

@@ -4,15 +4,17 @@
       <div class="col-8 col-md-8 col-lg-5">
         <div class="search-container position-relative">
           <form class="d-flex align-items-center" (submit)="onSearch()">
+
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="search-icon feather feather-search">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
+
             <input class="form-control search-input ps-5" [(ngModel)]="searchTerm" name="search"
-                   type="search" placeholder="Search anything..." aria-label="Search"
-                   (input)="onInputChange()">
+                   type="search" placeholder="Search anything..." (input)="onInputChange()" autocomplete="off">
+
             <button class="btn btn-search ms-2" type="submit">Search</button>
           </form>
 
@@ -21,9 +23,6 @@
             <li class="dropdown-item" *ngFor="let place of filteredResults" (click)="selectPlace(place)">
               {{ place }}
             </li>
-        </ul>
-        <ul class="dropdown-menu show w-100 mt-1" *ngIf="searchTerm && (filteredResults).length === 0">
-            <li class="dropdown-item text-danger">No results found!!</li>
         </ul>
         </div>
       </div>

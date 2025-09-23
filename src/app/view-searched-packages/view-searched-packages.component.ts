@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TravelPackage, DynamicCardService } from '../Service/dynamic-card.service';
+import { TravelPackage, DynamicCardService } from '../Services/dynamic-card.service';
 import { ActivatedRoute } from '@angular/router';
 
 

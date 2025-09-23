@@ -16,7 +16,7 @@ export class AuthserviceService {
   // Get users by username  
   getUserByEmailId(emailId: string): Observable<any[]> {
     const url = `${this.strUrl}User?Email=${emailId}`;
-    // console.log("Fetching user data from:", url);
+    console.log("Fetching user data from:", url);
     return this.rest.get<any[]>(url);
   }
 
