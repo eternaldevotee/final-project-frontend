@@ -1,6 +1,6 @@
 <h3>Create Account</h3><br />
 
-<form [formGroup]="signup" (ngSubmit)="onSubmit()">
+<form [formGroup]="AsignupForm" (ngSubmit)="onSubmit()">
     <div class="control mb-3">
         <label for="name" class="form-label">Full Name :</label>
         <input type="text" class="form-control" id="name" placeholder="Enter your full Name" formControlName="name" />
@@ -12,50 +12,41 @@
     </div>
 
     <div class="control mb-3">
-        <label for="email" class="form-label">Email :</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter your Email" formControlName="email" />
+        <label for="emailId" class="form-label">emailId :</label>
+        <input type="emailId" class="form-control" id="emailId" placeholder="Enter your emailId" formControlName="emailId" />
     </div>
-    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger m-2">
-        <small *ngIf="email?.errors?.['required']">Email cannot be empty.</small>
-        <small *ngIf="email?.errors?.['email']">Email should follow the format: name&#64;domain.com.</small>
+    <div *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)" class="text-danger m-2">
+        <small *ngIf="emailId?.errors?.['required']">emailId cannot be empty.</small>
+        <small *ngIf="emailId?.errors?.['emailId']">emailId should follow the format: name&#64;domain.com.</small>
     </div>
 
     <div class="control mb-3">
-        <label for="number" class="form-label">Contact number :</label>
-        <input type="number" class="form-control" id="number" placeholder="Enter Contact number"
-            formControlName="number" />
-    </div>
-    <div *ngIf="number?.invalid && (number?.dirty || number?.touched)" class="text-danger m-2">
-        <small *ngIf="number?.errors?.['required']">Contact number cannot be empty.</small>
-        <small *ngIf="number?.errors?.['pattern']">Enter a valid 10-digit mobile number.</small>
+        <label for="cnumber" class="form-label">Contact number :</label>
+        <input type="number" class="form-control" id="cnumber" placeholder="Enter Contact number"
+            formControlName="cnumber" />
     </div>
 
-    <div formGroupName="password">
         <div class="control mb-3">
             <label for="password" class="form-label">Create Password :</label>
             <input type="password" class="form-control" id="password" placeholder="Enter Password"
-                formControlName="pwd" />
+                formControlName="password" />
         </div>
-        <div *ngIf="pwd?.invalid && (pwd?.dirty || pwd?.touched)" class="text-danger m-2">
-            <small *ngIf="pwd?.errors?.['required']">Password is required.</small>
-            <small *ngIf="pwd?.errors?.['pattern']">Password must be at least 8 characters long and include at least one
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger m-2">
+            <small *ngIf="password?.errors?.['required']">Password is required.</small>
+            <small *ngIf="password?.errors?.['pattern']">Password must be at least 8 characters long and include at least one
                 uppercase letter, one lowercase letter, one number, and one special character.</small>
         </div>
 
         <div class="control mb-3">
             <label for="confirm-password" class="form-label">Confirm Password :</label>
             <input type="password" class="form-control" id="confirm-password" placeholder="Re-enter Password"
-                formControlName="cpwd" />
+                formControlName="conPassword" />
         </div>
-        <div *ngIf="cpwd?.invalid && (cpwd?.dirty || cpwd?.touched)" class="text-danger m-2">
-            <small *ngIf="cpwd?.errors?.['required']">Password is required.</small>
-            <small *ngIf="cpwd?.errors?.['minlength']">Password must be at least 8 characters.</small>
+        <div *ngIf="conPassword?.invalid && (conPassword?.dirty || conPassword?.touched)" class="text-danger m-2">
+            <small *ngIf="conPassword?.errors?.['required']">Password is required.</small>
+            <small *ngIf="conPassword?.errors?.['minlength']">Password must be at least 8 characters.</small>
         </div>
 
-        <small *ngIf="password?.errors?.['differentPwd'] && (cpwd?.dirty || cpwd?.touched)" class="text-danger m-2">
-            Confirm password must match the password.
-        </small>
-    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
