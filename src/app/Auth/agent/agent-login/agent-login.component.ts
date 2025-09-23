@@ -19,7 +19,7 @@ export class AgentLoginComponent {
 
 
   constructor(private restservice:AuthserviceService, private sharedataservice:ShareloginService, private router: Router){}
-  @ViewChild('loginModal') loginModal!: ElementRef;
+
 
   ngOnInit(): void {
     this.login={
@@ -39,15 +39,6 @@ export class AgentLoginComponent {
 
         if(password === data[0].Password){//data[0].Password => accessing the Password, since the return value is a single user object inside an array
           alert("Logged in successfully!!");
-
-          const modalElement = document.getElementById('loginModal');
-          const modal = (window as any).bootstrap.Modal.getInstance(modalElement);
-          if (modal) {
-            modal.hide();
-          }
-
-          this.sharedataservice.setLoginStatus(true);
-          this.sharedataservice.login();
           this.router.navigate(['']);
         }
         else

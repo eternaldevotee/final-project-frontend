@@ -32,6 +32,7 @@ import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 import { ReviewsModule } from './reviews/reviews.module';
 import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
+import { AgentLoginComponent } from './Auth/agent/agent-login/agent-login.component';
 
 
 
@@ -63,6 +64,7 @@ import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.componen
     SearchbarComponent,
     ViewSearchedPackagesComponent,
     AgentNavbarComponent,
+    AgentLoginComponent,
   
   ],
     

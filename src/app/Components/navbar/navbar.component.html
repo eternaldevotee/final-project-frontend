@@ -29,9 +29,7 @@
         </svg>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#" (click)="onClick()">Logout</a></li>
       </ul>
     </div>
 
@@ -47,7 +45,12 @@
     </a>
 
     <!-- Agent Login and SignUp -->
-    <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button>
+    <!-- <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button> -->
+    <a [routerLink]="[{ outlets: { modal: ['agentLogin'] } }]">
+        <button type="button" class="btn btn-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#agentLoginModal">
+            Agent Login
+        </button>
+    </a>
   </div>
 </nav>
 

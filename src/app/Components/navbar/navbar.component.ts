@@ -9,20 +9,19 @@ import { ShareloginService } from '../../Services/sharelogin.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-
    isLoggedIn!:boolean;
-
-
-
 
   constructor(private shareDataService : ShareloginService) {}
 
     ngOnInit(): void {
-
       this.shareDataService.loginStatus$.subscribe(status => {
         this.isLoggedIn = status;
         console.log('Login status in navbar:', this.isLoggedIn);
       });
+  }
 
+  onClick() {
+      this.shareDataService.setLoginStatus(false);
+      this.shareDataService.logOff();
   }
 }
