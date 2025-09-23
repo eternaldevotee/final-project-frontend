@@ -29,3 +29,12 @@
     
   </div>
 </div>
+
+
+<br><br>
+<div *ngIf = "package">
+  
+<app-review-form [packageId]="package.PackageID"></app-review-form>
+<br><br>
+<app-review-list [packageId]="package.PackageID"></app-review-list>
+</div>

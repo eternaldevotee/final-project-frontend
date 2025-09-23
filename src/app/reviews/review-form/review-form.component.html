@@ -126,7 +126,7 @@
 </mat-card>
  -->
 
- <mat-card class="review-form-card mb-4">
+ <!-- <mat-card class="review-form-card mb-4">
   <mat-card-title>Share your experience</mat-card-title>
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
@@ -163,6 +163,139 @@
           {{ submitting ? 'Submitting...' : 'Submit Review' }}
         </button>
       </div>
+    </form>
+  </mat-card-content>
+</mat-card> -->
+
+<!-- <mat-card class="review-form-card">
+  <mat-card-header>
+    <mat-card-title>Share your experience</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+      <div class="rating-container mb-4">
+        <label class="rating-label">Your Rating</label>
+        <div class="stars" 
+             (mouseleave)="hoveredRating = 0"
+             [class.is-invalid]="form.get('rating')?.invalid && form.get('rating')?.touched">
+          <mat-icon *ngFor="let star of ratings"
+                    (mouseenter)="hoveredRating = star"
+                    (click)="setRating(star)"
+                    [class.filled]="hoveredRating >= star || form.get('rating')?.value >= star">
+            {{ (hoveredRating >= star || form.get('rating')?.value >= star) ? 'star' : 'star_border' }}
+          </mat-icon>
+          <mat-error *ngIf="form.invalid && form.get('comment')?.valid">
+          Rating is required.
+      </mat-error>
+        </div>
+      </div>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Your feedback</mat-label>
+        <textarea matInput 
+                  rows="4" 
+                  formControlName="comment" 
+                  placeholder="Tell us what you enjoyed or what could be improved..."></textarea>
+        <mat-hint align="end">{{ form.get('comment')?.value?.length || 0 }}/1000</mat-hint>
+        <mat-error *ngIf="form.get('comment')?.hasError('required')">
+          Feedback is required.
+        </mat-error>
+        <mat-error *ngIf="form.get('comment')?.hasError('minlength')">
+          Please enter at least 10 characters.
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          Submit Review
+        </button>
+      </mat-card-actions>
+      
+    </form>
+  </mat-card-content>
+</mat-card> -->
+
+
+<mat-card class="review-form-card">
+  <mat-card-header>
+    <div class="header-left">
+      <mat-card-title>Share your experience</mat-card-title>
+      <mat-card-subtitle>Short, honest reviews help other travellers.</mat-card-subtitle>
+    </div>
+    
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="review-form">
+
+      <div class="left-col">
+        <!-- Rating -->
+        <div class="rating-container mb-4">
+          <label class="rating-label">Your Rating </label>
+
+          <div class="stars"
+               role="radiogroup"
+               aria-label="Rating"
+               (mouseleave)="hoveredRating = 0"
+               [class.is-invalid]="form.get('rating')?.invalid && form.get('rating')?.touched">
+
+            <button type="button"
+                    *ngFor="let star of ratings"
+                    class="star-button"
+                    (mouseenter)="hoveredRating = star"
+                    (focus)="hoveredRating = star"
+                    (blur)="hoveredRating = 0"
+                    (click)="setRating(star)"
+                    [attr.aria-checked]="(form.get('rating')?.value >= star)"
+                    role="radio"
+                    [class.filled]="hoveredRating >= star || form.get('rating')?.value >= star"
+                    tabindex="0">
+              <mat-icon aria-hidden="true">{{ (hoveredRating >= star || form.get('rating')?.value >= star) ? 'star' : 'star_border' }}</mat-icon>
+            </button>
+
+          </div>
+
+          <div class="rating-meta" aria-live="polite">
+            <span class="rating-value">{{ form.get('rating')?.value || 0 }}/5</span>
+            <span class="rating-text">{{ ratingLabel }}</span>
+          </div>
+            <mat-error *ngIf="form.invalid && form.get('comment')?.valid">
+            Feedback is required.
+          </mat-error>
+          
+        </div>
+      </div>
+
+      <div class="right-col">
+        <!-- Comment -->
+        <mat-form-field appearance="outline" class="w-100 comment-field">
+          <mat-label>Your feedback</mat-label>
+          <textarea matInput rows="6" formControlName="comment" placeholder="Tell us what you enjoyed or what could be improved..."></textarea>
+
+          
+          <mat-hint align="end" class="hint-right">{{ form.get('comment')?.value?.length || 0 }}/1000</mat-hint>
+
+          <mat-error *ngIf="form.get('comment')?.hasError('required')">
+            Feedback is required.
+          </mat-error>
+          <mat-error *ngIf="form.get('comment')?.hasError('minlength')">
+            Please enter at least 10 characters.
+          </mat-error>
+        </mat-form-field>
+
+        
+
+        <mat-card-actions align="end" class="actions">
+          <button mat-stroked-button type="button" (click)="clear()" [disabled]="submitting">Clear</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || submitting">
+            <mat-icon aria-hidden="true">send</mat-icon>
+            <span *ngIf="!submitting">Submit Review</span>
+            <span *ngIf="submitting">Sending…</span>
+          </button>
+        </mat-card-actions>
+      </div>
+
     </form>
   </mat-card-content>
 </mat-card>
