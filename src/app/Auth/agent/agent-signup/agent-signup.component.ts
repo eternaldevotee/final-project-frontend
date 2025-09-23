@@ -71,6 +71,7 @@ export class AgentSignupComponent {
     conPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
     cnumber:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]{10}$/)])
   })
+number: any;
 
   get name(){
     return this.AsignupForm.get('name');

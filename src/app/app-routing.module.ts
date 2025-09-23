@@ -47,7 +47,7 @@ const routes: Routes = [
     {path : 'agent/packages' , component : ListPackagesComponent},
     {path : 'agent/create-package' , component : DashboardComponent},
     {path : 'agent' , component : AgentNavbarComponent},
-    {path : '', redirectTo:"home", pathMatch:"full"}
+    {path : '', redirectTo:"home", pathMatch:"full"},
     {path : 'agent/home', component : ListPackagesComponent}
 ];
 

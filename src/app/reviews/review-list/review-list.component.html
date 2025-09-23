@@ -26,7 +26,7 @@
 
 
 
-<div class="review-list mt-4">
+<!-- <div class="review-list mt-4">
   <h3 class="mb-3">Published Reviews</h3>
   <ng-container *ngIf="reviews$ | async as reviews">
 
@@ -61,5 +61,81 @@
       </mat-card>
     </div>
     
+  </ng-container>
+</div> -->
+
+<div class="review-list mt-4">
+  <div class="review-list-header">
+    <div>
+      <h3 class="title">Published Reviews</h3>
+      <small class="subtitle">What customers are saying about our package</small>
+    </div>
+
+    <!-- Filter + counts -->
+    <div class="header-controls">
+      <ng-container *ngIf="counts$ | async as c">
+        <div class="count-badge">{{ c.visible }} of {{ c.total }} reviews</div>
+      </ng-container>
+
+      <!-- simple material select for rating filter -->
+      <mat-form-field appearance="outline" class="filter-select">
+        <mat-label>Filter by rating</mat-label>
+        <mat-select (selectionChange)="setRatingFilter($event.value)" panelClass="rating-panel">
+          <mat-option [value]="null">All ratings</mat-option>
+          <mat-option [value]="5">5 — Excellent</mat-option>
+          <mat-option [value]="4">4 — Very Good</mat-option>
+          <mat-option [value]="3">3 — Good</mat-option>
+          <mat-option [value]="2">2 — Fair</mat-option>
+          <mat-option [value]="1">1 — Poor</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <ng-container *ngIf="filteredReviews$ | async as reviews">
+    <div *ngIf="reviews.length === 0" class="empty-state">
+      <mat-icon>rate_review</mat-icon>
+      <p>No reviews yet.</p>
+      <span>Be the first to share your experience!</span>
+    </div>
+
+    <!-- single-column list (no side-by-side) -->
+    <div class="review-list-column">
+      <div *ngFor="let r of reviews; trackBy: trackById" class="mb-3 review-item">
+        <mat-card class="review-card" role="article" aria-label="Customer review">
+          <mat-card-header class="card-header">
+            <div mat-card-avatar class="review-avatar" aria-hidden="true">
+              <span>U{{ r.userId }}</span>
+            </div>
+
+            <div class="header-meta">
+              <mat-card-title class="user-name">Anonymous User</mat-card-title>
+              <mat-card-subtitle class="review-date">{{ r.timestamp | date:'longDate' }}</mat-card-subtitle>
+            </div>
+
+            <div class="header-right">
+              <div class="rating-badge" aria-hidden="true">{{ r.rating }}/5</div>
+            </div>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="rating-row">
+              <div class="rating-display" aria-hidden="true">
+                <mat-icon *ngFor="let i of [1,2,3,4,5]" class="star-icon">
+                  {{ i <= r.rating ? 'star' : 'star_border' }}
+                </mat-icon>
+              </div>
+            </div>
+
+            <p class="customer-comment">“{{ r.comment }}”</p>
+
+            <div *ngIf="r.agentResponse" class="agent-response mt-3 p-3">
+              <p class="agent-response-title"><strong>Response from our team</strong></p>
+              <p class="mb-0 agent-response-text">{{ r.agentResponse }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
   </ng-container>
 </div>
