@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { BookingserviceService } from '../../Service/bookingservice.service';
+import { BookingserviceService } from '../../Services/bookingservice.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

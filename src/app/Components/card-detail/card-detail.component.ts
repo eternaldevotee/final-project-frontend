@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.service';
+import { DynamicCardService, TravelPackage } from '../../Services/dynamic-card.service';
+import { ShareloginService } from '../../Services/sharelogin.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -11,7 +12,7 @@ import { DynamicCardService, TravelPackage } from '../../Service/dynamic-card.se
 export class CardDetailComponent implements OnInit {
   package!: TravelPackage;
 
-  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private routeBooking: Router){}
+  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private routeBooking: Router, private shareLoginService: ShareloginService){}
 
     ngOnInit(): void {
 
@@ -26,6 +27,11 @@ export class CardDetailComponent implements OnInit {
     }
 
     onBookNow(){
-      this.routeBooking.navigate(['/booking',this.package.PackageID]);
+      if(this.shareLoginService.isLoggedIn()){
+        this.routeBooking.navigate(['/booking',this.package.PackageID]);
+      }else{
+        alert("Please log in to book!!")
+      }
+
     }
 }

@@ -15,7 +15,7 @@ import { Title } from '@angular/platform-browser';
 import {
   DynamicCardService,
   TravelPackage,
-} from '../../Service/dynamic-card.service';
+} from '../../Services/dynamic-card.service';
 
 @Component({
   selector: 'app-dashboard',
