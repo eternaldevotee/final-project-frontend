@@ -48,6 +48,7 @@ const routes: Routes = [
     {path : 'agent/create-package' , component : DashboardComponent},
     {path : 'agent' , component : AgentNavbarComponent},
     {path : '', redirectTo:"home", pathMatch:"full"}
+    {path : 'agent/home', component : ListPackagesComponent}
 ];
 
 @NgModule({
