@@ -1,10 +1,12 @@
 <app-agent-navbar/>
 
+<!-- 
+src="TajMahal.webp" -->
 <div *ngIf="package" class="container mt-5 shadow-large">
   <div class="row">
     <div class="col-md-6 mb-4">
       <img
-        src="TajMahal.webp"
+        src= {{package.ImageSrc}}
         class="img-fluid rounded shadow"
         alt="image Of Package"
       />

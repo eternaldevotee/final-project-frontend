@@ -60,7 +60,8 @@ const routes: Routes = [
     {path : 'edit-package/:id', component : DashboardComponent},
     {path : 'agent/packages' , component : ListPackagesComponent},
     {path : 'agent/create-package' , component : DashboardComponent},
-    {path : 'agent' , component : AgentNavbarComponent}
+    {path : 'agent' , component : AgentNavbarComponent},
+    {path : 'agent/home', component : ListPackagesComponent}
 ];
 
 @NgModule({
