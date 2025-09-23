@@ -23,7 +23,7 @@
          <div *ngFor="let services of package.IncludedServices" class="badge text-bg-primary m-2">{{services}}</div>
       </div>
       <br/>
-      <button class="btn btn-success">Book now</button>
+      <button class="btn btn-success" (click)="onBookNow()">Book now</button>
     </div>
 
     

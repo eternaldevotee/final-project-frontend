@@ -4,7 +4,7 @@
       "UserID": 1,
       "Name": "User1",
       "Email": "user1@example.com",
-      "Password": "pass1",
+      "Password": "pass123456",
       "Role": "customer",
       "ContactNumber": "9876543201",
       "id": "f5a9"
@@ -13,7 +13,7 @@
       "UserID": 2,
       "Name": "User2",
       "Email": "user2@example.com",
-      "Password": "pass2",
+      "Password": "pass212345",
       "Role": "customer",
       "ContactNumber": "9876543202",
       "id": "68a0"
@@ -107,142 +107,146 @@
       "Password": "Admin@1234",
       "Role": "Customer",
       "ContactNumber": ""
+    },
+    {
+      "id": "9ff5",
+      "UserId": "1234",
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "Role": "Customer",
+      "ContactNumber": ""
     }
   ],
   "TravelPackage": [
     {
-      "Title": "Luxury Bangalore & Ooty Getaway",
-      "Description": "Stay in premium resorts and enjoy curated experiences in Bangalore and Ooty.",
-      "DetailedDescription": "Begin in Bangalore with luxury stays and curated city tours that blend comfort with culture. Visit art galleries, dine at gourmet restaurants, and unwind in serene gardens. The city’s cosmopolitan vibe is perfect for indulgent travelers.\n\nThen escape to Ooty’s cool hills, where colonial charm meets natural beauty. Stay in heritage resorts, ride the Nilgiri Mountain Railway, and stroll through botanical gardens. This getaway is all about pampering and picturesque landscapes.",
+      "PackageID": 112,
+      "Title": "Wildlife Safari in Madhya Pradesh",
+      "Description": "Spot tigers and explore ancient caves.",
+      "DetailedDescription": "Safari in Kanha and Bandhavgarh National Parks, visit Bhimbetka rock shelters, and enjoy tribal culture.",
       "Duration": "5 days",
-      "Price": 49020.17,
+      "Price": 45000,
       "IncludedServices": [
         "Hotel",
         "Transport",
         "Guide",
-        "Flight",
-        "Meals"
+        "Meals",
+        "Safari"
       ],
       "ImageSrc": "/bangalore.webp",
-      "id": "103e"
+      "Location": "Madhya Pradesh",
+      "id": "112d"
     },
     {
-      "Title": "Andaman Island Explorer",
-      "Description": "Discover pristine beaches, coral reefs, and tropical adventures.",
-      "DetailedDescription": "Fly into Port Blair and visit Cellular Jail and Corbyn’s Cove. Then head to Havelock Island for snorkeling at Elephant Beach and relaxing by turquoise waters. Ideal for beach lovers and underwater explorers.",
-      "Duration": "5 days",
-      "Price": 52500,
+      "PackageID": 114,
+      "Title": "Heritage Walk in Lucknow",
+      "Description": "Discover Nawabi culture and Mughal architecture.",
+      "DetailedDescription": "Explore Bara Imambara, Chikan embroidery markets, and taste Awadhi cuisine. A cultural deep dive into royal elegance.",
+      "Duration": "3 days",
+      "Price": 26800,
       "IncludedServices": [
         "Hotel",
         "Transport",
         "Guide",
-        "Flight",
-        "Water Sports"
+        "Meals",
+        "Cultural Show"
       ],
       "ImageSrc": "/bangalore.webp",
-      "id": "108v"
+      "Location": "Uttar Pradesh",
+      "id": "114f"
+    },
+    {
+      "Title": "Architectural Wonders of Odisha Edited",
+      "Description": "Marvel at ancient temples and coastal beauty.",
+      "Duration": "4 days",
+      "Price": 34500,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Boat Ride"
+      ],
+      "ImageSrc": "/odisha.webp",
+      "DetailedDescription": "Visit Konark Sun Temple, Puri Jagannath Temple, and Chilika Lake. Enjoy local dance and seafood.",
+      "Location": "Odisha",
+      "PackageID": 117,
+      "id": "117i"
+    },
+    {
+      "PackageID": 118,
+      "Title": "Eco Adventure in Meghalaya",
+      "Description": "Explore caves, waterfalls, and living root bridges.",
+      "DetailedDescription": "Visit Cherrapunji, Mawlynnong (Asia’s cleanest village), and trek to double-decker root bridges. Ideal for nature lovers.",
+      "Duration": "5 days",
+      "Price": 41000,
+      "IncludedServices": [
+        "Hotel",
+        "Transport",
+        "Guide",
+        "Meals",
+        "Trekking"
+      ],
+      "ImageSrc": "/bangalore.webp",
+      "Location": "Meghalaya",
+      "id": "118j"
     }
   ],
   "Booking": [
     {
-      "BookingID": 1,
-      "UserID": 3,
-      "PackageID": 1,
-      "StartDate": "2025-12-26",
-      "EndDate": "2026-01-10",
-      "Status": "Pending",
-      "PaymentID": 1,
-      "id": "32b5"
-    },
-    {
-      "BookingID": "BKG003",
-      "UserID": "USR004",
-      "PackageID": "PKG003",
-      "StartDate": "2025-12-05",
-      "EndDate": "2025-12-12",
-      "Status": "Pending",
-      "PaymentID": 2,
-      "id": "0c39"
-    },
-    {
-      "BookingID": 3,
-      "UserID": 7,
-      "PackageID": 4,
-      "StartDate": "2025-09-11",
-      "EndDate": "2025-09-16",
-      "Status": "Pending",
-      "PaymentID": 3,
-      "id": "6336"
-    },
-    {
-      "BookingID": 4,
-      "UserID": 8,
-      "PackageID": 10,
-      "StartDate": "2025-09-14",
-      "EndDate": "2025-09-27",
-      "Status": "Pending",
-      "PaymentID": 4,
-      "id": "7670"
-    },
-    {
-      "BookingID": "BKG006",
-      "UserID": "USR007",
-      "PackageID": "PKG006",
-      "StartDate": "2026-03-15",
-      "EndDate": "2026-03-24",
-      "Status": "Cancelled",
-      "PaymentID": 5,
-      "id": "99b6"
-    },
-    {
-      "BookingID": 6,
-      "UserID": 7,
-      "PackageID": 5,
-      "StartDate": "2025-12-05",
-      "EndDate": "2025-12-20",
-      "Status": "Cancelled",
-      "PaymentID": 6,
-      "id": "85aa"
-    },
-    {
-      "BookingID": 7,
-      "UserID": 9,
-      "PackageID": 3,
-      "StartDate": "2025-11-19",
-      "EndDate": "2025-11-23",
-      "Status": "Cancelled",
-      "PaymentID": 7,
-      "id": "52c0"
-    },
-    {
-      "BookingID": "BKG013",
-      "UserID": "USR001",
-      "PackageID": "PKG013",
-      "StartDate": "2025-11-20",
-      "EndDate": "2025-11-23",
-      "Status": "Cancelled",
-      "PaymentID": 8,
-      "id": "a8d9"
-    },
-    {
-      "BookingID": 9,
-      "UserID": 3,
-      "PackageID": 7,
-      "StartDate": "2025-12-12",
-      "EndDate": "2025-12-26",
-      "Status": "Cancelled",
-      "PaymentID": 9,
-      "id": "4147"
-    },
-    {
       "BookingID": 10,
       "UserID": 7,
       "PackageID": 1,
-      "StartDate": "2025-10-29",
-      "EndDate": "2025-11-05",
+      "date": "2025-10-29",
       "Status": "Cancelled",
+      "Adults": 4,
+      "Children": 1,
       "PaymentID": 10,
       "id": "2fd2"
+    },
+    {
+      "id": "be5d",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 1,
+      "date": "2025-09-30",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "99ab",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 1,
+      "date": "2025-09-30",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "7ed2",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 13,
+      "date": "2025-09-26",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "b779",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 10,
+      "date": "2025-09-12",
+      "Status": "Success",
+      "Adults": 9,
+      "Children": 0,
+      "PaymentID": 1234
     }
   ],
   "Payment": [
@@ -337,105 +341,185 @@
       "id": "6c2c"
     }
   ],
-  "Review": [
+  "reviews": [
     {
-      "ReviewID": "REV001",
-      "UserID": "USR001",
-      "PackageID": "PKG001",
-      "Rating": 5,
-      "Comment": "Amazing trip! The city tour was fantastic.",
-      "Timestamp": "2025-10-25T10:30:00Z",
-      "id": "46c7"
+      "id": "1",
+      "userId": 2,
+      "packageId": 101,
+      "rating": 5,
+      "comment": "Amazing trip! The scenery was breathtaking...",
+      "timestamp": "2025-09-11T09:30:00.000Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you so much for your wonderful feedback!..."
     },
     {
-      "ReviewID": "REV002",
-      "UserID": "USR002",
-      "PackageID": "PKG002",
-      "Rating": 4,
-      "Comment": "Review comment 1",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "0083"
+      "id": "2",
+      "userId": 3,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "It was a very nice experience overall...",
+      "timestamp": "2025-09-12T15:20:00.000Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you for your response.........."
     },
     {
-      "ReviewID": 2,
-      "UserID": 6,
-      "PackageID": 5,
-      "Rating": 1,
-      "Comment": "Review comment 2",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "c66f"
+      "id": "3",
+      "userId": 4,
+      "packageId": 102,
+      "rating": 3,
+      "comment": "The food options were limited for vegetarians...",
+      "timestamp": "2025-09-13T12:30:00.000Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV006",
-      "UserID": "USR009",
-      "PackageID": "PKG008",
-      "Rating": 5,
-      "Comment": "Review comment 3",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "1c7d"
+      "id": "ee5d",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "waste badddd..........",
+      "timestamp": "2025-09-19T11:37:34.416Z",
+      "status": "REJECTED"
     },
     {
-      "ReviewID": 4,
-      "UserID": 3,
-      "PackageID": 8,
-      "Rating": 1,
-      "Comment": "Review comment 4",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "9e19"
+      "id": "7264",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "VIVEK IS A GOOD GUY",
+      "timestamp": "2025-09-19T11:59:38.206Z",
+      "status": "PUBLISHED",
+      "agentResponse": "NOT AT ALL"
     },
     {
-      "ReviewID": 5,
-      "UserID": 2,
-      "PackageID": 4,
-      "Rating": 1,
-      "Comment": "Review comment 5",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "80ca"
+      "id": "fed4",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "Stany is cute",
+      "timestamp": "2025-09-19T12:00:52.227Z",
+      "status": "REJECTED"
     },
     {
-      "ReviewID": "REV009",
-      "UserID": "USR013",
-      "PackageID": "PKG012",
-      "Rating": 4,
-      "Comment": "Review comment 6",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "083d"
+      "id": "7756",
+      "userId": 1,
+      "packageId": 101,
+      "rating": null,
+      "comment": "JJJJJJJJJJJ",
+      "timestamp": "2025-09-19T12:01:55.291Z",
+      "status": "PUBLISHED",
+      "agentResponse": "OKAYYY"
     },
     {
-      "ReviewID": "REV010",
-      "UserID": "USR001",
-      "PackageID": "PKG013",
-      "Rating": 5,
-      "Comment": "Review comment 7",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "c569"
+      "id": "cab0",
+      "userId": 1,
+      "packageId": 101,
+      "rating": null,
+      "comment": "GGHJYVHVHJV",
+      "timestamp": "2025-09-19T12:11:31.031Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV012",
-      "UserID": "USR004",
-      "PackageID": "PKG003",
-      "Rating": 5,
-      "Comment": "Review comment 8",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "d0b5"
+      "id": "286f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "waste............................Experencie",
+      "timestamp": "2025-09-20T13:38:40.701Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV013",
-      "UserID": "USR005",
-      "PackageID": "PKG005",
-      "Rating": 4,
-      "Comment": "Review comment 9",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "5035"
+      "id": "b455",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 2,
+      "comment": "fffffffffff",
+      "timestamp": "2025-09-20T13:50:25.752Z",
+      "status": "PUBLISHED"
     },
     {
-      "ReviewID": "REV014",
-      "UserID": "USR008",
-      "PackageID": "PKG006",
-      "Rating": 5,
-      "Comment": "Review comment 10",
-      "Timestamp": "2025-09-09 11:59:12",
-      "id": "53e3"
+      "id": "3e7f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "wwwwwwwwwwwwwwwwwww",
+      "timestamp": "2025-09-20T13:51:33.162Z",
+      "status": "PUBLISHED",
+      "agentResponse": "huh hyug"
+    },
+    {
+      "id": "0acc",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "goodddddddd",
+      "timestamp": "2025-09-22T05:00:41.358Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "7cf2",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 4,
+      "comment": "wdewqdwefreg4w",
+      "timestamp": "2025-09-22T06:54:51.893Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "3cb3",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "fewfcd reag",
+      "timestamp": "2025-09-22T09:44:10.475Z",
+      "status": "PUBLISHED",
+      "agentResponse": "rrrrrrrrrrrrr"
+    },
+    {
+      "id": "e366",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "very good.",
+      "timestamp": "2025-09-22T09:53:02.469Z",
+      "status": "REJECTED",
+      "agentResponse": "reeg eragt"
+    },
+    {
+      "id": "7e5e",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 5,
+      "comment": "all good.................!!",
+      "timestamp": "2025-09-22T10:45:22.228Z",
+      "status": "PUBLISHED",
+      "agentResponse": "Thank you......."
+    },
+    {
+      "id": "338f",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "shubam goasttttttttttttt",
+      "timestamp": "2025-09-22T10:48:04.725Z",
+      "status": "PUBLISHED"
+    },
+    {
+      "id": "f491",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 3,
+      "comment": "let it goooo",
+      "timestamp": "2025-09-22T11:15:03.075Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "7450",
+      "userId": 1,
+      "packageId": 101,
+      "rating": 1,
+      "comment": "ooo ooooooooooo",
+      "timestamp": "2025-09-22T11:15:23.905Z",
+      "status": "PENDING"
     }
   ],
   "Insurance": [
@@ -658,12 +742,6 @@
       "phone": 9823456721
     },
     {
-      "id": "5",
-      "name": "Pooja Patel",
-      "location": "Ahmedabad",
-      "phone": 7896541230
-    },
-    {
       "id": "6",
       "name": "Neha Gupta",
       "location": "Pune",
@@ -736,14 +814,5 @@
       "phone": 9765123490
     }
   ],
-  "signupRequests": [
-    {
-      "id": "1",
-      "name": "Ravi Sharma",
-      "email": "ravi@example.com",
-      "password": "agent123",
-      "role": "agent",
-      "active": true
-    }
-  ]
+  "signupRequests": []
 }

@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   styleUrl: './customer-auth-modal.component.css'
 })
 export class CustomerAuthModalComponent {
-  constructor(private router: Router) {}
 
+  constructor(private router: Router) {}
+  
   navigateTo(view: string) {
     this.router.navigate([{ outlets: { modal: [view] } }]);
   }

@@ -1,0 +1,52 @@
+.agent-panel {
+  background-color: #f0f8ff; /* A light blue to differentiate from admin */
+  border: 1px solid #cce5ff;
+  border-radius: 12px;
+}
+
+.review-card {
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+}
+
+.review-avatar {
+  background-color: #007bff; /* Primary blue for user avatars */
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-display mat-icon {
+  color: #ffc107;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-state mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+/* Styling for the existing agent response */
+.agent-response {
+  background-color: #e9f5e9;
+  border-left: 4px solid #28a745;
+  border-radius: 4px;
+}
+
+.agent-response-title {
+  font-size: 0.9rem;
+  color: #155724;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,102 @@
+/* .rating {
+  color: #f5c518; 
+  font-weight: bold;
+}
+.customer-comment {
+  font-style: italic;
+  font-size: 1.05rem;
+}
+.agent-response {
+  background-color: #f0f8ff; 
+  border-left: 4px solid #0d6efd; 
+  border-radius: 4px;
+} */
+
+
+
+
+/* Card Styling */
+.review-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+  transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+}
+
+/* User Avatar Placeholder */
+.review-avatar {
+  background-color: #0d6efd; /* Bootstrap primary blue */
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Visual Star Rating */
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-display mat-icon {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Customer's Comment */
+.customer-comment {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 0;
+}
+
+/* Agent's Response Block */
+.agent-response {
+  background-color: #f8f9fa; /* A very light grey */
+  border-left: 4px solid #198754; /* Bootstrap success green */
+  border-radius: 4px;
+}
+
+.agent-response-title {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Enhanced Empty State Message */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+  color: #6c757d; /* Muted text color */
+}
+
+.empty-state mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.empty-state span {
+  font-size: 1rem;
+}

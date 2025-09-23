@@ -6,7 +6,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CarouselComponent } from './Components/carousel/carousel.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { CardComponent } from './Components/card/card.component';
-import { DashboardComponent } from './Auth/agent/dashboard/dashboard.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LoginComponent } from './Auth/customer/login/login.component';
 import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { AdminLoginComponent } from './Auth/admin/login/login.component';
@@ -31,7 +31,13 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
 import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
 import { SignuprequestsComponent } from './Auth/admin/signuprequests/signuprequests.component';
 import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
-import { RouterModule, RouterOutlet } from '@angular/router';
+
+import { BookingComponent } from './booking-module/booking/booking.component';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
+import { ReviewsModule } from './reviews/reviews.module';
+import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
 
 
 
@@ -65,8 +71,15 @@ import { RouterModule, RouterOutlet } from '@angular/router';
     CustomerAuthModalComponent,
       CurrentagentComponent,
       SignuprequestsComponent,
-      AgentControlComponent
+      AgentControlComponent,
 
+    AdminLoginComponent,
+    CustomerAuthModalComponent,
+    BookingComponent,
+    SearchbarComponent,
+    ViewSearchedPackagesComponent,
+    AgentNavbarComponent,
+  
   ],
     imports:[
     BrowserModule,
@@ -80,7 +93,12 @@ import { RouterModule, RouterOutlet } from '@angular/router';
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    RouterOutlet
+    RouterOutlet,
+    RouterLink,
+    RouterOutlet,
+    ReviewsModule
+
+
     
   ],
   providers: [],
