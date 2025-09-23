@@ -6,10 +6,15 @@ import {
   FormArray,
   FormControl,
 } from '@angular/forms';
-import {
-  TravelPackageService,
-  TravelPackage1,
-} from '../../Service/travel-package.service';
+// import {
+//   TravelPackageService,
+//   TravelPackage1,
+// } from '../../Service/travel-package.service';
+
+import { TravelPackageService } from '../../Services/travel-package.service';
+import { TravelPackage1 } from '../../Services/travel-package.service';
+
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import {
