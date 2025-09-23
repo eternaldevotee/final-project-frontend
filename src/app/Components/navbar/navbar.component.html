@@ -7,13 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link design" href="#">Home </a>
+        <a class="nav-link design" href="">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link design" routerLink="/admindashboard" routerLinkActive="active ">Packages</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link design" href="#">Destinations</a>
       </li>
       <li class="nav-item">
         <a class="nav-link design" routerLink="/adminlogin">About</a>
@@ -21,9 +18,9 @@
     </ul>
   </div>
 
-  <!-- After Logged in -->
+
   <div *ngIf="isLoggedIn">
-    <!-- Profile Dropdown -->
+  
     <div class="dropdown m-2">
       <a href="#" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Your Profile">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -32,16 +29,13 @@
         </svg>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#" (click)="onClick()">Logout</a></li>
       </ul>
     </div>
 
   </div>
 
-  <!-- Before Login -->
-  <!-- Customer Login and SignUp -->
+
   <div *ngIf="!isLoggedIn">
     <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
         <button type="button" class="btn btn-outline-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -49,13 +43,18 @@
         </button>
     </a>
 
-    <!-- Agent Login and SignUp -->
-    <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button>
-    <!-- Admin Login Button -->
+ 
+
     <a [routerLink]="['/adminlogin']">
       <button class="btn btn-warning border border-3 rounded-pill m-2">Admin</button>
+      </a>
+
+    <a [routerLink]="[{ outlets: { modal: ['agentLogin'] } }]">
+        <button type="button" class="btn btn-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#agentLoginModal">
+            Agent Login
+        </button>
     </a>
-  </div>
+    </div>
 </nav>
 
 <app-searchbar></app-searchbar>

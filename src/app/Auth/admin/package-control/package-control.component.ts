@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { AdminserviceService } from '../../../Service/adminservice.service'; 
+import { AdminserviceService } from '../../../Services/adminservice.service'; 
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-control-packages',

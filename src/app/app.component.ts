@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SearchserviceService } from './Service/searchservice.service';
-import { ShareloginService } from './Service/sharelogin.service';
+import { SearchserviceService } from './Services/searchservice.service';
+// import { ShareloginService } from './Service/sharelogin.service';
+// import { SearchserviceService } from './Services/searchservice.service';
+import { ShareloginService } from './Services/sharelogin.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

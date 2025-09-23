@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchserviceService } from '../Service/searchservice.service';
-import { ShareloginService } from '../Service/sharelogin.service';
+import { SearchserviceService } from '../../Services/searchservice.service';
 import { Router } from '@angular/router';
 
 @Component({

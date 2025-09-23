@@ -24,14 +24,17 @@ import { SignuprequestsComponent } from './Auth/admin/signuprequests/signupreque
 
 
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
-import { BookingComponent, BookingForm } from './booking-module/booking/booking.component';
+import { BookingComponent } from './Components/booking/booking.component';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
 import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
+import { authGuard } from './auth.guard';
+
 
 const routes: Routes = [
-    {path:"",component:HomeComponent},
+    {path:'home',component:HomeComponent},
     {path:'login', component:LoginComponent, outlet:'modal'},
     {path:'signup', component:SignupComponent, outlet:'modal'},
+    
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
     {path:'admindashboard',component:AdminlayoutComponent},
@@ -53,7 +56,7 @@ const routes: Routes = [
     {path :'agent/package/:id', component :AgentPackageDetailComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
     {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
-    {path:'booking/:PackageID',component:BookingComponent},
+    {path:'booking/:PackageID',component:BookingComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent},
     {path : 'agent/packages' , component : ListPackagesComponent},
     {path : 'agent/create-package' , component : DashboardComponent},

@@ -138,24 +138,6 @@
       "id": "112d"
     },
     {
-      "PackageID": 114,
-      "Title": "Heritage Walk in Lucknow",
-      "Description": "Discover Nawabi culture and Mughal architecture.",
-      "DetailedDescription": "Explore Bara Imambara, Chikan embroidery markets, and taste Awadhi cuisine. A cultural deep dive into royal elegance.",
-      "Duration": "3 days",
-      "Price": 26800,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Cultural Show"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Uttar Pradesh",
-      "id": "114f"
-    },
-    {
       "Title": "Architectural Wonders of Odisha Edited",
       "Description": "Marvel at ancient temples and coastal beauty.",
       "Duration": "4 days",
@@ -245,6 +227,39 @@
       "date": "2025-09-12",
       "Status": "Success",
       "Adults": 9,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "819d",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 115,
+      "date": "2025-09-27",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "486a",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 10,
+      "date": "2025-09-30",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 2,
+      "PaymentID": 1234
+    },
+    {
+      "id": "429c",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 110,
+      "date": "2025-09-12",
+      "Status": "Success",
+      "Adults": 4,
       "Children": 0,
       "PaymentID": 1234
     }
@@ -729,12 +744,6 @@
     }
   ],
   "Agents": [
-    {
-      "id": "1",
-      "name": "Manoj Kumar",
-      "location": "Kolkata",
-      "phone": 8745625874
-    },
     {
       "id": "2",
       "name": "Ravi Sharma",

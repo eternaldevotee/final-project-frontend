@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,10 +11,15 @@ import { SignupComponent } from './Auth/customer/signup/signup.component';
 import { AdminLoginComponent } from './Auth/admin/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SearchpipePipe } from './Components/pipes/searchpipe.pipe';
 import { NgModule } from '@angular/core';
-import { MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionModule } from '@angular/material/expansion';
+import {  MatAccordion,
+  MatExpansionPanel,
+  MatExpansionPanelHeader,
+  MatExpansionPanelTitle,
+  MatExpansionModule,
+} from '@angular/material/expansion';
 import { HomeComponent } from './home/home.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { FaqComponent } from './pages/faq/faq.component';
@@ -31,16 +35,12 @@ import { CustomerAuthModalComponent } from './Auth/customer/customer-auth-modal/
 import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
 import { SignuprequestsComponent } from './Auth/admin/signuprequests/signuprequests.component';
 import { AgentControlComponent } from './Auth/admin/agent-control/agent-control.component';
-
-import { BookingComponent } from './booking-module/booking/booking.component';
+import { BookingComponent } from './Components/booking/booking.component';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SearchbarComponent } from './Components/searchbar/searchbar.component';
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 import { ReviewsModule } from './reviews/reviews.module';
 import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -63,25 +63,20 @@ import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.componen
     AdminProfileComponent,
     AdminlayoutComponent,
     CardDetailComponent,
-
     AdminAgentComponent,
-    AdminPackagesComponent,
     AgentPackageDetailComponent,
-
     CustomerAuthModalComponent,
-      CurrentagentComponent,
-      SignuprequestsComponent,
-      AgentControlComponent,
-
+    CurrentagentComponent,
+    SignuprequestsComponent,
+    AgentControlComponent,
     AdminLoginComponent,
     CustomerAuthModalComponent,
     BookingComponent,
     SearchbarComponent,
     ViewSearchedPackagesComponent,
     AgentNavbarComponent,
-  
   ],
-    imports:[
+  imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -96,10 +91,8 @@ import { AgentNavbarComponent } from './Agent/agent-navbar/agent-navbar.componen
     RouterOutlet,
     RouterLink,
     RouterOutlet,
-    ReviewsModule
-
-
-    
+    ReactiveFormsModule,
+    ReviewsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

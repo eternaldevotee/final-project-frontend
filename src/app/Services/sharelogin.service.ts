@@ -12,4 +12,18 @@ loginStatus$ = this.loginStatus.asObservable();
   setLoginStatus(status: boolean): void {
     this.loginStatus.next(status);
   }
+
+  blogin :boolean =false;
+
+  login(){
+    this.blogin=true;
+  }
+
+  logOff(){
+    this.blogin = false;
+  }
+
+  isLoggedIn(){
+    return this.blogin;
+  }
 }

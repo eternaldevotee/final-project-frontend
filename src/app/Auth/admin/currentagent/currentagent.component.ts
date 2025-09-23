@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgentService } from '../../../Service/agents.service'; 
+import { AgentService } from '../../../Services/agents.service'; 
 @Component({
   selector: 'app-currentagent',
   standalone: false,
