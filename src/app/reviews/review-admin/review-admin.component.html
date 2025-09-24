@@ -1,5 +1,5 @@
 <mat-card class="mt-5 admin-panel">
-  <mat-card-title>Admin Panel: Pending Reviews for Moderation</mat-card-title>
+  <mat-card-title>Pending Reviews for Moderation</mat-card-title>
   <mat-card-content>
     <ng-container *ngIf="pending$ | async as list">
       <div *ngIf="list.length === 0" class="empty-state">

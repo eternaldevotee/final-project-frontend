@@ -1,68 +1,189 @@
-/* Main panel styling */
+
+:root {
+  --panel-bg: linear-gradient(180deg,#fbfdff,#f7fbff);
+  --panel-border: #dfeeff;
+  --accent: #0d6efd;
+  --muted: #6c757d;
+  --card-bg: #ffffff;
+  --success: #28a745;
+}
+
+/* Panel container */
 .admin-panel {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(11, 36, 70, 0.04);
 }
 
-/* Individual review card styling */
-.review-card {
-  border: 1px solid #e0e0e0;
-  box-shadow: none;
+/* Card title (mat-card-title) spacing tweak */
+.admin-panel ::ng-deep .mat-card-title,
+.admin-panel ::ng-deep .mat-card-subtitle {
+  display: block;
+}
+.admin-panel mat-card-title {
+  font-weight: 700;
+  color: #07243f;
+  font-size: 1.5rem;
+  padding: 10px 12px;
+  text-align: center;
 }
 
-/* User Avatar Placeholder */
-.review-avatar {
-  background-color: #6c757d; /* Muted grey for admin context */
-  color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Visual Star Rating */
-.rating-display {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.rating-display mat-icon {
-  color: #ffc107; /* Gold color for stars */
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
-}
-
-/* Action buttons styling */
-.agent-actions button {
-  flex-grow: 1; /* Make buttons take equal space */
-}
-.agent-actions mat-icon {
-  margin-right: 8px;
-}
-
-/* Enhanced Empty State Message */
+/* Empty state */
 .empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 36px;
+  border-radius: 12px;
   text-align: center;
-  color: #6c757d;
+  color: var(--muted);
+  background: linear-gradient(180deg, rgba(40,167,69,0.03), rgba(40,167,69,0.01));
+  border: 1px dashed rgba(40,167,69,0.06);
+  margin: 8px;
+}
+.empty-state mat-icon {
+  font-size: 56px;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  color: var(--success) !important;
+}
+.empty-state p { font-size: 1.15rem; margin: 0; color: #17472a; }
+
+/* Pending item wrapper */
+.pending-item {
+  margin: 10px 6px;
 }
 
-.empty-state mat-icon {
-  font-size: 48px;
+/* Review card */
+.review-card {
+  border: 1px solid rgba(16,36,58,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .16s ease, box-shadow .16s ease;
+  background: var(--card-bg);
+  box-shadow: 0 6px 18px rgba(20,45,78,0.04);
+}
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(20,45,78,0.08);
+}
+
+/* Card header */
+.review-card mat-card-header {
+  padding: 12px 14px;
+  align-items: center;
+}
+.review-avatar {
   width: 48px;
   height: 48px;
-  margin-bottom: 16px;
-  color: #28a745; /* Success green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff !important;
+  /* visible colored avatar, overrides white backgrounds */
+  background: linear-gradient(135deg,#0062cc,#0d6efd) !important;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.06);
 }
 
-.empty-state p {
-  font-size: 1.2rem;
-  margin: 0;
+/* Title & subtitle */
+.review-card mat-card-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  
 }
+.review-card mat-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Rating display — force gold stars */
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.rating-display mat-icon {
+  color: #ffc107;
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Comment text */
+.review-card p {
+  margin: 10px 14px;
+  color: #1f2d3d;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+/* Divider spacing */
+.review-card mat-divider {
+  margin: 6px 0;
+}
+
+/* Actions row */
+.agent-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px 16px;
+}
+.agent-actions button {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: none;
+}
+/* Primary publish button */
+.agent-actions button[color="primary"] {
+  border-color: rgba(13,110,253,0.08);
+  background: linear-gradient(180deg,#e8f0ff,#e1f0ff);
+  color: #063a6c;
+  box-shadow: 0 8px 18px rgba(13,110,253,0.06);
+}
+/* Danger/reject button */
+.agent-actions button[color="warn"] {
+  border-color: rgba(220,53,69,0.06);
+  background: linear-gradient(180deg,#fff2f2,#fff0f0);
+  color: #8b1d1d;
+  box-shadow: 0 8px 18px rgba(220,53,69,0.04);
+}
+
+/* mat-icon spacing inside buttons */
+.agent-actions mat-icon {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Small screens — stack actions */
+@media (max-width: 520px) {
+  .agent-actions { flex-direction: column; }
+  .rating-display mat-icon { font-size: 18px !important; width: 18px !important; height: 18px !important; }
+  .review-avatar { width: 44px; height: 44px; font-size: 0.9rem; }
+}
+
+/* Accessibility focus */
+.review-card:focus-within,
+.review-card:focus {
+  outline: 3px solid rgba(13,110,253,0.06);
+  outline-offset: 4px;
+}
+
+/* Utility spacing (keeps your existing classes working) */
+.mb-3 { margin-bottom: 12px; }
+.mt-3 { margin-top: 12px; }
