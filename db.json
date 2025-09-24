@@ -153,7 +153,7 @@
       "id": "118j"
     },
     {
-      "Title": "Goa Complete package ",
+      "Title": "Goa Complete package Edited",
       "Description": "Live the desert dream with camel safaris and golden fort adventures.",
       "Duration": "3 days",
       "Price": 31200.5,
@@ -240,21 +240,6 @@
       "DetailedDescription": "From the Eiffel Tower to the Louvre, Paris blends elegance with cultural depth. Its cobbled streets and chic cafés make every stroll a poetic experience",
       "Location": "France",
       "PackageID": 849683
-    },
-    {
-      "Title": "Rome",
-      "Description": "Rome is a living museum of ancient wonders and culinary indulgence.",
-      "Duration": "7",
-      "Price": 28500,
-      "IncludedServices": [
-        "Travel",
-        "Hotels"
-      ],
-      "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.YUI2W_3AYOxsG_STV-PJpAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "DetailedDescription": "Marvel at the Colosseum, Pantheon, and Trevi Fountain as history surrounds you. Savor pasta and gelato while wandering through centuries-old streets",
-      "Location": "Italy",
-      "PackageID": 580158,
-      "id": "580158"
     },
     {
       "id": "890061",
@@ -529,7 +514,8 @@
       "rating": null,
       "comment": "GGHJYVHVHJV",
       "timestamp": "2025-09-19T12:11:31.031Z",
-      "status": "PUBLISHED"
+      "status": "PUBLISHED",
+      "agentResponse": "frd6rt"
     },
     {
       "id": "286f",
