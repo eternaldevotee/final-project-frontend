@@ -31,30 +31,41 @@ import { authGuard } from './auth.guard';
 
 
 const routes: Routes = [
-    {path:'home',component:HomeComponent},
+    {path:'',component:HomeComponent,children:[
+
+    
     {path:'login', component:LoginComponent, outlet:'modal'},
-    {path:'signup', component:SignupComponent, outlet:'modal'},
+    {path:'signup', component:SignupComponent, outlet:'modal'}]},
     
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
-    {path:'admindashboard',component:AdminlayoutComponent},
-    {path:'adminlogin',component:AdminLoginComponent},
-    {path:'privacy',component:PrivacyComponent},
-    { path: 'adminlayout', component: AdminlayoutComponent },
-    {
-        path: 'agentControl', component: AgentControlComponent,
+    {path:'admindashboard',component:AdminlayoutComponent,
+    children: [
+      { path: 'packagecontrol', component: PackageControlComponent },
+      {path: 'agentControl',
+        component: AgentControlComponent,
         children: [
-            {path:'currentagent',component:CurrentagentComponent},
-            {path:'signuprequests',component:SignuprequestsComponent}
-        ]},
+          { path: 'currentagent', component: CurrentagentComponent },
+          { path: 'signuprequests', component: SignuprequestsComponent }
+        ]
+      }
+    ]
+  },
+
+    {path:'adminlogin',component:AdminLoginComponent},
+     
+    
+    {path:'privacy',component:PrivacyComponent},
+    { path: 'adminlayout', component: AdminlayoutComponent},
+      
     
     {path:'adminpackages',component:AdminPackagesComponent},  
     {path : 'packages', component : CardComponent},
-    {path:'packagecontrol',component:PackageControlComponent},
+    
 
     {path : 'package/:id', component : CardDetailComponent},
     {path :'agent/package/:id', component :AgentPackageDetailComponent},
-    {path: '**', redirectTo: '', pathMatch: 'full'},
+    // {path: '**', redirectTo: '', pathMatch: 'full'},
     {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
     {path:'booking/:PackageID',component:BookingComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent},
