@@ -475,7 +475,7 @@
       "userId": 1,
       "packageId": 523892,
       "timestamp": "2025-09-24T09:22:36.388Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     }
   ],
   "Insurance": [
@@ -690,12 +690,6 @@
       "name": "Ravi Sharma",
       "location": "Delhi",
       "phone": 9823456721
-    },
-    {
-      "id": "6",
-      "name": "Neha Gupta",
-      "location": "Pune",
-      "phone": 9988776655
     },
     {
       "id": "8",

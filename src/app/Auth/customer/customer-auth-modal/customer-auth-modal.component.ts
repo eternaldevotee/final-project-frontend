@@ -14,4 +14,8 @@ export class CustomerAuthModalComponent {
   navigateTo(view: string) {
     this.router.navigate([{ outlets: { modal: [view] } }]);
   }
+
+  close(){
+    this.router.navigate(['']);
+  }
 }
