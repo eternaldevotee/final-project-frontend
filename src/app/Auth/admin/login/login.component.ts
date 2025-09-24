@@ -1,3 +1,4 @@
+import { ShareloginService } from './../../../Services/sharelogin.service';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -13,7 +14,7 @@ export class AdminLoginComponent {
   password: string = '';
   errorMessage: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private service :ShareloginService) {}
 
   login(): void {
     this.errorMessage = null;
@@ -21,6 +22,7 @@ export class AdminLoginComponent {
     this.http.get<any[]>(apiUrl).subscribe({
       next: (users) => {
         if (users && users.length > 0) {
+          this.service.login();
           this.router.navigate(['/admindashboard']);
         } else {
           this.errorMessage = 'Invalid admin credentials';

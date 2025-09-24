@@ -20,9 +20,6 @@ import { PackageControlComponent } from './Auth/admin/package-control/package-co
 import { CurrentagentComponent } from './Auth/admin/currentagent/currentagent.component';
 import { SignuprequestsComponent } from './Auth/admin/signuprequests/signuprequests.component';
 
-
-
-
 import { ViewSearchedPackagesComponent } from './view-searched-packages/view-searched-packages.component';
 import { BookingComponent } from './Components/booking/booking.component';
 import { ListPackagesComponent } from './Components/list-packages/list-packages.component';
@@ -31,34 +28,32 @@ import { authGuard } from './auth.guard';
 
 
 const routes: Routes = [
-    {path:'',component:HomeComponent,children:[
-
-    
-    {path:'login', component:LoginComponent, outlet:'modal'},
-    {path:'signup', component:SignupComponent, outlet:'modal'}]},
+    {path:'',component:HomeComponent,
+      children:[    
+        {path:'login', component:LoginComponent, outlet:'modal'},
+        {path:'signup', component:SignupComponent, outlet:'modal'}
+      ]
+    },
     
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
-    {path:'admindashboard',component:AdminlayoutComponent,
-    children: [
-      { path: 'packagecontrol', component: PackageControlComponent },
-      {path: 'agentControl',
-        component: AgentControlComponent,
-        children: [
-          { path: 'currentagent', component: CurrentagentComponent },
-          { path: 'signuprequests', component: SignuprequestsComponent }
-        ]
-      }
-    ]
-  },
+    {path:'admindashboard',component:AdminlayoutComponent,canActivate:[authGuard],
+      children:[
+        { path: 'packagecontrol', component: PackageControlComponent },
+        {path: 'agentControl', component: AgentControlComponent,
+          children: [
+            { path: 'currentagent', component: CurrentagentComponent },
+            { path: 'signuprequests', component: SignuprequestsComponent }
+          ]
+        }
+      ]
+    },
 
     {path:'adminlogin',component:AdminLoginComponent},
-     
-    
+
     {path:'privacy',component:PrivacyComponent},
-    { path: 'adminlayout', component: AdminlayoutComponent},
+    {path: 'adminlayout', component: AdminlayoutComponent},
       
-    
     {path:'adminpackages',component:AdminPackagesComponent},  
     {path : 'packages', component : CardComponent},
     
