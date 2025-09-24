@@ -18,9 +18,9 @@
     </ul>
   </div>
 
-  <!-- After Logged in -->
+
   <div *ngIf="isLoggedIn">
-    <!-- Profile Dropdown -->
+  
     <div class="dropdown m-2">
       <a href="#" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Your Profile">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -35,8 +35,7 @@
 
   </div>
 
-  <!-- Before Login -->
-  <!-- Customer Login and SignUp -->
+
   <div *ngIf="!isLoggedIn">
     <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
         <button type="button" class="btn btn-outline-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#loginModal">
@@ -46,13 +45,19 @@
   </div>
     <!-- Agent Login and SignUp -->
     <!-- <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button> -->
-  <div>
+  
+
+    <a [routerLink]="['/adminlogin']">
+      <button class="btn btn-warning border border-3 rounded-pill m-2">Admin</button>
+    </a>
+    
+    <div>
     <a (click)="routeToSignIn()">
         <button type="button" class="btn btn-primary border border-3 rounded-pill m-2" >
           Agent Login
         </button>
     </a>
-  </div>
+    </div>
 </nav>
 
 <app-searchbar></app-searchbar>

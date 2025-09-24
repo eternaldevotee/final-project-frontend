@@ -36,7 +36,7 @@ export class AgentPackageDetailComponent {
     console.log("in delete func")
     this.cardService.deletePackage(id).subscribe(() => {
       console.log("Deleted package sucessfully");
-      this.router.navigate(['/packages']);
+      this.router.navigate(['/agent/packages']);
     })
   }
   
