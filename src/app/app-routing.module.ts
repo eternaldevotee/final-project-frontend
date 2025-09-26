@@ -36,7 +36,8 @@ const routes: Routes = [
     {path:'',component:HomeComponent,
       children:[    
         {path:'login', component:LoginComponent, outlet:'modal'},
-        {path:'signup', component:SignupComponent, outlet:'modal'}
+        {path:'signup', component:SignupComponent, outlet:'modal'},
+        {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
       ]
     },
     
@@ -67,7 +68,6 @@ const routes: Routes = [
     {path : 'package/:id', component : CardDetailComponent},
     {path :'agent/package/:id', component :AgentPackageDetailComponent},
     // {path: '**', redirectTo: '', pathMatch: 'full'},
-    {path:'viewsearch/:Location',component: ViewSearchedPackagesComponent},
     {path:'booking/:PackageID',component:BookingComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent},
     {path : 'agent/packages' , component : ListPackagesComponent},
