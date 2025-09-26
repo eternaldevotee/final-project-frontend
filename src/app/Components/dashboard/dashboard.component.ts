@@ -14,7 +14,6 @@ import {
 import { TravelPackageService } from '../../Services/travel-package.service';
 import { TravelPackage1 } from '../../Services/travel-package.service';
 
-
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import {
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit {
     private packageService: DynamicCardService,
     private route: ActivatedRoute,
     private packageService1: TravelPackageService,
-    private router : Router
+    private router: Router
   ) {
     this.createPackageForm = this.fb.group({
       Title: ['', [Validators.required, Validators.maxLength(100)]],
@@ -125,28 +124,10 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // submit(): void {
-  //   if (this.createPackageForm.invalid) {
-  //     this.createPackageForm.markAllAsTouched();
-  //     return;
-  //   }
-  //   const payload = this.createPackageForm.value
-
-  //   this.packageService1.createPackage(payload).subscribe(() => {
-  //     this.createPackageForm.reset();
-  //     this.includedServices.clear();
-  //     this.loadPackages();
-  //   });
-  // }
-
   submit(): void {
     console.log('hi in the sumbit function');
     console.log(this.isEditMode);
-    // if(this.createPackageForm.invalid) {
-    //   this.createPackageForm.markAllAsTouched();
-    //   return;
-    // }
-    // const payload = this.createPackageForm.value;
+
     const payload = {
       ...this.createPackageForm.value,
       PackageID: this.editingPackageId,
@@ -164,22 +145,7 @@ export class DashboardComponent implements OnInit {
           this.loadPackages();
         });
       alert('Package edited');
-    }
-
-    // this.packageService1.createPackage(payload).subscribe(() => {
-    //   this.createPackageForm.reset();
-    //   this.includedServices.clear();
-    //   this.loadPackages();
-    // })
-    //       this.packageService1.createPackage(this.createPackageForm.value).subscribe((createdPkg) => {
-    //   const updated = { ...createdPkg, PackageID: Number(createdPkg.id) };
-    //   this.packageService.updatePackage(createdPkg.id, updated).subscribe(() => {
-    //     this.createPackageForm.reset();
-    //     this.includedServices.clear();
-    //     this.loadPackages();
-    //   });
-    // });
-    else {
+    } else {
       const basePayload = this.createPackageForm.value;
 
       const randomId = Math.floor(Math.random() * 1000000);
@@ -190,14 +156,6 @@ export class DashboardComponent implements OnInit {
         id: randomId.toString(),
         // generates a number between 0 and 999999
       };
-
-      // console.log(payload1);
-
-      // this.packageService1.createPackage(payload1).subscribe(() => {
-      //   this.createPackageForm.reset();
-      //   this.includedServices.clear();
-      //   this.loadPackages();
-      // });
 
       this.packageService1.createPackage(payload1).subscribe((createdPkg) => {
         const patchPayload = {
@@ -212,15 +170,9 @@ export class DashboardComponent implements OnInit {
             this.includedServices.clear();
             this.loadPackages();
           });
-          alert('New Package created');
-          this.router.navigate(['/agent/package',createdPkg.id ])
-
+        alert('New Package created');
+        this.router.navigate(['/agent/package', createdPkg.id]);
       });
-
-      
-
-       
-      
     }
   }
 }

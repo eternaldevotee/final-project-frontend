@@ -25,7 +25,6 @@ const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'login', component:LoginComponent, outlet:'modal'},
     {path:'signup', component:SignupComponent, outlet:'modal'},
-    {path:'agentLogin', component:AgentLoginComponent, outlet:'modal'},
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
     {path:'admindashboard',component:AdminNavbarComponent},
