@@ -60,6 +60,8 @@ export class ReviewAgentComponent implements OnInit {
     this.published$ = this.reviewsService.getReviewsForPackage(this.packageId);
   }
 
+  
+
   respond(review: Review, responseText: string): void {
     if (!responseText?.trim()) {
       alert('Response cannot be empty.');

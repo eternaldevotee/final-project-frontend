@@ -91,6 +91,15 @@
       "id": "0b8e"
     },
     {
+      "UserID": 11,
+      "Name": "admin",
+      "Email": "admin@example.com",
+      "Password": "12345678",
+      "Role": "admin",
+      "ContactNumber": "",
+      "id": "admin-1"
+    },
+    {
       "id": "b747",
       "UserId": "1234",
       "Name": "Stany ",
@@ -107,42 +116,33 @@
       "Password": "",
       "Role": "Customer",
       "ContactNumber": ""
+    },
+    {
+      "id": "ba5b"
+    },
+    {
+      "id": "048d"
+    },
+    {
+      "id": "b96e"
+    },
+    {
+      "id": "548b"
+    },
+    {
+      "id": "f3ce"
+    },
+    {
+      "id": "68b2"
+    },
+    {
+      "id": "5e95"
+    },
+    {
+      "id": "d788"
     }
   ],
   "TravelPackage": [
-    {
-      "PackageID": 118,
-      "Title": "Eco Adventure in Meghalaya",
-      "Description": "Explore caves, waterfalls, and living root bridges.",
-      "DetailedDescription": "Visit Cherrapunji, Mawlynnong (Asia’s cleanest village), and trek to double-decker root bridges. Ideal for nature lovers.",
-      "Duration": "5 days",
-      "Price": 41000,
-      "IncludedServices": [
-        "Hotel",
-        "Transport",
-        "Guide",
-        "Meals",
-        "Trekking"
-      ],
-      "ImageSrc": "/bangalore.webp",
-      "Location": "Meghalaya",
-      "id": "118j"
-    },
-    {
-      "Title": "Goa Complete package ",
-      "Description": "Live the desert dream with camel safaris and golden fort adventures.",
-      "Duration": "3 days",
-      "Price": 31200.5,
-      "IncludedServices": [
-        "Travel",
-        "Meals"
-      ],
-      "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.WfgK0xzv3KALYSoeOOOkNgHaEo?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "DetailedDescription": "Stay in a luxury desert camp under the stars. Ride camels across sand dunes, explore Jaisalmer Fort, and enjoy folk performances by firelight. This package blends adventure with cultural immersion in Rajasthan’s golden city.",
-      "Location": "Goa",
-      "PackageID": 212834,
-      "id": "212834"
-    },
     {
       "Title": "Meghalaya Full Tour",
       "Description": "Live the desert dream with camel safaris and golden fort adventures.",
@@ -189,21 +189,6 @@
       "PackageID": 482061
     },
     {
-      "Title": "Paris Edited",
-      "Description": "The romantic City of Lights dazzles with art, fashion, and timeless charm.",
-      "Duration": "6",
-      "Price": 87000,
-      "IncludedServices": [
-        "Food",
-        "Stay"
-      ],
-      "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.lPTBTAUj-wtb0XSvGs1FuQHaEP?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "DetailedDescription": "From the Eiffel Tower to the Louvre, Paris blends elegance with cultural depth. Its cobbled streets and chic cafés make every stroll a poetic experience",
-      "Location": "France",
-      "PackageID": 849683,
-      "id": "849683"
-    },
-    {
       "Title": "Rome",
       "Description": "Rome is a living museum of ancient wonders and culinary indulgence.",
       "Duration": "7",
@@ -232,6 +217,36 @@
       "DetailedDescription": "Big Ben, Buckingham Palace, and the London Eye anchor its historic core. Red buses and the Thames weave through a city of culture and innovation",
       "Location": "UK",
       "PackageID": 890061
+    },
+    {
+      "id": "409296",
+      "Title": "Himalayan Escape",
+      "Description": "A serene getaway to the snow-capped Himalayas",
+      "Duration": "4 days",
+      "Price": 25000,
+      "IncludedServices": [
+        "Meals",
+        "Travel"
+      ],
+      "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.VTGKqjMHChrtuakUnzYZcAHaFM?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "DetailedDescription": "Experience breathtaking views, cozy cabins, and guided treks through pine forests. Perfect for nature lovers and adventure seekers.",
+      "Location": "Manali, Himachal Pradesh",
+      "PackageID": 409296
+    },
+    {
+      "Title": "Goa Beach Blast Edited",
+      "Description": "Sun, sand, and sea in India’s party capital",
+      "Duration": "6",
+      "Price": 75000,
+      "IncludedServices": [
+        "Travel",
+        "Boating"
+      ],
+      "ImageSrc": "https://assets.serenity.co.uk/58000-58999/58779/1296x864.jpg",
+      "DetailedDescription": "Dive into the vibrant energy of Goa with this beachside escape. Spend your days lounging on golden sands, sipping fresh coconut water, and trying thrilling water sports like parasailing and jet skiing. As the sun sets, explore Goa’s legendary nightlife—from beach shacks with live music to neon-lit clubs.",
+      "Location": "Goa",
+      "PackageID": 731446,
+      "id": "731446"
     }
   ],
   "Booking": [
@@ -321,6 +336,28 @@
       "Status": "Success",
       "Adults": 4,
       "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "dfcb",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 194827,
+      "date": "2025-09-26",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": 1234
+    },
+    {
+      "id": "d193",
+      "BookingID": 1234,
+      "UserId": 1234,
+      "PackageID": 580158,
+      "date": "2025-09-27",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 2,
       "PaymentID": 1234
     }
   ],
@@ -420,7 +457,7 @@
     {
       "id": "1",
       "userId": 2,
-      "packageId": 101,
+      "packageId": 523892,
       "rating": 5,
       "comment": "Amazing trip! The scenery was breathtaking...",
       "timestamp": "2025-09-11T09:30:00.000Z",
@@ -440,7 +477,7 @@
     {
       "id": "3",
       "userId": 4,
-      "packageId": 102,
+      "packageId": 523892,
       "rating": 3,
       "comment": "The food options were limited for vegetarians...",
       "timestamp": "2025-09-13T12:30:00.000Z",
@@ -456,144 +493,102 @@
       "status": "REJECTED"
     },
     {
-      "id": "7264",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 4,
-      "comment": "VIVEK IS A GOOD GUY",
-      "timestamp": "2025-09-19T11:59:38.206Z",
-      "status": "PUBLISHED",
-      "agentResponse": "NOT AT ALL"
-    },
-    {
-      "id": "fed4",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 1,
-      "comment": "Stany is cute",
-      "timestamp": "2025-09-19T12:00:52.227Z",
-      "status": "REJECTED"
-    },
-    {
-      "id": "7756",
-      "userId": 1,
-      "packageId": 101,
-      "rating": null,
-      "comment": "JJJJJJJJJJJ",
-      "timestamp": "2025-09-19T12:01:55.291Z",
-      "status": "PUBLISHED",
-      "agentResponse": "OKAYYY"
-    },
-    {
-      "id": "cab0",
-      "userId": 1,
-      "packageId": 101,
-      "rating": null,
-      "comment": "GGHJYVHVHJV",
-      "timestamp": "2025-09-19T12:11:31.031Z",
-      "status": "PUBLISHED"
-    },
-    {
-      "id": "286f",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 1,
-      "comment": "waste............................Experencie",
-      "timestamp": "2025-09-20T13:38:40.701Z",
-      "status": "PUBLISHED"
-    },
-    {
-      "id": "b455",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 2,
-      "comment": "fffffffffff",
-      "timestamp": "2025-09-20T13:50:25.752Z",
-      "status": "PUBLISHED"
-    },
-    {
-      "id": "3e7f",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 1,
-      "comment": "wwwwwwwwwwwwwwwwwww",
-      "timestamp": "2025-09-20T13:51:33.162Z",
-      "status": "PUBLISHED",
-      "agentResponse": "huh hyug"
-    },
-    {
-      "id": "0acc",
-      "userId": 1,
-      "packageId": 101,
+      "id": "b288",
       "rating": 3,
-      "comment": "goodddddddd",
-      "timestamp": "2025-09-22T05:00:41.358Z",
-      "status": "REJECTED"
-    },
-    {
-      "id": "7cf2",
+      "comment": "Good experience.",
       "userId": 1,
-      "packageId": 101,
-      "rating": 4,
-      "comment": "wdewqdwefreg4w",
-      "timestamp": "2025-09-22T06:54:51.893Z",
-      "status": "REJECTED"
-    },
-    {
-      "id": "3cb3",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 3,
-      "comment": "fewfcd reag",
-      "timestamp": "2025-09-22T09:44:10.475Z",
-      "status": "PUBLISHED",
-      "agentResponse": "rrrrrrrrrrrrr"
-    },
-    {
-      "id": "e366",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 3,
-      "comment": "very good.",
-      "timestamp": "2025-09-22T09:53:02.469Z",
-      "status": "REJECTED",
-      "agentResponse": "reeg eragt"
-    },
-    {
-      "id": "7e5e",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 5,
-      "comment": "all good.................!!",
-      "timestamp": "2025-09-22T10:45:22.228Z",
-      "status": "PUBLISHED",
-      "agentResponse": "Thank you......."
-    },
-    {
-      "id": "338f",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 1,
-      "comment": "shubam goasttttttttttttt",
-      "timestamp": "2025-09-22T10:48:04.725Z",
-      "status": "PUBLISHED"
-    },
-    {
-      "id": "f491",
-      "userId": 1,
-      "packageId": 101,
-      "rating": 3,
-      "comment": "let it goooo",
-      "timestamp": "2025-09-22T11:15:03.075Z",
+      "packageId": 523892,
+      "timestamp": "2025-09-24T09:22:36.388Z",
       "status": "PENDING"
     },
     {
-      "id": "7450",
+      "id": "f11c",
+      "rating": 3,
+      "comment": "ccy tyfty jhui",
       "userId": 1,
-      "packageId": 101,
+      "packageId": 523892,
+      "timestamp": "2025-09-25T09:47:35.975Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "d56a",
+      "rating": 3,
+      "comment": "jdfiuhusdi hhrg",
+      "userId": 1,
+      "packageId": 523892,
+      "timestamp": "2025-09-25T09:48:08.322Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "57ad",
+      "rating": 5,
+      "comment": "dsadasdasdsaddas",
+      "userId": 1,
+      "packageId": 523892,
+      "timestamp": "2025-09-25T09:50:36.849Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "74a8",
+      "rating": 4,
+      "comment": "sadasdsada",
+      "userId": 1,
+      "packageId": 523892,
+      "timestamp": "2025-09-25T09:51:36.506Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "7aa8",
       "rating": 1,
-      "comment": "ooo ooooooooooo",
-      "timestamp": "2025-09-22T11:15:23.905Z",
+      "comment": " BadBadBadBadBad",
+      "userId": 1,
+      "packageId": 523892,
+      "timestamp": "2025-09-25T09:58:31.062Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "ee5b",
+      "rating": 5,
+      "comment": "tttttttttttttttttttttttttttt",
+      "userId": 1,
+      "packageId": 194827,
+      "timestamp": "2025-09-25T10:01:35.778Z",
+      "status": "REJECTED"
+    },
+    {
+      "id": "665d",
+      "rating": 4,
+      "comment": "dsdfsfdsfsdfd",
+      "userId": 1,
+      "packageId": 194827,
+      "timestamp": "2025-09-26T03:29:57.199Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "1787",
+      "rating": 5,
+      "comment": "dadsadaaaaaaaaaa",
+      "userId": 1,
+      "packageId": 194827,
+      "timestamp": "2025-09-26T03:38:04.071Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "7322",
+      "rating": 4,
+      "comment": "asdsadsada",
+      "userId": 1,
+      "packageId": 194827,
+      "timestamp": "2025-09-26T03:38:10.514Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "0b9f",
+      "rating": 3,
+      "comment": "It was good",
+      "userId": 1,
+      "packageId": 580158,
+      "timestamp": "2025-09-26T09:57:54.720Z",
       "status": "PENDING"
     }
   ],
@@ -802,5 +797,68 @@
       "ResolutionTime": "3 hours",
       "id": "c1c9"
     }
-  ]
+  ],
+  "Agents": [
+    {
+      "id": "2",
+      "name": "Ravi Sharma",
+      "location": "Delhi",
+      "phone": 9823456721
+    },
+    {
+      "id": "8",
+      "name": "Kiran Reddy",
+      "location": "Hyderabad",
+      "phone": 9876123450
+    },
+    {
+      "id": "11",
+      "name": "Ritu Jain",
+      "location": "Nagpur",
+      "phone": 9981234567
+    },
+    {
+      "id": "12",
+      "name": "Sanjay Rao",
+      "location": "Bhopal",
+      "phone": 9765123489
+    },
+    {
+      "id": "13",
+      "name": "Tanya Kapoor",
+      "location": "Chandigarh",
+      "phone": 9126783450
+    },
+    {
+      "id": "14",
+      "name": "Ajay Nair",
+      "location": "Cochin",
+      "phone": 9876541203
+    },
+    {
+      "id": "17",
+      "name": "Sneha Rao",
+      "location": "Bhubaneswar",
+      "phone": 9123456709
+    },
+    {
+      "id": "18",
+      "name": "Anil Kumar",
+      "location": "Kochi",
+      "phone": 9876543212
+    },
+    {
+      "id": "19",
+      "name": "Riya Sharma",
+      "location": "Dehradun",
+      "phone": 9988776612
+    },
+    {
+      "id": "20",
+      "name": "Vishal Gupta",
+      "location": "Shimla",
+      "phone": 9765123490
+    }
+  ],
+  "signupRequests": []
 }

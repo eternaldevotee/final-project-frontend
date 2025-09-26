@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 mb-4">
       <img
-        src="TajMahal.webp"
+        src= {{package.ImageSrc}}
         class="img-fluid rounded shadow"
         alt="image Of Package"
       />
@@ -28,4 +28,13 @@
 
     
   </div>
+</div>
+
+
+<br><br>
+<div *ngIf = "package">
+  
+<app-review-form [packageId]="package.PackageID"></app-review-form>
+<br><br>
+<app-review-list [packageId]="package.PackageID"></app-review-list>
 </div>

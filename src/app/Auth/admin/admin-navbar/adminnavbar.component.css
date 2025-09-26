@@ -28,6 +28,12 @@ a{
   color:black;
   position:relative;
 }
+.logout{
+  width:20px;
+  height:20px;
+
+
+}
 a::after{
   content:"";
   position:absolute;

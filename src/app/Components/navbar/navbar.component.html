@@ -1,7 +1,8 @@
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-box p-3 m-2"> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent position-absolute top-0 start-0 w-100 p-3 z-3">
   <a class="navbar-brand" href="#">TravelPro</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,40 +19,44 @@
     </ul>
   </div>
 
-  <!-- After Logged in -->
+
   <div *ngIf="isLoggedIn">
-    <!-- Profile Dropdown -->
     <div class="dropdown m-2">
-      <a href="#" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Your Profile">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      <a href="#" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom"
+        title="Your Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle"
+          viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
         </svg>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="#" (click)="onClick()">Logout</a></li>
       </ul>
     </div>
-
   </div>
 
-  <!-- Before Login -->
-  <!-- Customer Login and SignUp -->
+
   <div *ngIf="!isLoggedIn">
     <a [routerLink]="[{ outlets: { modal: ['login'] } }]">
-        <button type="button" class="btn btn-outline-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Login
-        </button>
+      <button type="button" class="btn btn-outline-primary border border-3 rounded-pill m-2" data-bs-toggle="modal"
+        data-bs-target="#loginModal">
+        Login
+      </button>
     </a>
-
-    <!-- Agent Login and SignUp -->
-    <!-- <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button> -->
-    <a [routerLink]="[{ outlets: { modal: ['agentLogin'] } }]">
-        <button type="button" class="btn btn-primary border border-3 rounded-pill m-2" data-bs-toggle="modal" data-bs-target="#agentLoginModal">
-            Agent Login
-        </button>
+    <a [routerLink]="['/adminlogin']">
+      <button class="btn btn-warning border border-3 rounded-pill m-2">Admin</button>
+    </a>
+  
+    <a (click)="routeToSignIn()">
+      <button type="button" class="btn btn-primary border border-3 rounded-pill m-2">Agent Login
+      </button>
     </a>
   </div>
+  <!-- Agent Login and SignUp -->
+  <!-- <button class="btn btn-primary border border-3 rounded-pill">Agent Login</button> -->
+
 </nav>
 
 <app-searchbar></app-searchbar>

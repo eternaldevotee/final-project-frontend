@@ -1,62 +1,164 @@
-/* --- New Card Styles --- */
+:root {
+  --card-bg: linear-gradient(135deg, #ffffff, #f7fbff);
+  --accent: #1976d2; /* material primary */
+  --muted: rgba(0,0,0,0.6);
+  --error: #f44336;
+}
+
 .review-form-card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.review-form-card mat-card-content {
-  padding: 16px; /* Adds breathing room inside the card */
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(20, 40, 70, 0.08);
+  background: var(--card-bg);
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-/* --- Rating Component Styles --- */
-.rating-input-container {
-  padding: 8px 12px;
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 24px 8px 24px;
+  background: linear-gradient(90deg, rgba(25,118,210,0.07), rgba(25,118,210,0.02));
+}
+
+.header-left mat-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-left mat-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+
+
+mat-card-content {
+  padding: 20px 24px 28px 24px;
+}
+
+.review-form {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .review-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rating */
+.rating-container {
   position: relative;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  border: 1px solid #ccc; /* Default border */
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
-}
-
-/* ✅ Style for the container when invalid */
-.rating-input-container.is-invalid {
-  border-color: #f44336; /* Red border on error */
 }
 
 .rating-label {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 0.75em;
-  margin-bottom: 4px;
   display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .stars {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+  background: rgba(255,255,255,0.6);
 }
 
-.stars mat-icon {
-  font-size: 32px;
-  width: 32px;
-  height: 32px;
-  color: #c5c5c5;
+
+.star-button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 6px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: color 0.2s ease-in-out, transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.16s cubic-bezier(.2,.8,.2,1), filter 0.12s ease;
 }
 
-.stars mat-icon:hover {
-  transform: scale(1.2);
+.star-button:focus {
+  outline: none;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 16px rgba(25,118,210,0.12);
 }
 
-.stars mat-icon.filled {
-  color: #ffc107;
+.star-button mat-icon {
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  color: #c7c7c7;
+  transition: color 0.12s ease-in-out, transform 0.12s ease-in-out;
 }
 
-.rating-input-container mat-error {
-  font-size: 0.75em;
-  position: absolute;
-  bottom: -1.3em; /* Position below the container */
-  left: 0;
-  color: #f44336;
+.star-button.filled mat-icon {
+  color: #ffb300; /* amber */
+  filter: drop-shadow(0 4px 8px rgba(255,179,0,0.12));
 }
+
+.rating-meta {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.rating-value {
+  font-weight: 700;
+}
+
+/* Inputs */
+.comment-field {
+  width: 100%;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-radius: 8px;
+}
+
+.mat-form-field .mat-form-field-infix {
+  padding: 10px 12px;
+}
+
+
+.hint-right { color: var(--muted); font-size: 0.78rem; }
+
+
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+button[mat-raised-button] {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(25,118,210,0.08);
+}
+
+button[mat-stroked-button] {
+  border-radius: 10px;
+}
+
+.mb-4 { margin-bottom: 1.25rem; }
+.w-100 { width: 100%; }

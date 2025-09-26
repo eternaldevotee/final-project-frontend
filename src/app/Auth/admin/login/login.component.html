@@ -1,20 +1,19 @@
 <body>
   <div class="form">
-    <h3>Login</h3>
+    <h3>Admin Login</h3>
     <br>
-    <form class="formsgroup" action="/">
+    <form class="formsgroup" (ngSubmit)="login()">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
       <label class="mb-2" for="username">Enter your Username:</label>
       <br>
-      <input class="mb-2" type="text" name="username" id="username" placeholder="Username">
+      <input class="mb-2" type="text" name="username" id="username" placeholder="Username" [(ngModel)]="username">
       <br>
       <label class="mb-2" for="password">Enter your password:</label>
       <br>
-      <input class="mb-2" type="password" name="password" id="password" placeholder=" Password">
+      <input class="mb-2" type="password" name="password" id="password" placeholder=" Password" [(ngModel)]="password">
       <br>
       <br>
+      <button type="submit" class="btn btn-info">Login</button>
     </form>
-    <div>
-      <button class="btn btn-info">Login</button>
-    </div>
   </div>
 </body>

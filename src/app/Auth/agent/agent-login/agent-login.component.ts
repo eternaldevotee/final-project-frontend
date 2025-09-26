@@ -28,18 +28,18 @@ export class AgentLoginComponent {
     }
   }
 
-  onSubmit(loginForm: NgForm) {
-    const emailId = loginForm.value.emailId;
+  onSubmit(AloginForm: NgForm) {
+    const emailId = AloginForm.value.emailId;
 
     this.restservice.getUserByEmailId(emailId).subscribe(data =>{
       this.userExists=data.length>0;
 
       if(this.userExists){
-        const password = loginForm.value.password;
+        const password = AloginForm.value.password;
 
         if(password === data[0].Password){//data[0].Password => accessing the Password, since the return value is a single user object inside an array
           alert("Logged in successfully!!");
-          this.router.navigate(['']);
+          this.router.navigate(['/agent']);
         }
         else
           alert("Incorrect password!!")

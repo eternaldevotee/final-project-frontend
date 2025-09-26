@@ -1,0 +1,153 @@
+
+/* .control:has(.ng-invalid.ng-touched.ng-dirty) label{
+    color:#f98b75;
+}
+
+input.ng-invalid.ng-touched.ng-dirty{
+    background-color: #fbdcd6;
+    border-color: #f84e2c;
+}  */
+
+/* login.css - attractive centered card form */
+:root {
+  --card-bg: linear-gradient(180deg,#ffffff,#fbfdff);
+  --accent: #0d6efd;
+  --muted: #6c757d;
+  --danger: #f84e2c;
+  --success: #198754;
+}
+
+/* Center container */
+.login-container {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  background: linear-gradient(180deg, #f5f8ff 0%, #ffffff 100%);
+}
+
+/* Card */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(18, 40, 80, 0.08);
+  border: 1px solid rgba(13,110,253,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Header */
+.form-header {
+  text-align: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(13,110,253,0.04);
+  margin-bottom: 10px;
+}
+.form-header h2 {
+  margin: 8px 0 2px;
+  font-size: 1.45rem;
+  color: #07243f;
+  font-weight: 700;
+}
+.form-header .lead {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Form body */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Controls */
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-label {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #16324a;
+}
+
+/* Input styling */
+.form-control {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(16,36,58,0.08);
+  background: #fff;
+  box-shadow: inset 0 1px 0 rgba(16,36,58,0.02);
+  font-size: 0.95rem;
+  color: #122233;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 80ms ease;
+  outline: none;
+}
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(13,110,253,0.08);
+  transform: translateY(-1px);
+}
+
+/* help text */
+.form-help {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Highlight inputs that are invalid and touched */
+.control input.ng-invalid.ng-touched,
+.control input.ng-invalid.ng-dirty {
+  background-color: #fff7f6;
+  border-color: rgba(248,78,44,0.14);
+  box-shadow: 0 6px 16px rgba(248,78,44,0.04);
+}
+
+/* Button & actions */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.btn-block {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  background: linear-gradient(180deg,#0b63d6,#0d6efd);
+  border: none;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(13,110,253,0.1);
+}
+
+
+/* Auxiliary links */
+.aux-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.small-link {
+  color: var(--accent);
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+.small-link:hover { text-decoration: underline; }
+.divider { color: rgba(0,0,0,0.18); font-size: 0.9rem; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card { padding: 16px; border-radius: 12px; }
+  .form-header h2 { font-size: 1.25rem; }
+}

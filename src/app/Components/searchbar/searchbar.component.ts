@@ -25,8 +25,6 @@ export class SearchbarComponent {
     this.filteredResults = [];
   }
 
-
-
   constructor(private service: SearchserviceService,private router: Router) {}
 
   onSearch() {

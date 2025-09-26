@@ -1,72 +1,12 @@
-// import { Component, Input, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { ReviewsService } from '../reviews.service';
-// import { Review } from '../review.model';
-
-// @Component({
-//   selector: 'app-review-form',
-//   standalone: false, 
-//   templateUrl: './review-form.component.html',
-//   styleUrls: ['./review-form.component.css']
-// })
-// export class ReviewFormComponent implements OnInit {
-//   @Input() packageId!: number;
-//   form!: FormGroup;
-//   submitting = false;
-//   ratings = [5, 4, 3, 2, 1];
-//   currentUserId = 1; // In a real app, this would come from an authentication service
-
-//   constructor(private fb: FormBuilder,private reviewsService: ReviewsService) {}
-  
-
-//   ngOnInit(): void {
-//     this.form = this.fb.group({
-//       rating: [null, [Validators.required]],
-//       comment: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]]
-//     });
-//   }
-
-//   submit(): void {
-//     if (this.form.invalid || this.submitting) {
-//       return;
-//     }
-//     this.submitting = true;
-
-//     const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status'> = {
-//       userId: this.currentUserId,
-//       packageId: this.packageId,
-//       rating: this.form.value.rating,
-//       comment: this.form.value.comment
-//     };
-
-//     this.reviewsService.createReview(payload).subscribe({
-//       next: () => {
-//         alert('Thanks! Your review has been submitted for moderation.');
-//         this.form.reset();
-//         // Manually reset validators and state
-//         Object.keys(this.form.controls).forEach(key => {
-//             this.form.get(key)?.setErrors(null) ;
-//         });
-//         this.submitting = false;
-//       },
-//       error: () => {
-//         alert('Failed to submit your review. Please try again later.');
-//         this.submitting = false;
-//       }
-//     });
-//    }
-// }
-
-
-
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReviewsService } from '../reviews.service';
 import { Review } from '../review.model';
+import { ShareloginService } from '../../Services/sharelogin.service';
 
 @Component({
   selector: 'app-review-form',
-  standalone: false,
+  standalone:false,
   templateUrl: './review-form.component.html',
   styleUrls: ['./review-form.component.css']
 })
@@ -74,11 +14,12 @@ export class ReviewFormComponent implements OnInit {
   @Input() packageId!: number;
   form!: FormGroup;
   submitting = false;
-  ratings = [1, 2, 3, 4, 5]; // ✅ Changed to ascending order for the UI
-  hoveredRating = 0;          // ✅ To manage the hover effect
-  currentUserId = 1; // In a real app, this would come from an authentication service
 
-  constructor(private fb: FormBuilder, private reviewsService: ReviewsService) {}
+  ratings: number[] = [1, 2, 3, 4, 5];
+  hoveredRating = 0;
+  currentUserId = 1;
+
+  constructor(private fb: FormBuilder, private reviewsService: ReviewsService, private shareLoginService: ShareloginService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -87,42 +28,55 @@ export class ReviewFormComponent implements OnInit {
     });
   }
 
-  // ✅ Method to set the rating when a star is clicked
   setRating(rating: number): void {
-    this.form.get('rating')?.setValue(rating);
     this.form.get('rating')?.setValue(rating);
     this.form.get('rating')?.markAsTouched();
   }
 
+  clear(): void {
+    this.form.reset({ rating: null, comment: '' });
+    this.hoveredRating = 0;
+  }
+
+  get ratingLabel(): string {
+    const r = this.form.get('rating')?.value || 0;
+    if (r >= 5) return 'Excellent';
+    if (r >= 4) return 'Very good';
+    if (r >= 3) return 'Good';
+    if (r >= 2) return 'Fair';
+    if (r >= 1) return 'Poor';
+    return 'Not rated';
+  }
+
+
   submit(): void {
-    if (this.form.invalid || this.submitting) {
-      // Mark all fields as touched to display validation errors
-      this.form.markAllAsTouched();
-      return;
+    // this.form.markAllAsTouched();
+
+    // if (this.form.invalid || this.submitting) {
+    //   return;
+    // }
+    if(this.shareLoginService.isLoggedIn()){
+      this.submitting = true;
+      const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status'> = {
+        ...this.form.value,
+        userId: this.currentUserId,
+        packageId: this.packageId
+      };
+
+      this.reviewsService.createReview(payload).subscribe({
+        next: () => {
+          alert('Thanks! Your review has been submitted for moderation.');
+          this.clear();
+          this.submitting = false;
+        },
+        error: () => {
+          alert('Failed to submit your review. Please try again later.');
+          this.submitting = false;
+        }
+      });
+    }else{
+      alert("Please Login to submit a review!!")
     }
-    this.submitting = true;
-
-    const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status'> = {
-      userId: this.currentUserId,
-      packageId: this.packageId,
-      rating: this.form.value.rating,
-      comment: this.form.value.comment
-    };
-
-    this.reviewsService.createReview(payload).subscribe({
-      next: () => {
-        alert('Thanks! Your review has been submitted for moderation.');
-        this.form.reset();
-        // Manually reset validators and state
-        Object.keys(this.form.controls).forEach(key => {
-            this.form.get(key)?.setErrors(null) ;
-        });
-        this.submitting = false;
-      },
-      error: () => {
-        alert('Failed to submit your review. Please try again later.');
-        this.submitting = false;
-      }
-    });
-   }
+    
+  }
 }
