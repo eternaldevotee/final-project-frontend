@@ -4,7 +4,7 @@
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="date" class="form-label">Date</label>
-        <input type="date" id="date" class="form-control" formControlName="date">
+        <input type="date" id="date" class="form-control" formControlName="date" [min]="minDate">
       </div>
 
 

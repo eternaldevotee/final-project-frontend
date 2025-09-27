@@ -17,6 +17,16 @@ export class BookingComponent {
       Children: new FormControl(0, [Validators.required, Validators.min(0)]),
   })
   
+  minDate: any;
+  
+  ngOnInit(): void {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    this.minDate = tomorrow.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+  }
+
   constructor(private restservice: BookingserviceService, private router :ActivatedRoute){}
 
     packageId!:number|null;
