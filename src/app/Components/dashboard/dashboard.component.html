@@ -58,8 +58,8 @@
       </div>
     </div>
 
-    <div *ngIf="!isEditMode"><button type="submit" class="btn btn-primary mt-2">Create Package</button></div>
-    <div *ngIf="isEditMode" ><button type="submit" class="btn btn-primary mt-2">Edit Package</button></div>
+    <div *ngIf="!isEditMode"><button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Create Package</button></div>
+    <div *ngIf="isEditMode" ><button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Edit Package</button></div>
 <!-- 
     <button type="submit" class="btn btn-primary mt-2">Edit Package</button> -->
     
