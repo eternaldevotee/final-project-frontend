@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h4 class="mb-3">Your Bookings</h4>
+  <div *ngFor="let booking of bookings" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Booking ID: {{ booking.BookingID }}</h5>
+      <p class="card-text"><strong>User ID:</strong> {{ booking.UserId }}</p>
+      <p class="card-text"><strong>Package ID:</strong> {{ booking.PackageID }}</p>
+      <p class="card-text"><strong>Date:</strong> {{ booking.date }}</p>
+      <p class="card-text"><strong>Status:</strong> {{ booking.Status }}</p>
+      <p class="card-text"><strong>Adults:</strong> {{ booking.Adults }}</p>
+      <p class="card-text"><strong>Children:</strong> {{ booking.Children }}</p>
+      <p class="card-text"><strong>Payment ID:</strong> {{ booking.PaymentID }}</p>
+    </div>
+  </div>
+</div>

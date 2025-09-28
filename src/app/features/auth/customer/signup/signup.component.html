@@ -1,0 +1,49 @@
+<h3>Create Account</h3><br/>
+<form [formGroup]="signupForm" (submit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="Enter your name"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="name?.touched && !name?.valid">
+      <p class="m-2">Name is required!!</p>
+    </span>
+  </div>
+  <div class="mb-3">
+    <label for="emailId" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emailId" name="emailId" formControlName="emailId" placeholder="Enter your email"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="(emailId?.touched && emailId?.errors?.['required']) ">
+      <p class="m-2">Email is required!!</p>
+    </span>
+    <!-- Validating the vaild email id using @ -->
+    <span class="text-danger" *ngIf="(emailId?.dirty && emailId?.errors?.['email'])">
+      <p class="m-2">Enter a valid email address (e.g., user&#64;example.com).</p>
+    </span>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" formControlName="password" placeholder="Set a password"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="(password?.touched && password?.errors?.['required'])">
+      <p class="m-2">Password is required!!</p>
+    </span>
+    <!-- Validating the vaild email id using @ -->
+    <span class="text-danger" *ngIf="(password?.dirty && password?.errors?.['pattern'])">
+      <p class="m-2">The password should contain uppercase, lowercase, numbers and speacial characters && must have have atleast 8 characters.</p>
+    </span>
+  </div>
+  <div class="mb-3">
+    <label for="conPassword" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="conPassword" name="conPassword" formControlName="conPassword" placeholder="Confirm your password"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="conPassword?.touched && !conPassword?.valid">
+      <p class="m-2">Please confirm your password!!</p>
+    </span>
+  </div>
+    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Submit</button>
+</form>
+
+<div class="text-center mt-3">
+  Already have an Account? 
+  <a [routerLink]="['/login']" class="text-primary fw-bold text-decoration-none">Log in?</a>
+</div>
