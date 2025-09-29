@@ -145,6 +145,7 @@ export class DashboardComponent implements OnInit {
           this.loadPackages();
         });
       alert('Package edited');
+      this.router.navigate(['agent/package', this.idPackage])
     } else {
       const basePayload = this.createPackageForm.value;
 
