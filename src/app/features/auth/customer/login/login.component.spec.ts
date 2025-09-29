@@ -43,5 +43,5 @@ fdescribe('LoginComponent', () => {
     expect(component.login).toEqual({UserId:'',Name:'', Email: '', Password: '', ContactNumber:'',Role:'' });
   });
 
-
+  
 });

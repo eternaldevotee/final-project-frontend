@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReviewsService } from '../reviews.service';
-import { Review } from '../review.model';
+import { Review } from '../../../core/models/ReviewModel';
 import { Observable } from 'rxjs';
 
 @Component({

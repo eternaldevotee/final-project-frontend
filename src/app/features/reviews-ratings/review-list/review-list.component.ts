@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable, startWith } from 'rxjs';
 
 import { ReviewsService } from '../reviews.service';
-import { Review } from '../review.model';
+import { Review } from '../../../core/models/ReviewModel';
 
 @Component({
   selector: 'app-review-list',

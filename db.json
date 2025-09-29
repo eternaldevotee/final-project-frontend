@@ -193,6 +193,22 @@
       "Location": "Goa",
       "PackageID": 731446,
       "id": "731446"
+    },
+    {
+      "Title": "Beach Bliss",
+      "Description": "Relax on the golden sands of Goa",
+      "Duration": "3 days",
+      "Price": 18000,
+      "IncludedServices": [
+        "Meals",
+        "Travel",
+        "Beach Activities"
+      ],
+      "ImageSrc": "https://vipeventsmgmt.com/wp-content/uploads/2017/12/Beach-1.jpg",
+      "DetailedDescription": "Enjoy sunbathing, water sports, and vibrant nightlife in Goa. Ideal for couples and solo travelers seeking fun and relaxation.",
+      "Location": "Goa",
+      "PackageID": 409297,
+      "id": "409297"
     }
   ],
   "Booking": [
@@ -283,6 +299,28 @@
       "Adults": 5,
       "Children": 0,
       "PaymentID": "96b7eba3-8897-4499-892e-412f48aa1796"
+    },
+    {
+      "id": "70c4",
+      "BookingID": "c6436e9e-462b-411a-9e21-9cd70dabd6ee",
+      "UserId": "78da28df-8f99-4844-b4c2-4ecaa515bb8a",
+      "PackageID": 580158,
+      "date": "2025-10-10",
+      "Status": "Success",
+      "Adults": 3,
+      "Children": 1,
+      "PaymentID": "34da6f7b-c941-40fe-a233-4aac253f6a90"
+    },
+    {
+      "id": "8da6",
+      "BookingID": "6df6eed2-476f-49de-8b8c-19a6ee730dd4",
+      "UserId": "78da28df-8f99-4844-b4c2-4ecaa515bb8a",
+      "PackageID": 482061,
+      "date": "2025-10-10",
+      "Status": "Success",
+      "Adults": 4,
+      "Children": 0,
+      "PaymentID": "09a52a70-77c7-4e32-aaeb-a9ba83e31372"
     }
   ],
   "Payment": [
@@ -378,7 +416,7 @@
       "userId": 1,
       "packageId": 523892,
       "timestamp": "2025-09-24T09:22:36.388Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "f11c",
@@ -387,7 +425,7 @@
       "userId": 1,
       "packageId": 523892,
       "timestamp": "2025-09-25T09:47:35.975Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "d56a",
@@ -441,7 +479,7 @@
       "userId": 1,
       "packageId": 194827,
       "timestamp": "2025-09-26T03:29:57.199Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "1787",
@@ -450,7 +488,7 @@
       "userId": 1,
       "packageId": 194827,
       "timestamp": "2025-09-26T03:38:04.071Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "7322",
@@ -459,7 +497,7 @@
       "userId": 1,
       "packageId": 194827,
       "timestamp": "2025-09-26T03:38:10.514Z",
-      "status": "PENDING"
+      "status": "REJECTED"
     },
     {
       "id": "0b9f",
@@ -688,12 +726,6 @@
   ],
   "Agents": [
     {
-      "id": "2",
-      "name": "Ravi Sharma",
-      "location": "Delhi",
-      "phone": 9823456721
-    },
-    {
       "id": "8",
       "name": "Kiran Reddy",
       "location": "Hyderabad",
@@ -712,34 +744,16 @@
       "phone": 9765123489
     },
     {
-      "id": "13",
-      "name": "Tanya Kapoor",
-      "location": "Chandigarh",
-      "phone": 9126783450
-    },
-    {
       "id": "14",
       "name": "Ajay Nair",
       "location": "Cochin",
       "phone": 9876541203
     },
     {
-      "id": "17",
-      "name": "Sneha Rao",
-      "location": "Bhubaneswar",
-      "phone": 9123456709
-    },
-    {
       "id": "18",
       "name": "Anil Kumar",
       "location": "Kochi",
       "phone": 9876543212
-    },
-    {
-      "id": "19",
-      "name": "Riya Sharma",
-      "location": "Dehradun",
-      "phone": 9988776612
     },
     {
       "id": "20",
