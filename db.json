@@ -116,6 +116,33 @@
       "Password": "Pass@123",
       "Role": "customer",
       "ContactNumber": ""
+    },
+    {
+      "id": "a426",
+      "UserId": "e6693f06-fcad-4de5-895c-8cb9397a859b",
+      "Name": "Vivek",
+      "Email": "vivek@gmail.com",
+      "Password": "Vivek@1234",
+      "Role": "customer",
+      "ContactNumber": ""
+    },
+    {
+      "id": "2cb9",
+      "UserId": "fcde78ee-4717-45e1-8767-d416b074ccf2",
+      "Name": "Charan ",
+      "Email": "charan@gmail.com",
+      "Password": "Charan@1234",
+      "Role": "customer",
+      "ContactNumber": ""
+    },
+    {
+      "id": "6db7",
+      "UserId": "cbc58de3-5356-4b2d-9c7f-f14f4e5c5472",
+      "Name": "New Agent",
+      "Email": "agent64@gmail.com",
+      "Password": "Agent64@1234",
+      "Role": "agent",
+      "ContactNumber": 1022274848
     }
   ],
   "TravelPackage": [
@@ -135,21 +162,6 @@
       "PackageID": 482061
     },
     {
-      "Title": "Rome",
-      "Description": "Rome is a living museum of ancient wonders and culinary indulgence.",
-      "Duration": "7",
-      "Price": 28500,
-      "IncludedServices": [
-        "Travel",
-        "Hotels"
-      ],
-      "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.YUI2W_3AYOxsG_STV-PJpAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
-      "DetailedDescription": "Marvel at the Colosseum, Pantheon, and Trevi Fountain as history surrounds you. Savor pasta and gelato while wandering through centuries-old streets",
-      "Location": "Italy",
-      "PackageID": 580158,
-      "id": "580158"
-    },
-    {
       "id": "890061",
       "Title": "London",
       "Description": "London fuses royal heritage with modern vibrancy across its iconic skyline.",
@@ -165,8 +177,7 @@
       "PackageID": 890061
     },
     {
-      "id": "409296",
-      "Title": "Himalayan Escape",
+      "Title": "Himalayan Escape ",
       "Description": "A serene getaway to the snow-capped Himalayas",
       "Duration": "4 days",
       "Price": 25000,
@@ -177,10 +188,11 @@
       "ImageSrc": "https://tse1.mm.bing.net/th/id/OIP.VTGKqjMHChrtuakUnzYZcAHaFM?rs=1&pid=ImgDetMain&o=7&rm=3",
       "DetailedDescription": "Experience breathtaking views, cozy cabins, and guided treks through pine forests. Perfect for nature lovers and adventure seekers.",
       "Location": "Manali, Himachal Pradesh",
-      "PackageID": 409296
+      "PackageID": 409296,
+      "id": "409296"
     },
     {
-      "Title": "Goa Beach Blast ",
+      "Title": "Goa Beach Blast  Edited",
       "Description": "Sun, sand, and sea in India’s party capital",
       "Duration": "6",
       "Price": 75000,
@@ -195,7 +207,7 @@
       "id": "731446"
     },
     {
-      "Title": "Beach Bliss",
+      "Title": "Beach Bliss ",
       "Description": "Relax on the golden sands of Goa",
       "Duration": "3 days",
       "Price": 18000,
@@ -321,6 +333,72 @@
       "Adults": 4,
       "Children": 0,
       "PaymentID": "09a52a70-77c7-4e32-aaeb-a9ba83e31372"
+    },
+    {
+      "id": "2faf",
+      "BookingID": "5f192422-c425-4abb-8e72-9e407d1d4069",
+      "UserId": "f49212da-fa45-4b16-9993-6a8314d80f52",
+      "PackageID": 409296,
+      "date": "2025-10-02",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": "04751ab1-9c51-4501-8239-02eef83241f8"
+    },
+    {
+      "id": "b8e2",
+      "BookingID": "c9d5af02-1101-4e87-bb72-1652f216dbcc",
+      "UserId": "f49212da-fa45-4b16-9993-6a8314d80f52",
+      "PackageID": 409296,
+      "date": "2025-10-09",
+      "Status": "Success",
+      "Adults": 5,
+      "Children": 0,
+      "PaymentID": "af045d2f-506e-44a2-b973-d8ed196d9b37"
+    },
+    {
+      "id": "74b6",
+      "BookingID": "0e7154f5-0f71-46af-9857-ebf7e1af18c7",
+      "UserId": "e6693f06-fcad-4de5-895c-8cb9397a859b",
+      "PackageID": 409296,
+      "date": "2025-10-03",
+      "Status": "Success",
+      "Adults": 7,
+      "Children": 0,
+      "PaymentID": "7be344ab-65c0-4ad3-82d3-894c454ab733"
+    },
+    {
+      "id": "bbc7",
+      "BookingID": "1b0bf0a4-5f87-4166-acc0-0c18cb06b1c9",
+      "UserId": "9ddf65e6-20b7-42a1-aca2-fadf82161a94",
+      "PackageID": 731446,
+      "date": "2025-10-03",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": "6c3d580d-3809-46a6-9a21-f3803459979c"
+    },
+    {
+      "id": "6f68",
+      "BookingID": "07dc2a87-45f4-4472-8a84-79a6eacd26a0",
+      "UserId": "9ddf65e6-20b7-42a1-aca2-fadf82161a94",
+      "PackageID": 580158,
+      "date": "2025-10-24",
+      "Status": "Success",
+      "Adults": 1,
+      "Children": 0,
+      "PaymentID": "a622397f-5671-4335-a33c-bc09a3fb45d1"
+    },
+    {
+      "id": "3afd",
+      "BookingID": "f28b207c-ad65-4988-81d5-47d91a9b5f66",
+      "UserId": "9ddf65e6-20b7-42a1-aca2-fadf82161a94",
+      "PackageID": 580158,
+      "date": "2025-10-03",
+      "Status": "Success",
+      "Adults": 4,
+      "Children": 0,
+      "PaymentID": "22e04885-97e7-498c-a857-ab53c2249c30"
     }
   ],
   "Payment": [
@@ -506,7 +584,7 @@
       "userId": 1,
       "packageId": 580158,
       "timestamp": "2025-09-26T09:57:54.720Z",
-      "status": "PENDING"
+      "status": "PUBLISHED"
     },
     {
       "id": "488d",
@@ -516,6 +594,15 @@
       "packageId": 482061,
       "timestamp": "2025-09-27T10:14:27.293Z",
       "status": "PENDING"
+    },
+    {
+      "id": "0331",
+      "rating": 4,
+      "comment": "Very good experience",
+      "userId": 1,
+      "packageId": 731446,
+      "timestamp": "2025-09-29T04:38:19.694Z",
+      "status": "PUBLISHED"
     }
   ],
   "Insurance": [
