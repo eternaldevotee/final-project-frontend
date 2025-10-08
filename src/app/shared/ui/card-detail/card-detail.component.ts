@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DynamicCardService } from '../../../core/services/dynamic-card.service';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { TravelPackageModel } from '../../../core/models/TravelPackageModel';
 
 @Component({

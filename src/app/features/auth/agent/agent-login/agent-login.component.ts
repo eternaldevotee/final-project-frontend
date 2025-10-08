@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
-import { ShareloginService } from '../../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 import { UserModel } from '../../../../core/models/UserModel';
 
 
@@ -23,12 +23,12 @@ export class AgentLoginComponent {
 
   ngOnInit(): void {
     this.login={
-      UserId:'',
-      Name:'',
-      Email:'',
-      Password:'',
-      Role:'',
-      ContactNumber:''
+      userID:'',
+      name:'',
+      email:'',
+      password:'',
+      role:'',
+      contactNumber:''
     }
   }
   onSubmit(AloginForm: NgForm) {
@@ -38,12 +38,13 @@ export class AgentLoginComponent {
       next:(data) =>{
       
         this.userExists=!!data;
-        const role= data.Role;
+        const role= data.role;
         if(this.userExists&&role=='agent'){
           const password = AloginForm.value.password;
 
-          if(password === data.Password){
+          if(password === data.password){
             alert("Logged in successfully!!");
+            this.sharedataservice.login(data.userID,data.role);
             this.router.navigate(['/agent']);
           }
           else

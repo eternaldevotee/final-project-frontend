@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookingserviceService } from '../../../core/services/bookingservice.service';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { BookingModel } from '../../../core/models/BookingModel';
+import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 
 @Component({
   selector: 'app-booking-form',
@@ -26,7 +27,7 @@ export class BookingFormComponent {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
-    this.minDate = tomorrow.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    this.minDate = tomorrow.toISOString().split('T')[0]; // Format to: YYYY-MM-DD
   }
 
   constructor(private restservice: BookingserviceService, private router :ActivatedRoute, private shareLoginService: ShareloginService, private route: Router){}
@@ -47,7 +48,6 @@ export class BookingFormComponent {
 
   onSubmit() {
     if (this.bookingForm.valid) {
-      //console.log('Booking Data:', this.bookingForm.value);
 
       this.booking={
         BookingID:crypto.randomUUID(),
@@ -60,9 +60,14 @@ export class BookingFormComponent {
         PaymentID:crypto.randomUUID()
       }
 
-      this.restservice.createBookingDetails(this.booking).subscribe(data =>{
+      this.restservice.createBookingDetails(this.booking).subscribe({
+        next:() =>{
           alert("Booked successfully!");
           this.route.navigate(['home']);
+      },
+        error:(err)=>{
+          alert(err);
+        }
       })
     }
   }

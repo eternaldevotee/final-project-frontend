@@ -23,16 +23,17 @@ import { SignuprequestsComponent } from './features/auth/admin/signuprequests/si
 import { ViewSearchedPackagesComponent } from './features/search-module/view-searched-packages/view-searched-packages.component';
 import { BookingFormComponent } from './features/booking-payment/booking-form/booking-form.component';
 import { ListPackagesComponent } from './features/list-packages/list-packages.component';
-import { authGuard } from './core/gaurds/auth.guard';
+import { authGuard } from './core/gaurds/agent/auth.guard';
 import { AgentSignupComponent } from './features/auth/agent/agent-signup/agent-signup.component';
 import { AgentLoginComponent } from './features/auth/agent/agent-login/agent-login.component';
 import { ReviewAdminComponent } from './features/reviews-ratings/review-admin/review-admin.component';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
+import { customerAuthGuardGuard } from './core/gaurds/customer/customer-auth-guard.guard';
 
 
 export const routes: Routes = [
-    {path:'agentlogin',   component: AgentLoginComponent },
-    {path:'agentsignup',  component: AgentSignupComponent },
+  
+    //customer
     {path:'login',        component:LoginComponent},
     {path:'signup',       component:SignupComponent},
     {path:'home',         component:HomeComponent,
@@ -42,9 +43,21 @@ export const routes: Routes = [
       ]
     },
     {path:'',redirectTo:'/home',pathMatch:'full'},
+
+    {path:'privacy',component:PrivacyComponent},
     {path:'tnc',component:TncComponent},
     {path:'faq',component:FaqComponent},
-    {path:'admindashboard',component:AdminlayoutComponent,canActivate:[authGuard],
+    {path : 'package/:id', component : CardDetailComponent},
+    {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
+    {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
+
+
+    //admin
+    {path:'adminlogin',component:AdminLoginComponent},
+    {path: 'adminlayout', component: AdminlayoutComponent},
+    {path:'adminpackages',component:AdminPackagesComponent},  
+
+    {path:'admindashboard',component:AdminlayoutComponent,
       children:[
         { path: 'packagecontrol', component: PackageControlComponent },
         {path: 'agentControl', component: AgentControlComponent,
@@ -57,23 +70,19 @@ export const routes: Routes = [
       ]
     },
 
-    {path:'privacy',component:PrivacyComponent},
-
-
-    {path:'adminlogin',component:AdminLoginComponent},
-    {path: 'adminlayout', component: AdminlayoutComponent},
-    {path:'adminpackages',component:AdminPackagesComponent},  
-    
-    {path : 'package/:id', component : CardDetailComponent},
-    {path : 'agent/package/:id', component :AgentPackageDetailComponent},
-    {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[authGuard]},
-    {path : 'edit-package/:id', component : DashboardComponent},
-    {path : 'agent/packages' , component : ListPackagesComponent},
-    {path : 'agent/create-package' , component : DashboardComponent},
-    {path : 'agent' , component : ListPackagesComponent},
-    {path : 'agent/home', component : ListPackagesComponent},
-    {path : 'mybookings',component: ViewMybookingsComponent}
-
+    //agent
+    {path:'agentlogin',   component: AgentLoginComponent },
+    {path:'agentsignup',  component: AgentSignupComponent },
+    {path : 'agent' , component : ListPackagesComponent, canActivate:[authGuard],
+      children:[
+        {path : 'agent/home', component : ListPackagesComponent},
+        {path : 'agent/packages' , component : ListPackagesComponent},
+      ]
+    },
+    {path : 'agent/create-package' , component : DashboardComponent, canActivate:[authGuard]},
+    {path : 'agent/package/:id', component :AgentPackageDetailComponent, canActivate:[authGuard]},
+    {path : 'edit-package/:id', component : DashboardComponent,canActivate:[authGuard]},
+    {path : 'agent/package/:id', component :AgentPackageDetailComponent,canActivate:[authGuard]}
 ];
 
 @NgModule({

@@ -49,12 +49,12 @@ number: any;
     const password = this.AsignupForm.get('password')?.value;
     console.log(conpassword +" " +password)
     const signUp={
-      UserId:crypto.randomUUID(),
-      Name:this.AsignupForm.get('name')?.value??'',
-      Email:this.AsignupForm.get('emailId')?.value??'',
-      Password:this.AsignupForm.get('password')?.value??'',
-      Role:"agent",
-      ContactNumber:this.AsignupForm.get('cnumber')?.value??'',
+      userID:crypto.randomUUID(),
+      name:this.AsignupForm.get('name')?.value??'',
+      email:this.AsignupForm.get('emailId')?.value??'',
+      password:this.AsignupForm.get('password')?.value??'',
+      role:"agent",
+      contactNumber:this.AsignupForm.get('cnumber')?.value??'',
     }
     if(password!=conpassword){
       alert("Password not matching with confirm password!!")

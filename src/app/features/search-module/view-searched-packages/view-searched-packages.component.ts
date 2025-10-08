@@ -12,7 +12,7 @@ import { TravelPackageModel } from '../../../core/models/TravelPackageModel';
 })
 export class ViewSearchedPackagesComponent {
       packages! : TravelPackageModel[];
-      Location!:string |null;
+      Location!: string |null;
       constructor(private cardService : DynamicCardService,private route: ActivatedRoute) {}
 
       ngOnInit(): void {

@@ -43,12 +43,12 @@ export class SignupComponent {
     const password = this.signupForm.get('password')?.value;
 
     this.signUp={
-      UserId:crypto.randomUUID(),
-      Name:this.signupForm.get('name')?.value??'',
-      Email:this.signupForm.get('emailId')?.value??'',
-      Password:this.signupForm.get('password')?.value??'',
-      Role:"customer",
-      ContactNumber:""
+      userID:crypto.randomUUID(),
+      name:this.signupForm.get('name')?.value??'',
+      email:this.signupForm.get('emailId')?.value??'',
+      password:this.signupForm.get('password')?.value??'',
+      role:"customer",
+      contactNumber:""
     }
     if(password!=conpassword){
       alert("Password not matching with confirm password!!")

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReviewsService } from '../reviews.service';
 import { Review } from '../../../core/models/ReviewModel';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 
 
 @Component({

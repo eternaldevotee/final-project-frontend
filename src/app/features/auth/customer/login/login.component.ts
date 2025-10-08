@@ -2,8 +2,9 @@ import { Component ,ElementRef,OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
-import { ShareloginService } from '../../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 import { UserModel } from '../../../../core/models/UserModel';
+import { CustomerLoginStateService } from '../../../../core/services/loginstate/customer-login-state.service';
 
 @Component({
   selector: 'app-login',
@@ -17,16 +18,16 @@ export class LoginComponent {
   userExists!:boolean;  
 
 
-  constructor(private restservice:AuthserviceService, private sharedataservice:ShareloginService, private router: Router){}
+  constructor(private restservice:AuthserviceService, private customerdataservice:CustomerLoginStateService, private router: Router){}
 
   ngOnInit(): void {
     this.login={
-      UserId:'',
-      Name:'',
-      Email:'',
-      Password:'',
-      Role:'',
-      ContactNumber:''
+      userID:'',
+      name:'',
+      email:'',
+      password:'',
+      role:'',
+      contactNumber:''
     }
   }
 
@@ -40,14 +41,14 @@ export class LoginComponent {
         this.userExists=!!data;
         console.log("The user exists:" + this.userExists)
 
-        if(this.userExists && data.Role == "customer"){
+        if(this.userExists && data.role == "customer"){
           const password = loginForm.value.password;
         
-          if(password === data.Password){
+          if(password === data.password){
             alert("Logged in successfully!!");
-            const userId=data.UserId;
-
-            this.sharedataservice.login(userId);
+            const userId=data.userID;
+            const role = data.role;
+            this.customerdataservice.login(userId,role);
             this.router.navigate(['']);
           }
           else

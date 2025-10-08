@@ -1,8 +1,15 @@
+<app-navbar class="navbar-expand-lg navbar-dark bg-light position-absolute top-0 start-0 w-100 p-1 z-3 text-danger"></app-navbar>
+<br/><br/>
+<div class="login-wrapper container d-flex justify-content-center align-items-center mt-5" style="height: 80vh;">
+  <div class="login-illustration">
+    <img src="Designer.png">
+  </div>
+<div class="login-form-container">
 <h3>Login</h3><br/>
 <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
   <div class="mb-3">
     <label for="emailId" class="form-label">Email</label>
-    <input type="email" #emailId="ngModel" class="form-control" id="emailId" name="emailId" [(ngModel)]="login.Email" placeholder="Enter your email" required email/>
+    <input type="email" #emailId="ngModel" class="form-control" id="emailId" name="emailId" [(ngModel)]="login.email" placeholder="Enter your email" required email/>
     <!-- Validating the touch and dirty -->
     <span class="text-danger" *ngIf="(emailId.touched && emailId.errors?.['required']) ">
       <p class="m-2">Email is required!!</p>
@@ -14,7 +21,7 @@
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" #password="ngModel" class="form-control" id="password" name="password" [(ngModel)]="login.Password" placeholder="Enter your password" required minlength="8" maxlength="20"/>
+    <input type="password" #password="ngModel" class="form-control" id="password" name="password" [(ngModel)]="login.password" placeholder="Enter your password" required minlength="8" maxlength="20"/>
     <!-- Validating the touch and dirty -->
     <span class="text-danger" *ngIf="(password.touched && password.errors?.['required'])">
       <p class="m-2">Password is required!!</p>
@@ -25,11 +32,12 @@
     </span>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
-</form>
 
 <div class="text-center mt-3">
   Don't have an Account? 
   <a [routerLink]="['/signup']" class="text-primary fw-bold text-decoration-none">Signup</a>
 </div>
-
+</form>
+</div>
+</div>
 

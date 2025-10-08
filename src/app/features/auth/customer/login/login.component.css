@@ -1,80 +1,126 @@
-
-/* General body styling */
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Center the form container */
+/* Main Container */
+.login-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  max-width: 1100px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Left Side Image */
+.login-illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaf6ff;
+}
+
+.login-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Side Form Container */
+.login-form-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading */
+.login-form-container h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
 form {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-/* Form heading */
-h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #343a40;
-}
-
-/* Label styling */
+/* Labels */
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
+  font-weight: 500;
+  color: #555;
 }
 
-/* Input field styling */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    box-sizing: border-box;
+/* Input Fields */
+input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
 }
 
-/* Error message styling */
-.text-danger {
-    font-size: 0.9em;
-    color: #dc3545;
+input.form-control:focus {
+  border-color: #ff4b5c;
+  box-shadow: 0 0 0 0.2rem rgba(255, 75, 92, 0.25);
 }
 
-/* Submit button styling */
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
+/* Validation Messages */
+.text-danger p {
+  font-size: 0.85rem;
+  margin: 5px 0 0;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+/* Submit Button */
+button.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  background-color: #ff4b5c;
+  border-color: #ff4b5c;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-/* Link styling */
-a {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: #007bff;
-    text-decoration: none;
+button.btn-primary:hover {
+  background-color: #e04352;
 }
 
-a:hover {
-    text-decoration: underline;
+button.btn-primary:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Signup Link Below Button */
+.text-center.mt-3 {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text-center.mt-3 a {
+  margin-left: 5px;
+  font-size: 1rem;
+  color: #ff4b5c;
+  text-decoration: none;
+}
+
+.text-center.mt-3 a:hover {
+  text-decoration: underline;
 }

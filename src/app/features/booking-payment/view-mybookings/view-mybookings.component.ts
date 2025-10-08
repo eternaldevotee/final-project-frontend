@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BookingserviceService } from '../../../core/services/bookingservice.service';
 import { ActivatedRoute } from '@angular/router';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { BookingModel } from '../../../core/models/BookingModel';
+import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 
 
 @Component({
@@ -18,12 +18,15 @@ export class ViewMybookingsComponent implements OnInit{
 
   bookings:BookingModel[]=[];
 
-  ngOnInit(){
-     this.route.paramMap.subscribe(params => {
-      const userId = this.shareLoginService.getUserId();
-      this.restService.getBookingsById(userId).subscribe(booking =>{
-        this.bookings=booking;
-      })
-     })
-  }  
+
+  ngOnInit() {
+    const userId = this.shareLoginService.getUserId();
+    if (userId) {
+      this.restService.getBookingsById(userId).subscribe({
+        next: booking => this.bookings = booking,
+        error: err => console.error('Error fetching bookings:', err)
+      });
+    }
+  }
+
 }

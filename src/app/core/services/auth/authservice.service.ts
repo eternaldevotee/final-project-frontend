@@ -14,6 +14,7 @@ export class AuthserviceService {
 
   strUrl : string = "http://localhost:3000/User";
 
+  strUrl1 : string = "http://localhost:8080/user/setUser" 
   // Get users by username  
   getUserByEmailId(emailId: string): Observable<UserModel> {
     const url = `${this.strUrl}?Email=${emailId}`;
@@ -28,25 +29,19 @@ export class AuthserviceService {
             return throwError(() => new Error("Something went wrong while connecting to the server. Please try again later."));
           })
         );
-}
+  }
 
 
   //insert customer info
   setUserDetails(signup :UserModel):Observable<UserModel>{
-    console.log("Posting user data to:", `${this.strUrl}`,signup);
+    console.log("Posting user data to:", `${this.strUrl1}`,signup);
 
-    return this.rest.post<UserModel>(`${this.strUrl}`,signup).pipe(
+    return this.rest.post<UserModel>(`${this.strUrl1}`,signup).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching user:", error);
             return throwError(() => new Error("Something went wrong while connecting to the server. Sign up failed!!, Please try again later."));
           })
         );
-  }
-
-  //fetchesSimilarData
-  fetchMatchingPackages(searchValue:string):Observable<any>{
-    // console.log(this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`));
-    return this.rest.get(`${this.strUrl}Travel?Title_like=${searchValue}`);
   }
 }

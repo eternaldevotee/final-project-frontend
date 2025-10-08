@@ -4,9 +4,10 @@ import { BookingFormComponent } from './booking-form.component';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookingserviceService } from '../../../core/services/bookingservice.service';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 
 fdescribe('BookingFormComponent', () => {
   let component: BookingFormComponent;

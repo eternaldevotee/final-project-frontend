@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchserviceService } from '../../../core/services/search/searchservice.service';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { Route, Router } from '@angular/router';
+import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,10 @@ import { Route, Router } from '@angular/router';
 export class NavbarComponent implements OnInit{
    isLoggedIn!:boolean;
 
-  constructor(private shareDataService : ShareloginService , private router : Router) {}
+  constructor(private customerShareDataService : CustomerLoginStateService , private router : Router) {}
 
     ngOnInit() {
-      this.shareDataService.loginState$.subscribe(isLoggedIn => {
+      this.customerShareDataService.loginState$.subscribe(isLoggedIn => {
         this.isLoggedIn=isLoggedIn;
       });
     }
@@ -24,6 +25,6 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(['/agentlogin'])
   }
   onClick() {
-      this.shareDataService.logOff();
+      this.customerShareDataService.logOff();
   }
 }

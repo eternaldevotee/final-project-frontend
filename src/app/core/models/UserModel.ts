@@ -1,10 +1,10 @@
 export interface UserModel{
 
-  UserId:any;
-  Name:string;
-  Email:string;
-  Password:string;
-  Role:string;
-  ContactNumber:string;
+  userID:any;
+  name:string;
+  email:string;
+  password:string;
+  role:string;
+  contactNumber:string;
   
 }

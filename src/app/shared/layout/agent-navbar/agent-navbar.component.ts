@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShareloginService } from '../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 
 @Component({
   selector: 'app-agent-navbar',

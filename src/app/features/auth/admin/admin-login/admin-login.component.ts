@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShareloginService } from '../../../../core/services/sharelogin.service';
+import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -14,7 +14,7 @@ export class AdminLoginComponent {
   password: string = '';
   errorMessage: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router, private service :ShareloginService) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(): void {
     this.errorMessage = null;
@@ -24,7 +24,6 @@ export class AdminLoginComponent {
         if (users && users.length > 0) {
 
           const userId = users[0].UserId;
-          this.service.login(userId);
           this.router.navigate(['/admindashboard']);
         } else {
           this.errorMessage = 'Invalid admin credentials';
