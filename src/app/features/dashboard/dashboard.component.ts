@@ -6,10 +6,7 @@ import {
   FormArray,
   FormControl,
 } from '@angular/forms';
-// import {
-//   TravelPackageService,
-//   TravelPackage1,
-// } from '../../Service/travel-package.service';
+
 
 import { TravelPackageService } from '../../core/services/travel-package.service';
 import { TravelPackage1 } from '../../core/services/travel-package.service';
@@ -125,8 +122,6 @@ export class DashboardComponent implements OnInit {
   }
 
   submit(): void {
-    console.log('hi in the sumbit function');
-    console.log(this.isEditMode);
 
     const payload = {
       ...this.createPackageForm.value,
@@ -145,7 +140,7 @@ export class DashboardComponent implements OnInit {
           this.loadPackages();
         });
       alert('Package edited');
-      this.router.navigate(['agent/package', this.idPackage])
+      this.router.navigate(['agent/package', this.editingPackageId])
     } else {
       const basePayload = this.createPackageForm.value;
 
@@ -158,21 +153,42 @@ export class DashboardComponent implements OnInit {
         // generates a number between 0 and 999999
       };
 
+      console.log("Payload1 data before sending to createPage" , payload1);
+
+      // this.packageService1.createPackage(payload1).subscribe((createdPkg) => {
+      //   const patchPayload = {
+      //     ...createdPkg,
+      //     PackageID: Number(createdPkg.id),
+      //   };
+
+      //   this.packageService
+      //     .updatePackage1(createdPkg.id, patchPayload)
+      //     .subscribe(() => {
+      //       this.createPackageForm.reset();
+      //       this.includedServices.clear();
+      //       this.loadPackages();
+      //     });
+      //   alert('New Package created');
+      //   this.router.navigate(['/agent/package', createdPkg.id]);
+      // });
+
+
       this.packageService1.createPackage(payload1).subscribe((createdPkg) => {
         const patchPayload = {
           ...createdPkg,
           PackageID: Number(createdPkg.id),
         };
 
-        this.packageService
-          .updatePackage1(createdPkg.id, patchPayload)
-          .subscribe(() => {
-            this.createPackageForm.reset();
-            this.includedServices.clear();
-            this.loadPackages();
-          });
+        // this.packageService
+        //   .updatePackage1(createdPkg.id, patchPayload)
+        //   .subscribe(() => {
+        //     this.createPackageForm.reset();
+        //     this.includedServices.clear();
+        //     this.loadPackages();
+        //   });
         alert('New Package created');
-        this.router.navigate(['/agent/package', createdPkg.id]);
+        this.router.navigate(['/agent/package', createdPkg.PackageID]);
+
       });
     }
   }

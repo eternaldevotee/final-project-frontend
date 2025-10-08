@@ -33,12 +33,19 @@ export class AgentPackageDetailComponent {
   }
 
   onDeleteAgent(id : string) : void {
-    console.log(id);
+
+    const confirmed = window.confirm("Are you sure you have to delete this package?");
+    if(confirmed) {
+      console.log(id);
     console.log("in delete func")
     this.cardService.deletePackage(id).subscribe(() => {
       console.log("Deleted package sucessfully");
       this.router.navigate(['/agent/packages']);
     })
+    }
+    else {
+      console.log("Delete cancelled by user");
+    }
   }
   
 }
