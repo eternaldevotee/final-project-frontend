@@ -15,8 +15,8 @@
   <table class="table table-bordered bordered-primary mt-4 tbl">
     <thead>
       <tr>
-         <th style="width: 20%;">Title</th>
-    <th style="width: 45%;">Description</th>
+         <th style="width: 20%;">title</th>
+    <th style="width: 45%;">description</th>
     <th style="width: 15%;">Duration</th>
     <th style="width: 10%;">Price</th>
     <th style="width: 10%;">Actions</th>
@@ -25,8 +25,8 @@
     <tbody>
       @for (pkg of filteredPackages; track pkg.id) {
         <tr>
-          <td>{{ pkg.Title }}</td>
-          <td>{{ pkg.Description }}</td>
+          <td>{{ pkg.title }}</td>
+          <td>{{ pkg.description }}</td>
           <td>{{ pkg.Duration }}</td>
           <td>₹{{ pkg.Price }}</td>
           <td>

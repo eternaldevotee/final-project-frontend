@@ -8,13 +8,13 @@
 
     <form #AloginForm="ngForm" (ngSubmit)="onSubmit(AloginForm)" class="form-body" novalidate>
       <div class="control mb-3">
-        <label for="emailId" class="form-label">Email</label>
+        <label for="email" class="form-label">Email</label>
         <input
           type="email"
-          id="emailId"
+          id="emailID"
           placeholder="name@domain.com"
           class="form-control"
-          name="emailId"
+          name="emailID"
           ngModel
           #email="ngModel"
           required email

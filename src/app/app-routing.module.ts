@@ -76,9 +76,11 @@ export const routes: Routes = [
     {path : 'agent' , component : ListPackagesComponent, canActivate:[authGuard],
       children:[
         {path : 'agent/home', component : ListPackagesComponent},
-        {path : 'agent/packages' , component : ListPackagesComponent},
+        // {path : 'agent/packages' , component : ListPackagesComponent},
       ]
     },
+    {path : 'agent/packages', component: ListPackagesComponent,canActivate:[authGuard]},
+    
     {path : 'agent/create-package' , component : DashboardComponent, canActivate:[authGuard]},
     {path : 'agent/package/:id', component :AgentPackageDetailComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent,canActivate:[authGuard]},

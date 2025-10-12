@@ -8,12 +8,12 @@ fdescribe('AuthserviceService', () => {
   let httpMock: HttpTestingController;
 
   const mockUser: UserModel = {
-    UserId: '123',
-    Name: 'Stany',
-    Email: 'stany@example.com',
-    Password: 'Strong@123',
-    Role: 'customer',
-    ContactNumber: ''
+    userID: '123',
+    name: 'Stany',
+    email: 'stany@example.com',
+    password: 'Strong@123',
+    role: 'customer',
+    contactNumber: ''
   };
 
   beforeEach(() => {

@@ -1,47 +1,47 @@
-<app-agent-navbar/>
+<app-agent-navbar />
 
-<div class="container my-4 p-4 shadow-large " style=" background-color: rgb(230, 227, 227); border-radius: 12px; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);;">
-  <!-- <h2>Create Package</h2> -->
-   <div *ngIf = "!isEditMode">
+<div class="container my-4 p-4 shadow-large" style="background-color: rgb(230, 227, 227); border-radius: 12px; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);">
+  <div *ngIf="!isEditMode">
     <h2>Create New Package</h2>
-   </div>
-   <div *ngIf = "isEditMode">
+  </div>
+  <div *ngIf="isEditMode">
     <h2>Edit Package</h2>
-   </div>
+  </div>
+
   <form [formGroup]="createPackageForm" (ngSubmit)="submit()" novalidate>
     <div class="mb-3">
-      <label class="form-label">Title</label>
-      <input class="form-control" formControlName="Title" placeholder="Enter title" />
+      <label class="form-label">title</label>
+      <input class="form-control" formControlName="title" placeholder="Enter title" />
     </div>
+
     <div class="mb-3">
       <label class="form-label">Enter Image URL</label>
-      <input class="form-control" formControlName="ImageSrc" placeholder="Enter title" />
+      <input class="form-control" formControlName="imageSrc" placeholder="Enter image URL" />
     </div>
 
-    <!-- Adding Location  -->
     <div class="mb-3">
-      <label class="form-label">Enter the Location</label>
-      <input class="form-control" formControlName="Location" placeholder="Enter Location" />
+      <label class="form-label">Enter the location</label>
+      <input class="form-control" formControlName="location" placeholder="Enter location" />
     </div>
-
-
 
     <div class="mb-3">
       <label class="form-label">Enter summary</label>
-      <input class="form-control" formControlName="Description" placeholder="Enter title" />
+      <input class="form-control" formControlName="description" placeholder="Enter summary" />
     </div>
+
     <div class="mb-3">
-      <label class="form-label">Description</label>
-      <textarea class="form-control" formControlName="DetailedDescription" rows="6" placeholder="Describe the package"></textarea>
+      <label class="form-label">description</label>
+      <textarea class="form-control" formControlName="detailedDescription" rows="6" placeholder="Describe the package"></textarea>
     </div>
+
     <div class="row g-3">
       <div class="col-md-6">
-        <label class="form-label">Duration</label>
-        <input class="form-control" formControlName="Duration" placeholder="e.g. 5 days" />
+        <label class="form-label">duration</label>
+        <input class="form-control" formControlName="duration" placeholder="e.g. 5 days" />
       </div>
       <div class="col-md-6">
-        <label class="form-label">Price</label>
-        <input type="number" class="form-control" formControlName="Price" placeholder="e.g. 19999" />
+        <label class="form-label">price</label>
+        <input type="number" class="form-control" formControlName="price" placeholder="e.g. 19999" />
       </div>
     </div>
 
@@ -50,7 +50,7 @@
         <label class="form-label mb-0">Included Services</label>
         <button type="button" class="btn btn-sm btn-outline-primary" (click)="addIncludedService('')">+ Add</button>
       </div>
-      <div class="mt-2" formArrayName="IncludedServices">
+      <div class="mt-2" formArrayName="includedServices">
         <div class="input-group mb-2" *ngFor="let ctrl of includedServices.controls; index as i">
           <input class="form-control" [formControlName]="i" placeholder="e.g. Meals" />
           <button type="button" class="btn btn-outline-danger" (click)="removeIncludedService(i)">Remove</button>
@@ -58,11 +58,11 @@
       </div>
     </div>
 
-    <div *ngIf="!isEditMode"><button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Create Package</button></div>
-    <div *ngIf="isEditMode" ><button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Edit Package</button></div>
-<!-- 
-    <button type="submit" class="btn btn-primary mt-2">Edit Package</button> -->
-    
+    <div *ngIf="!isEditMode">
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Create Package</button>
+    </div>
+    <div *ngIf="isEditMode">
+      <button type="submit" class="btn btn-primary mt-2" [disabled]="createPackageForm.invalid">Edit Package</button>
+    </div>
   </form>
-
 </div>

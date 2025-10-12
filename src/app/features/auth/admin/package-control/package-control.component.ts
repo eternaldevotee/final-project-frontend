@@ -37,7 +37,7 @@ searchPackages(searchTerm: string): void {
     } else {
 
       this.filteredPackages = this.packages.filter(pkg => 
-        pkg.Title.toLowerCase().includes(searchTerm.toLowerCase())
+        pkg.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
   }
