@@ -43,6 +43,7 @@ import { AdminAgentComponent } from './features/auth/admin/admin-agent/admin-age
 import { ReviewsModule } from './features/reviews-ratings/reviews.module';
 import { StoreModule } from '@ngrx/store';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
+import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { ViewMybookingsComponent } from './features/booking-payment/view-mybooki
     AgentSignupComponent,
     AdminAgentComponent,
     ViewMybookingsComponent,
+    AgentHomeComponent,
 
   ],
   imports: [

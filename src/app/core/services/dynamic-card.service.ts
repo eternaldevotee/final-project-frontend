@@ -26,6 +26,10 @@ export class DynamicCardService {
   }
 
 
+  getPackagesByAdminId(adminID : string) : Observable<any> {
+    return this.http.get(`${this.apiUrl1}/id/${adminID}`);
+  }
+
   deletePackage(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl1}/${id}`);
   }

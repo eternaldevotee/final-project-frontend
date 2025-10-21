@@ -4,10 +4,19 @@
       "id": "bbd7",
       "userID": "4c88a716-2e9f-4a74-a4ec-83a0a88fa2c2",
       "name": "Agentone",
-      "email": "agentone1@example.com",
+      "email": "agentone@example.com",
       "password": "Pass@123",
       "role": "agent",
       "contactNumber": 9898878765
+    },
+    {
+      "id": "cde9",
+      "userID": "7f21b9a2-3c4e-4b1a-9f2e-91d3b6c5e7a1",
+      "name": "Agenttwo",
+      "email": "agenttwo2@example.com",
+      "password": "Pass@456",
+      "role": "agent",
+      "contactNumber": 9876543210
     }
   ],
   "TravelPackage": [
@@ -16,10 +25,7 @@
       "description": "New York City is a vibrant global metropolis known for its iconic skyline, cultural diversity, and nonstop energy.",
       "duration": "5",
       "price": 23000,
-      "includedServices": [
-        "Stay",
-        "Food"
-      ],
+      "includedServices": ["Stay", "Food"],
       "imageSrc": "https://tse3.mm.bing.net/th/id/OIP.-TzFBbHeO7cr_QR7Z466wQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
       "detaileddescription": "Home to landmarks like Times Square, Central Park, and the Statue of Liberty, NYC blends history with innovation. Its five boroughs pulse with art, finance, fashion, and food, making it a magnet for dreamers and doers worldwide.",
       "location": "New York",
@@ -31,10 +37,7 @@
       "description": "London fuses royal heritage with modern vibrancy across its iconic skyline.",
       "duration": "7",
       "price": 89700,
-      "includedServices": [
-        "Flights",
-        "Guide"
-      ],
+      "includedServices": ["Flights", "Guide"],
       "imageSrc": "https://tse4.mm.bing.net/th/id/OIP.8AX_AaLf0hfWCMWoAWvo-gHaEo?rs=1&pid=ImgDetMain&o=7&rm=3",
       "detaileddescription": "Big Ben, Buckingham Palace, and the London Eye anchor its historic core. Red buses and the Thames weave through a city of culture and innovation",
       "location": "UK",
@@ -46,10 +49,7 @@
       "description": "A serene getaway to the snow-capped Himalayas",
       "duration": "4 days",
       "price": 25000,
-      "includedServices": [
-        "Meals",
-        "Travel"
-      ],
+      "includedServices": ["Meals", "Travel"],
       "imageSrc": "https://tse1.mm.bing.net/th/id/OIP.VTGKqjMHChrtuakUnzYZcAHaFM?rs=1&pid=ImgDetMain&o=7&rm=3",
       "detaileddescription": "Experience breathtaking views, cozy cabins, and guided treks through pine forests. Perfect for nature lovers and adventure seekers.",
       "location": "Manali, Himachal Pradesh",
@@ -61,10 +61,7 @@
       "description": "Sun, sand, and sea in India’s party capital",
       "duration": "6",
       "price": 75000,
-      "includedServices": [
-        "Travel",
-        "Boating"
-      ],
+      "includedServices": ["Travel", "Boating"],
       "imageSrc": "https://assets.serenity.co.uk/58000-58999/58779/1296x864.jpg",
       "detaileddescription": "Dive into the vibrant energy of Goa with this beachside escape. Spend your days lounging on golden sands, sipping fresh coconut water, and trying thrilling water sports like parasailing and jet skiing. As the sun sets, explore Goa’s legendary nightlife—from beach shacks with live music to neon-lit clubs.",
       "location": "Goa",
@@ -77,9 +74,7 @@
       "description": "sdfksdjf lksdflksdjf lksdf",
       "duration": "4",
       "price": 2500,
-      "includedServices": [
-        "Demo"
-      ],
+      "includedServices": ["Demo"],
       "imageSrc": "/bangalore.webp",
       "detaileddescription": "sdfjsdf knskfdn sa,mfdn asfdn,janfd ,nfds sndf,san dfsadf ",
       "location": "bsdflkjsf",
@@ -91,9 +86,7 @@
       "description": "dsflkjs .kfns.fdn sfn,msnfd ,sfd,sndfkl sfdlshdf ",
       "duration": "2",
       "price": 2343,
-      "includedServices": [
-        "running"
-      ],
+      "includedServices": ["running"],
       "imageSrc": "sdflsf2",
       "detailedDescription": "dsflkjs .kfns.fdn sfn,msnfd ,sfd,sndfkl sfdlshdf  dsflkjs .kfns.fdn sfn,msnfd ,sfd,sndfkl sfdlshdf ",
       "location": "South AFrica",
@@ -105,9 +98,7 @@
       "description": "test 404040404044040test 404040404044040",
       "duration": "23",
       "price": 2343,
-      "includedServices": [
-        "walk"
-      ],
+      "includedServices": ["walk"],
       "imageSrc": "sfdkjhssdfsfdsf",
       "detailedDescription": "test 404040404044040test 404040404044040test 404040404044040",
       "location": "test 404040404044040",
