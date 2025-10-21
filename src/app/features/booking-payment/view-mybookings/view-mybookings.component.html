@@ -2,14 +2,14 @@
   <h4 class="mb-3">Your Bookings</h4>
   <div *ngFor="let booking of bookings" class="card mb-3">
     <div class="card-body">
-      <h5 class="card-title">Booking ID: {{ booking.BookingID }}</h5>
-      <p class="card-text"><strong>User ID:</strong> {{ booking.UserId }}</p>
-      <p class="card-text"><strong>Package ID:</strong> {{ booking.PackageID }}</p>
+      <h5 class="card-title">Booking ID: {{ booking.bookingID }}</h5>
+      <p class="card-text"><strong>User ID:</strong> {{ booking.userID }}</p>
+      <p class="card-text"><strong>Package ID:</strong> {{ booking.packageID }}</p>
       <p class="card-text"><strong>Date:</strong> {{ booking.date }}</p>
-      <p class="card-text"><strong>Status:</strong> {{ booking.Status }}</p>
-      <p class="card-text"><strong>Adults:</strong> {{ booking.Adults }}</p>
-      <p class="card-text"><strong>Children:</strong> {{ booking.Children }}</p>
-      <p class="card-text"><strong>Payment ID:</strong> {{ booking.PaymentID }}</p>
+      <p class="card-text"><strong>Status:</strong> {{ booking.status }}</p>
+      <p class="card-text"><strong>Adults:</strong> {{ booking.noOfAdults }}</p>
+      <p class="card-text"><strong>Children:</strong> {{ booking.noOfChildren }}</p>
+      <p class="card-text"><strong>Payment ID:</strong> {{ booking.paymentID }}</p>
     </div>
   </div>
 </div>

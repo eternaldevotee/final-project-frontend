@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { BookingModel } from '../../../core/models/BookingModel';
 import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
+import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
+import { PaymentServiceService } from '../../../core/services/payment-service.service';
 
 @Component({
   selector: 'app-booking-form',
@@ -12,6 +14,7 @@ import { BookingserviceService } from '../../../core/services/booking/bookingser
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.css'
 })
+
 export class BookingFormComponent {
   booking!:BookingModel;
   minDate: any;
@@ -30,7 +33,11 @@ export class BookingFormComponent {
     this.minDate = tomorrow.toISOString().split('T')[0]; // Format to: YYYY-MM-DD
   }
 
-  constructor(private restservice: BookingserviceService, private router :ActivatedRoute, private shareLoginService: ShareloginService, private route: Router){}
+
+
+  constructor(private restservice: BookingserviceService, private router :ActivatedRoute, 
+    private customerLoginStateService: CustomerLoginStateService, private route: Router,
+    private paymentService: PaymentServiceService){}
 
     packageId!:number|null;
 
@@ -48,22 +55,32 @@ export class BookingFormComponent {
 
   onSubmit() {
     if (this.bookingForm.valid) {
-
       this.booking={
-        BookingID:crypto.randomUUID(),
-        UserId:this.shareLoginService.getUserId(),
-        PackageID:Number(this.router.snapshot.paramMap.get('PackageID')),
+        bookingID:crypto.randomUUID(),
+        userID:this.customerLoginStateService.getUserId(),
+        packageID:this.router.snapshot.paramMap.get('PackageID'),
         date:this.bookingForm.get('date')?.value??'',
-        Status:"Success",
-        Adults: this.bookingForm.get('Adults')?.value ?? 1,
-        Children: this.bookingForm.get('Children')?.value ?? 0,
-        PaymentID:crypto.randomUUID()
+        status:"Pending",
+        noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
+        noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
+        paymentID:crypto.randomUUID()
       }
 
       this.restservice.createBookingDetails(this.booking).subscribe({
         next:() =>{
           alert("Booked successfully!");
-          this.route.navigate(['home']);
+
+          const user = {
+            name: 'Stany', // You can fetch this from login state or API
+            email: 'customer4@example.com',
+            contactNumber: '974021322' // Optional
+          };
+
+          this.paymentService.createOrder(50000, this.booking.bookingID).subscribe(order => {
+            this.paymentService.initiatePayment(order, this.booking.bookingID, user);
+          });
+
+          //this.route.navigate(['home']);
       },
         error:(err)=>{
           alert(err);
