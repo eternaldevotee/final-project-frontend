@@ -19,12 +19,13 @@ export class AgentPackageDetailComponent {
 
   ngOnInit() : void {
     this.route.paramMap.subscribe(params => {
-      const id = Number(params.get('id'));
+      const id = params.get('id');
+      
       console.log(id);
       console.log("inside the admin card detail page")
 
       this.cardService.getPackages().subscribe(packages => {
-        this.package = packages.find((pkg : TravelPackageModel) => pkg.PackageID === id)!;
+        this.package = packages.find((pkg : TravelPackageModel) => pkg.packageID === id)!;
         console.log("got package")
         console.log(this.package);
         window.scrollTo({top: 0, behavior: 'smooth'})

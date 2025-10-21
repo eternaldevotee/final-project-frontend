@@ -13,9 +13,9 @@ fdescribe('SearchserviceService', () => {
   const mockPackages: TravelPackageModel[] = [
     {
       PackageID: 1,
-      Title: 'Beach Paradise',
-      Description: 'Relax on the beach',
-      DetailedDescription: 'Enjoy 3 days of sun, sand, and sea in Goa.',
+      title: 'Beach Paradise',
+      description: 'Relax on the beach',
+      detailedDescription: 'Enjoy 3 days of sun, sand, and sea in Goa.',
       Duration: '3 Days',
       Price: 5000,
       IncludedServices: ['Hotel', 'Meals', 'Transport'],

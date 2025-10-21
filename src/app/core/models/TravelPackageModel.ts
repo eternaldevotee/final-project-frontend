@@ -1,12 +1,24 @@
+// export interface TravelPackageModel {
+//   packageID: number;
+//   title : string;
+//   description : string;
+//   detaileddescription : string;
+//   duration : string;
+//   price : number;
+//   includedServices : string[];
+//   imageSrc : string;
+//   id: string;
+//   location : string;
+// }
+
 export interface TravelPackageModel {
-  PackageID: number;
-  Title : string;
-  Description : string;
-  DetailedDescription : string;
-  Duration : string;
-  Price : number;
-  IncludedServices : string[];
-  ImageSrc : string;
-  id: string;
-  Location : string;
+  packageID: string;
+  title: string;
+  description: string;
+  detailedDescription: string;
+  duration: string;
+  price: number;
+  includedServices: string[];
+  imageSrc: string;
+  location: string;
 }

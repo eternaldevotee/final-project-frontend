@@ -13,26 +13,29 @@ import { TravelPackageModel } from '../../../core/models/TravelPackageModel';
 export class CardDetailComponent implements OnInit {
   package!: TravelPackageModel;
 
-  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private routeBooking: Router, private shareLoginService: ShareloginService){}
+  constructor(
+    private route: ActivatedRoute,
+    private cardService: DynamicCardService,
+    private routeBooking: Router,
+    private shareLoginService: ShareloginService
+  ) {}
 
-    ngOnInit(): void {
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.cardService.getPackages().subscribe(packages => {
+        this.package = packages.find((pkg: TravelPackageModel) => pkg.packageID === id)!;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+    console.log(this.package);
+  }
 
-      this.route.paramMap.subscribe(params => {
-        const id = Number(params.get('id'));
-        this.cardService.getPackages().subscribe(packages => {
-          this.package = packages.find((pkg : TravelPackageModel) => pkg.PackageID === id)!;
-          //to scroll back to routeroutlet
-          window.scrollTo({top : 0, behavior:'smooth'});
-        })
-      })
+  onBookNow(): void {
+    if (this.shareLoginService.isLoggedIn()) {
+      this.routeBooking.navigate(['/booking', this.package.packageID]);
+    } else {
+      alert('Please log in to book!!');
     }
-
-    onBookNow(){
-      if(this.shareLoginService.isLoggedIn()){
-        this.routeBooking.navigate(['/booking',this.package.PackageID]);
-      }else{
-        alert("Please log in to book!!")
-      }
-
-    }
+  }
 }

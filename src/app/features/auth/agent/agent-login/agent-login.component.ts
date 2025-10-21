@@ -14,15 +14,14 @@ import { UserModel } from '../../../../core/models/UserModel';
 })
 export class AgentLoginComponent {
 
-  login!:UserModel;
+  ALogin!:UserModel;
   userExists!:boolean;  
 
 
   constructor(private restservice:AuthserviceService, private sharedataservice:ShareloginService, private router: Router){}
-
-
+  
   ngOnInit(): void {
-    this.login={
+    this.ALogin={
       userID:'',
       name:'',
       email:'',
@@ -32,11 +31,10 @@ export class AgentLoginComponent {
     }
   }
   onSubmit(AloginForm: NgForm) {
-    const emailId = AloginForm.value.emailId;
+    const emailID = AloginForm.value.emailID;
 
-    this.restservice.getUserByEmailId(emailId).subscribe({
+    this.restservice.getUserByEmailId(emailID).subscribe({
       next:(data) =>{
-      
         this.userExists=!!data;
         const role= data.role;
         if(this.userExists&&role=='agent'){

@@ -93,7 +93,7 @@
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.06);
 }
 
-/* Title & subtitle */
+/* title & subtitle */
 .review-card mat-card-title {
   font-size: 0.98rem;
   font-weight: 600;

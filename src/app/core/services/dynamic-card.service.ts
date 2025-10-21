@@ -1,39 +1,51 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { TravelPackageModel } from '../models/TravelPackageModel';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DynamicCardService {
-  apiUrl:string = 'http://localhost:3000/TravelPackage';
-  
-  
-  constructor(private http : HttpClient) { }
+  apiUrl: string = 'http://localhost:3000/TravelPackage';
+  apiUrl1: string = 'http://localhost:8080/agent/packages';
+  crtApi: string = 'http://localhost:8080/agent';
 
-  updatePackage(id : string, data : Partial<TravelPackageModel>) : Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, data);
+  constructor(private http: HttpClient) {}
 
+  
+
+  getPackageById(id: string): Observable<TravelPackageModel> {
+    return this.http.get<TravelPackageModel>(`${this.apiUrl1}/${id}`);
   }
 
-  getPackageById(id : string) : Observable<TravelPackageModel> {
-    console.log("Hello I am in the get Package Id method")
-    return this.http.get<TravelPackageModel>(`${this.apiUrl}/${id}`)
+  getPackages(): Observable<any> {
+    return this.http
+      .get(this.apiUrl1)
+      .pipe(tap((data) => console.log('Fetched package', data)));
   }
 
-  getPackages() : Observable<any> {
-    // console.log(this.apiUrl)
-    return this.http.get(this.apiUrl)
+
+  deletePackage(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl1}/${id}`);
   }
-  
-  updatePackage1(id: string, data: Partial<TravelPackageModel>): Observable<TravelPackageModel> {
-  return this.http.put<TravelPackageModel>(`${this.apiUrl}/${id}`, data);
+
+
+
+  createPackage(
+    pkg: Omit<TravelPackageModel, 'packageID'>
+  ): Observable<TravelPackageModel> {
+    return this.http.post<TravelPackageModel>(
+      `${this.crtApi}/createPackage`,
+      pkg
+    );
+  }
+
+  updatePackage(
+    id: string,
+    data: Partial<TravelPackageModel>
+  ): Observable<any> {
+    console.log('in the update package and the package id is ', id);
+    return this.http.put(`${this.apiUrl1}/${id}`, data);
+  }
 }
-
-  deletePackage(id : string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
-  }
-}
-
