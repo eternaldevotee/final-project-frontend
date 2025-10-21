@@ -10,12 +10,14 @@ export class BookingserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:3000/Booking";
+  strUrl : string = "http://localhost:8080/booking/getBooking";
+
+  strUrl1 : string = "http://localhost:8080/booking/setBooking";
 
   //insert customer info
   createBookingDetails(booking :BookingModel):Observable<BookingModel>{
     console.log(booking);
-    return this.rest.post<BookingModel>(`${this.strUrl}`,booking).pipe(
+    return this.rest.post<BookingModel>(`${this.strUrl1}`,booking).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching user:", error);
@@ -25,7 +27,7 @@ export class BookingserviceService {
   }
   
   getBookingsById(userId:any):Observable<BookingModel[]>{
-    return this.rest.get<BookingModel[]>(`${this.strUrl}?UserId=${userId}`).pipe(
+    return this.rest.get<BookingModel[]>(`${this.strUrl}?userID=${userId}`).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching user:", error);

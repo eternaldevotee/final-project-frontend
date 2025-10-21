@@ -1,10 +1,10 @@
 export interface BookingModel{
-  BookingID: any;
-  UserId: any;
-  PackageID: number;
-  date: string;
-  Status: string;
-  Adults: number;
-  Children: number;
-  PaymentID: any;
+  bookingID: any;
+  userID: any;
+  packageID: any;
+  date: any;
+  status: string;
+  noOfAdults: number;
+  noOfChildren: number;
+  paymentID: any;
 }
