@@ -45,6 +45,7 @@ import { StoreModule } from '@ngrx/store';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
 import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
+import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { PaymentCancelledComponent } from './features/booking-payment/payment-ca
     ViewMybookingsComponent,
     PaymentSuccessComponent,
     PaymentCancelledComponent,
+    AgentHomeComponent,
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 export interface TravelPackageModel {
   packageID: string;
+  userID :  string;
   title: string;
   description: string;
   detailedDescription: string;

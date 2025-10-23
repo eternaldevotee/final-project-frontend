@@ -31,6 +31,7 @@ import { ViewMybookingsComponent } from './features/booking-payment/view-mybooki
 import { customerAuthGuardGuard } from './core/gaurds/customer/customer-auth-guard.guard';
 import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
+import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 
 
 export const routes: Routes = [
@@ -77,14 +78,17 @@ export const routes: Routes = [
     //agent
     {path:'agentlogin',   component: AgentLoginComponent },
     {path:'agentsignup',  component: AgentSignupComponent },
-    {path : 'agent' , component : ListPackagesComponent, canActivate:[authGuard],
-      children:[
-        {path : 'agent/home', component : ListPackagesComponent},
-        // {path : 'agent/packages' , component : ListPackagesComponent},
-      ]
-    },
+    // {path : 'agent' , component : ListPackagesComponent, canActivate:[authGuard],
+    //   children:[
+    //     {path : 'agent/home', component : ListPackagesComponent},
+    //     // {path : 'agent/packages' , component : ListPackagesComponent},
+    //   ]
+    // },
+
+    {path : 'agent', component : AgentHomeComponent},
+    {path : 'agent/home', component : AgentHomeComponent},
     {path : 'agent/packages', component: ListPackagesComponent,canActivate:[authGuard]},
-    
+    // {path : '/agent', component : AgentHomeComponent },
     {path : 'agent/create-package' , component : DashboardComponent, canActivate:[authGuard]},
     {path : 'agent/package/:id', component :AgentPackageDetailComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent,canActivate:[authGuard]},

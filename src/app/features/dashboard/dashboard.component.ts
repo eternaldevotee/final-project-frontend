@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { TravelPackageModel } from "../../core/models/TravelPackageModel";
 import { DynamicCardService } from "../../core/services/dynamic-card.service";
 import { TravelPackageService } from "../../core/services/travel-package.service";
+import { ShareloginService } from "../../core/services/loginstate/sharelogin.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,8 @@ export class DashboardComponent implements OnInit {
     private packageService: DynamicCardService,
     private route: ActivatedRoute,
     private packageService1: TravelPackageService,
-    private router: Router
+    private router: Router,
+    private shareLoginService : ShareloginService
   ) {
     this.createPackageForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(100)]],
@@ -122,7 +124,7 @@ export class DashboardComponent implements OnInit {
       if(this.editingPackageId !== null) {
         payload.packageID = this.editingPackageId;
       }
-      console.log("just loggin the payload " , payload);
+      
     
       this.packageService.updatePackage(payload.packageID, payload).subscribe(() => {
         this.resetForm();
@@ -131,6 +133,9 @@ export class DashboardComponent implements OnInit {
         this.router.navigate(['agent/package', payload.packageID]);
       });
     } else {
+      const adminID  = this.shareLoginService.getUserId();
+      payload.userID = adminID;
+      console.log("Loggin the payload just before the create package" , payload);
       this.packageService.createPackage(payload).subscribe((createdPkg) => {
         alert('New Package created');
         this.router.navigate(['/agent/package', createdPkg.packageID]);
