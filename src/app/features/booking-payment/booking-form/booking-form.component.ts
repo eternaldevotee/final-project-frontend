@@ -7,6 +7,8 @@ import { BookingModel } from '../../../core/models/BookingModel';
 import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
 import { PaymentServiceService } from '../../../core/services/payment-service.service';
+import { PaymentModel } from '../../../core/models/PaymentModel';
+import { StripeResponseModel } from '../../../core/models/StripeResponseModel';
 
 @Component({
   selector: 'app-booking-form',
@@ -17,6 +19,8 @@ import { PaymentServiceService } from '../../../core/services/payment-service.se
 
 export class BookingFormComponent {
   booking!:BookingModel;
+  payment!:PaymentModel;
+  response!: StripeResponseModel;
   minDate: any;
 
   bookingForm = new  FormGroup({
@@ -69,18 +73,31 @@ export class BookingFormComponent {
       this.restservice.createBookingDetails(this.booking).subscribe({
         next:() =>{
           alert("Booked successfully!");
+          this.payment={
+            packageID: this.booking.packageID,
+            price: 200000,
+            noOfAdults: this.booking.noOfAdults,
+            noOfChildren: this.booking.noOfChildren,
+            currency:"INR"
+          }
+          console.log(this.payment);
+          this.paymentService.createOrder(this.payment).subscribe({
+            next:response =>{
+              this.response = response;
+              
+              const stripeUrl = response.sessionUrl;
+              //window.location.href = stripeUrl;
+              window.open(stripeUrl, '_blank');
+              
+              this.restservice.updateBookingStatus(this.booking.bookingID).subscribe({
+                next:response=> console.log(response),
+                error:err=>console.error()
+                
+              })
+            },
+            error:err => console.error("Error on payment: "+ err)
+          })
 
-          const user = {
-            name: 'Stany', // You can fetch this from login state or API
-            email: 'customer4@example.com',
-            contactNumber: '974021322' // Optional
-          };
-
-          this.paymentService.createOrder(50000, this.booking.bookingID).subscribe(order => {
-            this.paymentService.initiatePayment(order, this.booking.bookingID, user);
-          });
-
-          //this.route.navigate(['home']);
       },
         error:(err)=>{
           alert(err);
