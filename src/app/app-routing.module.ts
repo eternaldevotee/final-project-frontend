@@ -29,6 +29,8 @@ import { AgentLoginComponent } from './features/auth/agent/agent-login/agent-log
 import { ReviewAdminComponent } from './features/reviews-ratings/review-admin/review-admin.component';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
 import { customerAuthGuardGuard } from './core/gaurds/customer/customer-auth-guard.guard';
+import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
+import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 
 
 export const routes: Routes = [
@@ -50,6 +52,8 @@ export const routes: Routes = [
     {path : 'package/:id', component : CardDetailComponent},
     {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
+    {path : 'payment-success', component: PaymentSuccessComponent},
+    { path: 'payment-cancelled', component: PaymentCancelledComponent },
 
 
     //admin

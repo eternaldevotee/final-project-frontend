@@ -43,6 +43,8 @@ import { AdminAgentComponent } from './features/auth/admin/admin-agent/admin-age
 import { ReviewsModule } from './features/reviews-ratings/reviews.module';
 import { StoreModule } from '@ngrx/store';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
+import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
+import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 
 
 @NgModule({
@@ -77,6 +79,8 @@ import { ViewMybookingsComponent } from './features/booking-payment/view-mybooki
     AgentSignupComponent,
     AdminAgentComponent,
     ViewMybookingsComponent,
+    PaymentSuccessComponent,
+    PaymentCancelledComponent,
 
   ],
   imports: [
