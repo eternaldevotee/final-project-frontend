@@ -44,6 +44,7 @@ import { ReviewsModule } from './features/reviews-ratings/reviews.module';
 import { StoreModule } from '@ngrx/store';
 import { ViewMybookingsComponent } from './features/booking-payment/view-mybookings/view-mybookings.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
+import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component'
     AdminAgentComponent,
     ViewMybookingsComponent,
     AgentHomeComponent,
+    BookingSummaryTableComponent,
 
   ],
   imports: [

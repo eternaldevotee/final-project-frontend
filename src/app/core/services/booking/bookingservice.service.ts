@@ -13,6 +13,7 @@ export class BookingserviceService {
   strUrl : string = "http://localhost:8080/booking/getBooking";
 
   strUrl1 : string = "http://localhost:8080/booking/setBooking";
+  strUrl2 : string  = "http://localhost:8080/agent/packages"
 
   //insert customer info
   createBookingDetails(booking :BookingModel):Observable<BookingModel>{
@@ -34,5 +35,11 @@ export class BookingserviceService {
             return throwError(() => new Error("Something went wrong while connecting to the server. Cannot fetch the bookings, Please try again later."));
           })
         );
+  }
+
+  //get by pkg id
+  getBookingsByPkgID(packageID:any):Observable<BookingModel[]>{
+    console.log("inside the show bookings" , packageID);
+    return this.rest.get<BookingModel[]>(`${this.strUrl2}?packageID=${packageID}/showBookings`)
   }
 }

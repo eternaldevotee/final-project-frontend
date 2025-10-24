@@ -3,6 +3,7 @@ import { DynamicCardService} from '../../core/services/dynamic-card.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { TravelPackageModel } from '../../core/models/TravelPackageModel';
+import { SharedBookingServiceService } from '../../core/services/shared-booking-service.service';
 
 @Component({
   selector: 'app-agent-package-detail',
@@ -15,7 +16,7 @@ export class AgentPackageDetailComponent {
 
 
 
-  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private router : Router) {}
+  constructor(private route : ActivatedRoute, private cardService : DynamicCardService, private router : Router , private sharedBookingService : SharedBookingServiceService) {}
 
   ngOnInit() : void {
     this.route.paramMap.subscribe(params => {
@@ -28,6 +29,9 @@ export class AgentPackageDetailComponent {
         this.package = packages.find((pkg : TravelPackageModel) => pkg.packageID === id)!;
         console.log("got package")
         console.log(this.package);
+
+        //setting package id into the service for accessing for the booking summary table
+        this.sharedBookingService.setPackageId(this.package.packageID);
         window.scrollTo({top: 0, behavior: 'smooth'})
       })
     })
