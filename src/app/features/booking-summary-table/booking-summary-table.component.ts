@@ -3,6 +3,7 @@ import { BookingModel } from '../../core/models/BookingModel';
 import { ShowBookingsService } from '../../core/services/show-bookings.service';
 import { SharedBookingServiceService } from '../../core/services/shared-booking-service.service';
 import { share } from 'rxjs';
+import { BookingserviceService } from '../../core/services/booking/bookingservice.service';
 
 @Component({
   selector: 'app-booking-summary-table',
@@ -13,14 +14,19 @@ import { share } from 'rxjs';
 export class BookingSummaryTableComponent {
 
   bookings! : BookingModel[];
-  constructor(private showBookingService : ShowBookingsService , private sharedBookingService : SharedBookingServiceService){}
+  constructor(private showBookingService : ShowBookingsService , private sharedBookingService : SharedBookingServiceService , private bookingService : BookingserviceService){}
   pkgId! : string;
   ngOnInit():void{
     this.sharedBookingService.currentPackageId$.subscribe(id => {
       if(id != null) {
         this.pkgId = id;
         console.log("this is from booking servive " ,this.pkgId);
-        this.showBookingService.showBookings(this.pkgId);
+        
+        this.bookingService.getBookingsByPkgID(this.pkgId).subscribe(books => {
+          console.log("Bookings are ", books);
+          this.bookings = books;
+        });
+        console.log("This are the bookings " ,this.bookings);
       }
     })
     
