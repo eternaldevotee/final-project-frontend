@@ -12,6 +12,8 @@ export class BookingserviceService {
 
   strUrl : string = "http://localhost:8080/booking";
 
+  strUrl1 : string = "http://localhost:8080/booking/setBooking";
+  strUrl2 : string  = "http://localhost:8080/booking"
 
   //insert customer info
   createBookingDetails(booking :BookingModel):Observable<BookingModel>{
@@ -35,7 +37,16 @@ export class BookingserviceService {
         );
   }
 
+  //get by pkg id
+  getBookingsByPkgID(packageID:any):Observable<BookingModel[]>{
+    console.log("inside the show bookings !!! " , packageID);
+    return this.rest.get<BookingModel[]>(`${this.strUrl2}/getAllBookingByPkgID?packageID=${packageID}`) 
+  }
+
   updateBookingStatus(bookingID:string):Observable<BookingModel>{
    return this.rest.put<BookingModel>(`${this.strUrl} `,{});
   }
 }
+
+
+// hello
