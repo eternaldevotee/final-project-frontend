@@ -50,7 +50,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./review-agent.component.css']
 })
 export class ReviewAgentComponent implements OnInit {
-  @Input() packageId!: number;
+  @Input() packageId!: string;
   published$!: Observable<Review[]>;
 
   constructor(private reviewsService: ReviewsService) {}

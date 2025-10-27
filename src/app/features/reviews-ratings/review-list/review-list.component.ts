@@ -29,7 +29,7 @@ import { Review } from '../../../core/models/ReviewModel';
 
 
 export class ReviewListComponent implements OnInit {
-  @Input() packageId!: number;
+  @Input() packageId!: string;
 
   /** raw source from service */
   reviews$!: Observable<Review[]>;
@@ -63,7 +63,7 @@ export class ReviewListComponent implements OnInit {
     );
   }
 
-  trackById(index: number, item: Review): number {
+  trackById(index: number, item: Review): string {
     return item.reviewId;
   }
 
