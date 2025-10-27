@@ -12,22 +12,26 @@ import { ShareloginService } from '../../../core/services/loginstate/sharelogin.
   styleUrls: ['./review-form.component.css']
 })
 export class ReviewFormComponent implements OnInit {
-  @Input() packageId!: number;
+  @Input() packageId!: string;
   form!: FormGroup;
   submitting = false;
 
   ratings: number[] = [1, 2, 3, 4, 5];
   hoveredRating = 0;
-  currentUserId = 1;
-
-  constructor(private fb: FormBuilder, private reviewsService: ReviewsService, private shareLoginService: ShareloginService) {}
+  currentUserId = "";
+  
+  constructor(private fb: FormBuilder, private reviewsService: ReviewsService, private shareLoginService: ShareloginService ) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
       rating: [null, [Validators.required]],
       comment: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]]
     });
+
+   this.currentUserId = this.shareLoginService.getUserId();
   }
+
+  
 
   setRating(rating: number): void {
     this.form.get('rating')?.setValue(rating);
@@ -58,7 +62,7 @@ export class ReviewFormComponent implements OnInit {
     // }
     if(this.shareLoginService.isLoggedIn()){
       this.submitting = true;
-      const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status'> = {
+      const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status' | 'agentResponse'> = {
         ...this.form.value,
         userId: this.currentUserId,
         packageId: this.packageId

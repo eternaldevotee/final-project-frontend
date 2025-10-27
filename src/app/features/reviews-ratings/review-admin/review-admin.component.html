@@ -11,9 +11,9 @@
         <mat-card class="review-card">
           <mat-card-header>
             <div mat-card-avatar class="review-avatar">
-              <span>U{{ r.userId }}</span>
+              <span>{{ r.userName | slice:0:1  }}</span>
             </div>
-            <mat-card-title>Review from User #{{ r.userId }}</mat-card-title>
+            <mat-card-title>Review from {{r.userName}} #{{ r.userId }}</mat-card-title>
             <mat-card-subtitle>{{ r.timestamp | date:'medium' }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>

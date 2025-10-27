@@ -18,11 +18,11 @@ export class ReviewAdminComponent implements OnInit { // Renamed class
     this.pending$ = this.reviewsService.getPendingReviews();
   }
 
-  publish(reviewId: number): void {
+  publish(reviewId: string): void {
     this.reviewsService.moderateReview(reviewId, true).subscribe();
   }
 
-  reject(reviewId: number): void {
+  reject(reviewId: string): void {
     this.reviewsService.moderateReview(reviewId, false).subscribe();
   }
 

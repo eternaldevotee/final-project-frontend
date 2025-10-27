@@ -10,7 +10,7 @@ import { Review } from '../../core/models/ReviewModel';
 })
 export class ReviewsService {
   // The API endpoint provided by json-server
-  private apiUrl  = 'http://localhost:3000/reviews';
+  private apiUrl  = 'http://localhost:8080/reviews';
   private reviews$ = new BehaviorSubject<Review[]>([]);
 
   constructor(private http: HttpClient) {
@@ -20,21 +20,18 @@ export class ReviewsService {
   // Fetches all data from the API and updates the BehaviorSubject
   loadInitialData() {
     // Note: json-server uses 'id', so we map it back to 'reviewId' for our model
-    return this.http.get<any[]>(this.apiUrl).pipe(
-        map(reviews => reviews.map(r => ({...r, reviewId: r.id })))
-    ).subscribe({
+    return this.http.get<any[]>(this.apiUrl).subscribe({
       next: reviews => this.reviews$.next(reviews || []),
       error: () => this.reviews$.next([])
     });
   }
-
   // Base observable for all reviews
   getAllReviews(): Observable<Review[]> {
     return this.reviews$.asObservable();
   }
 
   // Filtered observable for published reviews
- getReviewsForPackage(packageId: number): Observable<Review[]> {
+ getReviewsForPackage(packageId: string): Observable<Review[]> {
   return this.getAllReviews().pipe(
     map(list => list.filter(r => r.packageId === packageId && r.status === 'PUBLISHED'))
   );
@@ -46,27 +43,27 @@ export class ReviewsService {
   }
 
   // Send a POST request to create a new review
-  createReview(review: Omit<Review, 'reviewId' | 'timestamp' | 'status'>): Observable<Review> {
-  const newReview = {
-    ...review,
-    // REMOVED: `id: Date.now()`. Let json-server handle this.
-    timestamp: new Date().toISOString(),
-    status: 'PENDING'
-  };
-  return this.http.post<Review>(this.apiUrl, newReview).pipe(
+  createReview(review: Omit<Review, 'reviewId' |'userName'| 'timestamp' | 'status' | 'agentResponse'>): Observable<Review> {
+  // const newReview = {
+  //   ...review,
+  //   // REMOVED: `id: Date.now()`. Let json-server handle this.
+  //   timestamp: new Date().toISOString(),
+  //   status: 'PENDING'
+  // };
+  return this.http.post<Review>(this.apiUrl, review).pipe(
     tap(() => this.loadInitialData()) // This is correct, re-fetch after posting
   );
 }
 
   // Send a PATCH request to add an agent response
-  respondToReview(reviewId: number, response: string): Observable<Review> {
+  respondToReview(reviewId: string, response: string): Observable<Review> {
     return this.http.patch<Review>(`${this.apiUrl}/${reviewId}`, { agentResponse: response }).pipe(
       tap(() => this.loadInitialData()) // Re-fetch all data after a successful patch
     );
   }
 
   // Send a PATCH request to change the review status
-  moderateReview(reviewId: number, publish: boolean): Observable<Review> {
+  moderateReview(reviewId: string, publish: boolean): Observable<Review> {
     const newStatus = publish ? 'PUBLISHED' : 'REJECTED';
     return this.http.patch<Review>(`${this.apiUrl}/${reviewId}`, { status: newStatus }).pipe(
       tap(() => this.loadInitialData()) // Re-fetch all data after a successful patch
