@@ -44,4 +44,9 @@ export class CustomerLoginStateService {
   getRole(): any {
     return sessionStorage.getItem('role');
   }
+
+  getName() : any {
+    console.log(sessionStorage.getItem('name'));
+    return sessionStorage.getItem('name');
+  }
 }

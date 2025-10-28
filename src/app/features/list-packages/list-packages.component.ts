@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DynamicCardService } from '../../core/services/dynamic-card.service';
 import { TravelPackageModel } from '../../core/models/TravelPackageModel';
 import { ShareloginService } from '../../core/services/loginstate/sharelogin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-packages',
@@ -13,7 +14,7 @@ export class ListPackagesComponent {
 
   packages!: TravelPackageModel[];
 
-  constructor(private cardService : DynamicCardService, private shareLoginService : ShareloginService){}
+  constructor(private cardService : DynamicCardService, private shareLoginService : ShareloginService , private router : Router){}
 
   ngOnInit() : void {
     const adminID = this.shareLoginService.getUserId();
@@ -23,6 +24,9 @@ export class ListPackagesComponent {
     })
   }
 
+  navigateTo(path : string) {
+    this.router.navigate([`/${path}`]);
+  }
   
   
 

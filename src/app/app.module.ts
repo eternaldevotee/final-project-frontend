@@ -47,6 +47,7 @@ import { PaymentSuccessComponent } from './features/booking-payment/payment-succ
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
+import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
 
 
 @NgModule({
@@ -85,6 +86,7 @@ import { BookingSummaryTableComponent } from './features/booking-summary-table/b
     PaymentCancelledComponent,
     AgentHomeComponent,
     BookingSummaryTableComponent,
+    MotivatorComponent,
 
   ],
   imports: [

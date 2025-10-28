@@ -29,3 +29,9 @@ h1{
     font-size: 2.3rem;
     color: #333;
 }
+
+.no-packages-found {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+}
