@@ -1,0 +1,40 @@
+.container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 24px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.row{
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.row.fw-bold {
+    background-color: #e3f2fd;
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.row:hover {
+    background-color: #f1f1f1;
+}
+
+.row div {
+    font-size: 15px;
+    color: #333;
+}
+
+.row div:last-child {
+    font-weight: 500;
+    color: #2e7d32;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px 10px;
+    font-size: 28px;
+}

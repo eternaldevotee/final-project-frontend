@@ -49,6 +49,9 @@ import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component'
 import { PaymentProcessingComponent } from './features/booking-payment/payment-processing/payment-processing.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentReceiptComponent } from './features/booking-payment/payment-receipt/payment-receipt.component';
+import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
+import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
+
 
 @NgModule({
   declarations: [
@@ -87,6 +90,8 @@ import { PaymentReceiptComponent } from './features/booking-payment/payment-rece
     AgentHomeComponent,
     PaymentProcessingComponent,
     PaymentReceiptComponent,
+    BookingSummaryTableComponent,
+    MotivatorComponent,
 
   ],
   imports: [

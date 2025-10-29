@@ -1,0 +1,6 @@
+.quote-box {
+  background-color: #F4EDE4; /* Sand Beige */
+  font-family: 'Poppins', sans-serif;
+  border-left: 4px solid #FF6B6B; /* Coral accent */
+  transition: opacity 0.5s ease-in-out;
+}

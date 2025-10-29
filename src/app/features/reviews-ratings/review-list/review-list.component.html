@@ -105,11 +105,11 @@
         <mat-card class="review-card" role="article" aria-label="Customer review">
           <mat-card-header class="card-header">
             <div mat-card-avatar class="review-avatar" aria-hidden="true">
-              <span>U{{ r.userId }}</span>
+              <span>{{ r.userName | slice:0:1  }}</span>
             </div>
 
             <div class="header-meta">
-              <mat-card-title class="user-name">Anonymous User</mat-card-title>
+              <mat-card-title class="user-name">{{r.userName}}</mat-card-title>
               <mat-card-subtitle class="review-date">{{ r.timestamp | date:'longDate' }}</mat-card-subtitle>
             </div>
 
