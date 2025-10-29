@@ -32,6 +32,7 @@ import { customerAuthGuardGuard } from './core/gaurds/customer/customer-auth-gua
 import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
+import { PaymentProcessingComponent } from './features/booking-payment/payment-processing/payment-processing.component';
 
 
 export const routes: Routes = [
@@ -55,6 +56,7 @@ export const routes: Routes = [
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
+    { path: 'payment-processing', component: PaymentProcessingComponent },
 
 
     //admin

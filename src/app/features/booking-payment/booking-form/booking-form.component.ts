@@ -6,7 +6,7 @@ import { ShareloginService } from '../../../core/services/loginstate/sharelogin.
 import { BookingModel } from '../../../core/models/BookingModel';
 import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
-import { PaymentServiceService } from '../../../core/services/payment-service.service';
+import { PaymentServiceService } from '../../../core/services/payment/payment-service.service';
 import { PaymentModel } from '../../../core/models/PaymentModel';
 import { StripeResponseModel } from '../../../core/models/StripeResponseModel';
 
@@ -72,9 +72,10 @@ export class BookingFormComponent {
 
       this.restservice.createBookingDetails(this.booking).subscribe({
         next:() =>{
-          alert("Booked successfully!");
           this.payment={
             packageID: this.booking.packageID,
+            bookingID: this.booking.bookingID,
+            userID: this.booking.userID,
             price: 200000,
             noOfAdults: this.booking.noOfAdults,
             noOfChildren: this.booking.noOfChildren,
@@ -86,14 +87,12 @@ export class BookingFormComponent {
               this.response = response;
               
               const stripeUrl = response.sessionUrl;
+
+              sessionStorage.setItem('sessionId', response.sessionId);
+              sessionStorage.setItem('bookingID', this.booking.bookingID)
               //window.location.href = stripeUrl;
               window.open(stripeUrl, '_blank');
-              
-              this.restservice.updateBookingStatus(this.booking.bookingID).subscribe({
-                next:response=> console.log(response),
-                error:err=>console.error()
-                
-              })
+
             },
             error:err => console.error("Error on payment: "+ err)
           })

@@ -26,7 +26,7 @@ export class BookingserviceService {
   }
   
   getBookingsById(userId:any):Observable<BookingModel[]>{
-    return this.rest.get<BookingModel[]>(`${this.strUrl}/getBooking?userID=${userId}`).pipe(
+    return this.rest.get<BookingModel[]>(`${this.strUrl}/getBookingByUsrID?userID=${userId}`).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching user:", error);
@@ -35,7 +35,10 @@ export class BookingserviceService {
         );
   }
 
-  updateBookingStatus(bookingID:string):Observable<BookingModel>{
-   return this.rest.put<BookingModel>(`${this.strUrl} `,{});
+  updateBookingStatus(bookingID:any):Observable<BookingModel>{
+    return this.rest.put<BookingModel>(`${this.strUrl}/updateBookingStatus?bookingID=${bookingID}`,{});
+  }
+  updatePaymentStatusInBooking(bookingID:any):Observable<BookingModel>{
+   return this.rest.put<BookingModel>(`${this.strUrl}/updatePaymentStatus?bookingID=${bookingID}`,{});
   }
 }

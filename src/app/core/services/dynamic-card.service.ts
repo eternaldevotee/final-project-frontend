@@ -13,8 +13,6 @@ export class DynamicCardService {
 
   constructor(private http: HttpClient) {}
 
-  
-
   getPackageById(id: string): Observable<TravelPackageModel> {
     return this.http.get<TravelPackageModel>(`${this.apiUrl1}/${id}`);
   }

@@ -46,7 +46,9 @@ import { ViewMybookingsComponent } from './features/booking-payment/view-mybooki
 import { PaymentSuccessComponent } from './features/booking-payment/payment-success/payment-success.component';
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
-
+import { PaymentProcessingComponent } from './features/booking-payment/payment-processing/payment-processing.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PaymentReceiptComponent } from './features/booking-payment/payment-receipt/payment-receipt.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component'
     PaymentSuccessComponent,
     PaymentCancelledComponent,
     AgentHomeComponent,
+    PaymentProcessingComponent,
+    PaymentReceiptComponent,
 
   ],
   imports: [
@@ -103,6 +107,7 @@ import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component'
     ReactiveFormsModule,
     ReviewsModule,
     StoreModule.forRoot({}, {}),
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
