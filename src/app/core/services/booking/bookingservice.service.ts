@@ -40,6 +40,7 @@ export class BookingserviceService {
   updateBookingStatus(bookingID:any):Observable<BookingModel>{
     return this.rest.put<BookingModel>(`${this.strUrl}/updateBookingStatus?bookingID=${bookingID}`,{});
   }
+  
   updatePaymentStatusInBooking(bookingID:any):Observable<BookingModel>{
    return this.rest.put<BookingModel>(`${this.strUrl}/updatePaymentStatus?bookingID=${bookingID}`,{});
   }
