@@ -1,9 +1,10 @@
 <app-agent-navbar/>
 
 <h1 class="p-2 ">List of your Current Packages</h1>
- <div *ngIf = "packages.length == 0" class="no-packages-found">
-    You don’t have any active packages yet. Click below to create one
-    <button class="btn-primary" (click) = "navigateTo('/agent/create-package')">Create package</button>
+  <div *ngIf = "packages && packages.length == 0" class="no-packages-found">
+    <img src="/no-packages-found.png"/>
+    <div class="no-pkg-msg">You don’t have any active packages. Click below to create one</div>
+    <button class="btn-primary" (click) = "navigateTo('/agent/create-package')">Create package Now</button>
  </div>
  <div class="container">
     <div class="row p-2 " style="justify-content: space-around;">

@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
@@ -31,7 +33,16 @@ h1{
 }
 
 .no-packages-found {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
     font-size: large;
+}
+
+.no-pkg-msg {
+    font-size: 22px;
 }
