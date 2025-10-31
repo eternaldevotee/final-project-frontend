@@ -33,6 +33,8 @@ import { PaymentSuccessComponent } from './features/booking-payment/payment-succ
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 import { PaymentProcessingComponent } from './features/booking-payment/payment-processing/payment-processing.component';
+import { AgentNavbarComponent } from './shared/layout/agent-navbar/agent-navbar.component';
+import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
 
 
 export const routes: Routes = [
@@ -80,12 +82,7 @@ export const routes: Routes = [
     //agent
     {path:'agentlogin',   component: AgentLoginComponent },
     {path:'agentsignup',  component: AgentSignupComponent },
-    // {path : 'agent' , component : ListPackagesComponent, canActivate:[authGuard],
-    //   children:[
-    //     {path : 'agent/home', component : ListPackagesComponent},
-    //     // {path : 'agent/packages' , component : ListPackagesComponent},
-    //   ]
-    // },
+   
 
     {path : 'agent', component : AgentHomeComponent},
     {path : 'agent/home', component : AgentHomeComponent},
@@ -94,7 +91,8 @@ export const routes: Routes = [
     {path : 'agent/create-package' , component : DashboardComponent, canActivate:[authGuard]},
     {path : 'agent/package/:id', component :AgentPackageDetailComponent, canActivate:[authGuard]},
     {path : 'edit-package/:id', component : DashboardComponent,canActivate:[authGuard]},
-    {path : 'agent/package/:id', component :AgentPackageDetailComponent,canActivate:[authGuard]}
+    {path : 'agent/package/:id', component :AgentPackageDetailComponent,canActivate:[authGuard]},
+    {path : 'agent/notifications', component : AgentNotificationsComponent}
 ];
 
 @NgModule({

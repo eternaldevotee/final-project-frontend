@@ -51,6 +51,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentReceiptComponent } from './features/booking-payment/payment-receipt/payment-receipt.component';
 import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
 import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
+import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
     PaymentReceiptComponent,
     BookingSummaryTableComponent,
     MotivatorComponent,
+    AgentNotificationsComponent,
 
   ],
   imports: [
