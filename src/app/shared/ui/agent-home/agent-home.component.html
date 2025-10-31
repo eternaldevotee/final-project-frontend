@@ -12,15 +12,25 @@
 
   <app-motivator/>
 
-  <div class="d-flex justify-content-around flex-wrap mt-4">
-    <button class="btn btn-primary m-2" (click) = "navigateTo('agent/create-package')" >
-      <i class="bi bi-plus-circle"></i> Create Package
-    </button>
-    <button class="btn btn-warning m-2" (click) = "navigateTo('/agent/packages')">
-      <i class="bi bi-pencil-square"></i> Update Package
-    </button>
-    <button class="btn btn-info m-2" (click) = "navigateTo('/agent/packages')">
-      <i class="bi bi-search"></i> See Your Current Packages
-    </button>
+ <div class="d-flex justify-content-center flex-wrap mt-4">
+  <div class="action-card create" (click)="navigateTo('agent/create-package')">
+    <i class="bi bi-plus-circle-fill icon"></i>
+    <h5>Create Package</h5>
+    <p>Tailor a new travel plan for your client.</p>
   </div>
+
+  <div class="action-card update" (click)="navigateTo('/agent/packages')">
+    <i class="bi bi-pencil-square icon"></i>
+    <h5>Update Package</h5>
+    <p>Modify existing packages with new details.</p>
+  </div>
+
+  <div class="action-card view" (click)="navigateTo('/agent/packages')">
+    <i class="bi bi-search icon"></i>
+    <h5>See Your Packages</h5>
+    <p>Browse all your current travel packages.</p>
+  </div>
+</div>
+
+
 </div>

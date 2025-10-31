@@ -60,4 +60,7 @@ src="TajMahal.webp" -->
 <hr class="hr" />
 <app-booking-summary-table />
 <hr class="hr" />
+
+<div *ngIf = "package">
 <app-review-agent [packageId]="package.packageID"></app-review-agent>
+</div>
