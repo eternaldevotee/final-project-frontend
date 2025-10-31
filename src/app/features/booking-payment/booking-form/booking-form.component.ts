@@ -37,8 +37,6 @@ export class BookingFormComponent {
     this.minDate = tomorrow.toISOString().split('T')[0]; // Format to: YYYY-MM-DD
   }
 
-
-
   constructor(private restservice: BookingserviceService, private router :ActivatedRoute, 
     private customerLoginStateService: CustomerLoginStateService, private route: Router,
     private paymentService: PaymentServiceService){}
@@ -67,41 +65,39 @@ export class BookingFormComponent {
         status:"Pending",
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
-        paymentID:crypto.randomUUID()
+        paymentID:"hello"
       }
 
-      this.restservice.createBookingDetails(this.booking).subscribe({
-        next:() =>{
-          this.payment={
-            packageID: this.booking.packageID,
-            bookingID: this.booking.bookingID,
-            userID: this.booking.userID,
-            price: 200000,
-            noOfAdults: this.booking.noOfAdults,
-            noOfChildren: this.booking.noOfChildren,
-            currency:"INR"
-          }
-          console.log(this.payment);
-          this.paymentService.createOrder(this.payment).subscribe({
-            next:response =>{
+       this.restservice.createBookingDetails(this.booking).subscribe({
+         next:() =>{
+          console.log(this.booking)
+           this.payment={
+             packageID: this.booking.packageID,
+             bookingID: this.booking.bookingID,
+             userID: this.booking.userID,
+             price: 200000,
+             noOfAdults: this.booking.noOfAdults,
+             noOfChildren: this.booking.noOfChildren,
+             currency:"INR"
+           }
+           console.log(this.payment);
+           this.paymentService.createOrder(this.payment).subscribe({
+             next:response =>{
               this.response = response;
               
-              const stripeUrl = response.sessionUrl;
+               const stripeUrl = response.sessionUrl;
 
-              sessionStorage.setItem('sessionId', response.sessionId);
-              sessionStorage.setItem('bookingID', this.booking.bookingID)
-              //window.location.href = stripeUrl;
-              window.open(stripeUrl, '_blank');
-
-            },
-            error:err => console.error("Error on payment: "+ err)
-          })
-
-      },
-        error:(err)=>{
-          alert(err);
-        }
-      })
+               sessionStorage.setItem('sessionId', response.sessionId);
+               sessionStorage.setItem('bookingID', this.booking.bookingID)
+               //window.location.href = stripeUrl;
+               window.open(stripeUrl, '_blank')
+             },
+             error:err => console.error("Error on payment: "+ err)
+           })
+        
+       },
+         error:(err)=> alert(err)
+       })
     }
   }
 }
