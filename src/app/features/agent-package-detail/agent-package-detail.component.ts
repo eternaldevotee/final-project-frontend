@@ -3,7 +3,7 @@ import { DynamicCardService} from '../../core/services/dynamic-card.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { TravelPackageModel } from '../../core/models/TravelPackageModel';
-import { SharedBookingServiceService } from '../../core/services/shared-booking-service.service';
+import { SharedBookingServiceService } from '../../core/services/booking/shared-booking-service.service';
 
 @Component({
   selector: 'app-agent-package-detail',

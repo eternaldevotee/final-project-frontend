@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class AgentService {
   private apiUrl = 'http://localhost:3000/Agents';
   private signupUrl = 'http://localhost:3000/signupRequests';
+  
   getSignupRequests() {
     return this.http.get<any[]>(this.signupUrl);
   }

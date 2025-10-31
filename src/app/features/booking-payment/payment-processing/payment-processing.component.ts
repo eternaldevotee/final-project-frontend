@@ -37,7 +37,7 @@ ngOnInit(): void {
           }
         })
         
-        if (response == 1) {
+        if (response) {
           this.router.navigate(['/payment-success'], {replaceUrl:true});
         } else {
           this.router.navigate(['/payment-cancelled'], {replaceUrl:true});

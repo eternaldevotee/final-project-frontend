@@ -1,4 +1,4 @@
-export type ReviewStatus = 'PENDING' | 'PUBLISHED' | 'REJECTED';
+import { ReviewStatus } from "./enums/ReviewStatus";
 
 export interface Review {
   reviewId: string;

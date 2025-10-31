@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BookingModel } from '../../core/models/BookingModel';
 import { ShowBookingsService } from '../../core/services/show-bookings.service';
-import { SharedBookingServiceService } from '../../core/services/shared-booking-service.service';
+import { SharedBookingServiceService } from '../../core/services/booking/shared-booking-service.service';
 import { share } from 'rxjs';
 import { BookingserviceService } from '../../core/services/booking/bookingservice.service';
 

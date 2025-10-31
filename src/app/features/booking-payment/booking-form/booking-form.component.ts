@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
-import { BookingModel } from '../../../core/models/BookingModel';
+ import { BookingModel } from '../../../core/models/BookingModel';
 import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
 import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
 import { PaymentServiceService } from '../../../core/services/payment/payment-service.service';
@@ -27,6 +26,7 @@ export class BookingFormComponent {
       date: new FormControl('',[Validators.required]),
       Adults: new FormControl (1, [Validators.required, Validators.min(1)]),
       Children: new FormControl(0, [Validators.required, Validators.min(0)]),
+      insurance: new FormControl(false)
   })
   
   
@@ -62,9 +62,10 @@ export class BookingFormComponent {
         userID:this.customerLoginStateService.getUserId(),
         packageID:this.router.snapshot.paramMap.get('PackageID'),
         date:this.bookingForm.get('date')?.value??'',
-        status:"Pending",
+        status:this.booking.status,
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
+        insuranceStatus: this.bookingForm.get('insurance')?.value ?? false,
         paymentID:"hello"
       }
 

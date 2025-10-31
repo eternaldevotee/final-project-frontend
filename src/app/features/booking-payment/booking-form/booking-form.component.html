@@ -18,6 +18,14 @@
         <input type="number" id="Children" class="form-control" formControlName="Children" min="0">
       </div>
 
+  <!-- ✅ Radio Button Section -->
+  <div class="mb-3">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="insurance" formControlName="insurance">
+      <label class="form-check-label" for="insurance">Insurance opted?</label>
+    </div>
+  </div>
+
       <button type="submit" class="btn btn-primary" [disabled]="bookingForm.invalid">Proceed to Payment</button>
     </form>
   </div>
