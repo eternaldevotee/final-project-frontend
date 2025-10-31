@@ -17,11 +17,11 @@ export class BookingserviceService {
 
   //insert customer info
   createBookingDetails(booking :BookingModel):Observable<BookingModel>{
-    console.log(booking);
     return this.rest.post<BookingModel>(`${this.strUrl}/setBooking`,booking).pipe(
           retry(1),
-          catchError((error) => {
-            console.error("Error fetching user:", error);
+          catchError((err) => {
+            console.error("Error fetching user:", err);
+            console.error('Error body:', err.error);
             return throwError(() => new Error("Something went wrong while connecting to the server.Can't book now!!, Please try again later."));
           })
         );
@@ -40,6 +40,7 @@ export class BookingserviceService {
   updateBookingStatus(bookingID:any):Observable<BookingModel>{
     return this.rest.put<BookingModel>(`${this.strUrl}/updateBookingStatus?bookingID=${bookingID}`,{});
   }
+  
   updatePaymentStatusInBooking(bookingID:any):Observable<BookingModel>{
    return this.rest.put<BookingModel>(`${this.strUrl}/updatePaymentStatus?bookingID=${bookingID}`,{});
   }
