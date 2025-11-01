@@ -16,6 +16,19 @@ export class AgentNotificationsComponent {
 
   notifications! : AgentNotificationModel[];
 
+  getTypeColor(type : string) : string {
+    switch (type.toLowerCase()) {
+      case 'create' :
+        return 'green';
+      case 'update' :
+        return 'orange';
+      case 'delete' :
+        return 'red';
+      default:
+        return 'grey';
+    }
+  }
+
   ngOnInit() : void {
     const adminID = this.shareLoginService.getUserId();
     this.agentNotificationService.getNotifications(adminID).subscribe((data) => {

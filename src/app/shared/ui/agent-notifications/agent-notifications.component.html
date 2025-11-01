@@ -4,8 +4,8 @@
 
 
 <div class="notification-feed">
-  <div *ngFor="let notification of notifications" class="notification-card">
-    <div class="notification-type-tag">{{ notification.type | titlecase }}</div>
+  <div *ngFor="let notification of notifications" class="notification-card" [ngStyle] = "{'border-left' : '10px solid ' + getTypeColor(notification.type)}">
+    <div class="notification-type-tag" [ngStyle] = "{'color' : getTypeColor(notification.type)}">{{ notification.type | titlecase }}</div>
 
     <div class="notification-message">
       <b>{{ notification.message }}</b>

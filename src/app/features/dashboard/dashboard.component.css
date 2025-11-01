@@ -1,6 +1,7 @@
 .container {
   max-width: 1000px;
-  background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+  /* background: linear-gradient(to right, #f8f9fa, #e3f2fd); */
+  background-color: #838385;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -9,7 +10,7 @@
 }
 
 h2 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Poppins", serif;
   font-size: 36px;
   color: #0d6efd;
   margin-bottom: 30px;
@@ -61,4 +62,8 @@ textarea.form-control {
 
 .shadow-large {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    font-family: "Poppins", sans-serif;
 }
