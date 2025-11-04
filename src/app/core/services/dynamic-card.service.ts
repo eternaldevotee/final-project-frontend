@@ -7,7 +7,7 @@ import { TravelPackageModel } from '../models/TravelPackageModel';
   providedIn: 'root',
 })
 export class DynamicCardService {
-  apiUrl: string = 'http://localhost:3000/TravelPackage';
+  // apiUrl: string = 'http://localhost:3000/TravelPackage';
   apiUrl1: string = 'http://localhost:8080/agent/packages';
   crtApi: string = 'http://localhost:8080/agent';
 

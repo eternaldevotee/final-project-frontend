@@ -5,6 +5,8 @@ import { AuthserviceService } from '../../../../core/services/auth/authservice.s
 import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 import { UserModel } from '../../../../core/models/UserModel';
 import { CustomerLoginStateService } from '../../../../core/services/loginstate/customer-login-state.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +18,9 @@ export class LoginComponent {
 
   login!:UserModel;
   userExists!:boolean;  
+  loginRequest!:LoginRequest;
 
-
-  constructor(private restservice:AuthserviceService, private customerdataservice:CustomerLoginStateService, private router: Router){}
+  constructor(private restservice:AuthserviceService, private customerLoginStateService:CustomerLoginStateService, private router: Router){}
 
   ngOnInit(): void {
     this.login={
@@ -33,33 +35,20 @@ export class LoginComponent {
 
   onSubmit(loginForm: NgForm) {
 
-    const emailId = loginForm.value.emailId;
+    this.loginRequest={
+      email:loginForm.value.emailId,
+      password:loginForm.value.password
+    }
 
-    this.restservice.getUserByEmailId(emailId).subscribe({
-      next: (data) =>{ 
-        
-        this.userExists=!!data;
-        console.log("The user exists:" + this.userExists)
-
-        if(this.userExists && data.role == "customer"){
-          const password = loginForm.value.password;
-        
-          if(password === data.password){
-            alert("Logged in successfully!!");
-            const userId=data.userID;
-            const role = data.role;
-            this.customerdataservice.login(userId,role);
-            this.router.navigate(['']);
-          }
-          else
-            alert("Incorrect password!!")
-        }else{
-          alert("Email not registered!!");
-         }
+    this.restservice.userLogin(this.loginRequest).subscribe({
+      next: () => {
+        // this.customerLoginStateService.login()
+        alert('Login successful!');
+        this.router.navigate(['']);
       },
-
-      error: (err) => {
-        alert(err);
+      error: (err: HttpErrorResponse) => {
+        console.error(err);
+        alert(err.error || 'Login failed. Please check your credentials.');
       }
     })
   }

@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
 import { UserModel } from '../../../../core/models/UserModel';
+import { SignUpRequest } from '../../../../core/models/Requests/SignUpRequest';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +15,8 @@ import { UserModel } from '../../../../core/models/UserModel';
 })
 export class AgentSignupComponent {
 
-  Asignup!:UserModel;
+  signup!:SignUpRequest;
+
   AsignupForm = new FormGroup({
     name: new FormControl('',[Validators.required,Validators.minLength(3), Validators.pattern(/^[A-Za-z]+(?: [A-Za-z]+)*$/)]),
     emailId: new FormControl('',[Validators.required, Validators.email]),
@@ -20,7 +24,6 @@ export class AgentSignupComponent {
     conPassword:new FormControl('',[Validators.required,Validators.minLength(8)]),
     cnumber:new FormControl('',[Validators.required,Validators.pattern(/^[0-9]{10}$/)])
   })
-number: any;
 
   get name(){
     return this.AsignupForm.get('name');
@@ -42,25 +45,33 @@ number: any;
     return this.AsignupForm.get('cnumber');
   }
 
-  constructor(private restservice: AuthserviceService){}
+  constructor(private authService: AuthserviceService, private router: Router){}
 
   onSubmit(){
     const conpassword = this.AsignupForm.get('conPassword')?.value;
     const password = this.AsignupForm.get('password')?.value;
     console.log(conpassword +" " +password)
-    const signUp={
-      userID:crypto.randomUUID(),
+    
+    this.signup={
       name:this.AsignupForm.get('name')?.value??'',
       email:this.AsignupForm.get('emailId')?.value??'',
       password:this.AsignupForm.get('password')?.value??'',
-      role:"agent",
+      role:"AGENT",
       contactNumber:this.AsignupForm.get('cnumber')?.value??'',
     }
     if(password!=conpassword){
       alert("Password not matching with confirm password!!")
     }else{
-      this.restservice.setUserDetails(signUp).subscribe(data =>{
-        alert("Account created successfully!");
+      this.authService.setAgentDetails(this.signup).subscribe({
+        next:() => {
+          alert("Account created successfully!");
+          this.router.navigate(['/login']);
+        },
+        error: (err: HttpErrorResponse) => {
+          console.error('Error:', err);
+          const errorMessage = err.error || 'Something went wrong. Please try again.';
+          alert(errorMessage);
+        }
       })
     }
   }

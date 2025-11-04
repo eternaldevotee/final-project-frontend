@@ -10,7 +10,7 @@ export class CustomerLoginStateService {
   loginState$ = this.loginState.asObservable();
 
   private userId: any;
-  private role: any;
+  // private role: any;
 
   private getInitialLoginState(): boolean {
     return sessionStorage.getItem('isLoggedIn') === 'true';
@@ -18,18 +18,18 @@ export class CustomerLoginStateService {
 
   login(userid: any, role: string) {
     this.userId = userid;
-    this.role = role;
+    // this.role = role;
     this.loginState.next(true);
     sessionStorage.setItem('userId', userid);
-    sessionStorage.setItem('role', role);
+    // sessionStorage.setItem('role', role);
     sessionStorage.setItem('isLoggedIn', 'true');
   }
 
   logOff() {
-    this.userId = null;
+    // this.userId = null;
     this.loginState.next(false);
     sessionStorage.removeItem('userId');
-    sessionStorage.removeItem('role');
+    // sessionStorage.removeItem('role');
     sessionStorage.setItem('isLoggedIn', 'false');
   }
 
@@ -41,12 +41,12 @@ export class CustomerLoginStateService {
     return sessionStorage.getItem('userId');
   }
 
-  getRole(): any {
-    return sessionStorage.getItem('role');
-  }
+  // getRole(): any {
+  //   return sessionStorage.getItem('role');
+  // }
 
-  getName() : any {
-    console.log(sessionStorage.getItem('name'));
-    return sessionStorage.getItem('name');
-  }
+  // getName() : any {
+  //   console.log(sessionStorage.getItem('name'));
+  //   return sessionStorage.getItem('name');
+  // }
 }

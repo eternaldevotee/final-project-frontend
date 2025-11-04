@@ -62,7 +62,7 @@ export class BookingFormComponent {
         userID:this.customerLoginStateService.getUserId(),
         packageID:this.router.snapshot.paramMap.get('PackageID'),
         date:this.bookingForm.get('date')?.value??'',
-        status:this.booking.status,
+        status:"PENDING",
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
         insuranceStatus: this.bookingForm.get('insurance')?.value ?? false,

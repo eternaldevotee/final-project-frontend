@@ -14,6 +14,7 @@ import { BookingserviceService } from '../../../core/services/booking/bookingser
 
 export class ViewMybookingsComponent implements OnInit{
 
+
   constructor(private restService: BookingserviceService, private route: ActivatedRoute,private shareLoginService : ShareloginService){}
 
   bookings:BookingModel[]=[];
@@ -28,5 +29,6 @@ export class ViewMybookingsComponent implements OnInit{
       });
     }
   }
+
 
 }

@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { catchError, map, Observable, retry, throwError } from 'rxjs';
 import { BookingModel } from '../../models/BookingModel';
+import { BookingResponseModel } from '../../models/Reposonse/BookingResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -51,4 +52,15 @@ export class BookingserviceService {
     return this.rest.get<BookingModel[]>(`${this.strUrl2}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
+  getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{
+    return this.rest.get<BookingResponseModel[]>(`${this.strUrl}/getBookingByBookingID?bookingID=${bookingID}`).pipe(
+      map(bookingResponseModel => bookingResponseModel[0])
+    ).pipe(
+          retry(1),
+          catchError((error) => {
+            console.error("Error fetching booking details:", error);
+            return throwError(() => new Error("Something went wrong while connecting to the server. Please try again later."));
+          })
+        );
+  }
 }

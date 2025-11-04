@@ -10,7 +10,7 @@ import {  MatAccordion,
   MatExpansionPanelTitle,
   MatExpansionModule,
 } from '@angular/material/expansion';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import { CarouselComponent } from './shared/ui/carousel/carousel.component';
@@ -51,6 +51,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentReceiptComponent } from './features/booking-payment/payment-receipt/payment-receipt.component';
 import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
 import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
+import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
+import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 
 @NgModule({
@@ -92,6 +94,7 @@ import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
     PaymentReceiptComponent,
     BookingSummaryTableComponent,
     MotivatorComponent,
+    OrderDetailsComponent,
 
   ],
   imports: [
@@ -114,7 +117,9 @@ import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
     StoreModule.forRoot({}, {}),
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptors([jwtInterceptor]))
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

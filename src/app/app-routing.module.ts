@@ -33,6 +33,8 @@ import { PaymentSuccessComponent } from './features/booking-payment/payment-succ
 import { PaymentCancelledComponent } from './features/booking-payment/payment-cancelled/payment-cancelled.component';
 import { AgentHomeComponent } from './shared/ui/agent-home/agent-home.component';
 import { PaymentProcessingComponent } from './features/booking-payment/payment-processing/payment-processing.component';
+import { BookingSummaryTableComponent } from './features/booking-summary-table/booking-summary-table.component';
+import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 
 
 export const routes: Routes = [
@@ -54,10 +56,11 @@ export const routes: Routes = [
     {path : 'package/:id', component : CardDetailComponent},
     {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
+    {path:  'order-details/:BookingID',component:OrderDetailsComponent},
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
     { path: 'payment-processing', component: PaymentProcessingComponent },
-
+  
 
     //admin
     {path:'adminlogin',component:AdminLoginComponent},

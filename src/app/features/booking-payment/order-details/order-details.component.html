@@ -1,0 +1,27 @@
+<div class="booking-container">
+  <h2>Booking Details</h2>
+    <!-- <div class="section">
+      <h3>Customer Information</h3>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Email:</strong> john.doe@example.com</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+    </div> -->
+
+    <div class="section">
+      <h3>Package Information</h3>
+      <p><strong>Destination:</strong>{{ bookingResponseModel.package.packageID }}</p>
+      <p><strong>Travel Date:</strong>{{ bookingResponseModel.date }}</p>
+    </div>
+
+    <div class="section">
+      <h3>Booking Summary</h3>
+      <p><strong>Booking ID:</strong>{{ bookingResponseModel.bookingID }}</p>
+      <p><strong>Status:</strong>{{ bookingResponseModel.status }}</p>
+    </div>
+
+    <div class="section">
+      <h3>Payment Details</h3>
+      <p><strong>Amount Paid:</strong> ₹25,000</p>
+      <p><strong>Payment Method:</strong> Razorpay</p>
+    </div>
+</div>
