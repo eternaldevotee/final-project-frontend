@@ -24,6 +24,6 @@ export class MotivatorComponent implements OnInit {
     setInterval(() => {
       this.index = (this.index + 1) % this.quotes.length;
       this.currentQuote = this.quotes[this.index];
-    }, 3000)
+    }, 2000)
   }
 }

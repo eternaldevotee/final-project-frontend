@@ -1,0 +1,20 @@
+<button class="back-button" (click)="goBack()">
+  ← Back
+</button>
+
+
+<div class="notification-feed">
+  <div *ngFor="let notification of notifications" class="notification-card" [ngStyle] = "{'border-left' : '10px solid ' + getTypeColor(notification.type)}">
+    <div class="notification-type-tag" [ngStyle] = "{'color' : getTypeColor(notification.type)}">{{ notification.type | titlecase }}</div>
+
+    <div class="notification-message">
+      <b>{{ notification.message }}</b>
+    </div>
+
+    <div class="notification-meta">
+      <span class="notification-id">🆔 {{ notification.notificationID }}</span>
+      <!-- <span class="notification-agent">👤 Agent: {{ notification.userID }}</span> -->
+      <span class="notification-time">🕒 {{ notification.timestamp | date:'MMM d, y, h:mm a' }}</span>
+    </div>
+  </div>
+</div>

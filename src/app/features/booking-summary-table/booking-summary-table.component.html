@@ -5,15 +5,19 @@
             <div class="col-1">SL No.</div>
             <div class="col-3">Booking Id</div>
             <div class="col-3">User ID</div>
-            <div class="col-3">Payment ID</div>
-            <div class="col-2">Booking Status</div>
+            <div class="col-1">No. of Adults</div>
+            <div class="col-1">No. of Children</div>
+            <div class="col-2">Payment ID</div>
+            <div class="col-1">Booking Status</div>
         </div>
         <div class="row" *ngFor = "let booking of bookings">
             <div class="col-1">01</div>
             <div class="col-3">{{booking.bookingID}}</div>
             <div class="col-3">{{booking.userID}}</div>
-            <div class="col-3">{{booking.paymentID}}</div>
-            <div class="col-2">{{booking.status}}</div>
+            <div class="col-1">{{booking.noOfAdults}}</div>
+            <div class="col-1">{{booking.noOfChildren}}</div>
+            <div class="col-2">{{booking.paymentID}}</div>
+            <div class="col-1">{{booking.status}}</div>
         </div>
     </div>
 </div>

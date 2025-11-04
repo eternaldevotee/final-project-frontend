@@ -53,6 +53,8 @@ import { BookingSummaryTableComponent } from './features/booking-summary-table/b
 import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
 import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
+
 
 
 @NgModule({
@@ -95,6 +97,7 @@ import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
     BookingSummaryTableComponent,
     MotivatorComponent,
     OrderDetailsComponent,
+    AgentNotificationsComponent,
 
   ],
   imports: [
