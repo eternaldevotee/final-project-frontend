@@ -2,18 +2,17 @@
   <div class="form">
     <h3>Admin Login</h3>
     <br>
-    <form class="formsgroup" (ngSubmit)="login()">
-      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
-      <label class="mb-2" for="username">Enter your Username:</label>
+    <form class="formsgroup" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <label class="mb-2" for="emailId">Enter your Email:</label>
       <br>
-      <input class="mb-2" type="text" name="username" id="username" placeholder="Username" [(ngModel)]="username">
+      <input class="mb-2" type="email" name="emailId" id="emailId" placeholder="Email" ngModel required>
       <br>
       <label class="mb-2" for="password">Enter your password:</label>
       <br>
-      <input class="mb-2" type="password" name="password" id="password" placeholder=" Password" [(ngModel)]="password">
+      <input class="mb-2" type="password" name="password" id="password" placeholder="Password" ngModel required>
       <br>
       <br>
-      <button type="submit" class="btn btn-info">Login</button>
+      <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Login</button>
     </form>
   </div>
 </body>

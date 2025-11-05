@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Admin Assistance Dashboard</h2>
+
+  <div class="card mb-3" *ngFor="let request of requests">
+
+    <div class="card-body">
+      <h5 class="card-title">User ID: {{ request.user.userID }}</h5>
+
+      <p class="card-text">
+        <strong>Issue:</strong> {{ request.issueDescription }}
+      </p>
+
+      <p class="card-text">
+        <strong>Status:</strong>
+        <span [ngClass]="{
+          'text-warning': request.requestStatus === 'OPEN',
+          'text-success': request.requestStatus === 'CLOSED'
+        }">
+          {{ request.requestStatus }}
+        </span>
+      </p>
+
+      <p class="card-text" *ngIf="request.reply">
+        <strong>Admin Reply:</strong> {{ request.reply }}
+      </p>
+
+      <p class="card-text" *ngIf="request.requestStatus === 'CLOSED' && request.resolutionTime">
+        <strong>Closed On:</strong> {{ request.resolutionTime | date: 'short' }}
+      </p>
+
+      <div *ngIf="request.requestStatus !== 'CLOSED'">
+        <div class="form-group mb-2">
+          <label for="adminReply-{{request.requestId}}">Your Reply:</label>
+          <textarea
+            class="form-control"
+            id="adminReply-{{request.requestId}}"
+            #replyInput
+            rows="2"
+            placeholder="Type your reply here..."
+            (input)="onReplyInput($event, request.requestId)"></textarea>
+        </div>
+
+        <button
+          class="btn btn-primary me-2"
+          [disabled]="!replyInput.value || replyInput.value.trim() === ''"
+          (click)="adminReply(request.requestId, replyInput.value); replyInput.value = ''">
+          Submit Reply
+        </button>
+
+        <button
+          class="btn btn-success"
+          (click)="closeRequest(request.requestId)">
+          Mark as Closed
+        </button>
+      </div>
+
+      <!-- Disabled buttons for closed/solved requests -->
+      <div *ngIf="request.requestStatus === 'CLOSED'">
+        <button class="btn btn-secondary me-2" disabled>
+          <i class="bi bi-check"></i> Resolved
+        </button>
+        <button class="btn btn-secondary" disabled>
+          No Action Required
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show message when no requests found -->
+  <div class="alert alert-info" *ngIf="requests.length === 0">
+    <i class="bi bi-info-circle"></i> No assistance requests found.
+  </div>
+</div>

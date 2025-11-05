@@ -1,7 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
 import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
+import { UserModel } from '../../../../core/models/UserModel';
+import { HttpErrorResponse } from '@angular/common/http';
+import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,29 +13,62 @@ import { ShareloginService } from '../../../../core/services/loginstate/sharelog
   templateUrl: './admin-login.component.html',
   styleUrl: './admin-login.component.css'
 })
-export class AdminLoginComponent {
-  username: string = '';
-  password: string = '';
-  errorMessage: string | null = null;
+export class AdminLoginComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) {}
+  login!: UserModel;
+  loginRequest!: LoginRequest;
 
-  login(): void {
-    this.errorMessage = null;
-    const apiUrl = `http://localhost:3000/User?Name=${encodeURIComponent(this.username)}&Password=${encodeURIComponent(this.password)}&Role=admin`;
-    this.http.get<any[]>(apiUrl).subscribe({
-      next: (users) => {
-        if (users && users.length > 0) {
+  constructor(
+    private authService: AuthserviceService,
+    private shareLoginService: ShareloginService,
+    private router: Router
+  ) {}
 
-          const userId = users[0].UserId;
-          this.router.navigate(['/admindashboard']);
-        } else {
-          this.errorMessage = 'Invalid admin credentials';
-        }
+  ngOnInit(): void {
+    this.login = {
+      userID: '',
+      name: '',
+      email: '',
+      password: '',
+      role: '',
+      contactNumber: ''
+    }
+  }
+
+  onSubmit(loginForm: NgForm) {
+    this.loginRequest = {
+      email: loginForm.value.emailId,
+      password: loginForm.value.password
+    }
+
+    console.log('Sending admin login request:', this.loginRequest);
+
+    this.authService.adminLogin(this.loginRequest).subscribe({
+      next: (response) => {
+        console.log('Admin login response:', response);
+        this.shareLoginService.login(response);
+        alert('Admin login successful!');
+        this.router.navigate(['/admindashboard']);
       },
-      error: () => {
-        this.errorMessage = 'Unable to reach server. Start json-server on port 3000.';
+      error: (err: HttpErrorResponse) => {
+        console.error('Full error object:', err);
+        console.error('Error status:', err.status);
+        console.error('Error message:', err.message);
+        console.error('Error body:', err.error);
+
+        let errorMsg = 'Login failed. Please check your credentials.';
+        if (err.error && typeof err.error === 'string') {
+          errorMsg = err.error;
+        } else if (err.error && err.error.message) {
+          errorMsg = err.error.message;
+        } else if (err.message) {
+          errorMsg = err.message;
+        }
+
+        alert(errorMsg);
       }
     });
   }
 }
+
+
