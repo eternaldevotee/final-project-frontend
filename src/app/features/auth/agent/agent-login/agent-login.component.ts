@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
 import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 import { UserModel } from '../../../../core/models/UserModel';
+import { HttpErrorResponse } from '@angular/common/http';
+import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
+import { CustomerLoginStateService } from '../../../../core/services/loginstate/customer-login-state.service';
 
 
 @Component({
@@ -16,7 +19,7 @@ export class AgentLoginComponent {
 
   ALogin!:UserModel;
   userExists!:boolean;  
-
+  loginRequest!:LoginRequest;
 
   constructor(private restservice:AuthserviceService, private sharedataservice:ShareloginService, private router: Router){}
   
@@ -31,30 +34,24 @@ export class AgentLoginComponent {
     }
   }
   onSubmit(AloginForm: NgForm) {
-    const emailID = AloginForm.value.emailID;
+    
+    this.loginRequest={
+      email:AloginForm.value.emailID,
+      password:AloginForm.value.password
+    }
 
-    // this.restservice.getUserByEmailId(emailID).subscribe({
-    //   next:(data) =>{
-    //     this.userExists=!!data;
-    //     const role= data.role;
-    //     if(this.userExists&&role=='agent'){
-    //       const password = AloginForm.value.password;
+    console.log(this.loginRequest);
 
-    //       if(password === data.password){
-    //         alert("Logged in successfully!!");
-    //         this.sharedataservice.login(data.userID,data.role);
-    //         this.router.navigate(['/agent']);
-    //       }
-    //       else
-    //         alert("Incorrect password!!")
-    //     }else{
-    //       alert("Email not registered!!");
-    //      }
-    //   },
-
-    //   error: (err) => {
-    //     alert(err);
-    //   }
-    // })
+    this.restservice.userLogin(this.loginRequest).subscribe({
+      next: (response) => {
+        this.sharedataservice.login(response);
+        alert('Login successful!');
+        this.router.navigate(['/agent/home']);
+      },
+      error: (err: HttpErrorResponse) => {
+        console.error(err);
+        alert(err.error || 'Login failed. Please check your credentials.');
+      }
+    })
   }
 }

@@ -1,4 +1,5 @@
 import { BookingStatus } from "../enums/BookingStatus";
+import { InsuranceStatus } from "../enums/InsuranceStatus";
 
 export interface BookingRequest{
   userID: any;
@@ -7,6 +8,5 @@ export interface BookingRequest{
   status: BookingStatus;
   noOfAdults: number;
   noOfChildren: number;
-  insuranceStatus: boolean;
-  paymentID: any;
+  insuranceStatus: InsuranceStatus;
 }

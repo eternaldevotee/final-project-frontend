@@ -15,12 +15,12 @@ export class AuthserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  url:string="http://localhost:9090/auth/customerlogin";
+  url:string="http://localhost:9090/auth";
 
   //insert customer info
   setUserDetails(request :SignUpRequest):Observable<any>{
-    console.log("Posting user data to:", `${this.url}/setCustomer`,request);
-    return this.rest.post(`${this.url}/setCustomer`,request).pipe(
+    console.log("Posting user data to:", `${this.url}/customersignup`,request);
+    return this.rest.post(`${this.url}/customersignup`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
@@ -29,8 +29,8 @@ export class AuthserviceService {
 
   //insert agent info
   setAgentDetails(request :SignUpRequest):Observable<any>{
-    console.log("Posting user data to:", `${this.url}/setAgent`,request);
-    return this.rest.post(`${this.url}/setAgent`,request).pipe(
+    console.log("Posting user data to:", `${this.url}/agentsignup`,request);
+    return this.rest.post(`${this.url}/agentsignup`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
@@ -39,10 +39,19 @@ export class AuthserviceService {
 
   //user login
   userLogin(request :LoginRequest):Observable<LoginResponse>{
-    return this.rest.post<LoginResponse>(`${this.url}`,request).pipe(
+    return this.rest.post<LoginResponse>(`${this.url}/agentlogin`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
         );
   }
+
+  //   //user login
+  // agentLogin(request :LoginRequest):Observable<LoginResponse>{
+  //   return this.rest.post<LoginResponse>(`${this.url}/customerlogin`,request).pipe(
+  //         catchError((error : HttpErrorResponse) => {
+  //           return throwError(() => error);
+  //         })
+  //       );
+  // }
 }

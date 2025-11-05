@@ -50,7 +50,6 @@ export class SignupComponent {
       name:this.signupForm.get('name')?.value??'',
       email:this.signupForm.get('emailId')?.value??'',
       password:this.signupForm.get('password')?.value??'',
-      role:'ROLE_CUSTOMER',
       contactNumber:""
     }
     if(password!=conpassword){
@@ -62,7 +61,7 @@ export class SignupComponent {
           this.router.navigate(['/login']);
         },
         error: (err: HttpErrorResponse) => {
-          console.error('Error:', err);
+          //console.error('Error:', err);
           const errorMessage = err.error || 'Something went wrong. Please try again.';
           alert(errorMessage);
         }

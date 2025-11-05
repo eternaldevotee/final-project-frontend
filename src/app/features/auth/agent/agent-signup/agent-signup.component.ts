@@ -56,7 +56,6 @@ export class AgentSignupComponent {
       name:this.AsignupForm.get('name')?.value??'',
       email:this.AsignupForm.get('emailId')?.value??'',
       password:this.AsignupForm.get('password')?.value??'',
-      role:'ROLE_AGENT',
       contactNumber:this.AsignupForm.get('cnumber')?.value??'',
     }
     if(password!=conpassword){

@@ -67,10 +67,9 @@ export class BookingFormComponent {
         status:"PENDING",
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
-        insuranceStatus: this.bookingForm.get('insurance')?.value ?? false,
-        paymentID:"hello"
+        insuranceStatus: "NOT_OPTED",
       }
-
+      console.log(this.booking)
        this.restservice.createBookingDetails(this.booking).subscribe({
          next:(response) =>{
            this.bookingResponse=response;

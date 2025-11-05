@@ -1,0 +1,1 @@
+export type InsuranceStatus = 'OPTED' | 'NOT_OPTED' ;

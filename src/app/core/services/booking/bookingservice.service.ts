@@ -13,7 +13,7 @@ export class BookingserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:9090/customer/booking";
+  strUrl : string = "localhost:9090/customer/booking";
 
 
 

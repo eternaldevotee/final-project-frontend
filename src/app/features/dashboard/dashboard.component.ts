@@ -134,6 +134,7 @@ export class DashboardComponent implements OnInit {
       });
     } else {
       const adminID  = this.shareLoginService.getUserId();
+      console.log("Heyyyyyy",this.shareLoginService.getToken())
       payload.userID = adminID;
       console.log("Loggin the payload just before the create package" , payload);
       this.packageService.createPackage(payload).subscribe((createdPkg) => {
