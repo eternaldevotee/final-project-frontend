@@ -9,12 +9,15 @@ import { CustomerLoginStateService } from '../../../core/services/loginstate/cus
   styleUrl: './agent-home.component.css'
 })
 export class AgentHomeComponent {
+
+  agentName! : string;
   constructor(private router: Router , private state : CustomerLoginStateService){}
   navigateTo(path : string) {
     this.router.navigate([`/${path}`]);
   }
 
   ngOnInit() {
-    console.log("the name of agent is " , this.state.getName());
+    this.agentName = this.state.getName();
+    console.log("the name of agent is " , this.agentName);
   }
 }
