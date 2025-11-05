@@ -1,5 +1,6 @@
 import { TravelPackageResponse } from "./TravelPackageResponse";
 import { UserResponse } from "./UserResponse";
+import { PaymentResponse } from "./PaymentResponse";
 
 export interface BookingResponse {
   bookingID: string;
@@ -10,5 +11,5 @@ export interface BookingResponse {
   noOfAdults: number;
   noOfChildren: number;
   insuranceStatus: boolean;
-  payment: PaymentResponse;
+  payment:PaymentResponse;
 }

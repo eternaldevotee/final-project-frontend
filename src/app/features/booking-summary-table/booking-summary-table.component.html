@@ -13,10 +13,10 @@
         <div class="row" *ngFor = "let booking of bookings">
             <div class="col-1">01</div>
             <div class="col-3">{{booking.bookingID}}</div>
-            <div class="col-3">{{booking.userID}}</div>
+            <div class="col-3">{{booking.user.userID}}</div>
             <div class="col-1">{{booking.noOfAdults}}</div>
             <div class="col-1">{{booking.noOfChildren}}</div>
-            <div class="col-2">{{booking.paymentID}}</div>
+            <div class="col-2">{{booking.payment.paymentID}}</div>
             <div class="col-1">{{booking.status}}</div>
         </div>
     </div>

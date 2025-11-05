@@ -53,9 +53,9 @@ export class BookingserviceService {
   }
 
   //get by pkg id
-  getBookingsByPkgID(packageID:any):Observable<BookingModel[]>{
+  getBookingsByPkgID(packageID:any):Observable<BookingResponse[]>{
     console.log("inside the show bookings !!! " , packageID);
-    return this.rest.get<BookingModel[]>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
+    return this.rest.get<BookingResponse []>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
   getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{
