@@ -1,7 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
+import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
+import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
+import { CustomerLoginStateService } from '../../../../core/services/loginstate/customer-login-state.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,28 +13,35 @@ import { ShareloginService } from '../../../../core/services/loginstate/sharelog
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
-  username: string = '';
-  password: string = '';
-  errorMessage: string | null = null;
+  login!:LoginRequest;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private restservice:AuthserviceService, private customerLoginStateService:CustomerLoginStateService, private router: Router){}
 
-  login(): void {
-    this.errorMessage = null;
-    const apiUrl = `http://localhost:3000/User?Name=${encodeURIComponent(this.username)}&Password=${encodeURIComponent(this.password)}&Role=admin`;
-    this.http.get<any[]>(apiUrl).subscribe({
-      next: (users) => {
-        if (users && users.length > 0) {
+  ngOnInit(): void {
+    this.login={
+      email:'',
+      password:'',
+    }
+  }
 
-          const userId = users[0].UserId;
-          this.router.navigate(['/admindashboard']);
-        } else {
-          this.errorMessage = 'Invalid admin credentials';
-        }
+  onSubmit(loginForm: NgForm) {
+
+    this.login={
+      email:loginForm.value.emailId,
+      password:loginForm.value.password
+    }
+
+    this.restservice.userLogin(this.login).subscribe({
+      next: (response) => {
+        this.customerLoginStateService.login(response);
+        
+        alert('Login successful!');
+        this.router.navigate(['/admindashboard']);
       },
-      error: () => {
-        this.errorMessage = 'Unable to reach server. Start json-server on port 3000.';
+      error: (err: HttpErrorResponse) => {
+        console.error(err);
+        alert(err.error || 'Login failed. Please check your credentials.');
       }
-    });
+    })
   }
 }

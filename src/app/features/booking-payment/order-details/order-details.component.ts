@@ -20,11 +20,12 @@ export class OrderDetailsComponent{
   bookingResponseModel!:BookingResponseModel;
 
   ngOninit(){
-  const bookingID =this.router.snapshot.paramMap.get('BookingID');
+  const bookingID =this.router.snapshot.paramMap.get('id')??'';
 
-  this.bookingService.getBookingByBookingID(this.bookingID).subscribe({
+  this.bookingService.getBookingByBookingID(bookingID).subscribe({
     next:response=>{
       this.bookingResponseModel=response
+      // console.log("Hello",this.bookingResponseModel)
     },
     error:err=>console.log("Error fetching booking details",err)
   })

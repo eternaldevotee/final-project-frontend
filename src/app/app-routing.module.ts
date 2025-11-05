@@ -58,7 +58,7 @@ export const routes: Routes = [
     {path : 'package/:id', component : CardDetailComponent},
     {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
-    {path:  'order-details/:BookingID',component:OrderDetailsComponent},
+    {path:  'order-details/:id',component:OrderDetailsComponent},
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
     { path: 'payment-processing', component: PaymentProcessingComponent },

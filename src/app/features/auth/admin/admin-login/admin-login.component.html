@@ -1,19 +1,41 @@
-<body>
-  <div class="form">
-    <h3>Admin Login</h3>
-    <br>
-    <form class="formsgroup" (ngSubmit)="login()">
-      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
-      <label class="mb-2" for="username">Enter your Username:</label>
-      <br>
-      <input class="mb-2" type="text" name="username" id="username" placeholder="Username" [(ngModel)]="username">
-      <br>
-      <label class="mb-2" for="password">Enter your password:</label>
-      <br>
-      <input class="mb-2" type="password" name="password" id="password" placeholder=" Password" [(ngModel)]="password">
-      <br>
-      <br>
-      <button type="submit" class="btn btn-info">Login</button>
-    </form>
+<div class="login-wrapper container d-flex justify-content-center align-items-center mt-5" style="height: 80vh;">
+  <div class="login-illustration">
+    <img src="Designer.png">
   </div>
-</body>
+<div class="login-form-container">
+<h3>Admin Login</h3><br/>
+<form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+  <div class="mb-3">
+    <label for="emailId" class="form-label">Email</label>
+    <input type="email" #emailId="ngModel" class="form-control" id="emailId" name="emailId" [(ngModel)]="login.email" placeholder="Enter your email" required email/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="(emailId.touched && emailId.errors?.['required']) ">
+      <p class="m-2">Email is required!!</p>
+    </span>
+    <!-- Validating the vaild email id using @ -->
+    <span class="text-danger" *ngIf="(emailId.dirty && emailId.errors?.['email'])">
+      <p class="m-2">Enter a valid email address (e.g., user&#64;example.com).</p>
+    </span>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" #password="ngModel" class="form-control" id="password" name="password" [(ngModel)]="login.password" placeholder="Enter your password" required minlength="8" maxlength="20"/>
+    <!-- Validating the touch and dirty -->
+    <span class="text-danger" *ngIf="(password.touched && password.errors?.['required'])">
+      <p class="m-2">Password is required!!</p>
+    </span> 
+    <!-- Validating the minimum length -->
+    <span class="text-danger" *ngIf="(password.dirty && password.errors?.['minlength'])">
+      <p class="m-2">The password must contain minimum of 8 characters</p>
+    </span>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+
+<div class="text-center mt-3">
+  Don't have an Account? 
+  <a [routerLink]="['/signup']" class="text-primary fw-bold text-decoration-none">Signup</a>
+</div>
+</form>
+</div>
+</div>
+
