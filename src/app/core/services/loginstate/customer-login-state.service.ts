@@ -38,7 +38,7 @@ export class CustomerLoginStateService {
   }
 
   getUserId(): any {
-    return localStorage.getItem('userId');
+    return localStorage.getItem('userID');
   }
 
   getName(): any {

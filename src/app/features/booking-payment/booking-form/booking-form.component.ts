@@ -73,6 +73,9 @@ export class BookingFormComponent {
        this.restservice.createBookingDetails(this.booking).subscribe({
          next:(response) =>{
            this.bookingResponse=response;
+
+           console.log("This is booking respone: ",this.bookingResponse);
+
            this.payment={
              packageID: response.travelPackage.packageID,
              bookingID: response.bookingID,
@@ -82,18 +85,20 @@ export class BookingFormComponent {
              noOfChildren: response.noOfChildren,
              currency:'INR'
            }
+
+           console.log("This is payment: ", this.payment);
            this.paymentService.createOrder(this.payment).subscribe({
              next:response =>{
               this.response = response;
               
                const stripeUrl = response.sessionUrl;
-
+              console.log("This is stripe URL", stripeUrl)
                sessionStorage.setItem('sessionId', response.sessionId);
                sessionStorage.setItem('bookingID', this.bookingResponse.bookingID)
                //window.location.href = stripeUrl;
                window.open(stripeUrl, '_blank')
              },
-             error:err => console.error("Error on payment: "+ err)
+             error:err => console.error("Error on payment 111: ", err)
            })
         
        },
