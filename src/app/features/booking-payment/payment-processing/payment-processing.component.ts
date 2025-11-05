@@ -45,6 +45,9 @@ ngOnInit(): void {
       },
       error: err => console.error("Error on confirmPayment:" + err)
     });
+    sessionStorage.removeItem('sessionId');
+    sessionStorage.removeItem('bookingID');
+    
   }, 2000); // 2000 milliseconds = 2 seconds
 }
 }

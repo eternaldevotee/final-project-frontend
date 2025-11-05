@@ -7,7 +7,7 @@ import { AgentNotificationModel } from '../models/AgentNotificationModel';
   providedIn: 'root'
 })
 export class NotificationServiceService {
-  private baseUrl  = "http://localhost:8080/agent/notifications";
+  private baseUrl  = "http://localhost:9090/agent/notifications";
   constructor(private http : HttpClient) { }
 
   getNotifications(agentId : string) : Observable<AgentNotificationModel[]> {

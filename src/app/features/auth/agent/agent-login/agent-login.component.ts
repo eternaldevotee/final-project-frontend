@@ -33,28 +33,28 @@ export class AgentLoginComponent {
   onSubmit(AloginForm: NgForm) {
     const emailID = AloginForm.value.emailID;
 
-    this.restservice.getUserByEmailId(emailID).subscribe({
-      next:(data) =>{
-        this.userExists=!!data;
-        const role= data.role;
-        if(this.userExists&&role=='agent'){
-          const password = AloginForm.value.password;
+    // this.restservice.getUserByEmailId(emailID).subscribe({
+    //   next:(data) =>{
+    //     this.userExists=!!data;
+    //     const role= data.role;
+    //     if(this.userExists&&role=='agent'){
+    //       const password = AloginForm.value.password;
 
-          if(password === data.password){
-            alert("Logged in successfully!!");
-            this.sharedataservice.login(data.userID,data.role);
-            this.router.navigate(['/agent']);
-          }
-          else
-            alert("Incorrect password!!")
-        }else{
-          alert("Email not registered!!");
-         }
-      },
+    //       if(password === data.password){
+    //         alert("Logged in successfully!!");
+    //         this.sharedataservice.login(data.userID,data.role);
+    //         this.router.navigate(['/agent']);
+    //       }
+    //       else
+    //         alert("Incorrect password!!")
+    //     }else{
+    //       alert("Email not registered!!");
+    //      }
+    //   },
 
-      error: (err) => {
-        alert(err);
-      }
-    })
+    //   error: (err) => {
+    //     alert(err);
+    //   }
+    // })
   }
 }

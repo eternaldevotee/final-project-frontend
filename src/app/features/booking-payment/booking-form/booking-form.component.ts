@@ -8,6 +8,8 @@ import { CustomerLoginStateService } from '../../../core/services/loginstate/cus
 import { PaymentServiceService } from '../../../core/services/payment/payment-service.service';
 import { PaymentModel } from '../../../core/models/PaymentModel';
 import { StripeResponseModel } from '../../../core/models/StripeResponseModel';
+import { BookingRequest } from '../../../core/models/Requests/BookingRequest';
+import { BookingResponse } from '../../../core/models/Reposonse/BookingResponse';
 
 @Component({
   selector: 'app-booking-form',
@@ -17,7 +19,8 @@ import { StripeResponseModel } from '../../../core/models/StripeResponseModel';
 })
 
 export class BookingFormComponent {
-  booking!:BookingModel;
+  booking!:BookingRequest;
+  bookingResponse!:BookingResponse;
   payment!:PaymentModel;
   response!: StripeResponseModel;
   minDate: any;
@@ -58,7 +61,6 @@ export class BookingFormComponent {
   onSubmit() {
     if (this.bookingForm.valid) {
       this.booking={
-        bookingID:crypto.randomUUID(),
         userID:this.customerLoginStateService.getUserId(),
         packageID:this.router.snapshot.paramMap.get('PackageID'),
         date:this.bookingForm.get('date')?.value??'',
@@ -70,18 +72,17 @@ export class BookingFormComponent {
       }
 
        this.restservice.createBookingDetails(this.booking).subscribe({
-         next:() =>{
-          console.log(this.booking)
+         next:(response) =>{
+           this.bookingResponse=response;
            this.payment={
-             packageID: this.booking.packageID,
-             bookingID: this.booking.bookingID,
-             userID: this.booking.userID,
-             price: 200000,
-             noOfAdults: this.booking.noOfAdults,
-             noOfChildren: this.booking.noOfChildren,
-             currency:"INR"
+             packageID: response.travelPackage.packageID,
+             bookingID: response.bookingID,
+             userID: response.user.userID,
+             price: response.travelPackage.price,
+             noOfAdults: response.noOfAdults,
+             noOfChildren: response.noOfChildren,
+             currency:'INR'
            }
-           console.log(this.payment);
            this.paymentService.createOrder(this.payment).subscribe({
              next:response =>{
               this.response = response;
@@ -89,7 +90,7 @@ export class BookingFormComponent {
                const stripeUrl = response.sessionUrl;
 
                sessionStorage.setItem('sessionId', response.sessionId);
-               sessionStorage.setItem('bookingID', this.booking.bookingID)
+               sessionStorage.setItem('bookingID', this.bookingResponse.bookingID)
                //window.location.href = stripeUrl;
                window.open(stripeUrl, '_blank')
              },

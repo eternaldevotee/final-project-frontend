@@ -5,7 +5,7 @@ import { inject } from '@angular/core';
 export const customerAuthGuardGuard: CanActivateFn = (route, state) => {
    const customerLoginStateService = inject (CustomerLoginStateService);
 
-  if(customerLoginStateService.isLoggedIn() && customerLoginStateService.getRole()==='customer'){
+  if(customerLoginStateService.isLoggedIn() && customerLoginStateService.getRole()==='ROLE_CUSTOMER'){
      return true
   }else{
      return false

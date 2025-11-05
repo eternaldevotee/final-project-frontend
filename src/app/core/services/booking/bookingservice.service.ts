@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { catchError, map, Observable, retry, throwError } from 'rxjs';
 import { BookingModel } from '../../models/BookingModel';
 import { BookingResponseModel } from '../../models/Reposonse/BookingResponseModel';
+import { BookingRequest } from '../../models/Requests/BookingRequest';
+import { BookingResponse } from '../../models/Reposonse/BookingResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +13,13 @@ export class BookingserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:8080/booking";
+  strUrl : string = "http://localhost:9090/customer/booking";
 
-  strUrl1 : string = "http://localhost:8080/booking/setBooking";
-  strUrl2 : string  = "http://localhost:8080/booking"
+
 
   //insert customer info
-  createBookingDetails(booking :BookingModel):Observable<BookingModel>{
-    return this.rest.post<BookingModel>(`${this.strUrl}/setBooking`,booking).pipe(
+  createBookingDetails(booking :BookingRequest):Observable<BookingResponse>{
+    return this.rest.post<BookingResponse>(`${this.strUrl}/setBooking`,booking).pipe(
           retry(1),
           catchError((err) => {
             console.error("Error fetching user:", err);
@@ -49,7 +50,7 @@ export class BookingserviceService {
   //get by pkg id
   getBookingsByPkgID(packageID:any):Observable<BookingModel[]>{
     console.log("inside the show bookings !!! " , packageID);
-    return this.rest.get<BookingModel[]>(`${this.strUrl2}/getAllBookingByPkgID?packageID=${packageID}`) 
+    return this.rest.get<BookingModel[]>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
   getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{

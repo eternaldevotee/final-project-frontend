@@ -11,7 +11,7 @@ export class SearchserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:3000/";
+  strUrl : string = "http://localhost:9090/";
 
 
   getAllData():Observable<TravelPackageModel[]>{

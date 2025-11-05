@@ -6,6 +6,7 @@ import { UserModel } from '../../models/UserModel';
 import { map,retry,catchError } from 'rxjs/operators';
 import { SignUpRequest } from '../../models/Requests/SignUpRequest';
 import { LoginRequest } from '../../models/Requests/LoginRequest';
+import { LoginResponse } from '../../models/Reposonse/LoginResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -14,30 +15,7 @@ export class AuthserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:9090/user";
-
-  url:string="http://localhost:9090/customer";
-
-  // strUrl1 : string = "http://localhost:8080/user/setUser" 
-
-  // strUrl2 : string = "http://localhost:8080/user/getUserByEmail";
-
-  // Get users by username  
-  getUserByEmailId(emailId: string): Observable<UserModel> {
-    const url = `${this.strUrl}/getUserByEmail?email=${emailId}`;
-    console.log("Fetching user data from:", url);
-
-    return this.rest.get<UserModel[]>(`${this.strUrl}/getUserByEmail?email=${emailId}`).pipe(
-      map(users => users[0])
-    ).pipe(
-          retry(1),
-          catchError((error) => {
-            console.error("Error fetching user:", error);
-            return throwError(() => new Error("Something went wrong while connecting to the server. Please try again later."));
-          })
-        );
-  }
-
+  url:string="http://localhost:9090/auth/customerlogin";
 
   //insert customer info
   setUserDetails(request :SignUpRequest):Observable<any>{
@@ -60,8 +38,8 @@ export class AuthserviceService {
   }
 
   //user login
-  userLogin(request :LoginRequest):Observable<any>{
-    return this.rest.post(`${this.url}/login`,request).pipe(
+  userLogin(request :LoginRequest):Observable<LoginResponse>{
+    return this.rest.post<LoginResponse>(`${this.url}`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })

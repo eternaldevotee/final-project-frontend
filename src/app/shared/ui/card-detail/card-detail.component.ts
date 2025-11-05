@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DynamicCardService } from '../../../core/services/dynamic-card.service';
 import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { TravelPackageModel } from '../../../core/models/TravelPackageModel';
+import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -17,7 +18,7 @@ export class CardDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private cardService: DynamicCardService,
     private routeBooking: Router,
-    private shareLoginService: ShareloginService
+    private customerLoginStateService: CustomerLoginStateService
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class CardDetailComponent implements OnInit {
   }
 
   onBookNow(): void {
-    if (this.shareLoginService.isLoggedIn()) {
+    if (this.customerLoginStateService.isLoggedIn()) {
       this.routeBooking.navigate(['/booking', this.package.packageID]);
     } else {
       alert('Please log in to book!!');

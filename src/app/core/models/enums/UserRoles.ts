@@ -1,1 +1,1 @@
-export type UserRoles = 'CUSTOMER' | 'AGENT' | 'ADMIN';
+export type UserRoles = 'ROLE_CUSTOMER' | 'ROLE_AGENT' | 'ROLE_ADMIN';

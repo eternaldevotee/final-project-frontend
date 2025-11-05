@@ -11,8 +11,8 @@ export class PaymentServiceService {
 
   constructor(private http: HttpClient) {}
 
-  strUrl : string = "http://localhost:8080/payment/checkout";
-  strUrl1 : string = "http://localhost:8080/payment/confirm";
+  strUrl : string = "http://localhost:9090/payment/checkout";
+  strUrl1 : string = "http://localhost:9090/payment/confirm";
 
   // Create Stripe order
   createOrder(payment: PaymentModel): Observable<any> {

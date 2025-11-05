@@ -8,8 +8,8 @@ import { TravelPackageModel } from '../models/TravelPackageModel';
 })
 export class DynamicCardService {
   // apiUrl: string = 'http://localhost:3000/TravelPackage';
-  apiUrl1: string = 'http://localhost:8080/agent/packages';
-  crtApi: string = 'http://localhost:8080/agent';
+  apiUrl1: string = 'http://localhost:9090/agent/packages';
+  crtApi: string = 'http://localhost:9090/agent';
 
   constructor(private http: HttpClient) {}
 

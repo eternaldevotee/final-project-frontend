@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { LoginResponse } from '../../models/Reposonse/LoginResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -9,28 +10,27 @@ export class CustomerLoginStateService {
   private loginState = new BehaviorSubject<boolean>(this.getInitialLoginState());
   loginState$ = this.loginState.asObservable();
 
-  private userId: any;
-  // private role: any;
 
   private getInitialLoginState(): boolean {
-    return sessionStorage.getItem('isLoggedIn') === 'true';
+    return localStorage.getItem('isLoggedIn') === 'true';
   }
 
-  login(userid: any, role: string) {
-    this.userId = userid;
-    // this.role = role;
+  login(response:LoginResponse) {
     this.loginState.next(true);
-    sessionStorage.setItem('userId', userid);
-    // sessionStorage.setItem('role', role);
-    sessionStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userID', response.userID);
+    localStorage.setItem('name',response.name)
+    localStorage.setItem('role',response.role)
+    localStorage.setItem('token', response.token)
+    localStorage.setItem('isLoggedIn', 'true');
   }
 
   logOff() {
-    // this.userId = null;
     this.loginState.next(false);
-    sessionStorage.removeItem('userId');
-    // sessionStorage.removeItem('role');
-    sessionStorage.setItem('isLoggedIn', 'false');
+    localStorage.removeItem('userID');
+    localStorage.removeItem('name');
+    localStorage.removeItem('role');
+    localStorage.removeItem('token');
+    localStorage.setItem('isLoggedIn', 'false');
   }
 
   isLoggedIn(): boolean {
@@ -38,15 +38,14 @@ export class CustomerLoginStateService {
   }
 
   getUserId(): any {
-    return sessionStorage.getItem('userId');
+    return localStorage.getItem('userId');
   }
 
-  // getRole(): any {
-  //   return sessionStorage.getItem('role');
-  // }
+  getName(): any {
+    return localStorage.getItem('name');
+  }
 
-  // getName() : any {
-  //   console.log(sessionStorage.getItem('name'));
-  //   return sessionStorage.getItem('name');
-  // }
+  getRole(): any {
+    return localStorage.getItem('role');
+  }
 }

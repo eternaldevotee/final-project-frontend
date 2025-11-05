@@ -10,7 +10,7 @@ export class ShowBookingsService {
 
   constructor(private http: HttpClient) { }
 
-   api : string = 'http://localhost:8080/agent/packages';
+   api : string = 'http://localhost:9090/agent/packages';
 
    showBookings(packageId : string) : Observable<BookingModel[]> {
     console.log("inside the show bookings" , packageId);

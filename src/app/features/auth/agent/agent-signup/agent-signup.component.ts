@@ -51,12 +51,12 @@ export class AgentSignupComponent {
     const conpassword = this.AsignupForm.get('conPassword')?.value;
     const password = this.AsignupForm.get('password')?.value;
     console.log(conpassword +" " +password)
-    
+
     this.signup={
       name:this.AsignupForm.get('name')?.value??'',
       email:this.AsignupForm.get('emailId')?.value??'',
       password:this.AsignupForm.get('password')?.value??'',
-      role:"AGENT",
+      role:'ROLE_AGENT',
       contactNumber:this.AsignupForm.get('cnumber')?.value??'',
     }
     if(password!=conpassword){

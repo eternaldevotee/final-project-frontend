@@ -15,10 +15,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SignupComponent {
   signup! :SignUpRequest;
+
   signupForm = new FormGroup({
     name: new FormControl('',[Validators.required]),
     emailId: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+    password: new FormControl('',[Validators.required,Validators.minLength(8),
+      Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
     conPassword:new FormControl('',[Validators.required])
   })
 
@@ -48,7 +50,7 @@ export class SignupComponent {
       name:this.signupForm.get('name')?.value??'',
       email:this.signupForm.get('emailId')?.value??'',
       password:this.signupForm.get('password')?.value??'',
-      role:"CUSTOMER",
+      role:'ROLE_CUSTOMER',
       contactNumber:""
     }
     if(password!=conpassword){

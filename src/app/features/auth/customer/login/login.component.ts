@@ -41,8 +41,9 @@ export class LoginComponent {
     }
 
     this.restservice.userLogin(this.loginRequest).subscribe({
-      next: () => {
-        // this.customerLoginStateService.login()
+      next: (response) => {
+        this.customerLoginStateService.login(response);
+        
         alert('Login successful!');
         this.router.navigate(['']);
       },
