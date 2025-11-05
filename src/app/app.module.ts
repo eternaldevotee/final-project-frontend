@@ -54,6 +54,7 @@ import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
 import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
+import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
 
 
 
@@ -98,6 +99,7 @@ import { AgentNotificationsComponent } from './shared/ui/agent-notifications/age
     MotivatorComponent,
     OrderDetailsComponent,
     AgentNotificationsComponent,
+    AssistanceRequestComponent
 
   ],
   imports: [

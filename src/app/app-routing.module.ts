@@ -37,15 +37,16 @@ import { BookingSummaryTableComponent } from './features/booking-summary-table/b
 import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 import { AgentNavbarComponent } from './shared/layout/agent-navbar/agent-navbar.component';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
+import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
 
 
 export const routes: Routes = [
-  
+
     //customer
     {path:'login',        component:LoginComponent},
     {path:'signup',       component:SignupComponent},
     {path:'home',         component:HomeComponent,
-      children:[    
+      children:[
         {path:'viewsearch/:Location', component: ViewSearchedPackagesComponent},
         {path : 'packages',           component : CardComponent}
       ]
@@ -62,12 +63,12 @@ export const routes: Routes = [
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
     { path: 'payment-processing', component: PaymentProcessingComponent },
-  
+
 
     //admin
     {path:'adminlogin',component:AdminLoginComponent},
     {path: 'adminlayout', component: AdminlayoutComponent},
-    {path:'adminpackages',component:AdminPackagesComponent},  
+    {path:'adminpackages',component:AdminPackagesComponent},
 
     {path:'admindashboard',component:AdminlayoutComponent,
       children:[
@@ -78,14 +79,16 @@ export const routes: Routes = [
             { path: 'signuprequests', component: SignuprequestsComponent }
           ]
         },
-        { path: 'adminreviews', component: ReviewAdminComponent}
+        { path: 'adminreviews', component: ReviewAdminComponent},
+        {path:'assistancerequest',component:AssistanceRequestComponent}
       ]
     },
+
 
     //agent
     {path:'agentlogin',   component: AgentLoginComponent },
     {path:'agentsignup',  component: AgentSignupComponent },
-   
+
 
     {path : 'agent', component : AgentHomeComponent},
     {path : 'agent/home', component : AgentHomeComponent},
