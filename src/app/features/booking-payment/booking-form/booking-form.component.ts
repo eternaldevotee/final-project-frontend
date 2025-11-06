@@ -58,8 +58,12 @@ export class BookingFormComponent {
       return this.bookingForm.get('Children');
     }
 
+    get InsuranceStatus(){
+      return this.bookingForm.get('insurance');
+    }
   onSubmit() {
     if (this.bookingForm.valid) {
+      const insuranceValue = this.bookingForm.get('insurance')?.value;
       this.booking={
         userID:this.customerLoginStateService.getUserId(),
         packageID:this.router.snapshot.paramMap.get('PackageID'),
@@ -67,7 +71,7 @@ export class BookingFormComponent {
         status:"PENDING",
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
-        insuranceStatus: "NOT_OPTED",
+        insuranceStatus: insuranceValue ? 'OPTED' : 'NOT_OPTED',
       }
       console.log(this.booking)
        this.restservice.createBookingDetails(this.booking).subscribe({

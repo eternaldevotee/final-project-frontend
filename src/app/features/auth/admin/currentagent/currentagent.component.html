@@ -1,15 +1,29 @@
-
-<div class="search d-flex justify-content-center align-items-center">
-    <input type="text" #searchInput  placeholder="Search agents"   style="width:300px;height:40px;border-radius:10px;">
-    <button class="btn" (click)="searchAgents(searchInput.value)">🔎</button>
+<!-- Search Bar -->
+<div class="search-bar d-flex justify-content-center align-items-center my-4">
+  <input
+    type="text"
+    #searchInput
+    placeholder="Search agents"
+    class="form-control search-input"
+  />
+  <button class="btn btn-primary ms-2" (click)="searchAgents(searchInput.value)">
+    🔍 Search
+  </button>
 </div>
-<div class="container d-flex flex-wrap justify-content-between ">
-    <div class="tile mb-4 p-3 mt-5" *ngFor="let agent of filterAgents">
-        <div class="agent-info">
-            <h3>{{agent.name}}</h3>
-            <p>🏠Location: {{agent.location}}</p>
-            <p>☎️Phone: {{agent.phone}}</p>
-        </div>
-        <button class="btn btn-danger d-block mx-auto" (click)="deleteAgent(agent.id)">Suspend</button>
+
+<!-- Agent Cards -->
+<div class="container d-flex flex-wrap justify-content-center gap-4">
+  <div class="agent-card p-4" *ngFor="let agent of filterAgents">
+    <div class="agent-info">
+      <h4 class="agent-name">{{ agent.name }}</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Location: {{ agent.location }}</p>
+      <p><i class="fas fa-phone-alt"></i> Phone: {{ agent.phone }}</p>
     </div>
+    <button
+      class="btn btn-danger w-100 mt-3"
+      (click)="deleteAgent(getAgentId(agent))"
+    >
+      🚫 Suspend Agent
+    </button>
+  </div>
 </div>

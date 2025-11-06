@@ -1,6 +1,11 @@
-<div style="display:flex; justify-content:center; margin:20px 0;">
-  <a class="btn" routerLink="currentagent">Current Agents</a>
-  <a class="btn" routerLink="signuprequests">Signup Requests</a>
 
+<div class="nav-container">
+  <a class="nav-btn" routerLink="currentagent" (click)="showToast('Navigating to Current Agents')">
+    <i class="fas fa-users"></i> Current Agents
+  </a>
+  <a class="nav-btn" routerLink="signuprequests" (click)="showToast('Navigating to Signup Requests')">
+    <i class="fas fa-user-plus"></i> Signup Requests
+  </a>
 </div>
-  <router-outlet></router-outlet>
+
+<router-outlet></router-outlet>

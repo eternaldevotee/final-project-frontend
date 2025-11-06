@@ -1,17 +1,30 @@
-<div class="search d-flex justify-content-center align-items-center">
-    <input type="text" #searchInput placeholder="Search requests" style="width:300px;height:40px;border-radius:10px;">
-    <button class="btn" (click)="searchAgents(searchInput.value)">🔎</button>
+<!-- Search Bar -->
+<div class="search-bar d-flex justify-content-center align-items-center my-4">
+  <input
+    type="text"
+    #searchInput
+    placeholder="Search requests"
+    class="form-control search-input"
+  />
+  <button class="btn btn-primary ms-2" (click)="searchAgents(searchInput.value)">
+    🔍 Search
+  </button>
 </div>
 
-<div class="container d-flex flex-wrap justify-content-between">
-    <div class="tile mb-4 p-3 mt-5" *ngFor="let req of filteredAgents">
-        <div class="agent-info">
-            <h3>{{ req.name }}</h3>
-            <p>Email: {{ req.email }}</p>
-        </div>
-        <div class="d-flex justify-content-around mt-3">
-            <button class="btn btn-success approve" (click)="approveAgent(req.id)">Approve</button>
-            <button class="btn btn-danger reject" (click)="rejectAgent(req.id)">Reject</button>
-        </div>
+<!-- Request Cards -->
+<div class="container d-flex flex-wrap justify-content-center gap-4">
+  <div class="request-card p-4" *ngFor="let req of filteredAgents">
+    <div class="agent-info">
+      <h4 class="agent-name">{{ req.name }}</h4>
+      <p><i class="fas fa-envelope"></i> {{ req.email }}</p>
     </div>
+    <div class="d-flex justify-content-between mt-3">
+      <button class="btn btn-success w-45" (click)="approveAgent(getAgentId(req))">
+        ✅ Approve
+      </button>
+      <button class="btn btn-danger w-45" (click)="rejectAgent(getAgentId(req))">
+        ❌ Reject
+      </button>
+    </div>
+  </div>
 </div>

@@ -36,7 +36,7 @@ import { SignupComponent } from './features/auth/customer/signup/signup.componen
 import { AdminProfileComponent } from './features/auth/admin/admin-profile/admin-profile.component';
 import { AdminlayoutComponent } from './features/auth/admin/adminlayout/adminlayout.component';
 import { CurrentagentComponent } from './features/auth/admin/currentagent/currentagent.component';
-import { SignuprequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
+import { SignupRequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
 import { AgentLoginComponent } from './features/auth/agent/agent-login/agent-login.component';
 import { AgentSignupComponent } from './features/auth/agent/agent-signup/agent-signup.component';
 import { AdminAgentComponent } from './features/auth/admin/admin-agent/admin-agent.component';
@@ -54,6 +54,8 @@ import { MotivatorComponent } from './shared/ui/motivator/motivator.component';
 import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
+import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
+import { HandlecustomersComponent } from './features/auth/admin/handlecustomers/handlecustomers.component';
 
 
 
@@ -84,7 +86,7 @@ import { AgentNotificationsComponent } from './shared/ui/agent-notifications/age
     AdminProfileComponent,
     AdminlayoutComponent,
     CurrentagentComponent,
-    SignuprequestsComponent,
+    SignupRequestsComponent,
     AgentLoginComponent,
     AgentSignupComponent,
     AdminAgentComponent,
@@ -98,6 +100,8 @@ import { AgentNotificationsComponent } from './shared/ui/agent-notifications/age
     MotivatorComponent,
     OrderDetailsComponent,
     AgentNotificationsComponent,
+    AssistanceRequestComponent,
+    HandlecustomersComponent
 
   ],
   imports: [

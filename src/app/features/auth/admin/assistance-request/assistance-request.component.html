@@ -1,0 +1,84 @@
+<div class="container">
+<h2>Admin Assistance Dashboard</h2>
+
+<div class="card mb-3" *ngFor="let request of requests"
+     [ngClass]="{
+       'border-warning bg-warning bg-opacity-10': request.requestStatus === 'OPEN',
+       'border-success bg-success bg-opacity-10': request.requestStatus === 'CLOSED'
+     }">
+
+<div class="card-body">
+  <h5 class="card-title">User ID: {{ request.user.userID }}</h5>
+
+  <p class="card-text">
+    <strong>Issue:</strong> {{ request.issueDescription }}
+  </p>
+
+  <p class="card-text">
+    <strong>Status:</strong>
+    <span [ngClass]="{
+      'badge bg-warning text-dark': request.requestStatus === 'OPEN',
+      'badge bg-success': request.requestStatus === 'CLOSED'
+    }">
+      {{ request.requestStatus }}
+    </span>
+  </p>
+
+  <p class="card-text" *ngIf="request.reply">
+    <strong>Admin Reply:</strong> {{ request.reply }}
+  </p>
+
+  <p class="card-text" *ngIf="request.requestStatus === 'CLOSED' && request.resolutionTime">
+    <strong>Closed On:</strong> {{ request.resolutionTime | date: 'short' }}
+  </p>
+
+  <!-- Action Area: Visible only if request is NOT CLOSED -->
+  <div *ngIf="request.requestStatus !== 'CLOSED'">
+    <div class="form-group mb-4">
+      <label for="adminReply-{{request.requestId}}">Your Reply:</label>
+      <textarea
+        class="form-control"
+        id="adminReply-{{request.requestId}}"
+        #replyInput
+        rows="2"
+        placeholder="Type your reply here..."
+        (input)="onReplyInput($event, request.requestId)"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-start pt-2">
+      <button
+        class="btn btn-primary me-2"
+        [disabled]="!replyInput.value || replyInput.value.trim() === ''"
+        (click)="adminReply(request.requestId, replyInput.value); replyInput.value = ''">
+        Submit Reply
+      </button>
+
+      <button
+        class="btn btn-success"
+        (click)="closeRequest(request.requestId)">
+        Mark as Closed
+      </button>
+    </div>
+  </div>
+
+  <!-- Display for closed/solved requests - Both buttons disabled -->
+  <div *ngIf="request.requestStatus === 'CLOSED'">
+    <button class="btn btn-secondary me-2 opacity-50" disabled>
+      Submit Reply
+    </button>
+
+    <button class="btn btn-secondary opacity-50" disabled>
+      Mark as Closed
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+<!-- Show message when no requests found -->
+
+<div class="alert alert-info" *ngIf="requests.length === 0">
+<i class="bi bi-info-circle"></i> No assistance requests found.
+</div>
+</div>

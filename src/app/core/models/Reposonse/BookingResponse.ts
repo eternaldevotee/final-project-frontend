@@ -1,3 +1,5 @@
+import { BookingStatus } from "../enums/BookingStatus";
+import { InsuranceStatus } from "../enums/InsuranceStatus";
 import { TravelPackageResponse } from "./TravelPackageResponse";
 import { UserResponse } from "./UserResponse";
 import { PaymentResponse } from "./PaymentResponse";
@@ -7,9 +9,9 @@ export interface BookingResponse {
   user: UserResponse;
   travelPackage: TravelPackageResponse;
   date: Date;
-  status: string;
+  status: BookingStatus;
   noOfAdults: number;
   noOfChildren: number;
-  insuranceStatus: boolean;
-  payment:PaymentResponse;
+  insuranceStatus: InsuranceStatus;
+  payment: PaymentResponse;
 }

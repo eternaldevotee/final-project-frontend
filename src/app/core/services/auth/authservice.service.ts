@@ -46,6 +46,15 @@ export class AuthserviceService {
         );
   }
 
+  //admin login
+  adminLogin(request :LoginRequest):Observable<LoginResponse>{
+    return this.rest.post<LoginResponse>(`${this.url}/adminlogin`,request).pipe(
+          catchError((error : HttpErrorResponse) => {
+            return throwError(() => error);
+          })
+        );
+  }
+
   //   //user login
   // agentLogin(request :LoginRequest):Observable<LoginResponse>{
   //   return this.rest.post<LoginResponse>(`${this.url}/customerlogin`,request).pipe(
