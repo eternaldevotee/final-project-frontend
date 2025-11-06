@@ -10,7 +10,7 @@ import { Review } from '../../core/models/ReviewModel';
 })
 export class ReviewsService {
   // The API endpoint provided by json-server
-  private apiUrl  = 'http://localhost:8080/reviews';
+  private apiUrl  = 'http://localhost:9090/reviews';
   private reviews$ = new BehaviorSubject<Review[]>([]);
 
   constructor(private http: HttpClient) {

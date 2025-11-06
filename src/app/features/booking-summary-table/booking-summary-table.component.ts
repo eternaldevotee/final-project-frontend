@@ -26,7 +26,7 @@ export class BookingSummaryTableComponent {
         this.bookingService.getBookingsByPkgID(this.pkgId).subscribe(books => {
           console.log("Bookings are ", books);
           this.bookings = books;
-          console.log(this.bookings[0].payment.paymentID);
+          // console.log(this.bookings[0].payment.paymentID);
         });
         console.log("This are the bookings " ,this.bookings);
       }
