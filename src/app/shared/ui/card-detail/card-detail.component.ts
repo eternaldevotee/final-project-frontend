@@ -4,6 +4,9 @@ import { DynamicCardService } from '../../../core/services/dynamic-card.service'
 import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { TravelPackageModel } from '../../../core/models/TravelPackageModel';
 import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
+import { ReviewEligibility } from '../../../core/models/ReviewModel';
+import { Observable } from 'rxjs/internal/Observable';
+import { ReviewsService } from '../../../core/services/reviews/reviews.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -13,12 +16,13 @@ import { CustomerLoginStateService } from '../../../core/services/loginstate/cus
 })
 export class CardDetailComponent implements OnInit {
   package!: TravelPackageModel;
-
+  eligibility$!: Observable<ReviewEligibility>;
   constructor(
     private route: ActivatedRoute,
     private cardService: DynamicCardService,
     private routeBooking: Router,
-    private customerLoginStateService: CustomerLoginStateService
+    private customerLoginStateService: CustomerLoginStateService,
+    private reviewService: ReviewsService,
   ) {}
 
   ngOnInit(): void {
@@ -27,6 +31,10 @@ export class CardDetailComponent implements OnInit {
       this.cardService.getPackages().subscribe(packages => {
         this.package = packages.find((pkg: TravelPackageModel) => pkg.packageID === id)!;
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (this.package && this.package.packageID) {
+          this.eligibility$ = this.reviewService.checkEligibility(this.package.packageID);
+        }
       });
     });
     console.log(this.package);
