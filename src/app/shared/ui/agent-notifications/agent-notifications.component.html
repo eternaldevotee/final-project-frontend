@@ -2,9 +2,26 @@
   ← Back
 </button>
 
+<h1>Package Activity Log</h1>
+
+<div class="filters">
+  
+<select [(ngModel)] = "selectedAction" (change) = "applyFilters()" class="filter-class">
+  <option value="">All</option>
+  <option value="create">Create</option>
+  <option value="update">Update</option>
+  <option value="delete">Delete</option>
+</select>
+
+<div class="outer-div">
+  <input type="text" id="searchfilter" [(ngModel)]="pkgId" placeholder="Search package by ID"/>
+  <button (click) = "filterById()">Search</button>
+</div>
+</div>
+
 
 <div class="notification-feed">
-  <div *ngFor="let notification of notifications" class="notification-card" [ngStyle] = "{'border-left' : '10px solid ' + getTypeColor(notification.type)}">
+  <div *ngFor="let notification of filteredNotifications" class="notification-card" [ngStyle] = "{'border-left' : '10px solid ' + getTypeColor(notification.type)}">
     <div class="notification-type-tag" [ngStyle] = "{'color' : getTypeColor(notification.type)}">{{ notification.type | titlecase }}</div>
 
     <div class="notification-message">
