@@ -48,7 +48,7 @@ fdescribe('ListPackagesComponent', () => {
         duration: '5 days',
         price: 15000,
         includedServices: ['Hotel', 'Breakfast', 'Airport Pickup'],
-        imageSrc: '/assets/beach.jpg',
+        imageSrc: '/bangalore.webp',
         location: 'Goa'
       },
       {
@@ -60,7 +60,7 @@ fdescribe('ListPackagesComponent', () => {
         duration: '7 days',
         price: 22000,
         includedServices: ['Guide', 'Camping Gear', 'Meals'],
-        imageSrc: '/assets/mountain.jpg',
+        imageSrc: '/bangalore.webp',
         location: 'Manali'
       }
     ];
@@ -85,29 +85,8 @@ fdescribe('ListPackagesComponent', () => {
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.no-pkg-msg')?.textContent).toContain('You don’t have any active packages');
+    expect(compiled.querySelector('.no-pkg-msg')?.textContent).toContain('You don’t have any active packages. Click below to create one');
   });
 
-  // it('should render package cards when packages are available', () => {
-  //   component.packages = [
-  //     {
-  //       packageID: 'pkg001',
-  //       userID: 'admin123',
-  //       title: 'Beach Escape',
-  //       description: 'Relaxing beach trip',
-  //       detailedDescription: 'Enjoy 5 days of sun and sand in Goa.',
-  //       duration: '5 days',
-  //       price: 15000,
-  //       includedServices: ['Hotel', 'Breakfast', 'Airport Pickup'],
-  //       imageSrc: '/assets/beach.jpg',
-  //       location: 'Goa'
-  //     }
-  //   ];
-  //   fixture.detectChanges();
-
-  //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.card-title')?.textContent).toContain('Beach Escape');
-  //   expect(compiled.querySelector('.card-text')?.textContent).toContain('Relaxing beach trip');
-  //   expect(compiled.querySelector('img')?.getAttribute('src')).toBe('/assets/beach.jpg');
-  // });
+  
 });

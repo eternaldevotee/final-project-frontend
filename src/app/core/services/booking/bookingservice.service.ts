@@ -14,7 +14,7 @@ export class BookingserviceService {
   constructor(private rest: HttpClient) { }
 
   strUrl : string = "http://localhost:9090/customer/booking";
-
+  strUrl2 : string = "http://localhost:9090/agent"
 
 
   //insert customer info
@@ -55,7 +55,7 @@ export class BookingserviceService {
   //get by pkg id
   getBookingsByPkgID(packageID:any):Observable<BookingResponse[]>{
     console.log("inside the show bookings !!! " , packageID);
-    return this.rest.get<BookingResponse []>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
+    return this.rest.get<BookingResponse []>(`${this.strUrl2}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
   getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{
