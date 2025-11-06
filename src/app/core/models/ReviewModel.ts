@@ -5,9 +5,15 @@ export interface Review {
   userId: string;
   userName: string;
   packageId: string;
-  rating: number; // 1..5
+  rating: number;
   comment: string;
-  timestamp: string; // ISO format
+  timestamp: string;
   status: ReviewStatus;
   agentResponse?: string;
+}
+
+
+
+export interface ReviewEligibility {
+  eligible: boolean;
 }

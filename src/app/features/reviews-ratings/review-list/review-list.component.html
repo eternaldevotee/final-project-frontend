@@ -1,69 +1,3 @@
-<!-- <div class="review-list mt-4">
-  <h3 class="mb-3">Published Reviews</h3>
-  <ng-container *ngIf="reviews$ | async as reviews">
-    <div *ngIf="reviews.length === 0" class="text-muted">
-      No reviews yet. Be the first to share your experience!
-    </div>
-
-    <div *ngFor="let r of reviews; trackBy: trackById" class="mb-3">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title class="rating">{{ r.rating }} ★</mat-card-title>
-          <mat-card-subtitle>{{ r.timestamp | date:'longDate' }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p class="customer-comment">"{{ r.comment }}"</p>
-          <div *ngIf="r.agentResponse" class="agent-response mt-3 p-3">
-            <small><strong>Response from our team:</strong></small>
-            <p class="mb-0">{{ r.agentResponse }}</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </ng-container>
-</div> -->
-
-
-
-
-<!-- <div class="review-list mt-4">
-  <h3 class="mb-3">Published Reviews</h3>
-  <ng-container *ngIf="reviews$ | async as reviews">
-
-    <div *ngIf="reviews.length === 0" class="empty-state">
-      <mat-icon>rate_review</mat-icon>
-      <p>No reviews yet.</p>
-      <span>Be the first to share your experience!</span>
-    </div>
-
-    <div *ngFor="let r of reviews; trackBy: trackById" class="mb-3">
-      <mat-card class="review-card">
-        <mat-card-header>
-          <div mat-card-avatar class="review-avatar">
-            <span>U{{ r.userId }}</span> </div>
-          <mat-card-title>Anonymous User</mat-card-title>
-          <mat-card-subtitle>{{ r.timestamp | date:'longDate' }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div class="rating-display mb-3">
-            <mat-icon *ngFor="let i of [1,2,3,4,5]">
-              {{ i <= r.rating ? 'star' : 'star_border' }}
-            </mat-icon>
-          </div>
-          
-          <p class="customer-comment">"{{ r.comment }}"</p>
-          
-          <div *ngIf="r.agentResponse" class="agent-response mt-3 p-3">
-            <p class="agent-response-title"><strong>Response from our team:</strong></p>
-            <p class="mb-0">{{ r.agentResponse }}</p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    
-  </ng-container>
-</div> -->
-
 <div class="review-list mt-4">
   <div class="review-list-header">
     <div>
@@ -105,7 +39,7 @@
         <mat-card class="review-card" role="article" aria-label="Customer review">
           <mat-card-header class="card-header">
             <div mat-card-avatar class="review-avatar" aria-hidden="true">
-              <span>{{ r.userName | slice:0:1  }}</span>
+              <span>{{ r.userName | slice:0:1 }}</span>
             </div>
 
             <div class="header-meta">
@@ -122,8 +56,7 @@
             <div class="rating-row">
               <div class="rating-display" aria-hidden="true">
                 <mat-icon *ngFor="let i of [1,2,3,4,5]" class="star-icon">
-                  {{ i <= r.rating ? 'star' : 'star_border' }}
-                </mat-icon>
+                  {{ i <= r.rating ? 'star' : 'star_border' }} </mat-icon>
               </div>
             </div>
 

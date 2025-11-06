@@ -28,8 +28,17 @@
 </div>
 
 <br><br>
-<div *ngIf="package">
-  <app-review-form [packageId]="package.packageID"></app-review-form>
-  <br><br>
-  <app-review-list [packageId]="package.packageID"></app-review-list>
+<div>
+
+  <ng-container *ngIf="eligibility$ | async as eligibility">
+
+  <ng-container *ngIf="eligibility.eligible">
+    <app-review-form [packageId]="package.packageID"></app-review-form>
+  </ng-container>
+
+</ng-container>
+
+<br><br>
+<app-review-list [packageId]="package.packageID"></app-review-list>
+
 </div>
