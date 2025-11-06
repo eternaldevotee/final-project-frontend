@@ -15,3 +15,38 @@ margin-left:60px;
     width:100px;
     margin-left:5px;
 }
+.search-input {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.request-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.2s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-5px);
+}
+
+.agent-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.agent-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.w-45 {
+  width: 45%;
+}

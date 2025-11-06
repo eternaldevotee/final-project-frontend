@@ -41,6 +41,10 @@ export class AssistanceRequestComponent implements OnInit {
     console.log('Closing request:', reqId);
     console.log('API URL:', `http://localhost:9090/admin/assistancerequests/close/${reqId}`);
 
+
+
+
+
     this.adminService.closeRequest(reqId).subscribe({
       next: (response) => {
         console.log('Close response:', response);

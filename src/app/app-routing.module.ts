@@ -18,7 +18,7 @@ import { LoginComponent } from './features/auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './features/agent-package-detail/agent-package-detail.component';
 import { PackageControlComponent } from './features/auth/admin/package-control/package-control.component';
 import { CurrentagentComponent } from './features/auth/admin/currentagent/currentagent.component';
-import { SignuprequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
+import { SignupRequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
 
 import { ViewSearchedPackagesComponent } from './features/search-module/view-searched-packages/view-searched-packages.component';
 import { BookingFormComponent } from './features/booking-payment/booking-form/booking-form.component';
@@ -76,7 +76,7 @@ export const routes: Routes = [
         {path: 'agentControl', component: AgentControlComponent,
           children: [
             { path: 'currentagent', component: CurrentagentComponent },
-            { path: 'signuprequests', component: SignuprequestsComponent }
+            { path: 'signuprequests', component: SignupRequestsComponent }
           ]
         },
         { path: 'adminreviews', component: ReviewAdminComponent},

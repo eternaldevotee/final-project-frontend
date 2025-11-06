@@ -6,6 +6,7 @@ import { ShareloginService } from '../../../../core/services/loginstate/sharelog
 import { UserModel } from '../../../../core/models/UserModel';
 import { HttpErrorResponse } from '@angular/common/http';
 import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-login',
@@ -32,14 +33,14 @@ export class AdminLoginComponent implements OnInit {
       password: '',
       role: '',
       contactNumber: ''
-    }
+    };
   }
 
   onSubmit(loginForm: NgForm) {
     this.loginRequest = {
       email: loginForm.value.emailId,
       password: loginForm.value.password
-    }
+    };
 
     console.log('Sending admin login request:', this.loginRequest);
 
@@ -47,7 +48,25 @@ export class AdminLoginComponent implements OnInit {
       next: (response) => {
         console.log('Admin login response:', response);
         this.shareLoginService.login(response);
-        alert('Admin login successful!');
+
+     
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Signed in successfully'
+        });
+
         this.router.navigate(['/admindashboard']);
       },
       error: (err: HttpErrorResponse) => {
@@ -65,10 +84,24 @@ export class AdminLoginComponent implements OnInit {
           errorMsg = err.message;
         }
 
-        alert(errorMsg);
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+
+        Toast.fire({
+          icon: 'error',
+          title: errorMsg
+        });
       }
     });
   }
 }
-
-
