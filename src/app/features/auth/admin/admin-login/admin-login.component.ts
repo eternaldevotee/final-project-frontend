@@ -4,9 +4,16 @@ import { Router } from '@angular/router';
 import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
 import { ShareloginService } from '../../../../core/services/loginstate/sharelogin.service';
 import { UserModel } from '../../../../core/models/UserModel';
-import { HttpErrorResponse } from '@angular/common/http';
+// import { HttpErrorResponse } from '@angular/common/http';
 import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
 import Swal from 'sweetalert2';
+import { HttpErrorResponse } from '@angular/common/http';
+// import { Component } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { LoginRequest } from '../../../../core/models/Requests/LoginRequest';
+// import { AuthserviceService } from '../../../../core/services/auth/authservice.service';
+import { CustomerLoginStateService } from '../../../../core/services/loginstate/customer-login-state.service';
+// import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login',
@@ -102,6 +109,6 @@ export class AdminLoginComponent implements OnInit {
           title: errorMsg
         });
       }
-    });
+    })
   }
 }

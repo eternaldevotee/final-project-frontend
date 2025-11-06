@@ -13,7 +13,7 @@ export class BookingserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "localhost:9090/customer/booking";
+  strUrl : string = "http://localhost:9090/customer/booking";
 
 
 
@@ -22,8 +22,13 @@ export class BookingserviceService {
     return this.rest.post<BookingResponse>(`${this.strUrl}/setBooking`,booking).pipe(
           retry(1),
           catchError((err) => {
-            console.error("Error fetching user:", err);
-            console.error('Error body:', err.error);
+
+              if (err.status === 0) {
+                console.error('Network error or CORS issue:', err);
+              } else {
+                console.error(`Backend returned code ${err.status}`, err.error);
+              }
+
             return throwError(() => new Error("Something went wrong while connecting to the server.Can't book now!!, Please try again later."));
           })
         );
@@ -48,9 +53,9 @@ export class BookingserviceService {
   }
 
   //get by pkg id
-  getBookingsByPkgID(packageID:any):Observable<BookingModel[]>{
+  getBookingsByPkgID(packageID:any):Observable<BookingResponse[]>{
     console.log("inside the show bookings !!! " , packageID);
-    return this.rest.get<BookingModel[]>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
+    return this.rest.get<BookingResponse []>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
   getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{

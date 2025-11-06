@@ -58,8 +58,12 @@ export class BookingFormComponent {
       return this.bookingForm.get('Children');
     }
 
+    get InsuranceStatus(){
+      return this.bookingForm.get('insurance');
+    }
   onSubmit() {
     if (this.bookingForm.valid) {
+      const insuranceValue = this.bookingForm.get('insurance')?.value;
       this.booking={
         userID:this.customerLoginStateService.getUserId(),
         packageID:this.router.snapshot.paramMap.get('PackageID'),
@@ -67,12 +71,15 @@ export class BookingFormComponent {
         status:"PENDING",
         noOfAdults: this.bookingForm.get('Adults')?.value ?? 1,
         noOfChildren: this.bookingForm.get('Children')?.value ?? 0,
-        insuranceStatus: "NOT_OPTED",
+        insuranceStatus: insuranceValue ? 'OPTED' : 'NOT_OPTED',
       }
       console.log(this.booking)
        this.restservice.createBookingDetails(this.booking).subscribe({
          next:(response) =>{
            this.bookingResponse=response;
+
+           console.log("This is booking respone: ",this.bookingResponse);
+
            this.payment={
              packageID: response.travelPackage.packageID,
              bookingID: response.bookingID,
@@ -82,18 +89,20 @@ export class BookingFormComponent {
              noOfChildren: response.noOfChildren,
              currency:'INR'
            }
+
+           console.log("This is payment: ", this.payment);
            this.paymentService.createOrder(this.payment).subscribe({
              next:response =>{
               this.response = response;
               
                const stripeUrl = response.sessionUrl;
-
+              console.log("This is stripe URL", stripeUrl)
                sessionStorage.setItem('sessionId', response.sessionId);
                sessionStorage.setItem('bookingID', this.bookingResponse.bookingID)
                //window.location.href = stripeUrl;
                window.open(stripeUrl, '_blank')
              },
-             error:err => console.error("Error on payment: "+ err)
+             error:err => console.error("Error on payment 111: ", err)
            })
         
        },

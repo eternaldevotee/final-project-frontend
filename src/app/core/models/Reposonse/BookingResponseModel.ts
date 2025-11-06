@@ -1,4 +1,5 @@
 import { BookingStatus } from "../enums/BookingStatus";
+import { InsuranceStatus } from "../enums/InsuranceStatus";
 import { PaymentModel } from "../PaymentModel";
 import { TravelPackageModel } from "../TravelPackageModel";
 import { UserModel } from "../UserModel";
@@ -12,6 +13,6 @@ export interface BookingResponseModel{
   status: BookingStatus;
   noOfAdults: number;
   noOfChildren: number;
-  insuranceStatus: boolean;
+  insuranceStatus: InsuranceStatus;
   payment: PaymentModel;
 }
