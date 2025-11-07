@@ -55,7 +55,7 @@ export class SignupComponent {
     if(password!=conpassword){
       alert("Password not matching with confirm password!!")
     }else{
-      this.authService.setUserDetails(this.signup).subscribe({
+      this.authService.setCustomerDetails(this.signup).subscribe({
         next:() => {
           alert("Account created successfully!");
           this.router.navigate(['/login']);

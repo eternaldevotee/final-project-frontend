@@ -40,7 +40,7 @@ export class LoginComponent {
       password:loginForm.value.password
     }
 
-    this.restservice.userLogin(this.loginRequest).subscribe({
+    this.restservice.customerLogin(this.loginRequest).subscribe({
       next: (response) => {
         this.customerLoginStateService.login(response);
         

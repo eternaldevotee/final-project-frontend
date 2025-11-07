@@ -2,41 +2,42 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { TravelPackageModel } from '../models/TravelPackageModel';
-
+ 
 @Injectable({
   providedIn: 'root',
 })
 export class DynamicCardService {
   // apiUrl: string = 'http://localhost:3000/TravelPackage';
+  apiUrl2: string = 'http://localhost:9090/public/packages';
   apiUrl1: string = 'http://localhost:9090/agent/packages';
   crtApi: string = 'http://localhost:9090/agent';
-
+  publicApi : string = 'http://localhost:9090/public/packages'
   constructor(private http: HttpClient) {}
-
-  
-  
-
+ 
+ 
+ 
+ 
   getPackageById(id: string): Observable<TravelPackageModel> {
     return this.http.get<TravelPackageModel>(`${this.apiUrl1}/${id}`);
   }
-
+ 
   getPackages(): Observable<any> {
     return this.http
-      .get(this.apiUrl1)
+      .get(this.publicApi)
       .pipe(tap((data) => console.log('Fetched package', data)));
   }
-
-
+ 
+ 
   getPackagesByAdminId(adminID : string) : Observable<any> {
     return this.http.get(`${this.apiUrl1}/id/${adminID}`);
   }
-
+ 
   deletePackage(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl1}/${id}`);
   }
-
-
-
+ 
+ 
+ 
   createPackage(
     pkg: Omit<TravelPackageModel, 'packageID'>
   ): Observable<TravelPackageModel> {
@@ -45,7 +46,7 @@ export class DynamicCardService {
       pkg
     );
   }
-
+ 
   updatePackage(
     id: string,
     data: Partial<TravelPackageModel>
@@ -54,3 +55,5 @@ export class DynamicCardService {
     return this.http.put(`${this.apiUrl1}/${id}`, data);
   }
 }
+ 
+ 

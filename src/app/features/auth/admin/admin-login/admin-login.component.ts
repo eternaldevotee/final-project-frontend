@@ -31,7 +31,7 @@ export class AdminLoginComponent {
       password:loginForm.value.password
     }
 
-    this.restservice.userLogin(this.login).subscribe({
+    this.restservice.customerLogin(this.login).subscribe({
       next: (response) => {
         this.customerLoginStateService.login(response);
         

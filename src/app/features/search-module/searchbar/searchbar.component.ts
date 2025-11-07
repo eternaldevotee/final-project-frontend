@@ -16,10 +16,14 @@ export class SearchbarComponent {
   constructor(private service: SearchserviceService, private router: Router) {}
 
   ngOnInit(): void {
-    this.service.getAllData().subscribe(packages => {
+    this.service.getAllData().subscribe({
+      next:packages => {
+      console.log("HELLO",packages)
       const locations = packages.map((pkg: { location: string }) => pkg.location);
       const uniqueLocations = [...new Set(locations)];
       this.allPlaces = uniqueLocations;
+      },
+      error:err=>console.error(err)  
     });
   }
 

@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
 import { BookingModel } from '../../../core/models/BookingModel';
 import { BookingserviceService } from '../../../core/services/booking/bookingservice.service';
+import { CustomerLoginStateService } from '../../../core/services/loginstate/customer-login-state.service';
+import { BookingRequest } from '../../../core/models/Requests/BookingRequest';
+import { BookingResponse } from '../../../core/models/Reposonse/BookingResponse';
 
 
 @Component({
@@ -15,19 +18,17 @@ import { BookingserviceService } from '../../../core/services/booking/bookingser
 export class ViewMybookingsComponent implements OnInit{
 
 
-  constructor(private restService: BookingserviceService, private route: ActivatedRoute,private shareLoginService : ShareloginService){}
+  constructor(private restService: BookingserviceService, private route: ActivatedRoute,private customerLoginStateService: CustomerLoginStateService){}
 
-  bookings:BookingModel[]=[];
+  bookings:BookingResponse[]=[];
 
 
   ngOnInit() {
-    const userId = this.shareLoginService.getUserId();
-    if (userId) {
-      this.restService.getBookingsById(userId).subscribe({
+    const userID = this.customerLoginStateService.getUserId();
+      this.restService.getBookingsById(userID).subscribe({
         next: booking => this.bookings = booking,
         error: err => console.error('Error fetching bookings:', err)
       });
-    }
   }
 
 

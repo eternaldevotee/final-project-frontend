@@ -18,9 +18,9 @@ export class AuthserviceService {
   url:string="http://localhost:9090/auth";
 
   //insert customer info
-  setUserDetails(request :SignUpRequest):Observable<any>{
-    console.log("Posting user data to:", `${this.url}/customersignup`,request);
-    return this.rest.post(`${this.url}/customersignup`,request).pipe(
+  setCustomerDetails(request :SignUpRequest):Observable<any>{
+    console.log("Posting user data to:", `${this.url}/customer/signup`,request);
+    return this.rest.post(`${this.url}/customer/signup`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
@@ -29,29 +29,29 @@ export class AuthserviceService {
 
   //insert agent info
   setAgentDetails(request :SignUpRequest):Observable<any>{
-    console.log("Posting user data to:", `${this.url}/agentsignup`,request);
-    return this.rest.post(`${this.url}/agentsignup`,request).pipe(
+    console.log("Posting user data to:", `${this.url}/agent/signup`,request);
+    return this.rest.post(`${this.url}/agent/signup`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
         );
   }
 
-  //user login
-  userLogin(request :LoginRequest):Observable<LoginResponse>{
-    return this.rest.post<LoginResponse>(`${this.url}/agentlogin`,request).pipe(
+  //customer login
+  customerLogin(request :LoginRequest):Observable<LoginResponse>{
+    return this.rest.post<LoginResponse>(`${this.url}/customer/login`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })
         );
   }
 
-  //   //user login
-  // agentLogin(request :LoginRequest):Observable<LoginResponse>{
-  //   return this.rest.post<LoginResponse>(`${this.url}/customerlogin`,request).pipe(
-  //         catchError((error : HttpErrorResponse) => {
-  //           return throwError(() => error);
-  //         })
-  //       );
-  // }
+  //agent login
+  agentLogin(request :LoginRequest):Observable<LoginResponse>{
+    return this.rest.post<LoginResponse>(`${this.url}/agent/login`,request).pipe(
+          catchError((error : HttpErrorResponse) => {
+            return throwError(() => error);
+          })
+        );
+  }
 }

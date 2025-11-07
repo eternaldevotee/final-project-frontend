@@ -14,9 +14,7 @@ export class BookingserviceService {
   constructor(private rest: HttpClient) { }
 
   strUrl : string = "http://localhost:9090/customer/booking";
-
-
-
+  strUrl2 : string ="http://localhost:9090/agent"
   //insert customer info
   createBookingDetails(booking :BookingRequest):Observable<BookingResponse>{
     return this.rest.post<BookingResponse>(`${this.strUrl}/setBooking`,booking).pipe(
@@ -34,8 +32,8 @@ export class BookingserviceService {
         );
   }
   
-  getBookingsById(userId:any):Observable<BookingModel[]>{
-    return this.rest.get<BookingModel[]>(`${this.strUrl}/getBookingByUsrID?userID=${userId}`).pipe(
+  getBookingsById(userId:any):Observable<BookingResponse[]>{
+    return this.rest.get<BookingResponse[]>(`${this.strUrl}/getBookingByUsrID?userID=${userId}`).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching user:", error);
@@ -55,13 +53,11 @@ export class BookingserviceService {
   //get by pkg id
   getBookingsByPkgID(packageID:any):Observable<BookingResponse[]>{
     console.log("inside the show bookings !!! " , packageID);
-    return this.rest.get<BookingResponse []>(`${this.strUrl}/getAllBookingByPkgID?packageID=${packageID}`) 
+    return this.rest.get<BookingResponse []>(`${this.strUrl2}/getAllBookingByPkgID?packageID=${packageID}`) 
   }
 
-  getBookingByBookingID(bookingID:string):Observable<BookingResponseModel>{
-    return this.rest.get<BookingResponseModel[]>(`${this.strUrl}/getBookingByBookingID?bookingID=${bookingID}`).pipe(
-      map(bookingResponseModel => bookingResponseModel[0])
-    ).pipe(
+  getBookingByBookingID(bookingID:string):Observable<BookingResponse>{
+    return this.rest.get<BookingResponse>(`${this.strUrl}/getBookingByBookingID?bookingID=${bookingID}`).pipe(
           retry(1),
           catchError((error) => {
             console.error("Error fetching booking details:", error);
