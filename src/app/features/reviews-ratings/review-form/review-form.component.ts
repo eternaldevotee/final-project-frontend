@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReviewsService } from '../reviews.service';
 import { Review } from '../../../core/models/ReviewModel';
 import { ShareloginService } from '../../../core/services/loginstate/sharelogin.service';
+import { ReviewsService } from '../../../core/services/reviews/reviews.service';
 
 
 @Component({
   selector: 'app-review-form',
-  standalone:false,
+  standalone: false,
   templateUrl: './review-form.component.html',
   styleUrls: ['./review-form.component.css']
 })
@@ -19,8 +19,8 @@ export class ReviewFormComponent implements OnInit {
   ratings: number[] = [1, 2, 3, 4, 5];
   hoveredRating = 0;
   currentUserId = "";
-  
-  constructor(private fb: FormBuilder, private reviewsService: ReviewsService, private shareLoginService: ShareloginService ) {}
+
+  constructor(private fb: FormBuilder, private reviewsService: ReviewsService, private shareLoginService: ShareloginService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -28,10 +28,10 @@ export class ReviewFormComponent implements OnInit {
       comment: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]]
     });
 
-   this.currentUserId = this.shareLoginService.getUserId();
+    this.currentUserId = this.shareLoginService.getUserId();
   }
 
-  
+
 
   setRating(rating: number): void {
     this.form.get('rating')?.setValue(rating);
@@ -55,12 +55,7 @@ export class ReviewFormComponent implements OnInit {
 
 
   submit(): void {
-    // this.form.markAllAsTouched();
-
-    // if (this.form.invalid || this.submitting) {
-    //   return;
-    // }
-    if(this.shareLoginService.isLoggedIn()){
+    if (this.shareLoginService.isLoggedIn()) {
       this.submitting = true;
       const payload: Omit<Review, 'reviewId' | 'timestamp' | 'status' | 'agentResponse'> = {
         ...this.form.value,
@@ -79,9 +74,9 @@ export class ReviewFormComponent implements OnInit {
           this.submitting = false;
         }
       });
-    }else{
+    } else {
       alert("Please Login to submit a review!!")
     }
-    
+
   }
 }

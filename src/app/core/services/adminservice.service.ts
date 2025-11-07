@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CustomerResponse } from '../models/Reposonse/CustomerResponse';
-import { PageResponse } from '../models/Reposonse/PageResponse';
+
 
 @Injectable({
   providedIn: 'root'
@@ -58,13 +58,7 @@ export class AdminserviceService {
   }
 
 
-  getCustomers(page: number = 0, size: number = 10): Observable<PageResponse<CustomerResponse>> {
-    const headers = this.getAuthHeaders();
-    return this.http.get<PageResponse<CustomerResponse>>(
-      `${this.customerApiUrl}?page=${page}&size=${size}`,
-      { headers }
-    );
-  }
+
 
   suspendCustomer(userId: string): Observable<any> {
     const headers = this.getAuthHeaders();

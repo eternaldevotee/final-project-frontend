@@ -11,7 +11,7 @@ export class DynamicCardService {
   apiUrl2: string = 'http://localhost:9090/public/packages';
   apiUrl1: string = 'http://localhost:9090/agent/packages';
   crtApi: string = 'http://localhost:9090/agent';
-
+  publicApi : string = 'http://localhost:9090/public/packages'
   constructor(private http: HttpClient) {}
 
   
@@ -23,7 +23,7 @@ export class DynamicCardService {
 
   getPackages(): Observable<any> {
     return this.http
-      .get(this.apiUrl2)
+      .get(this.publicApi)
       .pipe(tap((data) => console.log('Fetched package', data)));
   }
 

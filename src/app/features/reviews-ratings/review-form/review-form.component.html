@@ -4,7 +4,7 @@
       <mat-card-title>Share your experience</mat-card-title>
       <mat-card-subtitle>Short, honest reviews help other travellers.</mat-card-subtitle>
     </div>
-    
+
   </mat-card-header>
 
   <mat-card-content>
@@ -15,24 +15,15 @@
         <div class="rating-container mb-4">
           <label class="rating-label">Your Rating </label>
 
-          <div class="stars"
-               role="radiogroup"
-               aria-label="Rating"
-               (mouseleave)="hoveredRating = 0"
-               [class.is-invalid]="form.get('rating')?.invalid && form.get('rating')?.touched">
+          <div class="stars" role="radiogroup" aria-label="Rating" (mouseleave)="hoveredRating = 0"
+            [class.is-invalid]="form.get('rating')?.invalid && form.get('rating')?.touched">
 
-            <button type="button"
-                    *ngFor="let star of ratings"
-                    class="star-button"
-                    (mouseenter)="hoveredRating = star"
-                    (focus)="hoveredRating = star"
-                    (blur)="hoveredRating = 0"
-                    (click)="setRating(star)"
-                    [attr.aria-checked]="(form.get('rating')?.value >= star)"
-                    role="radio"
-                    [class.filled]="hoveredRating >= star || form.get('rating')?.value >= star"
-                    tabindex="0">
-              <mat-icon aria-hidden="true">{{ (hoveredRating >= star || form.get('rating')?.value >= star) ? 'star' : 'star_border' }}</mat-icon>
+            <button type="button" *ngFor="let star of ratings" class="star-button" (mouseenter)="hoveredRating = star"
+              (focus)="hoveredRating = star" (blur)="hoveredRating = 0" (click)="setRating(star)"
+              [attr.aria-checked]="(form.get('rating')?.value >= star)" role="radio"
+              [class.filled]="hoveredRating >= star || form.get('rating')?.value >= star" tabindex="0">
+              <mat-icon aria-hidden="true">{{ (hoveredRating >= star || form.get('rating')?.value >= star) ? 'star' :
+                'star_border' }}</mat-icon>
             </button>
 
           </div>
@@ -44,7 +35,7 @@
           <mat-error *ngIf="form.invalid && form.get('comment')?.valid">
             Rating is required.
           </mat-error>
-          
+
         </div>
       </div>
 
@@ -52,9 +43,10 @@
         <!-- Comment -->
         <mat-form-field appearance="outline" class="w-100 comment-field">
           <mat-label>Your feedback</mat-label>
-          <textarea matInput rows="6" formControlName="comment" placeholder="Tell us what you enjoyed or what could be improved..."></textarea>
+          <textarea matInput rows="6" formControlName="comment"
+            placeholder="Tell us what you enjoyed or what could be improved..."></textarea>
 
-          
+
           <mat-hint align="end" class="hint-right">{{ form.get('comment')?.value?.length || 0 }}/1000</mat-hint>
 
           <mat-error *ngIf="form.get('comment')?.hasError('required')">
@@ -65,7 +57,7 @@
           </mat-error>
         </mat-form-field>
 
-        
+
 
         <mat-card-actions align="end" class="actions">
           <button mat-stroked-button type="button" (click)="clear()" [disabled]="submitting">Clear</button>

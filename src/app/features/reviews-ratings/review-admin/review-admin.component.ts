@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ReviewsService } from '../reviews.service';
 import { Review } from '../../../core/models/ReviewModel';
 import { Observable } from 'rxjs';
+import { ReviewsService } from '../../../core/services/reviews/reviews.service';
 
 @Component({
-  selector: 'app-review-admin', // Changed selector
+  selector: 'app-review-admin',
   standalone: false,
-  templateUrl: './review-admin.component.html', // Renamed file
-  styleUrls: ['./review-admin.component.css'] // Renamed file
+  templateUrl: './review-admin.component.html',
+  styleUrls: ['./review-admin.component.css']
 })
-export class ReviewAdminComponent implements OnInit { // Renamed class
+export class ReviewAdminComponent implements OnInit {
   pending$!: Observable<Review[]>;
 
-  constructor(private reviewsService: ReviewsService) {}
+  constructor(private reviewsService: ReviewsService) { }
 
   ngOnInit(): void {
     this.pending$ = this.reviewsService.getPendingReviews();
@@ -26,5 +26,4 @@ export class ReviewAdminComponent implements OnInit { // Renamed class
     this.reviewsService.moderateReview(reviewId, false).subscribe();
   }
 
-  // The 'respond' method has been removed from this component.
 }
