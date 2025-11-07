@@ -8,13 +8,13 @@
       Assistance Requests
     </h1>
   </div>
-
+ 
   <!-- Requests Grid -->
   <div class="requests-grid">
     <div class="glass-request-card" *ngFor="let request of requests"
          [class.status-open]="request.requestStatus === 'OPEN'"
          [class.status-closed]="request.requestStatus === 'CLOSED'">
-
+ 
       <!-- Card Header -->
       <div class="card-header">
         <div class="request-avatar">
@@ -37,14 +37,14 @@
           </span>
         </div>
       </div>
-
+ 
       <!-- Card Body -->
       <div class="card-body">
         <div class="info-section">
           <div class="info-label">Issue Description</div>
           <p class="issue-text">{{ request.issueDescription }}</p>
         </div>
-
+ 
         <div class="info-section" *ngIf="request.reply">
           <div class="info-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -54,7 +54,7 @@
           </div>
           <p class="reply-text">{{ request.reply }}</p>
         </div>
-
+ 
         <div class="info-section" *ngIf="request.requestStatus === 'CLOSED' && request.resolutionTime">
           <div class="info-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -65,7 +65,7 @@
           <p class="time-text">{{ request.resolutionTime | date: 'short' }}</p>
         </div>
       </div>
-
+ 
       <!-- Card Footer - Action Area -->
       <div class="card-footer">
         <div *ngIf="request.requestStatus !== 'CLOSED'">
@@ -78,7 +78,7 @@
               placeholder="Type your reply here..."
               (input)="onReplyInput($event, request.requestId)"></textarea>
           </div>
-
+ 
           <div class="action-buttons">
             <button
               class="reply-btn"
@@ -89,7 +89,7 @@
               </svg>
               Submit Reply
             </button>
-
+ 
             <button
               class="close-btn"
               (click)="closeRequest(request.requestId)">
@@ -100,7 +100,7 @@
             </button>
           </div>
         </div>
-
+ 
         <!-- Disabled state for closed requests -->
         <div *ngIf="request.requestStatus === 'CLOSED'" class="action-buttons disabled-state">
           <button class="reply-btn" disabled>
@@ -109,7 +109,7 @@
             </svg>
             Submit Reply
           </button>
-
+ 
           <button class="close-btn" disabled>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -120,7 +120,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- Empty State -->
   <div class="empty-state" *ngIf="requests.length === 0">
     <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -130,3 +130,5 @@
     <p>All assistance requests have been handled</p>
   </div>
 </div>
+ 
+ 

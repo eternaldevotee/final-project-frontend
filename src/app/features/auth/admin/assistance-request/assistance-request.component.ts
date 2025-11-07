@@ -1,6 +1,6 @@
 import { AdminserviceService } from './../../../../core/services/adminservice.service';
 import { Component, OnInit } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-assistance',
   standalone: false,
@@ -9,17 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssistanceRequestComponent implements OnInit {
   requests: any[] = [];
-
+ 
   constructor(private adminService: AdminserviceService) {}
-
+ 
   ngOnInit(): void {
     this.loadRequests();
   }
-
+ 
   onReplyInput(event: any, requestId: string): void {
     // This method helps trigger change detection for the button disabled state
   }
-
+ 
   loadRequests(): void {
     console.log('Fetching requests from: http://localhost:9090/admin/assistancerequests/all');
     this.adminService.getAllRequests().subscribe({
@@ -36,11 +36,11 @@ export class AssistanceRequestComponent implements OnInit {
       }
     });
   }
-
+ 
   closeRequest(reqId: string): void {
     console.log('Closing request:', reqId);
     console.log('API URL:', `http://localhost:9090/admin/assistancerequests/close/${reqId}`);
-
+ 
     this.adminService.closeRequest(reqId).subscribe({
       next: (response) => {
         console.log('Close response:', response);
@@ -49,17 +49,17 @@ export class AssistanceRequestComponent implements OnInit {
       }
     });
   }
-
+ 
   adminReply(reqId: string, reply: string): void {
     if (!reply || reply.trim() === '') {
       alert('Please enter a reply message');
       return;
     }
-
+ 
     this.adminService.adminReply(reqId, reply).subscribe({
       next: (response) => {
         alert('Reply sent successfully! Request will be closed.');
-
+ 
         // Automatically close the request after sending reply
         this.adminService.closeRequest(reqId).subscribe({
           next: (closeResponse) => {
@@ -76,3 +76,5 @@ export class AssistanceRequestComponent implements OnInit {
     });
   }
 }
+ 
+ 
