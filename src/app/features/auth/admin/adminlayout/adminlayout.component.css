@@ -182,7 +182,7 @@
 .letter:nth-child(7) { animation-delay: 1.2s, 0.7s; }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0 50%; }
   50% { background-position: 100% 50%; }
 }
 
@@ -577,17 +577,6 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
-}
-
-/* Rotation Animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /* Fade in animation for smooth appearance */
 .spinner-overlay {
@@ -602,4 +591,3 @@
     opacity: 1;
   }
 }
-

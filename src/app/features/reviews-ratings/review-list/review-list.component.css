@@ -15,6 +15,62 @@
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
+cus/* Review list styles - simple and modern */
+.review-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.review-tile {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #e8f1fb;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.tile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.tile-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tile-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.tile-comment {
+  font-style: italic;
+  color: #1f2d3d;
+  margin-top: 8px;
+}
+
+.tile-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 /* Header: title + filter */
 .review-list-header {
   display: flex;

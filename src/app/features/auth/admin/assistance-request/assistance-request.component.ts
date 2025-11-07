@@ -17,7 +17,7 @@ export class AssistanceRequestComponent implements OnInit {
   }
 
   onReplyInput(event: any, requestId: string): void {
-    // This method helps trigger change detection for the button disabled state
+   
   }
 
   loadRequests(): void {
@@ -51,16 +51,19 @@ export class AssistanceRequestComponent implements OnInit {
   }
 
   adminReply(reqId: string, reply: string): void {
-    if (!reply || reply.trim() === '') {
-      alert('Please enter a reply message');
-      return;
-    }
+
+
+
+    console.log(reqId,reply);
+    
 
     this.adminService.adminReply(reqId, reply).subscribe({
       next: (response) => {
+
+        console.log(reply);
         alert('Reply sent successfully! Request will be closed.');
 
-        // Automatically close the request after sending reply
+        
         this.adminService.closeRequest(reqId).subscribe({
           next: (closeResponse) => {
             this.loadRequests();

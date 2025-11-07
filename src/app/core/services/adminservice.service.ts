@@ -41,18 +41,21 @@ export class AdminserviceService {
   closeRequest(reqId: string): Observable<string> {
     const headers = this.getAuthHeaders();
     return this.http.post(
-      `${this.assistanceApiUrl}/assistancerequests/all/${reqId}`,
-      {},
+      `${this.assistanceApiUrl}/assistancerequests?reqId=${reqId}`,
+      null,
       { headers, responseType: 'text' }
     );
   }
 
   adminReply(reqId: string, reply: string): Observable<string> {
-    const encodedReply = encodeURIComponent(reply);
+  
+    const body = {
+    reply: reply 
+  };
     const headers = this.getAuthHeaders();
     return this.http.post(
-      `${this.assistanceApiUrl}/assistancerequests/${reqId}/${encodedReply}`,
-      {},
+      `${this.assistanceApiUrl}/assistancerequests/${reqId}`,
+      body,
       { headers, responseType: 'text' }
     );
   }

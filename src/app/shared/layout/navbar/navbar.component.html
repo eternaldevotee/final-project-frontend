@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand">TravelPro</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <a class="navbar-brand">
+    <img src="logo1-removebg-preview.png" style="width:100px;height:40px;">
+  </a>  
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link design" routerLink="/home">Home </a>
@@ -12,11 +10,15 @@
       <li *ngIf="isLoggedIn" class="nav-item">
         <a class="nav-link design" routerLink="/mybookings">My Bookings</a>
       </li>
+      <!-- <li *ngIf="isLoggedIn" class="nav-item">
+        <a class="nav-link design" routerLink="/mybookings">Assistance</a>
+      </li> -->
       <li *ngIf="isLoggedIn" class="nav-item">
         <a class="nav-link design" routerLink="/customer-assistance">Assistance</a>
       </li>
+ 
     </ul>
-  </div>
+  <!-- </div> -->
   <div *ngIf="isLoggedIn">
     <div class="dropdown m-2">
       <a href="#" data-bs-toggle="dropdown" aria-expanded="false" data-toggle="tooltip" data-placement="bottom"
@@ -35,8 +37,8 @@
       </ul>
     </div>
   </div>
-
-
+ 
+ 
   <div *ngIf="!isLoggedIn">
     <!-- Customer Login and SignUp -->
     <a [routerLink]="['/login']">
@@ -46,7 +48,7 @@
     <a [routerLink]="['/adminlogin']">
       <button class="btn-holo btn-warning border border-3 rounded-pill m-2 btn">Admin</button>
     </a>
-
+ 
     <!-- Agent Login and SignUp -->
     <a (click)="routeToSignIn()">
       <button type="button" class="btn btn-primary border border-3 rounded-pill m-2">Agent Login
@@ -54,3 +56,5 @@
     </a>
   </div>
 </nav>
+ 
+ 

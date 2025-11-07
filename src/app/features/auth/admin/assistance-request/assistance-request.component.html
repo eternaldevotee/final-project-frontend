@@ -12,8 +12,8 @@
   <!-- Requests Grid -->
   <div class="requests-grid">
     <div class="glass-request-card" *ngFor="let request of requests"
-         [class.status-open]="request.requestStatus === 'OPEN'"
-         [class.status-closed]="request.requestStatus === 'CLOSED'">
+         [class.status-open]="request.requestStatus === 'PENDING'"
+         [class.status-closed]="request.requestStatus === 'SOLVED'">
 
       <!-- Card Header -->
       <div class="card-header">
@@ -25,8 +25,8 @@
         <div class="request-header-info">
           <h3 class="request-title">User ID: {{ request.user.userID }}</h3>
           <span class="status-badge"
-                [class.badge-open]="request.requestStatus === 'OPEN'"
-                [class.badge-closed]="request.requestStatus === 'CLOSED'">
+                [class.badge-open]="request.requestStatus === 'PENDING'"
+                [class.badge-closed]="request.requestStatus === 'SOLVED'">
             <svg *ngIf="request.requestStatus === 'OPEN'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
@@ -55,7 +55,7 @@
           <p class="reply-text">{{ request.reply }}</p>
         </div>
 
-        <div class="info-section" *ngIf="request.requestStatus === 'CLOSED' && request.resolutionTime">
+        <div class="info-section" *ngIf="request.requestStatus === 'SOLVED' && request.resolutionTime">
           <div class="info-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -79,7 +79,7 @@
               (input)="onReplyInput($event, request.requestId)"></textarea>
           </div>
 
-          <div class="action-buttons">
+          <div class="action-buttons" *ngIf="request.requestStatus === 'PENDING'">
             <button
               class="reply-btn"
               [disabled]="!replyInput.value || replyInput.value.trim() === ''"
@@ -102,7 +102,7 @@
         </div>
 
         <!-- Disabled state for closed requests -->
-        <div *ngIf="request.requestStatus === 'CLOSED'" class="action-buttons disabled-state">
+        <div *ngIf="request.requestStatus === 'SOLVED'" class="action-buttons disabled-state">
           <button class="reply-btn" disabled>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
