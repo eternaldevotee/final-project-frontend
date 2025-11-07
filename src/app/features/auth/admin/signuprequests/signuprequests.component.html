@@ -1,30 +1,77 @@
-<!-- Search Bar -->
-<div class="search-bar d-flex justify-content-center align-items-center my-4">
-  <input
-    type="text"
-    #searchInput
-    placeholder="Search requests"
-    class="form-control search-input"
-  />
-  <button class="btn btn-primary ms-2" (click)="searchAgents(searchInput.value)">
-    🔍 Search
-  </button>
+<!-- Modern Search Bar -->
+<div class="search-section">
+  <div class="glass-search-bar">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <input
+      type="text"
+      #searchInput
+      placeholder="Search signup requests by name or email..."
+      class="modern-search-input"
+    />
+    <button class="search-btn" (click)="searchAgents(searchInput.value)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      Search
+    </button>
+  </div>
 </div>
 
-<!-- Request Cards -->
-<div class="container d-flex flex-wrap justify-content-center gap-4">
-  <div class="request-card p-4" *ngFor="let req of filteredAgents">
-    <div class="agent-info">
-      <h4 class="agent-name">{{ req.name }}</h4>
-      <p><i class="fas fa-envelope"></i> {{ req.email }}</p>
+<!-- Modern Request Cards -->
+<div class="requests-grid">
+  <div class="glass-request-card" *ngFor="let req of filteredAgents">
+    <!-- Card Header with Avatar -->
+    <div class="card-header">
+      <div class="request-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+        </svg>
+      </div>
+      <div class="request-header-info">
+        <h3 class="request-name">{{ req.name }}</h3>
+        <span class="request-badge">Pending Review</span>
+      </div>
     </div>
-    <div class="d-flex justify-content-between mt-3">
-      <button class="btn btn-success w-45" (click)="approveAgent(getAgentId(req))">
-        ✅ Approve
+
+    <!-- Card Body -->
+    <div class="card-body">
+      <div class="info-item">
+        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <div>
+          <span class="info-label">Email Address</span>
+          <span class="info-value">{{ req.email }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Footer with Action Buttons -->
+    <div class="card-footer">
+      <button class="approve-btn" (click)="approveAgent(getAgentId(req))">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        Approve
       </button>
-      <button class="btn btn-danger w-45" (click)="rejectAgent(getAgentId(req))">
-        ❌ Reject
+      <button class="reject-btn" (click)="rejectAgent(getAgentId(req))">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        Reject
       </button>
     </div>
   </div>
 </div>
+
+<!-- Empty State -->
+<div class="empty-state" *ngIf="filteredAgents.length === 0">
+  <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+  </svg>
+  <h3>No Pending Requests</h3>
+  <p>All signup requests have been processed</p>
+</div>
+

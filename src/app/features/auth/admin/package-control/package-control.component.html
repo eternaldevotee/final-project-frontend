@@ -1,40 +1,100 @@
-<div class="d-flex justify-content-center w-100 h-100">
-<div class="package-list-container">
-  <h2 class="text-center">Manage Travel Packages</h2>
-  <br>
+<div class="package-control-wrapper">
+  <!-- Header Section -->
+  <div class="header-section">
+    <button class="back-btn" (click)="goBack()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+      </svg>
+      <span>Back</span>
+    </button>
 
-  <a (click)="goBack()">
-  <svg class="back mb-6 bi bi-arrow-left-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
-</svg>
-</a>
-  <div class="d-flex justify-content-center align-items-center">
-  <input type="text" #searchInput style="width:300px;height:40px;border-radius:10px;">
-   <button class="btn" (click)="searchPackages(searchInput.value)">Search</button>
-</div>
-  <table class="table table-bordered bordered-primary mt-4 tbl">
-    <thead>
-      <tr>
-         <th style="width: 20%;">title</th>
-    <th style="width: 45%;">description</th>
-    <th style="width: 15%;">Duration</th>
-    <th style="width: 10%;">Price</th>
-    <th style="width: 10%;">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (pkg of filteredPackages; track pkg) {
-        <tr>
-          <td>{{ pkg.title }}</td>
-          <td>{{ pkg.description }}</td>
-          <td>{{ pkg.Duration }}</td>
-          <td>₹{{ pkg.Price }}</td>
-          <td>
-            <button class="btn btn-danger btn-sm" (click)="deletePackage(pkg.packageID)">Delete</button>
-          </td>
-        </tr>
-      }
-    </tbody>
-  </table>
-</div>
-</div>
+    <h1 class="page-title">
+      <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+      </svg>
+      Manage Travel Packages
+    </h1>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <div class="glass-search-bar">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input
+        type="text"
+        #searchInput
+        placeholder="Search packages by title, description, or price..."
+        class="modern-search-input"
+      />
+      <button class="search-btn" (click)="searchPackages(searchInput.value)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Packages Grid -->
+  <div class="packages-grid">
+    @for (pkg of filteredPackages; track pkg.packageID) {
+      <div class="glass-package-card">
+        <!-- Card Header -->
+        <div class="card-header">
+          <div class="package-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <div class="package-header-info">
+            <h3 class="package-title">{{ pkg.title }}</h3>
+            <div class="package-meta">
+              <span class="duration-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                {{ pkg.Duration }}
+              </span>
+              <span class="price-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                ₹{{ pkg.Price }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <p class="package-description">{{ pkg.description }}</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <button class="delete-btn" (click)="deletePackage(pkg.packageID)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+            Delete Package
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Empty State -->
+ 
+@if (filteredPackages.length === 0) {
+  <div class="empty-state">
+    <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+    </svg>
+    <h3>No Packages Found</h3>
+    <p>There are no travel packages matching your search criteria</p>
+  </div>
+}
+
+

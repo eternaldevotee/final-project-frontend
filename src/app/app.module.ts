@@ -56,6 +56,8 @@ import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
 import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
 import { HandlecustomersComponent } from './features/auth/admin/handlecustomers/handlecustomers.component';
+import { CustomerAssistanceComponent } from './features/customer-assistance/customer-assistance.component';
+
 
 
 
@@ -101,7 +103,9 @@ import { HandlecustomersComponent } from './features/auth/admin/handlecustomers/
     OrderDetailsComponent,
     AgentNotificationsComponent,
     AssistanceRequestComponent,
-    HandlecustomersComponent
+    HandlecustomersComponent,
+    CustomerAssistanceComponent
+  
 
   ],
   imports: [

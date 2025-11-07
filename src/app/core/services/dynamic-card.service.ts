@@ -8,6 +8,7 @@ import { TravelPackageModel } from '../models/TravelPackageModel';
 })
 export class DynamicCardService {
   // apiUrl: string = 'http://localhost:3000/TravelPackage';
+  apiUrl2: string = 'http://localhost:9090/public/packages';
   apiUrl1: string = 'http://localhost:9090/agent/packages';
   crtApi: string = 'http://localhost:9090/agent';
 
@@ -22,7 +23,7 @@ export class DynamicCardService {
 
   getPackages(): Observable<any> {
     return this.http
-      .get(this.apiUrl1)
+      .get(this.apiUrl2)
       .pipe(tap((data) => console.log('Fetched package', data)));
   }
 

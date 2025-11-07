@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from '../../../../core/services/adminservice.service';
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-control-packages',

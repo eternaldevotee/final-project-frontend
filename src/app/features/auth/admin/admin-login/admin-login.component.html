@@ -1,18 +1,91 @@
+<div class="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-600">
+  <div class="min-h-screen flex flex-col items-center justify-center p-6">
+    <div class="grid md:grid-cols-2 items-center gap-10 max-w-6xl w-full">
 
-<body>
-  <div class="form">
-    <h3>Admin Login</h3>
-    <br>
-    <form class="formsgroup" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-      <label class="mb-2" for="emailId">Enter your Email:</label>
-      <br>
-      <input class="mb-2" type="email" name="emailId" id="emailId" placeholder="Email" ngModel required>
-      <br>
-      <label class="mb-2" for="password">Enter your password:</label>
-      <br>
-      <input class="mb-2" type="password" name="password" id="password" placeholder="Password" ngModel required>
-      <br>
-      <br>
-      <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Login</button>
-    </form>
+      <div class="max-w-lg max-md:mx-auto max-md:text-center">
+        <a href="javascript:void(0)">
+<img src="https://ik.imagekit.io/78elq8ult/logo1.jpg" alt="TravelPro Logo" class="lg:w-[500px] w-[340px] mb-12 inline-block" />       </a>
+      
+<h2 class="text-12xl font-semibold !leading-tight text-white">
+  Admin Access Portal
+</h2>
+<p class="text-[27px] mt-6 text-white leading-relaxed">
+  Secure login for administrators to manage travel packages, agents, customers, and assistance requests.
+</p>
 
+      </div>
+
+      <form
+        class="bg-white rounded-xl px-8 py-12 max-w-md md:ml-auto max-md:mx-auto w-full shadow-2xl"
+        #loginForm="ngForm"
+        (ngSubmit)="onSubmit(loginForm)"
+      >
+        <h2 class="text-slate-900 text-3xl font-bold mb-12 text-center">
+          Admin Sign in
+        </h2>
+        <br>
+        
+
+        <div class="space-y-4">
+  
+          <div>
+            <label for="emailId" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <input
+              name="emailId"
+              type="email"
+              id="emailId"
+              autocomplete="email"
+              required
+              ngModel
+              class="bg-gray-100 focus:bg-transparent w-full text-sm px-4 py-3 rounded-md outline-gray-800 border border-gray-300 focus:border-purple-600 transition-all"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <!-- Password Input -->
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <input
+              name="password"
+              type="password"
+              id="password"
+              autocomplete="current-password"
+              required
+              ngModel
+              class="bg-gray-100 focus:bg-transparent w-full text-sm px-4 py-3 rounded-md outline-gray-800 border border-gray-300 focus:border-purple-600 transition-all"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mt-12">
+          <button
+            type="submit"
+            [disabled]="!loginForm.valid"
+            class="w-full shadow-xl py-3 px-6 text-[15px] font-medium rounded-md text-white bg-gradient-to-r from-purple-900 to-purple-600 hover:from-purple-800 hover:to-purple-500 focus:outline-0 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span class="flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              </svg>
+              Sign in as Admin
+            </span>
+          </button>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="mt-8 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+          <p class="text-xs text-purple-800 text-center flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            Secured with end-to-end encryption
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

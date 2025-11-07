@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CustomerResponse } from '../models/Reposonse/CustomerResponse';
+import { PageResponse } from '../models/Reposonse/PageResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,7 @@ import { Observable } from 'rxjs';
 export class AdminserviceService {
   private packageApiUrl = 'http://localhost:9090/admin/packages';
   private assistanceApiUrl = 'http://localhost:9090/admin';
+  private customerApiUrl = 'http://localhost:9090/admin/customers';
 
   constructor(private http: HttpClient) {}
 
@@ -20,9 +23,7 @@ export class AdminserviceService {
     });
   }
 
-  // =======================
-  // PACKAGE METHODS
-  // =======================
+
   getPackages(): Observable<any[]> {
     return this.http.get<any[]>(this.packageApiUrl);
   }
@@ -32,9 +33,6 @@ export class AdminserviceService {
     return this.http.delete(`${this.packageApiUrl}/${id}`, { headers, responseType: 'text' });
   }
 
-  // =======================
-  // ASSISTANCE REQUEST METHODS
-  // =======================
   getAllRequests(): Observable<any[]> {
     const headers = this.getAuthHeaders();
     return this.http.get<any[]>(`${this.assistanceApiUrl}/assistancerequests/all`, { headers });
@@ -54,6 +52,24 @@ export class AdminserviceService {
     const headers = this.getAuthHeaders();
     return this.http.post(
       `${this.assistanceApiUrl}/assistancerequests/${reqId}/${encodedReply}`,
+      {},
+      { headers, responseType: 'text' }
+    );
+  }
+
+
+  getCustomers(page: number = 0, size: number = 10): Observable<PageResponse<CustomerResponse>> {
+    const headers = this.getAuthHeaders();
+    return this.http.get<PageResponse<CustomerResponse>>(
+      `${this.customerApiUrl}?page=${page}&size=${size}`,
+      { headers }
+    );
+  }
+
+  suspendCustomer(userId: string): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.post(
+      `${this.customerApiUrl}/${userId}/suspend`,
       {},
       { headers, responseType: 'text' }
     );

@@ -1,12 +1,143 @@
 <admin-navbar/>
 
 <!-- Loading Spinner Overlay -->
-<div class="spinner-overlay" *ngIf="loading">
-  <div class="spinner-container">
-    <div class="spinner"></div>
-    <p class="spinner-text">Loading...</p>
+<div *ngIf="loading" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center backdrop-blur-sm">
+  <div class="relative">
+    <div class="w-24 h-24 border-8 border-purple-200 border-t-purple-600 rounded-full animate-spin"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <svg class="w-10 h-10 text-purple-600 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+      </svg>
+    </div>
   </div>
 </div>
 
-<!-- Main Content -->
+<!-- Voyager Landing Page - Only shown on /admindashboard -->
+<div *ngIf="showLandingPage" class="voyager-landing">
+  <!-- Animated Stars Background -->
+  <div class="stars-container">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="voyager-content">
+    <!-- Animated Planet/Globe -->
+    <div class="planet-container">
+      <div class="planet">
+        <div class="planet-glow"></div>
+        <div class="orbit orbit-1">
+          <div class="satellite"></div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="satellite"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Title Section -->
+    <div class="title-section">
+      <h1 class="voyager-title">
+        <span class="letter">V</span>
+        <span class="letter">O</span>
+        <span class="letter">Y</span>
+        <span class="letter">A</span>
+        <span class="letter">G</span>
+        <span class="letter">E</span>
+        <span class="letter">R</span>
+      </h1>
+      <div class="subtitle">Journey Beyond Boundaries</div>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="mission-box">
+      <div class="mission-icon">
+        <svg class="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <h2 class="mission-title">Our Mission</h2>
+      <p class="mission-text">
+        Voyager represents the spirit of exploration and discovery. We believe that travel is not just about destinations—it's about the transformative journey that broadens horizons, connects cultures, and creates memories that last a lifetime.
+      </p>
+    </div>
+
+    <!-- What Voyager Stands For -->
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Venture</h3>
+        <p>Dare to explore the unexplored, venture into new territories, and discover the wonders our world has to offer.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Optimize</h3>
+        <p>Every journey is carefully crafted to optimize your experience, ensuring comfort, safety, and unforgettable moments.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">⭐</div>
+        <h3>Your Journey</h3>
+        <p>Your dreams, your pace, your way. We personalize every adventure to match your unique travel aspirations.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Authentic</h3>
+        <p>Experience genuine connections with local cultures, authentic cuisines, and real stories from around the globe.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🌟</div>
+        <h3>Guided Excellence</h3>
+        <p>Expert travel agents guide you through every step, providing insights and support for a seamless journey.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🚀</div>
+        <h3>Elevate & Explore</h3>
+        <p>Rise above the ordinary. We elevate travel experiences and encourage exploration beyond your comfort zone.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">💎</div>
+        <h3>Remarkable</h3>
+        <p>Every package is designed to be remarkable, creating stories worth sharing and memories worth cherishing.</p>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <div class="cta-text">
+        <h2>Begin Your Voyage</h2>
+        <p>Navigate through our admin dashboard to manage packages, agents, and create extraordinary travel experiences.</p>
+      </div>
+      <div class="cta-buttons">
+        <a routerLink="packagecontrol" class="cta-btn cta-primary">
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          Manage Packages
+        </a>
+        <a routerLink="agentControl" class="cta-btn cta-secondary">
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          Manage Agents
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Child Routes Content -->
 <router-outlet/>

@@ -13,6 +13,7 @@ import { AgentControlComponent } from './features/auth/admin/agent-control/agent
 import { AdminlayoutComponent } from './features/auth/admin/adminlayout/adminlayout.component';
 import { CardDetailComponent } from './shared/ui/card-detail/card-detail.component';
 
+
 import { AdminPackagesComponent } from './features/auth/admin/admin-packages/admin-packages.component';
 import { LoginComponent } from './features/auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './features/agent-package-detail/agent-package-detail.component';
@@ -38,6 +39,7 @@ import { OrderDetailsComponent } from './features/booking-payment/order-details/
 import { AgentNavbarComponent } from './shared/layout/agent-navbar/agent-navbar.component';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
 import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
+import { CustomerAssistanceComponent } from './features/customer-assistance/customer-assistance.component';
 
 
 export const routes: Routes = [
@@ -60,6 +62,7 @@ export const routes: Routes = [
     {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
     {path:  'order-details/:id',component:OrderDetailsComponent},
+    {path : 'customer-assistance',component: CustomerAssistanceComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
     { path: 'payment-processing', component: PaymentProcessingComponent },

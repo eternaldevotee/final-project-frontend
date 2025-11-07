@@ -38,9 +38,7 @@ export class AgentService {
     return this.http.delete(`${this.baseUrl}/pendingagents/all/${id}`, { headers, responseType: 'text' });
   }
 
-  // =======================
-  // CURRENT AGENTS
-  // =======================
+
   getAgents(): Observable<any[]> {
     const headers = this.getAuthHeaders();
     return this.http.get<any[]>(`${this.baseUrl}/currentagents/all`, { headers });
