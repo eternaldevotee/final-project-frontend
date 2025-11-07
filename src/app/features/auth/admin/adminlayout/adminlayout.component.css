@@ -1,0 +1,605 @@
+/* ==================== VOYAGER LANDING PAGE ==================== */
+
+.voyager-landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a1f3a 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+/* ==================== ANIMATED STARS BACKGROUND ==================== */
+
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite, float-star 20s infinite;
+}
+
+.star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 10%; animation-delay: 0s, 0s; }
+.star:nth-child(2) { width: 3px; height: 3px; top: 20%; left: 80%; animation-delay: 0.5s, 2s; }
+.star:nth-child(3) { width: 1px; height: 1px; top: 30%; left: 30%; animation-delay: 1s, 4s; }
+.star:nth-child(4) { width: 2px; height: 2px; top: 50%; left: 60%; animation-delay: 1.5s, 6s; }
+.star:nth-child(5) { width: 3px; height: 3px; top: 70%; left: 20%; animation-delay: 2s, 8s; }
+.star:nth-child(6) { width: 1px; height: 1px; top: 80%; left: 70%; animation-delay: 2.5s, 10s; }
+.star:nth-child(7) { width: 2px; height: 2px; top: 15%; left: 50%; animation-delay: 3s, 12s; }
+.star:nth-child(8) { width: 3px; height: 3px; top: 40%; left: 90%; animation-delay: 3.5s, 14s; }
+.star:nth-child(9) { width: 1px; height: 1px; top: 60%; left: 40%; animation-delay: 4s, 16s; }
+.star:nth-child(10) { width: 2px; height: 2px; top: 90%; left: 10%; animation-delay: 4.5s, 18s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes float-star {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, 10px); }
+  50% { transform: translate(-5px, 20px); }
+  75% { transform: translate(-10px, 5px); }
+}
+
+/* ==================== PLANET/GLOBE ANIMATION ==================== */
+
+.planet-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 3rem;
+  animation: float-planet 6s ease-in-out infinite;
+}
+
+.planet {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  box-shadow:
+    inset -25px -25px 40px rgba(0,0,0,.5),
+    0 0 50px rgba(102, 126, 234, 0.6),
+    0 0 100px rgba(118, 75, 162, 0.4);
+  animation: rotate-planet 20s linear infinite;
+}
+
+.planet-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.3), transparent);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+  width: 280px;
+  height: 280px;
+  animation: rotate-orbit 15s linear infinite;
+}
+
+.orbit-2 {
+  width: 340px;
+  height: 340px;
+  animation: rotate-orbit 25s linear infinite reverse;
+}
+
+.satellite {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ffd700;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes float-planet {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+@keyframes rotate-planet {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ==================== CONTENT SECTION ==================== */
+
+.voyager-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==================== TITLE SECTION ==================== */
+
+.title-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.voyager-title {
+  font-size: 6rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.letter {
+  display: inline-block;
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s ease infinite, letter-bounce 2s ease infinite;
+}
+
+.letter:nth-child(1) { animation-delay: 0s, 0.1s; }
+.letter:nth-child(2) { animation-delay: 0.2s, 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.4s, 0.3s; }
+.letter:nth-child(4) { animation-delay: 0.6s, 0.4s; }
+.letter:nth-child(5) { animation-delay: 0.8s, 0.5s; }
+.letter:nth-child(6) { animation-delay: 1s, 0.6s; }
+.letter:nth-child(7) { animation-delay: 1.2s, 0.7s; }
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes letter-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 4px;
+  animation: fade-in 2s ease;
+}
+
+/* ==================== MISSION BOX ==================== */
+
+.mission-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slide-up 1s ease;
+}
+
+.mission-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate-icon 3s ease-in-out infinite;
+}
+
+.icon-rocket {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+@keyframes rotate-icon {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.mission-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ==================== VALUES GRID ==================== */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  animation: fade-in-up 0.8s ease backwards;
+}
+
+.value-card:nth-child(1) { animation-delay: 0.1s; }
+.value-card:nth-child(2) { animation-delay: 0.2s; }
+.value-card:nth-child(3) { animation-delay: 0.3s; }
+.value-card:nth-child(4) { animation-delay: 0.4s; }
+.value-card:nth-child(5) { animation-delay: 0.5s; }
+.value-card:nth-child(6) { animation-delay: 0.6s; }
+.value-card:nth-child(7) { animation-delay: 0.7s; }
+
+.value-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce-icon 2s ease infinite;
+}
+
+.value-card:hover .value-icon {
+  animation: spin-icon 0.6s ease;
+}
+
+@keyframes bounce-icon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes spin-icon {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.value-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ==================== CTA SECTION ==================== */
+
+.cta-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  animation: slide-up 1.2s ease;
+}
+
+.cta-text h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-text p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.cta-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+.cta-secondary {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+}
+
+.cta-secondary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(240, 147, 251, 0.5);
+  background: linear-gradient(135deg, #f5576c, #f093fb);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==================== GENERAL ANIMATIONS ==================== */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .voyager-title {
+    font-size: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .mission-title,
+  .cta-text h2 {
+    font-size: 2rem;
+  }
+
+  .planet-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .planet {
+    width: 150px;
+    height: 150px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+/* ==================== LOADING SPINNER ==================== */
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.relative {
+  position: relative;
+}
+
+.w-24 {
+  width: 6rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.border-8 {
+  border-width: 8px;
+}
+
+.border-purple-200 {
+  border-color: #e9d5ff;
+}
+
+.border-t-purple-600 {
+  border-top-color: #9333ea;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.transform {
+  transform: translate(-50%, -50%);
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.text-purple-600 {
+  color: #9333ea;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+}
+
+/* Rotation Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in animation for smooth appearance */
+.spinner-overlay {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

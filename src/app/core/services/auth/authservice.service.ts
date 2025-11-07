@@ -1,7 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { UserModel } from '../../models/UserModel';
 
 import { map,retry,catchError } from 'rxjs/operators';
 import { SignUpRequest } from '../../models/Requests/SignUpRequest';
@@ -49,6 +48,15 @@ export class AuthserviceService {
   //agent login
   agentLogin(request :LoginRequest):Observable<LoginResponse>{
     return this.rest.post<LoginResponse>(`${this.url}/agent/login`,request).pipe(
+                catchError((error : HttpErrorResponse) => {
+            return throwError(() => error);
+          })
+        );
+  }
+  
+  //admin login
+  adminLogin(request :LoginRequest):Observable<LoginResponse>{
+    return this.rest.post<LoginResponse>(`${this.url}/adminlogin`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })

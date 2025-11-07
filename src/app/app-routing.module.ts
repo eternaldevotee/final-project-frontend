@@ -13,12 +13,13 @@ import { AgentControlComponent } from './features/auth/admin/agent-control/agent
 import { AdminlayoutComponent } from './features/auth/admin/adminlayout/adminlayout.component';
 import { CardDetailComponent } from './shared/ui/card-detail/card-detail.component';
 
+
 import { AdminPackagesComponent } from './features/auth/admin/admin-packages/admin-packages.component';
 import { LoginComponent } from './features/auth/customer/login/login.component';
 import { AgentPackageDetailComponent } from './features/agent-package-detail/agent-package-detail.component';
 import { PackageControlComponent } from './features/auth/admin/package-control/package-control.component';
 import { CurrentagentComponent } from './features/auth/admin/currentagent/currentagent.component';
-import { SignuprequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
+import { SignupRequestsComponent } from './features/auth/admin/signuprequests/signuprequests.component';
 
 import { ViewSearchedPackagesComponent } from './features/search-module/view-searched-packages/view-searched-packages.component';
 import { BookingFormComponent } from './features/booking-payment/booking-form/booking-form.component';
@@ -37,15 +38,17 @@ import { BookingSummaryTableComponent } from './features/booking-summary-table/b
 import { OrderDetailsComponent } from './features/booking-payment/order-details/order-details.component';
 import { AgentNavbarComponent } from './shared/layout/agent-navbar/agent-navbar.component';
 import { AgentNotificationsComponent } from './shared/ui/agent-notifications/agent-notifications.component';
+import { AssistanceRequestComponent } from './features/auth/admin/assistance-request/assistance-request.component';
+import { CustomerAssistanceComponent } from './features/customer-assistance/customer-assistance.component';
 
 
 export const routes: Routes = [
-  
+
     //customer
     {path:'login',        component:LoginComponent},
     {path:'signup',       component:SignupComponent},
     {path:'home',         component:HomeComponent,
-      children:[    
+      children:[
         {path:'viewsearch/:Location', component: ViewSearchedPackagesComponent},
         {path : 'packages',           component : CardComponent}
       ]
@@ -59,15 +62,16 @@ export const routes: Routes = [
     {path : 'booking/:PackageID',component:BookingFormComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'mybookings',component: ViewMybookingsComponent,canActivate:[customerAuthGuardGuard]},
     {path:  'order-details/:id',component:OrderDetailsComponent},
+    {path : 'customer-assistance',component: CustomerAssistanceComponent, canActivate:[customerAuthGuardGuard]},
     {path : 'payment-success', component: PaymentSuccessComponent},
     { path: 'payment-cancelled', component: PaymentCancelledComponent },
     { path: 'payment-processing', component: PaymentProcessingComponent },
-  
+
 
     //admin
     {path:'adminlogin',component:AdminLoginComponent},
     {path: 'adminlayout', component: AdminlayoutComponent},
-    {path:'adminpackages',component:AdminPackagesComponent},  
+    {path:'adminpackages',component:AdminPackagesComponent},
 
     {path:'admindashboard',component:AdminlayoutComponent,
       children:[
@@ -75,17 +79,19 @@ export const routes: Routes = [
         {path: 'agentControl', component: AgentControlComponent,
           children: [
             { path: 'currentagent', component: CurrentagentComponent },
-            { path: 'signuprequests', component: SignuprequestsComponent }
+            { path: 'signuprequests', component: SignupRequestsComponent }
           ]
         },
-        { path: 'adminreviews', component: ReviewAdminComponent}
+        { path: 'adminreviews', component: ReviewAdminComponent},
+        {path:'assistancerequest',component:AssistanceRequestComponent}
       ]
     },
+
 
     //agent
     {path:'agentlogin',   component: AgentLoginComponent },
     {path:'agentsignup',  component: AgentSignupComponent },
-   
+
 
     {path : 'agent', component : AgentHomeComponent},
     {path : 'agent/home', component : AgentHomeComponent},

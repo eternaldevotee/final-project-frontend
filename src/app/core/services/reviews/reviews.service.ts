@@ -2,40 +2,48 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Review } from '../../core/models/ReviewModel';
+import { Review, ReviewEligibility } from '../../models/ReviewModel';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReviewsService {
-  // The API endpoint provided by json-server
-  private apiUrl  = 'http://localhost:8080/reviews';
+
+  private apiUrl = 'http://localhost:9090/reviews';
   private reviews$ = new BehaviorSubject<Review[]>([]);
 
   constructor(private http: HttpClient) {
     this.loadInitialData();
   }
 
+
   // Fetches all data from the API and updates the BehaviorSubject
   loadInitialData() {
-    // Note: json-server uses 'id', so we map it back to 'reviewId' for our model
+
     return this.http.get<any[]>(this.apiUrl).subscribe({
       next: reviews => this.reviews$.next(reviews || []),
       error: () => this.reviews$.next([])
     });
   }
+
+  checkEligibility(packageId: string): Observable<ReviewEligibility> {
+
+    return this.http.get<ReviewEligibility>(`${this.apiUrl}/eligibility/${packageId}`);
+  }
+
   // Base observable for all reviews
   getAllReviews(): Observable<Review[]> {
     return this.reviews$.asObservable();
   }
 
   // Filtered observable for published reviews
- getReviewsForPackage(packageId: string): Observable<Review[]> {
-  return this.getAllReviews().pipe(
-    map(list => list.filter(r => r.packageId === packageId && r.status === 'PUBLISHED'))
-  );
-}
+  getReviewsForPackage(packageId: string): Observable<Review[]> {
+    return this.getAllReviews().pipe(
+      map(list => list.filter(r => r.packageId === packageId && r.status === 'PUBLISHED'))
+    );
+  }
 
   // Filtered observable for pending reviews
   getPendingReviews(): Observable<Review[]> {
@@ -43,17 +51,11 @@ export class ReviewsService {
   }
 
   // Send a POST request to create a new review
-  createReview(review: Omit<Review, 'reviewId' |'userName'| 'timestamp' | 'status' | 'agentResponse'>): Observable<Review> {
-  // const newReview = {
-  //   ...review,
-  //   // REMOVED: `id: Date.now()`. Let json-server handle this.
-  //   timestamp: new Date().toISOString(),
-  //   status: 'PENDING'
-  // };
-  return this.http.post<Review>(this.apiUrl, review).pipe(
-    tap(() => this.loadInitialData()) // This is correct, re-fetch after posting
-  );
-}
+  createReview(review: Omit<Review, 'reviewId' | 'userName' | 'timestamp' | 'status' | 'agentResponse'>): Observable<Review> {
+    return this.http.post<Review>(this.apiUrl, review).pipe(
+      tap(() => this.loadInitialData()) // Re-fetch all data after a successful post
+    );
+  }
 
   // Send a PATCH request to add an agent response
   respondToReview(reviewId: string, response: string): Observable<Review> {
