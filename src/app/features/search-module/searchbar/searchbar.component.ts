@@ -18,7 +18,6 @@ export class SearchbarComponent {
   ngOnInit(): void {
     this.service.getAllData().subscribe({
       next:packages => {
-      console.log("HELLO",packages)
       const locations = packages.map((pkg: { location: string }) => pkg.location);
       const uniqueLocations = [...new Set(locations)];
       this.allPlaces = uniqueLocations;

@@ -56,7 +56,7 @@ export class AuthserviceService {
   
   //admin login
   adminLogin(request :LoginRequest):Observable<LoginResponse>{
-    return this.rest.post<LoginResponse>(`${this.url}/adminlogin`,request).pipe(
+    return this.rest.post<LoginResponse>(`${this.url}/admin/login`,request).pipe(
           catchError((error : HttpErrorResponse) => {
             return throwError(() => error);
           })

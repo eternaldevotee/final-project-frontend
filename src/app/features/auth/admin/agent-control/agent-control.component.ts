@@ -3,7 +3,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 
 
-import Swal from 'sweetalert2';
+// Swal import removed
 @Component({
   selector: 'app-agent-control',
   standalone: false,
@@ -14,21 +14,7 @@ import Swal from 'sweetalert2';
 export class AgentControlComponent {
 
   showToast(message: string): void {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top',
-      showConfirmButton: false,
-      timer: 2000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-      }
-    });
-
-    Toast.fire({
-      icon: 'info',
-      title: message
-    });
+    // Replaced SweetAlert2 toast logic with native alert()
+    alert(message);
   }
 }

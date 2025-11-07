@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgentService } from '../../../../core/services/agents.service';
-import { toast } from 'ngx-sonner'; // ✅ ngx-sonner for toasts
-import Swal from 'sweetalert2';     // ✅ SweetAlert2 for confirmation
+// toast import removed
+// Swal import removed
 
 @Component({
   selector: 'app-signuprequests',
@@ -24,10 +24,13 @@ export class SignupRequestsComponent implements OnInit {
       next: (data) => {
         this.agents = data;
         this.filteredAgents = data;
-        toast.success('✅ Signup requests loaded successfully');
+        // Replaced toast.success
+        alert('Signup requests loaded successfully');
       },
       error: (error) => {
-          toast.error('❌ Failed to load signup requests');
+        console.error('Error loading signup requests:', error);
+        // Replaced toast.error
+        alert('Failed to load signup requests');
       }
     });
   }
@@ -47,52 +50,48 @@ export class SignupRequestsComponent implements OnInit {
   }
 
   approveAgent(id: string): void {
-    Swal.fire({
-      title: 'Approve Agent?',
-      text: 'Are you sure you want to approve this agent?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, approve',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.agentService.approveRequest(id).subscribe({
-          next: () => {
-            this.agents = this.agents.filter(agent => this.getAgentId(agent) !== id);
-            this.filteredAgents = this.filteredAgents.filter(agent => this.getAgentId(agent) !== id);
-            toast.success('✅ Agent approved successfully');
-          },
-          error: (error) => {
+    // Replaced Swal.fire with native confirm
+    const confirmation = window.confirm(
+      'Are you sure you want to approve this agent?'
+    );
 
-            toast.error('❌ Failed to approve agent');
-          }
-        });
-      }
-    });
+    if (confirmation) {
+      this.agentService.approveRequest(id).subscribe({
+        next: () => {
+          this.agents = this.agents.filter(agent => this.getAgentId(agent) !== id);
+          this.filteredAgents = this.filteredAgents.filter(agent => this.getAgentId(agent) !== id);
+          // Replaced toast.success
+          alert('Agent approved successfully');
+        },
+        error: (error) => {
+          console.error('Error approving agent:', error);
+          // Replaced toast.error
+          alert('Failed to approve agent');
+        }
+      });
+    }
   }
 
   rejectAgent(id: string): void {
-    Swal.fire({
-      title: 'Reject Agent?',
-      text: 'Are you sure you want to reject this agent?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, reject',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.agentService.rejectRequest(id).subscribe({
-          next: () => {
-            this.agents = this.agents.filter(agent => this.getAgentId(agent) !== id);
-            this.filteredAgents = this.filteredAgents.filter(agent => this.getAgentId(agent) !== id);
-            toast.success('🚫 Agent rejected successfully');
-          },
-          error: (error) => {
+    // Replaced Swal.fire with native confirm
+    const confirmation = window.confirm(
+      'Are you sure you want to reject this agent?'
+    );
 
-            toast.error('❌ Failed to reject agent');
-          }
-        });
-      }
-    });
+    if (confirmation) {
+      this.agentService.rejectRequest(id).subscribe({
+        next: () => {
+          this.agents = this.agents.filter(agent => this.getAgentId(agent) !== id);
+          this.filteredAgents = this.filteredAgents.filter(agent => this.getAgentId(agent) !== id);
+          // Replaced toast.success
+          alert('Agent rejected successfully');
+        },
+        error: (error) => {
+          console.error('Error rejecting agent:', error);
+          // Replaced toast.error
+          alert('Failed to reject agent');
+        }
+      });
+    }
   }
 }

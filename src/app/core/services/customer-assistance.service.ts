@@ -27,7 +27,7 @@ export class CustomerAssistanceService {
       userId: userId,
       issue: issue
     };
-    return this.http.post(`${this.baseUrl}/assistancerequest/create`, requestBody, { headers });
+    return this.http.post(`${this.baseUrl}/assistance/request/create`, requestBody, { headers });
   }
 }
 

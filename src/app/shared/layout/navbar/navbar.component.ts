@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit{
     ngOnInit() {
       this.customerShareDataService.loginState$.subscribe(isLoggedIn => {
         this.isLoggedIn=isLoggedIn;
+        console.log("Customer Login state:", this.isLoggedIn)
       });
     }
 
