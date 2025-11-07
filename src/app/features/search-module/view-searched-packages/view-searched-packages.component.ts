@@ -16,11 +16,10 @@ export class ViewSearchedPackagesComponent {
       constructor(private cardService : DynamicCardService,private route: ActivatedRoute) {}
 
       ngOnInit(): void {
-        this.route.params.subscribe(data=>{
           this.Location=this.route.snapshot.paramMap.get('Location');
           this.cardService.getPackages().subscribe(data => {
-              this.packages = data.filter((travelPackage: { Location: string; }) => travelPackage.Location===this.Location);
+              this.packages = data.filter((travelPackage: { location: string; }) => travelPackage.location===this.Location);
             });
-        })
+      
       }
 }

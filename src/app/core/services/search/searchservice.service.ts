@@ -11,11 +11,10 @@ export class SearchserviceService {
 
   constructor(private rest: HttpClient) { }
 
-  strUrl : string = "http://localhost:9090/";
-
+  strUrl : string = "http://localhost:9090/public";
 
   getAllData():Observable<TravelPackageModel[]>{
-    return this.rest.get<TravelPackageModel[]>(`${this.strUrl}TravelPackage`).pipe(
+    return this.rest.get<TravelPackageModel[]>(`${this.strUrl}/packages`).pipe(
       retry(1),
       catchError((error) => {
         console.error("Error fetching user:", error);

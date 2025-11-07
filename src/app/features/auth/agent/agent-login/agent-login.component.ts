@@ -42,7 +42,7 @@ export class AgentLoginComponent {
 
     console.log(this.loginRequest);
 
-    this.restservice.userLogin(this.loginRequest).subscribe({
+    this.restservice.agentLogin(this.loginRequest).subscribe({
       next: (response) => {
         this.sharedataservice.login(response);
         alert('Login successful!');

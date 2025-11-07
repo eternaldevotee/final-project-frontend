@@ -1,27 +1,74 @@
 <div class="booking-container">
   <h2>Booking Details</h2>
-    <!-- <div class="section">
-      <h3>Customer Information</h3>
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Email:</strong> john.doe@example.com</p>
-      <p><strong>Phone:</strong> +91 9876543210</p>
-    </div> -->
 
-    <div class="section">
-      <h3>Package Information</h3>
-      <p><strong>Destination:</strong>{{ bookingResponseModel.package.packageID }}</p>
-      <p><strong>Travel Date:</strong>{{ bookingResponseModel.date }}</p>
-    </div>
+  <!-- Package Information -->
+  <div class="section">
+    <h3>Package Information</h3>
+    <!-- <img [src]="bookingResponse?.travelPackage?.imageSrc" alt="{{ bookingResponse?.travelPackage?.title }}" class="package-image" /> -->
+    <p><strong>Title:</strong> {{ bookingResponse?.travelPackage?.title }}</p>
+    <p><strong>Location:</strong> {{ bookingResponse?.travelPackage?.location }}</p>
+    <p><strong>Description:</strong> {{ bookingResponse?.travelPackage?.description }}</p>
+    <p><strong>Duration:</strong> {{ bookingResponse?.travelPackage?.duration }} Days</p>
+    <p><strong>Price per Person:</strong> ₹{{ bookingResponse?.travelPackage?.price | number }}</p>
+    <p>
+      <strong>Included Services:</strong>
+      {{ bookingResponse?.travelPackage?.includedServices?.join(', ') || 'No services listed' }}
+    </p>
+    <p><strong>Travel Date:</strong> {{ bookingResponse?.date | date:'longDate' }}</p>
+  </div>
 
-    <div class="section">
-      <h3>Booking Summary</h3>
-      <p><strong>Booking ID:</strong>{{ bookingResponseModel.bookingID }}</p>
-      <p><strong>Status:</strong>{{ bookingResponseModel.status }}</p>
-    </div>
+  <!-- Booking Summary -->
+  <div class="section">
+    <h3>Booking Summary</h3>
+    <p><strong>Booking ID:</strong> {{ bookingResponse?.bookingID }}</p>
+    <p>
+      <strong>Status:</strong>
+      <span [ngClass]="{
+        'badge-success': bookingResponse?.status === 'CONFIRMED',
+        'badge-warning': bookingResponse?.status !== 'CONFIRMED'
+      }">
+        {{ bookingResponse?.status }}
+      </span>
+    </p>
+    <p><strong>No. of Adults:</strong> {{ bookingResponse?.noOfAdults }}</p>
+    <p><strong>No. of Children:</strong> {{ bookingResponse?.noOfChildren }}</p>
+    <p>
+      <strong>Insurance:</strong>
+      <span [ngClass]="{
+        'badge-success': bookingResponse?.insuranceStatus === 'OPTED',
+        'badge-danger': bookingResponse?.insuranceStatus === 'NOT_OPTED'
+      }">
+        {{ bookingResponse?.insuranceStatus }}
+      </span>
+    </p>
+  </div>
 
-    <div class="section">
-      <h3>Payment Details</h3>
-      <p><strong>Amount Paid:</strong> ₹25,000</p>
-      <p><strong>Payment Method:</strong> Razorpay</p>
-    </div>
+  <!-- Customer Details -->
+  <!-- <div class="section">
+    <h3>Customer Information</h3>
+    <p><strong>Name:</strong> {{ bookingResponse?.user?.name }}</p>
+    <p><strong>Email:</strong> {{ bookingResponse?.user?.email }}</p>
+    <p *ngIf="bookingResponse?.user?.contactNumber && bookingResponse?.user?.contactNumber.trim() !== ''">
+      <strong>Contact:</strong> {{ bookingResponse?.user?.contactNumber }}
+    </p>
+    <p *ngIf="!bookingResponse?.user?.contactNumber || bookingResponse?.user?.contactNumber.trim() === ''">
+      <strong>Contact:</strong> <span class="badge-warning">Not Provided</span>
+    </p>
+  </div> -->
+
+  <!-- Payment Details -->
+  <div class="section">
+    <h3>Payment Details</h3>
+    <p><strong>Amount Paid:</strong> ₹{{ bookingResponse?.payment?.amount | number }}</p>
+    <p><strong>Payment ID:</strong> {{ bookingResponse?.payment?.paymentID }}</p>
+    <p>
+      <strong>Payment Status:</strong>
+      <span [ngClass]="{
+        'badge-success': bookingResponse?.payment?.status === 'complete',
+        'badge-warning': bookingResponse?.payment?.status !== 'complete'
+      }">
+        {{ bookingResponse?.payment?.status }}
+      </span>
+    </p>
+  </div>
 </div>

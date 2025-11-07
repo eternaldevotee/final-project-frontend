@@ -3,13 +3,14 @@
   <div *ngFor="let booking of bookings" class="card mb-3">
     <div class="card-body">
       <h5 class="card-title">Booking ID: {{ booking.bookingID }}</h5>
-      <p class="card-text"><strong>User ID:</strong> {{ booking.userID }}</p>
-      <p class="card-text"><strong>Package ID:</strong> {{ booking.packageID }}</p>
+      <p class="card-text"><strong>User ID:</strong> {{ booking.user.userID }}</p>
+      <p class="card-text"><strong>Package ID:</strong> {{ booking.travelPackage.packageID }}</p>
+      <p class="card-text"><strong>Package Name:</strong> {{ booking.travelPackage.title }}</p>
       <p class="card-text"><strong>Date:</strong> {{ booking.date }}</p>
       <p class="card-text"><strong>Status:</strong> {{ booking.status }}</p>
       <p class="card-text"><strong>Adults:</strong> {{ booking.noOfAdults }}</p>
       <p class="card-text"><strong>Children:</strong> {{ booking.noOfChildren }}</p>
-      <p class="card-text"><strong>Payment ID:</strong> {{ booking.paymentID }}</p>
+      <p class="card-text"><strong>Payment ID:</strong> {{ booking.payment.paymentID }}</p>
        <a [routerLink] = "['/order-details', booking.bookingID]" class="btn btn-primary" style="width: 40%;">View Details</a>
     </div>
   </div>
